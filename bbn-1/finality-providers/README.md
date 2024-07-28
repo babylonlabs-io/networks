@@ -335,7 +335,6 @@ Verification is successful!
 ```
 
 The pull request should follow the below template:
-<!-- TODO: update links once move to networks -->
 
 ```markdown
 # New ${nickname} Finality Provider
