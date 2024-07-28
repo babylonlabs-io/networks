@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "INVALID FP",
+    "identity": "xxx",
+    "website": "coll.fp.website.u.my",
+    "security_contact": "security@email.com",
+    "details": "no particulary details"
+  },
+  "eots_pk": "b60444181d81749c55ceb668c4432a87ab2937d0e0d66b69255c8f1913864fe3",
+  "commission": "0.050000000000000000"
+}
