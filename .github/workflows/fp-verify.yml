@@ -1,0 +1,75 @@
+name: New-FP
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'bbn-1/finality-providers/registry/**.json'
+      - 'bbn-1/finality-providers/sigs/**.sig'
+
+jobs:
+  build-eotsd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: babylonchain/finality-provider
+          ref: v0.3.0
+
+      - name: Cache eotsd
+        id: cache-eots
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./build/eotsd
+          key: key-eotsd-v030
+
+      - name: Setup go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.21
+      - name: Compile
+        run: |
+          go mod download
+          make build
+
+  changed-fp-files:
+    runs-on: ubuntu-latest
+    outputs:
+      any_changed: ${{steps.changed-files-registry.outputs.any_changed}}
+      all_changed_files: ${{steps.changed-files-registry.outputs.all_changed_files}}
+    steps:
+      - uses: actions/checkout@v4 # checkout to current repo
+        with:
+          fetch-depth: 0 # fetch all
+
+      - name: Get changed files
+        id: changed-files-registry
+        uses: tj-actions/changed-files@v44
+        with:
+          files: 'bbn-1/finality-providers/registry/*.json'
+
+  verify-new-fp:
+    needs:
+      - build-eotsd
+      - changed-fp-files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Load eotsd
+        id: cache-bin
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./build/eotsd
+          key: key-eotsd-v030
+
+      - name: Verify new FPs
+        if: needs.changed-fp-files.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_FILES: ${{ needs.changed-fp-files.outputs.all_changed_files }}
+        run: |
+          for filePathRegistryFP in ${ALL_CHANGED_FILES}; do
+            nickname=$(basename "$filePathRegistryFP" .json)
+            EOTSD_BIN=./build/eotsd ./bbn-1/finality-providers/scripts/verify-valid-fp.sh $nickname
+          done
