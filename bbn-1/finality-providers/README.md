@@ -259,10 +259,10 @@ the finality provider icon, the same way Cosmos-SDK uses for validators.
 The commission will be parsed as a decimal:
   - `"1.00"` represents 100% commission.
   - `"0.10"` represents  10% commission.
-  - `"0.01"` represents  01% commission.
+  - `"0.03"` represents  03% commission.
 
 **⚠ Warning!**
-The minimum commission value accepted is 5%. It will remain immutable and can't
+The minimum commission value accepted is 3%. It will remain immutable and can't
 be changed during the first phase of the Babylon mainnet. Please, define the
 commission rate wisely. Bitcoin stakers may earn various types of rewards. The
 commission rate you set affects every commission you earn on such rewards
@@ -339,18 +339,11 @@ The pull request should follow the below template:
 ```markdown
 # New ${nickname} Finality Provider
 
-Follow the finality provider information registry
-[guide](https://github.com/babylonlabs-io/networks/blob/ef18868512b0b9c823c653cdabc975f88b6fc7a2/bbn-1/finality-providers/README.md#L1)
-instructions to generate information.
-
 ## Checklist
 
-- [ ] [Create EOTS Key](https://github.com/babylonlabs-io/networks/blob/ef18868512b0b9c823c653cdabc975f88b6fc7a2/bbn-1/finality-providers/README.md#L154)
+- [ ] Follow the finality provider information registry
+[guide](https://github.com/babylonlabs-io/networks/blob/ef18868512b0b9c823c653cdabc975f88b6fc7a2/bbn-1/finality-providers/README.md#L1)
 - [ ] Backup Mnemonic
-- [ ] Generate Finality Provider Information
-- [ ] Input the information into a file under `bbn-1/finality-providers/registry/{nickname}.json`
-- [ ] [Sign the file](https://github.com/babylonlabs-io/networks/blob/ef18868512b0b9c823c653cdabc975f88b6fc7a2/bbn-1/finality-providers/README.md#L271)
-- [ ] Input the signature into a file under `bbn-1/finality-providers/sigs/{nickname}.sig`
 - [ ] Accept [terms and conditions](https://link-to-terms.com)
 
 > [!CAUTION]
