@@ -158,13 +158,13 @@ directory for the EOTS manager. This directory is created in the default home
 location or a location specified by the `--home` flag.
 
 ```bash
-eotsd init --home /path/to/eotsd/home/
+$ eotsd init --home /path/to/eotsd/home/
 ```
 
 After initialization, the home directory will have the following structure
 
 ```bash
-ls /path/to/eotsd/home/
+$ ls /path/to/eotsd/home/
   ├── eotsd.conf # Eotsd-specific configuration file.
   ├── logs       # Eotsd logs
 ```
@@ -192,7 +192,7 @@ used.
 recover an existing key instead of creating a new one.
 
 ```shell
-eotsd keys add --home /path/to/eotsd/home/ --key-name my-key-name --keyring-backend file
+$ eotsd keys add --home /path/to/eotsd/home/ --key-name my-key-name --keyring-backend file
 
 Enter keyring passphrase (attempt 1/3):
 ...
