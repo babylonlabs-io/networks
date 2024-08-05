@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "SilverSurfer",
+    "identity": "367B97CCE94F0FCF",
+    "website": "https://slsurfer.click/",
+    "security_contact": "mihalchuk.denis@outlook.com",
+    "details": "Provider, validator and node operator. Privacy and security"
+  },
+  "eots_pk": "80dfafc3bec400e270b0d4221124664535954039b979834f524d87ea6a8c0ffc",
+  "commission": "0.05"
+}
