@@ -1,8 +1,9 @@
 name: New-FP
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches:
+      - '**'
     paths:
       - 'bbn-1/finality-providers/registry/**.json'
       - 'bbn-1/finality-providers/sigs/**.sig'
