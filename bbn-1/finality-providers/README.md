@@ -39,8 +39,8 @@ requirements:
 - having participated in the
 [Babylon testnet-4](https://github.com/babylonchain/networks/tree/ac531139d5a75e575b34a80c9f8fc841cc33adab/bbn-test-4),
 - to go through a know your business (KYB) process conducted by Babylon Labs, and
-- to submit a pull request (PR), and the deadline is **August 16th, end of the
-day (EoD) anywhere on earth (AoE)**.
+- to submit a pull request (PR) before the deadline of **August 16th, end of
+the day (EoD) anywhere on earth (AoE)**.
 
 The pull request created should contain the finality provider's information
 combined with its EOTS public key, and a signature signed over the information
@@ -341,15 +341,15 @@ The pull request should follow the below template:
 
 ## Checklist
 
-- [ ] Follow the finality provider information registry
+- [ ] I have followed the finality provider information registry
 [guide](https://github.com/babylonlabs-io/networks/blob/ef18868512b0b9c823c653cdabc975f88b6fc7a2/bbn-1/finality-providers/README.md#L1)
-- [ ] Backup Mnemonic
+- [ ] I have backed up my mnemonic
 - [ ] I have read and agree to the [Babylon Ecosystem Participant License](https://docs.babylonlabs.io/assets/files/babylon-ecosystem-participant-license.pdf) and the [Babylon Ecosystem Participant Agreement](https://docs.babylonlabs.io/assets/files/babylon-ecosystem-participant-agreement.pdf).
 
 > [!CAUTION]
 > The loss of the (generated keys + mnemonic) makes the finality provider
 useless and unable to provide finality, which would lead to no transition to
-later phases of the Babylon networks.
+later phases of the Babylon network.
 ```
 
 ### 6. Modifying Finality Provider Information
