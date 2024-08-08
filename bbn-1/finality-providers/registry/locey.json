@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "locey",
+      "identity": "<identity>",
+      "website": "https://www.locey.fun",
+      "security_contact": "locey5201314@gmail.com",
+      "details": "This is a finality provider operated by locey."
+    },
+    "eots_pk": "ee39c6946562fc71a1ee30c5f2c95967958520dd0e12fa680f048732a38f7fef",
+    "commission": "0.10"
+  }
