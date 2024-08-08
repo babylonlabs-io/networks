@@ -342,7 +342,7 @@ The pull request should follow the below template:
 ## Checklist
 
 - [ ] I have followed the finality provider information registry
-[guide](https://github.com/babylonlabs-io/networks/blob/ef18868512b0b9c823c653cdabc975f88b6fc7a2/bbn-1/finality-providers/README.md#L1)
+[guide](https://github.com/babylonlabs-io/networks/blob/main/bbn-1/finality-providers/README.md)
 - [ ] I have backed up my mnemonic
 - [ ] I have read and agree to the [Babylon Ecosystem Participant License](https://docs.babylonlabs.io/assets/files/babylon-ecosystem-participant-license.pdf) and the [Babylon Ecosystem Participant Agreement](https://docs.babylonlabs.io/assets/files/babylon-ecosystem-participant-agreement.pdf).
 
