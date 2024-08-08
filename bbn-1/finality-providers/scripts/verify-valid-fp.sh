@@ -11,8 +11,6 @@ regexEmail="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([
 
 NICKNAME=${1:-""}
 EOTSD_BIN="${EOTSD_BIN:-eotsd}"
-echo "Nickname provided: '$NICKNAME'"
-
 
 if [ ${#NICKNAME} -lt 2 ]; then
   echo $NICKNAME "should have more than 2 characters"
