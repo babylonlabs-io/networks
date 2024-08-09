@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "Staketab",
+      "identity": "72200AE6CB11A0DE",
+      "website": "https://staketab.com",
+      "security_contact": "support@staketab.com",
+      "details": "Professional staking provider offering infrastructure solutions for the Web3 ecosystem."
+    },
+    "eots_pk": "3f642e20468aed388f8f397ca46524548c433e8bb68b348c31e1d66a062ef470",
+    "commission": "0.05"
+}
