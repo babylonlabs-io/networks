@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Villarael",
+    "identity": "50B2452D41744514",
+    "website": "https://villarael.xyz/",
+    "security_contact": "makanih660@gmail.com",
+    "details": "Pro Nodes&Validators"
+  },
+  "eots_pk": "e112c750f3728c452ccc78c662c9b53d4124c9f536e7cff35f8fa1647dba4e0b",
+  "commission": "0.06"
+}
