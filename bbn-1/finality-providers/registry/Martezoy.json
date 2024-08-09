@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Martezoy",
+    "identity": "",
+    "website": "https://martezoy.gitbook.io/martezoy",
+    "security_contact": "pryiatelchukvladyslavoleks@hotmail.com",
+    "details": "Martezoy - qualified node runner/provider"
+  },
+  "eots_pk": "4249e79889ec2cd59d30eebab74f53e7d9f019e9ea1f38b4ac47305d4b6ea6e3",
+  "commission": "0.07"
+}
