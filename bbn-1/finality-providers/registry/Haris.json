@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Haris",
+    "identity": "AF6BB2D53342C6B8",
+    "website": "https://github.com/Mernajop",
+    "security_contact": "kolesnikovevgenysergeevich@hotmail.com",
+    "details": "Providing the best services and highest uptime for the Babylon project as a finality provider"
+  },
+  "eots_pk": "811fd18c6cfa032605c5953c0eab93781621731b639e4146fd43541e08ff6eff",
+  "commission": "0.05"
+}
