@@ -37,7 +37,7 @@ fi
 
 if ! command -v $EOTSD_BIN &> /dev/null; then
   echo "⚠️ $EOTSD_BIN command could not be found!"
-  echo "Install it by following the instructions here https://github.com/babylonlabs-io/finality-provider/blob/v0.3.0"
+  echo "Install it by following the instructions here https://github.com/babylonlabs-io/finality-provider/blob/v0.4.0"
   exit 1
 fi
 
