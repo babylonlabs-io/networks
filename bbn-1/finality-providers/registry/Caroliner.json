@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Caroliner",
+    "identity": "2F9AF2334C50CA57",
+    "website": "https://caroline.joseannahav.space",
+    "security_contact": "LevTolctoy@hotmail.com",
+    "details": "Services for decentralised networks."
+  },
+  "eots_pk": "7a14b33a7462ecf1bcdb135792dab723be0778f60ef317642539be9e9bc358bb",
+  "commission": "0.05"
+}
