@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "AmberGroup",
+      "identity": "E332787C75C48DC1",
+      "website": "https://www.ambergroup.io/",
+      "security_contact": "blockchain_infra@ambergroup.io",
+      "details": "Amber Group is a leading crypto financial services platform specialized in digital wealth management and crypto-native liquidity solutions"
+    },
+    "eots_pk": "b3a838cbf2e61f2ecadf9f5924710e66dcf8212545884853073fe62c5ff5b949",
+    "commission": "0.05"
+  }
