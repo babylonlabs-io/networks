@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "kovtunmykola",
+    "identity": "",
+    "website": "https://github.com/kovtunmykola",
+    "security_contact": "kovtunmykola@hotmail.com",
+    "details": "Your trusted partner X validator in decentralized verification"
+  },
+  "eots_pk": "b9992e2ee0adeb2c57abf334c769d027dc939da6f4313010da2c65e1574681c2",
+  "commission": "0.05"
+}
