@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Cronus",
+    "identity": "3C5FDBFE2364DDB8",
+    "website": "https://cronusb.site/",
+    "security_contact": "samkisanaz73@gmail.com",
+    "details": "Trusted Validator Since 2021"
+  },
+  "eots_pk": "aeddb4062fff7d79ce306af370de7890dbb7c6e5ed692ce443b268b2ed08ca1b",
+  "commission": "0.05"
+}
