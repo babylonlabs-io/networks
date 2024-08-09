@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "creeptocat",
+    "identity": "81FE1B083F746187",
+    "website": "https://mau.pocketcat.monster",
+    "security_contact": "brawlerseja@hotmail.com",
+    "details": "Your cute provider"
+  },
+  "eots_pk": "e50ae45fe02878fecf6a702aa6c62f85430555fd3c0438179a00289cb9c7a832",
+  "commission": "0.07"
+}
