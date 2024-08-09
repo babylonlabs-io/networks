@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Chorus One",
+    "identity": "00B79D689B7DC1CE",
+    "website": "https://chorus.one",
+    "security_contact": "security@chorus.one",
+    "details": "Secure BBN and shape its future by delegating to Chorus One, a highly secure and stable validator. By delegating, you agree to the terms of service at: https://chorus.one/tos"
+  },
+  "eots_pk": "cef496d86c284f01e9cb293b5993e5e00df2116e4d7d7350d68276859561ae67",
+  "commission": "0.05"
+}
