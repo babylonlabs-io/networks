@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "NastyQueen",
+    "identity": "68635FA366C15F2B",
+    "website": "https://nasty-queen.gitbook.io/nastyqueen/",
+    "security_contact": "Korshenko.Anastasia@hotmail.com",
+    "details": "Security provider for web3. PoS validator & provider"
+  },
+  "eots_pk": "37ada3493db0aa609f4df4299d8879f9b1b3c4cccc0487f38ea9f663cf157a19",
+  "commission": "0.05"
+}
