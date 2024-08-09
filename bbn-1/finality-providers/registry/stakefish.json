@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "stakefish",
+    "identity": "stakefish",
+    "website": "https://stake.fish/",
+    "security_contact": "wilson@stake.fish",
+    "details": "stakefish has been operating validators from 2018. We are one of the largest and most trusted validators in the crypto ecosystem. We support 20+ protocols and help stake over  billion worth of assets for both institutions and retail investors."
+  },
+  "eots_pk": "f5669a225dfcc1b257e382c002ad3b651840042ca1efc9123e6398c71dbbe8ab",
+  "commission": "0.03"
+}
