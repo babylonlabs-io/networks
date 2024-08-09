@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "MitchelNodes",
+    "identity": "A089D966C935BE06",
+    "website": "https://github.com/MitchelNode",
+    "security_contact": "zalmanfanat@outlook.com",
+    "details": "Babylon Professional Provider"
+  },
+  "eots_pk": "452dddaad4f2ec6f910e280c41023ce2eda02b9886ee422d73e58bc7491697c7",
+  "commission": "0.06"
+}
