@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "AltLayer",
+      "identity": "",
+      "website": "https://www.altlayer.io",
+      "security_contact": "security@altresear.ch",
+      "details": "AltLayer is a decentralized protocol that facilitates the launch of native and restaked rollups with both optimistic and zk rollup stacks."
+    },
+    "eots_pk": "ae2f910a7c8d45fa908d4a7e5ce67fd5eb1a5f4390958c90354120b63a7819c8",
+    "commission": "0.05"
+  }
