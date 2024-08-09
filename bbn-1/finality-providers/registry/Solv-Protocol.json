@@ -1,0 +1,11 @@
+{
+    "description": {
+        "moniker": "Solv Protocol",
+        "identity": "8E9C1C1E9ADB6512",
+        "website": "https://app.solv.finance",
+        "security_contact": "contact@solv.finance",
+        "details": "Pioneering A Decentralized Bitcoin Reserve with SolvBTC."
+    },
+    "eots_pk": "fa7496f63a857d894aa393767325bf6f84560e9141f4ec54496c50f546f48bfb",
+    "commission": "0.05"
+}
