@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Hype INFRA",
+    "identity": "E83C7B8E58DC11E0",
+    "website": "https://www.hy.pe/",
+    "security_contact": "infra@hype.partners",
+    "details": ""
+  },
+  "eots_pk": "545fd0b6b9ec8eb27f98d47ce307696b8db0b01cda64471377a02e64fbc5672d",
+  "commission": "0.05"
+}
