@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Robinbobin",
+    "identity": "",
+    "website": "https://github.com/RobinBobinChain",
+    "security_contact": "GudanovaAngelinaMy@hotmail.com",
+    "details": "Validator Management. Node Deployment. Security and Scalability. Community Participation."
+  },
+  "eots_pk": "2f607d187acee1bc27a2f45bd20912c649e9d122852291dc8cb310414b07a613",
+  "commission": "0.06"
+}
