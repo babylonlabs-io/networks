@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "GoldenTor",
+    "identity": "B0A3AB06F8140CFF",
+    "website": "https://github.com/GoldenTorrent",
+    "security_contact": "saintroselove@hotmail.com",
+    "details": "Provider for your stake. 100% uptime"
+  },
+  "eots_pk": "f74b8f367f6ee0e7d7e28a1499fd7becec20e1bce2d3ff586aefa3fd8a0ed848",
+  "commission": "0.05"
+}
