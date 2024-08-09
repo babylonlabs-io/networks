@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "P-OPS Team",
+    "identity": "A2B9CAA088770EA6",
+    "website": "https://www.pops.one/",
+    "security_contact": "security@pops.one",
+    "details": "P-OPS TEAM is a decentralized organization providing you with validation and staking services, blockchain consultation, growth acceleration and investment capital for innovative Web 3.0 projects."
+  },
+  "eots_pk": "de7654da6e25df51cd0a56217fcde873723a5bb214e55e4e7cfcc19a635e3d71",
+  "commission": "0.05"
+}
