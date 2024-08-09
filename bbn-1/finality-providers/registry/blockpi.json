@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "BlockPI Network",
+    "identity": "FF5ABA14296FBF61",
+    "website": "https://blockpi.io",
+    "security_contact": "info@blockpi.io",
+    "details": "Distributed Multi-Chain Acceleration Layer"
+  },
+  "eots_pk": "5cc73dad46bce77ffc779f7f857cb7f5c9134eaeede3266df2ab31839e889632",
+  "commission": "0.05"
+}
