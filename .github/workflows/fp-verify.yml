@@ -1,5 +1,4 @@
 name: New-FP
-
 on:
   pull_request:
     types: [opened, synchronize]
@@ -15,7 +14,6 @@ jobs:
         with:
           repository: babylonchain/finality-provider
           ref: v0.3.0
-
       - name: Cache eotsd
         id: cache-eots
         uses: actions/cache@v4
@@ -23,7 +21,6 @@ jobs:
           path: |
             ./build/eotsd
           key: key-eotsd-v030
-
       - name: Setup go
         uses: actions/setup-go@v5
         with:
@@ -39,10 +36,9 @@ jobs:
       any_changed: ${{steps.changed-files-registry.outputs.any_changed}}
       all_changed_files: ${{steps.changed-files-registry.outputs.all_changed_files}}
     steps:
-      - uses: actions/checkout@v4 # checkout to current repo
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # fetch all
-
+          fetch-depth: 0
       - name: Get changed files
         id: changed-files-registry
         uses: tj-actions/changed-files@v44
@@ -63,13 +59,49 @@ jobs:
           path: |
             ./build/eotsd
           key: key-eotsd-v030
-
+      - name: Debug Environment
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "List of files in current directory:"
+          ls -la
+          echo "Content of bbn-1/finality-providers/registry directory:"
+          ls -la bbn-1/finality-providers/registry
+          echo "Content of bbn-1/finality-providers/sigs directory:"
+          ls -la bbn-1/finality-providers/sigs
+          echo "EOTSD binary information:"
+          file ./build/eotsd
+          ./build/eotsd --help || echo "Failed to run eotsd --help"
       - name: Verify new FPs
         if: needs.changed-fp-files.outputs.any_changed == 'true'
         env:
           ALL_CHANGED_FILES: ${{ needs.changed-fp-files.outputs.all_changed_files }}
         run: |
           for filePathRegistryFP in ${ALL_CHANGED_FILES}; do
+            echo "Processing file: $filePathRegistryFP"
             nickname=$(basename "$filePathRegistryFP" .json)
+            echo "Nickname: $nickname"
+            echo "Content of JSON file:"
+            cat "$filePathRegistryFP"
+            echo "Content of signature file:"
+            cat "bbn-1/finality-providers/sigs/${nickname}.sig"
+            echo "Running verification script:"
             EOTSD_BIN=./build/eotsd ./bbn-1/finality-providers/scripts/verify-valid-fp.sh $nickname
+            echo "Verification script exit code: $?"
           done
+      - name: Check verify-valid-fp.sh script
+        run: |
+          echo "Content of verify-valid-fp.sh script:"
+          cat ./bbn-1/finality-providers/scripts/verify-valid-fp.sh
+      - name: Debug EOTSD version
+        run: |
+          echo "EOTSD binary location:"
+          which ./build/eotsd
+          echo "EOTSD file information:"
+          file ./build/eotsd
+          echo "EOTSD version information (if available):"
+          ./build/eotsd --version || echo "No version flag available"
+          echo "EOTSD help information:"
+          ./build/eotsd --help
+          echo "Go build information:"
+          go version -m ./build/eotsd || echo "Unable to get Go build info"
