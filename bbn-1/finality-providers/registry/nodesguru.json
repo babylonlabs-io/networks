@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Nodes.Guru",
+    "identity": "28B672FCE6BBD562",
+    "website": "https://nodes.guru",
+    "security_contact": "security@nodes.guru",
+    "details": "Guru of non-custodial staking. Professional node running, low fees, best uptime and 24/7 customer support."
+  },
+  "eots_pk": "625cf6468c65028806b518fe78ad8e80c697a266394736b6bb9dd481e238816d",
+  "commission": "0.05"
+}
