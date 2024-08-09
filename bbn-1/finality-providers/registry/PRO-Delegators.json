@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "PRO Delegators",
+    "identity": "44771D06A00DD695",
+    "website": "https://pro-delegators.com",
+    "security_contact": "contact@pro-delegators.com",
+    "details": "Advanced Node Services for Professional Delegators"
+  },
+  "eots_pk": "e8a3ef3ca40ade56bd986663f24d5ab3bcc3cd18a88a10a8cd25d8af42314f62",
+  "commission": "0.03"
+}
