@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bakerik",
+    "identity": "43536A3F688858DB",
+    "website": "https://bakerik.gitbook.io/bakerik-portfolio",
+    "security_contact": "Yananti@outlook.com",
+    "details": "Validator service for customers"
+  },
+  "eots_pk": "b6edf8de996341a80ef9c990cf331f91af10758a0964245d9f1832646b0d13d1",
+  "commission": "0.05"
+}
