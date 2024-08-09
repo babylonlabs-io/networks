@@ -1,0 +1,11 @@
+{
+    "description": {
+        "moniker": "Informal Systems",
+        "identity": "6408AA029ADBE364",
+        "website": "https://informal.systems",
+        "security_contact": "validator@informal.systems",
+        "details": "Informal Systems - Enterprise-grade staking infrastructure with a focus on security and support for both networks and delegators since 2018."
+    },
+    "eots_pk": "68db13ba45241bcc1db1e63d998d78d9fce4b3f42772ef355e007a1105100476",
+    "commission": "0.03"
+}
