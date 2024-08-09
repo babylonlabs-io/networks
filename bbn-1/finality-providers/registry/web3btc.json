@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "web3btc",
+    "identity": "",
+    "website": "https://static-hk.istillgo.com",
+    "security_contact": "deblinux@qq.com",
+    "details": "A Decentralized Password Manager"
+  },
+  "eots_pk": "2f2ad150b5a0c3616ff438d275750db107b961f9dd783658ac4f79dcbccff98c",
+  "commission": "0.10"
+}
