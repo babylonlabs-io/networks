@@ -72,6 +72,23 @@ jobs:
           echo "EOTSD binary information:"
           file ./build/eotsd
           ./build/eotsd --help || echo "Failed to run eotsd --help"
+      - name: Debug EOTSD
+        run: |
+          echo "EOTSD binary location:"
+          ls -l ./build/eotsd
+          echo "EOTSD version (if available):"
+          ./build/eotsd version || echo "Version command not available"
+          echo "EOTSD help output:"
+          ./build/eotsd --help
+
+      - name: Debug Signature Verification
+        run: |
+          echo "Manual signature verification:"
+          ./build/eotsd verify-schnorr-sig \
+            --eots-pk 9b749016b734ce7de03712310cbb289b5d21db97af8e5227081acd5505af070c \
+            --signature-file bbn-1/finality-providers/sigs/blockpi.sig \
+            bbn-1/finality-providers/registry/blockpi.json
+            
       - name: Verify new FPs
         if: needs.changed-fp-files.outputs.any_changed == 'true'
         env:
