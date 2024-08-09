@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Antho",
+    "identity": "0C50A24D6D0F5933",
+    "website": "https://antho-blockchain.notion.site/Antho-Blockchain-df05c8b12c1343d7b3b316bf5c76bde6",
+    "security_contact": "Riasnyiandrii@hotmail.com",
+    "details": "Low commission. High uptime"
+  },
+  "eots_pk": "f3e75918646cf0ec53a924d426d73fa8931054f4c6c2457f76afc909eb55649d",
+  "commission": "0.05"
+}
