@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Sergenode",
+    "identity": "6526975A4DA336D6",
+    "website": "https://github.com/KislitsinSergey",
+    "security_contact": "Kislitsin.Sergey@hotmail.com",
+    "details": "Do you need high performance and low fees for optimal staking rewards? Then here I am."
+  },
+  "eots_pk": "e9f74a3c85d7cddbb6f0a07995fea914ac1d9373cc965dff0dc9ab179700730d",
+  "commission": "0.07"
+}
