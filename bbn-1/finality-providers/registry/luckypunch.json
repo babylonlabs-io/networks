@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "luckypunch",
+    "identity": "",
+    "website": "https://github.com/Lucky-Punch-Nodes",
+    "security_contact": "Quchimshizunero@hotmail.com",
+    "details": "Stake with PRO's"
+  },
+  "eots_pk": "90931a3bbdab2b6378c73d976448dcf60a7ae31c1408652ffffcbd83eb364d7f",
+  "commission": "0.06"
+}
