@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: babylonchain/finality-provider
+          repository: babylonlabs-io/finality-provider
           ref: v0.4.0
 
       - name: Cache eotsd
@@ -22,7 +22,7 @@ jobs:
         with:
           path: |
             ./build/eotsd
-          key: key-eotsd-v030
+          key: key-eotsd-v040
 
       - name: Setup go
         uses: actions/setup-go@v5
@@ -62,7 +62,7 @@ jobs:
         with:
           path: |
             ./build/eotsd
-          key: key-eotsd-v030
+          key: key-eotsd-v040
 
       - name: Verify new FPs
         if: needs.changed-fp-files.outputs.any_changed == 'true'
