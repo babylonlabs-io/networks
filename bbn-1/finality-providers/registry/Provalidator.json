@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Provalidator",
+    "identity": "3A7D5C9B0B88BEA1",
+    "website": "https://provalidator.com",
+    "security_contact": "zenon@provalidator.com",
+    "details": "Supporting Blockchain Infrastructure"
+  },
+  "eots_pk": "5177889c5509814722828fb18bafb2b518ef02ac68bbc30e4f795f7d8eaf3fd7",
+  "commission": "0.03"
+}
