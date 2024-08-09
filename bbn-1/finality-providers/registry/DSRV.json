@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "DSRV",
+    "identity": "CC434B6FE536F51B",
+    "website": "dsrvlabs.com",
+    "security_contact": "validator@dsrvlabs.com",
+    "details": "DSRV is an integrated blockchain solutions company with the mission of enriching the crypto ecosystem via stronger connectivity. We strive to be your gateway to a suite of all-comprehensive blockchain services. Everything distributed, served complete."
+  },
+  "eots_pk": "086fe422ec074cb64d7b06eeca4bf985f532eb32dcf8172402b5cb604d7c9a29",
+  "commission": "0.10"
+}
