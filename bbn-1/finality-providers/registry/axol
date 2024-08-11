@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "axol.io",
+    "identity": "FA1EA630E6129D0C",
+    "website": "https://axol.io/",
+    "security_contact": "drew@axol.io",
+    "details": "Axol is empowering institutional staking infrastructure with unrivaled uptime, harnessing self-healing nodes and renewable energy across Latin America. Contact us to stake your bitcoin today."
+  },
+  "eots_pk": "311c550309edab2025b9ee907cfeb0cf7223fefdda5d7752f2abe765d34d11cd",
+  "commission": "0.01"
+}
