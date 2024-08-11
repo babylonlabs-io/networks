@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Aguscrypto",
+    "identity": "A9C4F30184F4FC4C",
+    "website": "http://aguscrypto.xyz/",
+    "security_contact": "contact@aguscrypto.xyz",
+    "details": "Aguscrypto acts as a guardian of the Bitcoin network, ensuring its security, integrity, and adherence to Satoshi's vision."
+  },
+  "eots_pk": "30d6852a68e9ee20c8009322ba2eccfba22ca0ae77cbecbe0588ca7ff0fff456",
+  "commission": "0.05"
+}
