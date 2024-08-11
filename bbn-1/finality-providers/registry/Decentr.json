@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Decentr",
+    "identity": "FD3C0BCE9D7F7CF5",
+    "website": "https://decentr.net",
+    "security_contact": "yann.w3217@gmail.com",
+    "details": "Decentr maintain a distributed ledger, a shared copy of the blockchain's transaction history."
+  },
+  "eots_pk": "59f19690c77004d0f4222c628cb5270e5a7a5c171987e89e33ba18d3e1a28abc",
+  "commission": "0.05"
+}
