@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Thomilx",
+    "identity": "355B66C6326E35A7",
+    "website": "https://thomilx.gitbook.io/thomilx/",
+    "security_contact": "ivanuykolegmy@hotmail.com",
+    "details": "Dedicated self-validator, who is committed to contributing to blockchain's decentralized future."
+  },
+  "eots_pk": "9e0ae18a5f8758665ebabfe584741c9074a904b1902b143d13859388d2e48d33",
+  "commission": "0.05"
+}
