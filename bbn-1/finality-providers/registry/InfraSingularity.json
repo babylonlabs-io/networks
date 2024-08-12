@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "InfraSingularity",
+    "identity": "62ECC4FAFB20EB61",
+    "website": "https://infrasingularity.com",
+    "security_contact": "contact@infrasingularity.com",
+    "details": "InfraSingularity aims to radically transform the Web3 ecosystem as a pioneering Web3 Investor, and builder."
+  },
+  "eots_pk": "192308b034f9ae5b8de60ca0d807834773ca5f077960dfc22998096bc08d8bd9",
+  "commission": "0.10"
+}
