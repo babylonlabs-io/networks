@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Viabtc",
+    "identity": "",
+    "website": "https://www.viabtc.com/",
+    "security_contact": "support@viabtc.com",
+    "details": "ViaBTC is an innovation-driven blockchain service provider that boasts abundant experience, extensive investments, secure and reliable products, and a global user base"
+  },
+  "eots_pk": "c440e16b2e8ad1f39775bf28e35bff44bf4ca7367751cc94d4924dfde27e8ca9",
+  "commission": "0.05"
+}
