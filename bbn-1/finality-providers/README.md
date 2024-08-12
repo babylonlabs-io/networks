@@ -93,7 +93,7 @@ chains and earn commissions.
 
 The EOTS daemon is utilized to create the EOTS keys of the finality provider.
 To follow this guide, please use the
-[eotsd v0.3.0](https://github.com/babylonlabs-io/finality-provider/releases/tag/v0.3.0)
+[eotsd v0.4.0](https://github.com/babylonlabs-io/finality-provider/releases/tag/v0.4.0)
 version. This is a Golang project and requires version 1.21 or later. Install
 Go by following the instructions in the
 [official Go installation guide](https://golang.org/doc/install).
@@ -106,13 +106,13 @@ $ git clone https://github.com/babylonlabs-io/finality-provider.git
 Cloning into 'finality-provider'...
 ```
 
-Checkout to the v0.3.0 release tag
+Checkout to the v0.4.0 release tag
 
 ```bash
 $ cd finality-provider # cd into the project directory
-$ git checkout v0.3.0
+$ git checkout v0.4.0
 
-Note: switching to 'v0.3.0'.
+Note: switching to 'v0.4.0'.
 ```
 
 At the root of the finality provider repository install the binaries
