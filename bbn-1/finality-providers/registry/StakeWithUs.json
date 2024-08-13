@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "StakeWithUs",
+    "identity": "609F83752053AD57",
+    "website": "https://stakewith.us",
+    "security_contact": "node@stakewith.us",
+    "details": "Secured Staking Made Easy. Put Your Crypto to Work - Hassle Free."
+  },
+  "eots_pk": "513d10a6b689191cdc4ea740a1e8f5a1a508c83198867157008b9c172e911fa0",
+  "commission": "0.03"
+}

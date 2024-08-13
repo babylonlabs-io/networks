@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Freytara",
+    "identity": "4C86ACE40AA4591B",
+    "website": "https://freya.lol/",
+    "security_contact": "matinamohseni467m@gmail.com",
+    "details": "Experienced noderunner & validator"
+  },
+  "eots_pk": "3780023f58b2d75a98f0f0558040788e4b9bcfd89e7843c48af31490cf4d2c4d",
+  "commission": "0.05"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "ContributionDAO",
+    "identity": "3034BD2560DD86B4",
+    "website": "https://contributiondao.com",
+    "security_contact": "security@contributiondao.com",
+    "details": "Secure Network with Institutional-Grade Solution"
+  },
+  "eots_pk": "74d8171df05860f95f5a63f27bc81a81a178d4a0f32b24fa5abcfb3a4198574e",
+  "commission": "0.03"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "blockshell",
+    "identity": "7D19D161F98C086D",
+    "website": "https://blockshell.com",
+    "security_contact": "info@blockshell.com",
+    "details": "Blockshell empower projects with secure, reliable, and scalable blockchain node solutions."
+  },
+  "eots_pk": "5778d746eb3abf33e1181e71881fcf74fbf07bf27a2f2b2f8bef1eb99be7e660",
+  "commission": "0.05"
+}
