@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Staking4All",
+    "identity": "12375441A4267DC9",
+    "website": "https://www.staking4all.org/",
+    "security_contact": "info@staking4all.org",
+    "details": "Validator for Proof of Stake blockchains. Delegate to us for a easy staking experience"
+  },
+  "eots_pk": "8277d0e45cadd877f7beec1317f2b5872cd957b810702264b54eaeef97b86ab3",
+  "commission": "0.03"
+}
