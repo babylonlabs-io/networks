@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "plotei",
+    "identity": "",
+    "website": "https://github.com/Plotei",
+    "security_contact": "savchenkoartemana@hotmail.com",
+    "details": "Plotei Node Operator"
+  },
+  "eots_pk": "ff90dcf8deffe95f6faad7e455ba865c9deb5ce8674b302bd792ffaa96620e4c",
+  "commission": "0.07"
+}
