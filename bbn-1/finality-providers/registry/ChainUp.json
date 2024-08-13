@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "ChainUp",
+    "identity": "",
+    "website": "https://www.chainup.com/",
+    "security_contact": "randd@chainup.com",
+    "details": ""
+  },
+  "eots_pk": "<finality_provider_eots_pk>",
+  "commission": "0.10"
+}
