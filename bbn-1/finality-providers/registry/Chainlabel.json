@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Chainlabel",
+    "identity": "18FD045E81C560F8",
+    "website": "http://chainlabel.net",
+    "security_contact": "info@chainlabel.net",
+    "details": "We safeguards the the blockchain with Immutable Ledger node."
+  },
+  "eots_pk": "1f29b05c07dce241310eaa3dbdb5315dfb1977fbc06284244f4d85c7d77836b1",
+  "commission": "0.05"
+}
