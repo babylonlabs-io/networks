@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bitscale",
+    "identity": "",
+    "website": "https://bitscale.vc/",
+    "security_contact": "staking@bitscale.vc",
+    "details": "We invest in teams and solutions that bring transparency and efficiency to our world with cutting-edge technologies"
+  },
+  "eots_pk": "45bed1a1c92575f264c24b06d56c4a3f2421497c06955a7cc007bb3690525edf",
+  "commission": "0.04"
+}
