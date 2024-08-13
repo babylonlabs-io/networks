@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Kryz",
+    "identity": "DEAC37589FE4AA99",
+    "website": "https://kryz-chain.notion.site/Kryz-1124994767164ba29d8df43dbaccabb3?pvs=4",
+    "security_contact": "kryzhanovskiy.mikhail@outlook.com",
+    "details": "I’m Kryz, a dedicated self-validator and blockchain enthusiast focused on advancing decentralized technologies."
+  },
+  "eots_pk": "e2ad1fc33c581bbbd7fd11ecb5cbb1efb512a20d4d68c7b2119a6d571c30afc8",
+  "commission": "0.05"
+}
