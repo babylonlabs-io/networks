@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "01node",
+    "identity": "7BDD4C2E94392626",
+    "website": "https://01node.com",
+    "security_contact": "secops@01node.com",
+    "details": "Securely validating one block at a time since 2019"
+  },
+  "eots_pk": "4209feea09cd799cae01a0dfc94a2791cf1701e5e5430ec490b169afdb1cc220",
+  "commission": "0.05"
+}

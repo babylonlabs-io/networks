@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "ColdLar",
+    "identity": "766EDB4FCF1D7DC5",
+    "website": "https://www.coldlar.com",
+    "security_contact": "staff@coldlar.com",
+    "details": "ColdLar is a world-leading provider of hardware wallet services, specializing in encrypted asset storage solutions."
+  },
+  "eots_pk": "1ddeb3ec130bbab757e3ed46a977116ac2a5869f2b8407d7b8e24eb5aa310ae7",
+  "commission": "0.05"
+}
