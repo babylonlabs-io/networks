@@ -33,17 +33,17 @@ The system defines three types of transactions:
 - *Withdraw* which extracts unlocked/unbonded stake to any wallet address specified by the staker.
 
 The full spec of the staking transactions can be found
-[here](https://github.com/babylonlabs-io/babylon/blob/a8c9d27ab1d489eb55c23cbb2c75b87e1a85afdb/docs/staking-script.md).
+[here](https://github.com/babylonlabs-io/babylon/blob/main/docs/staking-script.md).
 
 Participants of the system can create staking transactions either through the
 staking dApp or the staker CLI:
-- The [Staking dApp](https://github.com/babylonlabs-io/simple-staking/)
+- The [Staking dApp](https://github.com/babylonlabs-io/simple-staking/tree/main)
   is a user-friendly application allowing users to create, sign, and submit
   staking transactions to the Bitcoin ledger.
   It can either be built directly inside the Bitcoin wallet or can connect
   to a wallet. It communicates with a back-end service (described later) that
   has access to an unbonding pipeline in order to submit unbonding requests.
-- The [Staker CLI](https://github.com/babylonlabs-io/btc-staker)
+- The [Staker CLI](https://github.com/babylonlabs-io/btc-staker/tree/main)
   is a command line tool for power users that want full control
   on how their staking transaction is constructed. Stakers utilize the CLI to
   construct Bitcoin staking transactions and are responsible for signing them
@@ -56,7 +56,7 @@ One could also build their own staking application and interact with the staking
 
 The covenant emulation committee is a set of entities responsible for approving
 on-demand unbonding requests. The members of the committee operate a
-[covenant signer](https://github.com/babylonlabs-io/covenant-signer)
+[covenant signer](https://github.com/babylonlabs-io/covenant-signer/tree/main)
 program which involves a server that accepts requests that contain unbonding
 requests that require the covenant emulator’s signature.
 If the requests are valid, then the signature is returned in the response.
@@ -70,7 +70,7 @@ without the staker's approval.
 The list of covenant emulation committee members is a global parameter, and the
 signer servers are shared among all instances of the staking back-ends.
 
-## Back-End Staking System Components
+## BackEnd Staking System Components
 
 ### [Staking Indexer](https://github.com/babylonlabs-io/staking-indexer)
 
