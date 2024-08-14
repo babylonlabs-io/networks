@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "TLanderon",
+    "identity": "7F793204BA34FF98",
+    "website": "https://github.com/TLanderon",
+    "security_contact": "tlarnewoo@hotmail.com",
+    "details": "Providing highest uptime with lowest fees"
+  },
+  "eots_pk": "571cc03b5eec6a49557a7eed48fd999db7f7b6acf5b9af7f3f99327f49945056",
+  "commission": "0.06"
+}

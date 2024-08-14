@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Caliber",
+    "identity": "BE9E5DF391D7093E",
+    "website": "caliber.build",
+    "security_contact": "devop@caliber.build",
+    "details": "Caliber is a Web3 Venture Builder started by veteran web3 builders and aims to build the next generation of web3 startups with new founders. We consider ourselves a co-founder of each startup & work side-by-side with founders"
+  },
+  "eots_pk": "cdf9a4678bbca14c3e1f2892f15a874122fa2cc372f8b47a558eddbaa2e370e9",
+  "commission": "0.05"
+}
