@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Guzel",
+    "identity": "E7838830DB3FBE6D",
+    "website": "",
+    "security_contact": "GuzelKhvan@outlook.com",
+    "details": "Professional PoS Validator"
+  },
+  "eots_pk": "cba5e7c2c7351f4050610d94489e7f720a5b518c5dda2e408ab98ae1b6d9d6b2",
+  "commission": "0.07"
+}
