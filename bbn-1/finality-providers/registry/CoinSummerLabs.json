@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "CoinSummerLabs",
+    "identity": "74d57b2827b0286719fc4ce2938ba410ea28b7e2",
+    "website": "https://coinsummer.io",
+    "security_contact": "k@coinsummer.io",
+    "details": "Backed by crypto-native degens, CoinSummer is a trusted liquidity provider, staking validator, and AVS operator supporting the crypto and DeFi evolution."
+  },
+  "eots_pk": "ee2a3d3750853f44a0cc4988c3432c37e8acca9557607fa5f9510ca539d8671f",
+  "commission": "0.03"
+}
