@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "PumpBTC",
+      "identity": "CAAE6F147CA9D28E",
+      "website": "https://pumpbtc.xyz",
+      "security_contact": "josechef@pumpbtc.xyz",
+      "details": "PumpBTC is a liquid staking protocol on Babylon to allow BTC HODLER to maximize yield."
+    },
+    "eots_pk": "0f5c19935a08f661a1c4dfeb5e51ce7f0cfcf4d2eeb405fe4c7d7bd668fc85e4",
+    "commission": "0.05"
+}
