@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "verse2",
+    "identity": "47D8EABCB4F4BF71",
+    "website": "https://verse2.io",
+    "security_contact": "ted@verse2.io",
+    "details": "Starting as a builder, Verse2 has expanded its business to node validators, crypto investors, and advisors for web3 projects, growing its influence in the Asian crypto scene. Verse2 has an outstanding and professional track record in running nodes for Layer 1 Mainnets. The team has been a node operator for major chains both locally and globally."
+  },
+  "eots_pk": "ec59e67621aca987b11d77a1acb488985852ec840843db871bb9a803341fa66d",
+  "commission": "0.05"
+}

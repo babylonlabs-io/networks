@@ -7,7 +7,7 @@
 # valid finality provider registration.
 
 CWD="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-regexEmail="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
+regexEmail="^(([A-Za-z0-9]+((\.|\-|\_|\+)?[A-Za-z0-9]?)*[A-Za-z0-9]+)|[A-Za-z0-9]+)@(([A-Za-z0-9]+)+((\.|\-|\_)?([A-Za-z0-9]+)+)*)+\.([A-Za-z]{2,})+$"
 
 NICKNAME=${1:-""}
 EOTSD_BIN="${EOTSD_BIN:-eotsd}"
@@ -59,6 +59,7 @@ fi
 
 if ! [[ $securityContact =~ $regexEmail ]]; then
   echo "$securityContact is not a valid email. Check whether you passed a valid finality provider email."
+  exit 1
 fi
 
 commission=$(cat "$fpFilePath" | jq -r '.commission')
