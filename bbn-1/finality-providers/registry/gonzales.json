@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "gonzales",
+    "identity": "",
+    "website": "https://gonzales.gitbook.io/gonzales/",
+    "security_contact": "hk5692024@gmail.com",
+    "details": "BBN Provider"
+  },
+  "eots_pk": "b58ce1f8833e29ad1244ea9269ff28732d2876fcc3504e594a9387d357f7c08f",
+  "commission": "0.07"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "LeverFi",
+    "identity": "",
+    "website": "https://www.leverfi.io",
+    "security_contact": "ops@leverfi.io",
+    "details": "LeverFi delivers high performance, world-class liquidity infrastructure for users in the Bitcoin and global Web3 ecosystems."
+  },
+  "eots_pk": "d5a24af7db075788a0fe6bf236ec2891673ea87f665402e300b79b25b310d262",
+  "commission": "0.035"
+}

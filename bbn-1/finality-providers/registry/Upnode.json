@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Upnode",
+    "identity": "D0084E1600CCC9F7",
+    "website": "https://upnode.org",
+    "security_contact": "hello@upnode.org",
+    "details": "Professionally managed institutional grade blockchain infrastructure provider."
+  },
+  "eots_pk": "756c9ab3070b326ce2af216bbd5a4d8fe8c3972a9a8e6048042fd0a105650ddc",
+  "commission": "0.03"
+}

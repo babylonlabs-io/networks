@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "PierTwo",
+      "identity": "",
+      "website": "http://piertwo.com/",
+      "security_contact": "admin@piertwo.com",
+      "details": "Australian based enterprise grade infrastructure for institutional clients. Non custodial ETH Staking. Secure Node and Validation Services. Creating the light client Lantern (C Sharp)."
+    },
+    "eots_pk": "6788b40df1c63023711fd01168e9a8644c4a5ac27a6d4fd2f7ca4fe7bdd290f0",
+    "commission": "0.10"
+}
