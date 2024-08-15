@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Ankr",
+    "identity": "",
+    "website": "www.ankr.com",
+    "security_contact": "mikhail.levin@ankr.com",
+    "details": "Build web3 apps with a full suite of developer tools. Power them with fast, global, decentralized connections to dozens of chains"
+  },
+  "eots_pk": "cc25813bdd6fb8a9c2e343536a917598eebc955e88418e57875dd593eaa05f3c",
+  "commission": "0.10"
+}
