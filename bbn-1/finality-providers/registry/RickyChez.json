@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "RickyChez",
+    "identity": "373472AA987738BD",
+    "website": "https://github.com/RickyChez",
+    "security_contact": "triviumgrennys@hotmail.com",
+    "details": "We focus our work on blockchain security, double signing prevention, redundancy, monitoring, backup."
+  },
+  "eots_pk": "932cd37ff514d8e8d1db8e4c308a6ef9e4be85d3857aafb92dd72a5faa27d02d",
+  "commission": "0.05"
+}

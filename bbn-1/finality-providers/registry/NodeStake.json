@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "NodeStake",
+    "identity": "94EFE192B2C52424",
+    "website": "https://nodestake.org",
+    "security_contact": "info@nodestake.org",
+    "details": "NodeStake is the professional validator, infrastructure provider and IBC relayer."
+  },
+  "eots_pk": "904797a87def7180c58b6d016a00e18a2736aa0f7ec05696ab5f08440e1a5150",
+  "commission": "0.03"
+}

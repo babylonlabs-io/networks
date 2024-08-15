@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "6block.com",
+    "identity": "",
+    "website": "https://6block.com",
+    "security_contact": "contact@6block.com",
+    "details": "Crypto mining and staking solution provider"
+  },
+  "eots_pk": "5c04ad094a9d1fe5c907ba9d15de1baea34345d9f46956b5202ab35b21499eee",
+  "commission": "0.03"
+}
