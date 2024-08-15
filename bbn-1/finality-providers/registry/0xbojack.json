@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "0xbojack",
+    "identity": "933397D7278E6F1C",
+    "website": "https://x.com/coder_chao",
+    "security_contact": "coderbojack@gmail.com",
+    "details": "Node Runner"
+  },
+  "eots_pk": "be269d18c63f87af05b6311ed4ecc31bc3ca974b18d7f008cf717a710653c7c4",
+  "commission": "0.05"
+}
