@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "silent",
+    "identity": "A47522A5527DB39F",
+    "website": "https://silentvalidator.com",
+    "security_contact": "operation@silentvalidator.com",
+    "details": "Silent Validator leverages robust infrastructure and deep expertise to provide highly reliable validation services, enriches the community and furthers the growth of the ecosystem."
+  },
+  "eots_pk": "c790b603199b5c06e9a2230c798130cdc5ea24f0ef8250383e483ac9ae57b397",
+  "commission": "0.03"
+}
