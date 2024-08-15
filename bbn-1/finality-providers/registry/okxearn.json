@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "OKX Earn",
+    "identity": "5E40FD2A1FCF6FE1",
+    "website": "https://www.okx.com",
+    "security_contact": "earn@okx.com",
+    "details": "OKX Earn serves as a one-stop shop for all the decentralised earning options available on the OKX platform and we are the leading staking service provider for blockchain projects"
+  },
+  "eots_pk": "374601b4c400b31f3aa78dc16b4e4d589c1284118e2476d83f0c39743881032c",
+  "commission": "0.03"
+}
