@@ -51,7 +51,7 @@ information from a back-end you operate.
 
 **Option-3**, develop Bitcoin staking as a feature of your extension wallet,
 which connects to either third party APIs
-(such as the Babylon [API](https://staking-api.testnet.babylonchain.io/swagger/index.html)) or a back-end you operate.
+(such as the Babylon [API](https://staking-api.babylonlabs.io/swagger/index.html)) or a back-end you operate.
 - For information about developing your own Bitcoin staking as a feature, please check
     - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts/tree/main)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/main/btcstaking/identifiable_staking.go)
@@ -86,7 +86,7 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
 
 **Option-3**, develop Bitcoin staking as a feature of your extension wallet,
 which connects to either third party APIs
-(such as the Babylon [API](https://staking-api.testnet.babylonchain.io/swagger/index.html)) or a back-end you operate.
+(such as the Babylon [API](https://staking-api.babylonlabs.io/swagger/index.html)) or a back-end you operate.
 - For information about developing Bitcoin staking as a feature, please check
     - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/main/btcstaking/identifiable_staking.go)
@@ -99,7 +99,7 @@ which connects to either third party APIs
 
 **Option-1**, develop Bitcoin staking as a feature of your extension wallet,
 which connects to either third party APIs
-(such as the Babylon [API](https://staking-api.testnet.babylonchain.io/swagger/index.html)) or a back-end you operate.
+(such as the Babylon [API](https://staking-api.babylonlabs.io/swagger/index.html)) or a back-end you operate.
 - For information about developing your own Bitcoin staking website, please check
     - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/main/btcstaking/identifiable_staking.go)

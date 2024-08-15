@@ -1,7 +1,7 @@
 # Operating a Bitcoin Staking Backend
 
 In this document we describe a reference tech stack employed by Babylon for a
-back-end service that collects information about the babylon staking system from
+back-end service that collects information about the Babylon staking system from
 Bitcoin and processes unbonding requests performed by users.
 The entirety or part of this tech stack can be employed by staking providers
 to build Bitcoin Staking applications.
@@ -30,9 +30,9 @@ The system defines three types of transactions:
 - *Staking* which creates new stake by locking BTC in the self-custodial
   Bitcoin Staking contract,
 - *Unbonding* which unbonds stake from the Bitcoin staking contract before the locking expires, and
-- *Withdraw* which extracts unlocked/unbonded stake to any wallet address specified by the staker.
+- *Withdraw* which extracts unlocked/unbonded stake to the staker's address.
 
-The full spec of the staking transactions can be found
+The full spec of the transactions involved in the Bitcoin staking protocol can be found
 [here](https://github.com/babylonlabs-io/babylon/blob/main/docs/staking-script.md).
 
 Participants of the system can create staking transactions either through the
@@ -68,7 +68,7 @@ covenant committee cannot consume the staking transaction
 without the staker's approval.
 
 The list of covenant emulation committee members is a global parameter, and the
-signer servers are shared among all instances of the staking back-ends.
+signer servers can be accessed from all instances of the staking back-ends.
 
 ## BackEnd Staking System Components
 
