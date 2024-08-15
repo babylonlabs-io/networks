@@ -93,12 +93,25 @@ For a particular version:
 - len(v_m.Tag) == 4
 - ValidBTCPks(v_m.CovenantPks)
 - len(v_m.CovenantPks) > 0
+- len(v_m.ActivationHeight) > 0
+
+- v_m.StakingCap == 0 => v_m.CapHeight > 0
+- v_m.StakingCap > 0 => v_m.CapHeight == 0
+- v_m.StakingCap > 0 => v_m.StakingCap > v_m.MaxStakingAmount
+
 - v_m.CovenantQuorum <= len(v_m.CovenantPks)
-- v_m.StakingCap > v_m.MaxStakingAmount
+- v_m.CovenantQuorum < 2^32
+- v_m.CovenantKeys.each(Key: validHexSchnorrKey(Key))
+
+- v_m.MinStakingAmount >= v_m.UnbondingFee + 1000
 - v_m.MaxStakingAmount >= v_m.MinStakingAmount
+- v_m.MaxStakingAmount < 2^63 && v_m.MinStakingAmount < 2^63 && v_m.StakingCap < 2^63
+
 - v_m.MaxStakingTime >= v_m.MinStakingTime
-- v_m.MaxStakingTime <= 65535
-- v_m.StakingCap = 0 && v_m.CapHeight != 0 || v_m.StakingCap != 0 && v_m.CapHeight == 0 
+- v_m.MaxStakingTime > 0 && v_m.MinStakingTime > 0 && v_m.UnbondingTime > 0
+- v_m.MaxStakingTime <= 65535 && v_m.MinStakingTime <= 65535 && v_m.UnbondingTime <= 65535
+
+- v_m.ConfirmationDepth > 1 && v_m.ConfirmationDepth <= 65535
 ```
 
 ## Updating staking parameters
