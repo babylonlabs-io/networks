@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Allnodes",
+    "identity": "3999DA33020A4DBC",
+    "website": "https://www.allnodes.com",
+    "security_contact": "support@allnodes.com",
+    "details": "Reliable non-custodial Validator run by the industry leader - Allnodes"
+  },
+  "eots_pk": "3e434a01a993069052076eb7bc16a6be3865a70ba51c41d9c06a2d468c34f185",
+  "commission": "0.03"
+}
