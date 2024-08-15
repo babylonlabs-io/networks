@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Validatus",
+    "identity": "DEF3590B1DCD96A4",
+    "website": "https://www.validatus.com",
+    "security_contact": "support@validatus.com",
+    "details": "Validatus - verifying blockchain entries on purely Enterprise Linux based systems with regular security audits. Stay safe. Stake with us."
+  },
+  "eots_pk": "9b2b5635e63234e62fb76fd5f3e805e9a3b3309087a240c31a00fee9b9307d74",
+  "commission": "0.05"
+}

@@ -1,0 +1,11 @@
+{
+	"description": {
+	  "moniker": "StakingCabin",
+	  "identity": "C0522DF992B0C407",
+	  "website": "https://stakingcabin.com",
+	  "security_contact": "richard@stakingcabin.com",
+	  "details": "Next generation of the internet by staking assets safely."
+	},
+	"eots_pk": "bea899ea108b5edb9d1f9deec47decd525e862202241c8e551e61b7b2ba1a733",
+	"commission": "0.05"
+  }
