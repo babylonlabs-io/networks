@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "Chakra",
+      "identity": "",
+      "website": "https://chakrachain.io",
+      "security_contact": "lukeglw@web3mq.com",
+      "details": "The first Modular Settlement Network backed by @StarkWareLtd & Bitcoin OGs"
+    },
+    "eots_pk": "76151bd3a518591a9c9b0a587ce107a07859b92159f9da25bd3a21eef5f6b20e",
+    "commission": "0.03"
+  }
