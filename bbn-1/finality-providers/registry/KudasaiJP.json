@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "KudasaiJP",
+      "identity": "8053B9A8E7E4C20E",
+      "website": "https://kudasai.co.jp",
+      "security_contact": "validator-dev@kudasai.co.jp",
+      "details": "KudasaiJP/Omakase is a professional staking and validation service. We also contribute to innovative projects via marketing and development support."
+    },
+    "eots_pk": "742f1eb3c7fdbd327fa44fcdddf17645d9c6b1287ea97463e046508234fa7537",
+    "commission": "0.10"
+  }
