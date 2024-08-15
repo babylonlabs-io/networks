@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Restake",
+    "identity": "98EC2DBC23F1B764",
+    "website": "https://restake.net",
+    "security_contact": "security@restake.net",
+    "details": "Effortless staking with institutional standards"
+  },
+  "eots_pk": "c1f57e1d27ab9f4c21e8e4a620f05fde3dae09834cd0620f568fe30832171f76",
+  "commission": "0.03"
+}
