@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Nelson",
+    "identity": "",
+    "website": "https://mirror.xyz/0x4cF94AAAeE2Fa5394Fc3aE7eD2C952860a0e9267",
+    "security_contact": "BogdanDombrovskyi@hotmail.com",
+    "details": "Secure provider for your staking. Support 24/7 by email"
+  },
+  "eots_pk": "9499bbade867bbf5c50569d0b58f30ed051f61cd9bd025675e68ca18cec43fad",
+  "commission": "0.05"
+}
