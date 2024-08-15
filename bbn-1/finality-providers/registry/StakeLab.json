@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "StakeLab.zone",
+    "identity": "F12B081334CBE0C6",
+    "website": "https://www.stakelab.zone",
+    "security_contact": "security@stakelab.zone",
+    "details": "Grow your assets - app.stakelab.zone/stake/babylon"
+  },
+  "eots_pk": "b7f804dd08fda86549d01aad1da1d05babed6fc48e70fae59e3c7fb38161f414",
+  "commission": "0.03"
+}

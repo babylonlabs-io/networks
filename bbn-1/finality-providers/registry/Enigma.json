@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Enigma",
+    "identity": "6223697ACA24A4FF",
+    "website": "https://enigma-validator.com/",
+    "security_contact": "contact@enigma-validator.com",
+    "details": "Highly secure professional validator across 40+ chains - offering a full refund for any downtime slashing - Reach out to us at contact@enigma-validator.com"
+  },
+  "eots_pk": "ac53903a0912689060abe4d79965b4cdba40fc98a5cfbd315f31f5c1791cbe75",
+  "commission": "0.03"
+}
