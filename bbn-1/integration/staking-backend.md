@@ -80,7 +80,7 @@ Staking and Unbonding transactions. It consumes the
 is valid and its activity status. Valid staking transactions are stored in a
 database and sent to RabbitMQ queues for further consumption by clients.
 
-### [Staking API](https://github.com/babylonlabs-io/staking-api-service/tree/main)
+### [Staking API](https://github.com/babylonlabs-io/staking-api-service/tree/v0.2.x)
 
 The staking API is a service that provides information about the state
 of the staking system and collects unbonding requests for further processing.
@@ -95,7 +95,7 @@ RabbitMQ queue the expiry checker writes to.
 In the case of an unbonding request, the API verifies it and stores it in
 a database for further consumption by the unbonding pipeline.
 
-### [Expiry Checker](https://github.com/babylonlabs-io/staking-expiry-checker/tree/main)
+### [Expiry Checker](https://github.com/babylonlabs-io/staking-expiry-checker/tree/v0.1.x)
 
 The staking expiry checker is a micro-service that reads staking transactions
 from a database and checks whether their timelock has expired by comparing it
