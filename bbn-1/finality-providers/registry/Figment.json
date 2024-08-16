@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Figment",
+    "identity": "E5F274B870BDA01D",
+    "website": "https://figment.io",
+    "security_contact": "security@figment.io",
+    "details": "Figment is the complete staking solution for over 500 institutional clients, providing enterprise validators, seamless staking integrations, audited infrastructure, robust rewards data, and more."
+  },
+  "eots_pk": "710104ee21393df7b209e7f1202b60425075160aea52b60a9bcb0e996771f069",
+  "commission": "0.1"
+}

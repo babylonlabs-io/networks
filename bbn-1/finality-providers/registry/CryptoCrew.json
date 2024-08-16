@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "✅ CryptoCrew",
+    "identity": "9AE70F9E3EDA8956",
+    "website": "https://ccvalidators.com",
+    "security_contact": "support@ccvalidators.com",
+    "details": "Secure BTC staking with CryptoCrew. We power the interchain. t.me/cryptocrew_validators"
+  },
+  "eots_pk": "84b63c04789c992aec4979599d94245721ec74ffa4474380121f1446be12d2c6",
+  "commission": "0.03"
+}

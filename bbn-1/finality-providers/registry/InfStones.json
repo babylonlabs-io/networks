@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "InfStones",
+    "identity": "E9B7CDC7623E0327",
+    "website": "https://infstones.com/",
+    "security_contact": "support@infstones.com",
+    "details": "InfStones is committed to supporting a wide range restaking initives."
+  },
+  "eots_pk": "911421ea9cd3107d81aef2a62bf04d7a3c57b7bc0462af668d0a332e5dd72fa8",
+  "commission": "0.05"
+}
