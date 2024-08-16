@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "EquinoxDAO",
+    "identity": "048733E2C6061B87",
+    "website": "https://www.equinoxdao.xyz",
+    "security_contact": "wangzhaozhu1@gmail.com",
+    "details": "professional Node Service Provider by EquinoxDAO"
+  },
+  "eots_pk": "04439d165b72bac13c16a22744a55cb249615b23b769fc393188cd4eed33f189",
+  "commission": "0.03"
+}
