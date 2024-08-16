@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Stakin",
+    "identity": "83D300CB42D06962",
+    "website": "https://stakin.com",
+    "security_contact": "security@stakin.com",
+    "details": "Leading institutional-grade web3 infrastructure and non-custodial staking service provider. ISO27001 Certified and Audited. Early Babylon Network supporter and Investor."
+  },
+  "eots_pk": "996477cf43980aa37e25620aba62676a8bf975ffedb6c8c89b85df1d31bf14fb",
+  "commission": "0.03"
+}

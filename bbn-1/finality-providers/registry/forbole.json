@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "Forbole",
+      "identity": "2861F5EE06627224",
+      "website": "https://forbole.com",
+      "security_contact": "validator@forbole.com",
+      "details": "Forbole is a professional node operator with proven track record running by a group of Bitcoin lovers. We provide enterprise-grade staking infrastructure since 2018."
+    },
+    "eots_pk": "4d2f9c3234961c5310e106600254b95c00d4e3aa80d0a08467c3bd1c40bb7d94",
+    "commission": "0.03"
+  }
