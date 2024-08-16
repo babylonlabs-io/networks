@@ -1,0 +1,12 @@
+{
+  "description": {
+    "moniker": "P2P.org",
+    "identity": "E12F46954695036D",
+    "website": "https://p2p.org/",
+    "security_contact": "cosmos-security@p2p.org",
+    "details": "P2P.org is a leading platform for whitelable staking infrastructure and staking solutions for enterprise and intermediaries. Stake your BTC with the most trusted and secure validator in the market."
+  },
+  "eots_pk": "d7442b3c1b2c85313f9440a0a0e783f5d56390bd2e9044bb4e10c48e6b6d5536",
+  "commission": "0.05"
+}
+

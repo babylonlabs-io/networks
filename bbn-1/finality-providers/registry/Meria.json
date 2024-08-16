@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Meria",
+    "identity": "9A516A1CD4116BBF",
+    "website": "https://meria.com",
+    "security_contact": "it@meria.com",
+    "details": "Meria is an institutional-grade staking service provider running blockchain infrastructure on more than +35 networks."
+  },
+  "eots_pk": "a1f39ed29581fb6ad54be8cdf1a8838b3429e87bdfdd2652c47946221c360f10",
+  "commission": "0.03"
+}

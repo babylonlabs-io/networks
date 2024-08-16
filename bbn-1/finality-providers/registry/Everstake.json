@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Everstake",
+    "identity": "EF5AC70C00BECEDC",
+    "website": "https://everstake.one",
+    "security_contact": "account-babylon@everstake.one",
+    "details": "Everstake is a staking-as-a-service company. We help institutional investors and regular token holders to profit off their crypto assets. Choose the most promising projects, delegate with Everstake, and make a stable passive income."
+  },
+  "eots_pk": "5f61c6a51d91a8cf09f0edfb3d539a8749a0cab2829d52f7c6f028fed7455278",
+  "commission": "0.03"
+}
