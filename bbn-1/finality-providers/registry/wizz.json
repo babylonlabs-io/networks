@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Wizz",
+    "identity": "46BB2F9C0187EE29",
+    "website": "https://babylon.wizz.cash",
+    "security_contact": "dev@astrox.network",
+    "details": "Make BTC Magical Again!"
+  },
+  "eots_pk": "c3d0ed36a03175727164df74e5a4ef5c05a369951fc9707e8a0eb17fd2dcb9d6",
+  "commission": "0.05"
+}
