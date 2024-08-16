@@ -43,7 +43,7 @@ staking dApp or the staker CLI:
   It can either be built directly inside the Bitcoin wallet or can connect
   to a wallet. It communicates with a back-end service (described later) that
   has access to an unbonding pipeline in order to submit unbonding requests.
-- The [Staker CLI](https://github.com/babylonlabs-io/btc-staker/tree/main)
+- The [Staker CLI](https://github.com/babylonlabs-io/btc-staker/tree/v0.5.x)
   is a command line tool for power users that want full control
   on how their staking transaction is constructed. Stakers utilize the CLI to
   construct Bitcoin staking transactions and are responsible for signing them
@@ -56,7 +56,7 @@ One could also build their own staking application and interact with the staking
 
 The covenant emulation committee is a set of entities responsible for approving
 on-demand unbonding requests. The members of the committee operate a
-[covenant signer](https://github.com/babylonlabs-io/covenant-signer/tree/main)
+[covenant signer](https://github.com/babylonlabs-io/covenant-signer/tree/v0.2.x)
 program which involves a server that accepts requests that contain unbonding
 requests that require the covenant emulator’s signature.
 If the requests are valid, then the signature is returned in the response.
