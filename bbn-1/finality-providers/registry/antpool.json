@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "antpool",
+    "identity": "",
+    "website": "antpool.com",
+    "security_contact": "support@antpool.com",
+    "details": "Antpool always maintains blockchain security as a world-leading mining pool"
+  },
+  "eots_pk": "706789fc5e936ad200a4c22b3bda97e50376ff269a8947eb872e9b054419348c",
+  "commission": "0.05"
+}
