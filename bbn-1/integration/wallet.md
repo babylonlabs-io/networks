@@ -1,6 +1,6 @@
 # Wallet Integration
 
-The `bbn-1` will focus on the security of the staked Bitcoins by
+The `bbn-1` network will focus on the security of the staked Bitcoins by
 allowing the user's to interaction with the BTC mainnet network directly for staking.
 It will be a lock-only network in which Bitcoin stake is going to be
 created without a Babylon chain operating. Stakers can lock their funds for a
@@ -38,14 +38,14 @@ interface your wallet (or a wrapper of it) should adhere to
 connects to your extension wallet that retrieves staking
 information from a back-end you operate.
 - To integrate with a staking website that uses the Babylon reference staking
-  dApp [implementation](https://github.com/babylonlabs-io/simple-staking), please
+  dApp [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main), please
   check the interface your wallet (or a wrapper of it) should adhere to 
   [here](https://github.com/babylonlabs-io/simple-staking/blob/main/docs/WalletIntegration.md).
 - For information about developing your own Bitcoin staking website, please check
-    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts)
+    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts/tree/main)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/v0.9.x/btcstaking/identifiable_staking.go)
       Bitcoin Staking libraries.
-    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking).
+    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
 - For information about operating your own back-end, please read this
   [document](./staking-backend.md)
 
@@ -56,7 +56,7 @@ which connects to either third party APIs
     - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts/tree/main)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/v0.9.x/btcstaking/identifiable_staking.go)
       Bitcoin Staking libraries.
-    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking).
+    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
 - For information about operating your own back-end, please read this
   [document](./staking-backend.md)
 
@@ -73,14 +73,14 @@ interface your mobile wallet (or a wrapper of it) should adhere to
 extension wallet that retrieves staking information from a back-end you
 operate. Then embed your own Bitcoin staking website to your mobile app wallet.
 - To integrate with a staking website that uses the Babylon reference staking
-  dApp [implementation](https://github.com/babylonlabs-io/simple-staking), please
+  dApp [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main), please
   check the interface your mobile wallet (or a wrapper of it) should adhere to 
   [here](https://github.com/babylonlabs-io/simple-staking/blob/main/docs/WalletIntegration.md).
 - For information about developing your own Bitcoin staking website, please check
-    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts)
+    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts/tree/main)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/v0.9.x/btcstaking/identifiable_staking.go)
       Bitcoin Staking libraries.
-    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking).
+    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
 - For information about operating your own back-end, please read this
   [document](./staking-backend.md)
 
@@ -88,10 +88,10 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
 which connects to either third party APIs
 (such as the Babylon [API](https://staking-api.babylonlabs.io/swagger/index.html)) or a back-end you operate.
 - For information about developing Bitcoin staking as a feature, please check
-    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts)
+    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts/tree/main)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/v0.9.x/btcstaking/identifiable_staking.go)
       Bitcoin Staking libraries.
-    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking).
+    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
 - For information about operating your own back=end, please read this
   [document](./staking-backend.md)
 
@@ -101,10 +101,10 @@ which connects to either third party APIs
 which connects to either third party APIs
 (such as the Babylon [API](https://staking-api.babylonlabs.io/swagger/index.html)) or a back-end you operate.
 - For information about developing your own Bitcoin staking website, please check
-    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts)
+    - our [TypeScript](https://github.com/babylonlabs-io/btc-staking-ts/tree/main)
       and [Golang](https://github.com/babylonlabs-io/babylon/tree/v0.9.x/btcstaking/identifiable_staking.go)
       Bitcoin Staking libraries.
-    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking).
+    - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
 - For information about operating your own back-end, please read this
   [document](./staking-backend.md)
 

@@ -28,12 +28,12 @@ transactions.
 
 The system defines three types of transactions:
 - *Staking* which creates new stake by locking BTC in the self-custodial
-  Bitcoin Staking contract,
-- *Unbonding* which unbonds stake from the Bitcoin staking contract before the locking expires, and
+  Bitcoin Staking script,
+- *Unbonding* which unbonds stake from the Bitcoin staking script before the locking expires, and
 - *Withdraw* which extracts unlocked/unbonded stake to the staker's address.
 
 The full spec of the transactions involved in the Bitcoin staking protocol can be found
-[here](https://github.com/babylonlabs-io/babylon/blob/main/docs/staking-script.md).
+[here](https://github.com/babylonlabs-io/babylon/blob/v0.9.x/docs/staking-script.md).
 
 Participants of the system can create staking transactions either through the
 staking dApp or the staker CLI:
@@ -72,7 +72,7 @@ signer servers can be accessed from all instances of the staking back-ends.
 
 ## BackEnd Staking System Components
 
-### [Staking Indexer](https://github.com/babylonlabs-io/staking-indexer)
+### [Staking Indexer](https://github.com/babylonlabs-io/staking-indexer/tree/v0.2.x)
 
 The staking indexer is a daemon that monitors the Bitcoin ledger for Bitcoin
 Staking and Unbonding transactions. It consumes the
@@ -80,7 +80,7 @@ Staking and Unbonding transactions. It consumes the
 is valid and its activity status. Valid staking transactions are stored in a
 database and sent to RabbitMQ queues for further consumption by clients.
 
-### [Staking API](https://github.com/babylonlabs-io/staking-api-service)
+### [Staking API](https://github.com/babylonlabs-io/staking-api-service/tree/main)
 
 The staking API is a service that provides information about the state
 of the staking system and collects unbonding requests for further processing.
@@ -95,7 +95,7 @@ RabbitMQ queue the expiry checker writes to.
 In the case of an unbonding request, the API verifies it and stores it in
 a database for further consumption by the unbonding pipeline.
 
-### [Expiry Checker](https://github.com/babylonlabs-io/staking-expiry-checker)
+### [Expiry Checker](https://github.com/babylonlabs-io/staking-expiry-checker/tree/main)
 
 The staking expiry checker is a micro-service that reads staking transactions
 from a database and checks whether their timelock has expired by comparing it
@@ -104,7 +104,7 @@ Once a delegation expires,
 the expiry checker submits an event to a RabbitMQ queue for further consumption
 by clients.
 
-### [Unbonding Pipeline](https://github.com/babylonlabs-io/cli-tools/)
+### [Unbonding Pipeline](https://github.com/babylonlabs-io/cli-tools/tree/v0.2.x)
 
 The unbonding pipeline is a process that is run periodically to execute
 pending unbonding requests.
