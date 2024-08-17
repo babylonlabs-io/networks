@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Jetking",
+    "identity": "",
+    "website": "https://www.jetking.com",
+    "security_contact": "devops@jetking.com",
+    "details": "India’s largest IT Training Institute"
+  },
+  "eots_pk": "3742769a01da6c7c4537ad7a4e181392ab3fd1fe04c78c137937974e74b39044",
+  "commission": "0.03"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "RockX",
+    "identity": "A15B586AB203F14E",
+    "website": "https://www.rockx.com",
+    "security_contact": "staking@rockx.com",
+    "details": "Stake and build via institutional-grade solutions and a suite of developer tools"
+  },
+  "eots_pk": "bb0bceda25d82f10a69feca9c076d85f61d750c9a481b8105d8389325538fdd1",
+  "commission": "0.03"
+}
