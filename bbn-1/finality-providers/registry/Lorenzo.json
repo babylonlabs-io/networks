@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Lorenzo",
+    "identity": "",
+    "website": "https://www.lorenzo-protocol.xyz/",
+    "security_contact": "vincent@lorenzo-protocol.xyz",
+    "details": "Bitcoin Liquidity Finance Layer"
+  },
+  "eots_pk": "db9160428e401753dc1a9952ffd4fa3386c7609cf8411d2b6d79c42323ca9923",
+  "commission": "0.05"
+}
