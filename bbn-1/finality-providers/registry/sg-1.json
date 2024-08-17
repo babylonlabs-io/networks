@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "SG-1",
+      "identity": "48608633F99D1B60",
+      "website": "https://sg-1.online",
+      "security_contact": "info@sg-1.online",
+      "details": "Explore the Cosmos with SG-1. Your favorite Finality Provider and Validator."
+    },
+    "eots_pk": "9a90cf6fbd249ee0a127843569352a8ade9a985ef0a652b2b58506828a7c85d0",
+    "commission": "0.03"
+}

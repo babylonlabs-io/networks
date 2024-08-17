@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "GalaxyDigital",
+    "identity": "1718CFB46A0EC7FA",
+    "website": "https://galaxy.com",
+    "security_contact": "bci@galaxy.com",
+    "details": "Galaxy is a digital asset and blockchain leader helping institutions, startups, and qualified individuals shape a changing economy."
+  },
+  "eots_pk": "acc2ddfdaaa3ca7acc13340c22a25dd910b98c08ba789ba5d8dac98e2f721cf9",
+  "commission": "0.05"
+}

@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "interchain.FM",
+      "identity": "8E92184569CD8E2D",
+      "website": "https://interchain.fm/",
+      "security_contact": "chjangounchained@gmail.com",
+      "details": "Non-custodial high 99.99% uptime validator w/ 100% return for downtime slashing. Run by your favorite Cosmos Radio Station. "
+    },
+    "eots_pk": "4b045c89c29e0536b9270c877f89da368391aaa2adbc91659dbb48593253ca32",
+    "commission": "0.03"
+}
