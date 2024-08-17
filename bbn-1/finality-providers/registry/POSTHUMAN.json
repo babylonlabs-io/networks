@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "POSTHUMAN|Stakedrop",
+    "identity": "8A9FC930E1A980D6",
+    "website": "https://posthuman.digital",
+    "security_contact": "validator@posthuman.digital",
+    "details": "Stake to get Airdrops and $PHMN | https://posthuman.digital/ "
+  },
+  "eots_pk": "c87809aafdd707d40392ed7fc2d71a5a5e646c8a672cb5a31909a36874da34fd",
+  "commission": "0.03"
+}
