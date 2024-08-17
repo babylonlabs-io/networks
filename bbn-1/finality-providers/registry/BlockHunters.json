@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "BlockHunters 🎯",
+    "identity": "BEAC09B6FE7F908B",
+    "website": "https://blockhunters.org",
+    "security_contact": "ops@blockhunters.org",
+    "details": "Hunt for the best stake. 🏹"
+  },
+  "eots_pk": "1f8ea557fb2684e79a1f971be1e21d99015328c60769d8e27c4c5945a0e2ed6b",
+  "commission": "0.03"
+}
