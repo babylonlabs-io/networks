@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "NyanCat",
+    "identity": "09D4624417E37ABD",
+    "website": "https://x.com/o___victor",
+    "security_contact": "onemoment1760@gmail.com",
+    "details": "Your reliable crypto validator. I ensure the security and efficiency of the network by verifying and validating transactions"
+  },
+  "eots_pk": "2ee029f7d804b7c1000edcfc4e4f32f0106f421c9592064c4c5f1df60972da74",
+  "commission": "0.05"
+}
