@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Disperze",
+    "identity": "AC87F469C49533B1",
+    "website": "https://disperze.network",
+    "security_contact": "disperze@protonmail.com",
+    "details": "Community validator managed by web3 developers. Our nodes are running on baer-metal servers."
+  },
+  "eots_pk": "d89fef3aa1ae3ff094e0c752c159f934bc525cebd5868ac50bc18f5209da7956",
+  "commission": "0.03"
+}
