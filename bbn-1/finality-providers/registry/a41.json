@@ -1,0 +1,11 @@
+{
+    "description": {
+        "moniker": "A41",
+        "identity": "87D9921253A2A9EB",
+        "website": "https://a41.io",
+        "security_contact": "dev@a41.io",
+        "details": "A41 is a blockchain infrastructure company. We provide staking service on multichain. Stake your token with us now and earn rewards!"
+    },
+    "eots_pk": "c03a5b6703ce87285f13d1202ba8b6317080754c5ab23bae95e5ee9261083b79",
+    "commission": "0.05"
+}
