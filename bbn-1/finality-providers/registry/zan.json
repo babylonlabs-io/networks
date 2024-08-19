@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "zan",
+    "identity": "",
+    "website": "https://zan.top",
+    "security_contact": "service@zan.top",
+    "details": "A suite of plug-and-play tools and services for your Web3 endeavors, your influential ecosystem collaborator"
+  },
+  "eots_pk": "cb3348647d39f65a2c619873b1f87612d794f362f791d479518f44eba7e9acf1",
+  "commission": "0.05"
+}
