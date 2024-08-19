@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Cobo",
+    "identity": "3B7C85200D5B57A9",
+    "website": "https://www.cobo.com/",
+    "security_contact": "security@cobo.com",
+    "details": "Cobo is a trusted custody and wallet infrastructure provider that simplifies digital asset security. We empower organizations and developers to innovate and scale their blockchain businesses with ease."
+  },
+  "eots_pk": "ef21fbe4f755892724c2fd7b00abe94bfcc6a965b7a84bcf087bb7d9529bc627",
+  "commission": "0.05"
+}
