@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "SandMan",
+    "identity": "0D01E33D7DBEF9B2",
+    "website": "https://sand.chessman.buzz",
+    "security_contact": "banscorporation@hotmail.com",
+    "details": "Ready to provide!"
+  },
+  "eots_pk": "8cc1ac9171375b76a01b28d329e593df93c3266decd80cdf6f04e03968dfa173",
+  "commission": "0.06"
+}
