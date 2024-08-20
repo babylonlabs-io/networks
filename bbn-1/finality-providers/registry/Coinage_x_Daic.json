@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Coinage x DAIC",
+    "identity": "C92C6965D89F07A3",
+    "website": "https://daic.capital",
+    "security_contact": "office@daic.capital",
+    "details": "The official validator node from Coinage (Coinage.Media) and DAIC (https://daic.capital/telegram)"
+  },
+  "eots_pk": "61d437bcff4512e45075b5c12fc9b0ececd3e7c87512e0d7fb599c3a28e2671c",
+  "commission": "0.05"
+}

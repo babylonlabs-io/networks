@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "HoodRun",
+      "identity": "D7F99CBB63FFFD9E",
+      "website": "https://hoodrun.io",
+      "security_contact": "contact@hoodrun.io",
+      "details": "Discover and Unlock the HoodRun Advantage; We make the Staking Experience the fastest and safest"
+    },
+    "eots_pk": "67732ad150b6bd773f24d250be3c65c6a7aff77abbd1ed4196b8f889374dda8a",
+    "commission": "0.04"
+}

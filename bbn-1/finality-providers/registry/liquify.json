@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Liquify",
+    "identity": "005F74E8F7365C38",
+    "website": "https://www.liquify.com/",
+    "security_contact": "contact@liquify.io",
+    "details": "Liquify is a fully bare-metal infrastructure company. Optimized for latency, throughput and uptime. Tailored for institutions"
+  },
+  "eots_pk": "615e9392eda947e85d827f19290c4dc2a5986dca278be4f480820741aa0fb1da",
+  "commission": "0.04"
+}

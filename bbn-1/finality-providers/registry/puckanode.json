@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "puckanode",
+      "identity": "08D548A0DAE3FD87",
+      "website": "https://www.puckanode.com/",
+      "security_contact": "puckanode@gmail.com",
+      "details": "BTC is here to stay, Babylon is here to slay"
+    },
+    "eots_pk": "03de19c4f95911486b327e2b4e9a5166ea3b287c8aa07358454c080547ac772f",
+    "commission": "0.06"
+  }

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "OneKey",
+    "identity": "",
+    "website": "https://onekey.so",
+    "security_contact": "dev@onekey.so",
+    "details": "OneKey - Fully open source crypto app and hardware wallet, backed by Coinbase Venture, Ribbit, Dragonfly and other prominent crypto funds."
+  },
+  "eots_pk": "adf4dcff7e38feef6689f42a4d6ac65446740b3bec13909200cf88a25f4cbc94",
+  "commission": "0.03"
+}

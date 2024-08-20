@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "WhisperNode",
+    "identity": "C99B3A6836BF0CB8",
+    "website": "https://whispernode.com",
+    "security_contact": "security@whispernode.com",
+    "details": "WhisperNode is a premier web3 infrastructure provider renowned for powering the backbone of blockchain ecosystems with our state-of-the-art validation services, RPC endpoints, and IBC relayers. Our commitment to reliability is showcased through our deployment of robust, geographically dispersed validators ensuring maximal uptime and unparalleled security."
+  },
+  "eots_pk": "abb95ba033f05427672aa4b3b6d591e0dfe7d23b41b47d8215aa503f4ddb2063",
+  "commission": "0.04"
+}
