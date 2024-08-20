@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Validation Cloud",
+    "identity": "45CB4A44DDA954E351EF52DBAF9B41F5A7572821",
+    "website": "https://validationcloud.io",
+    "security_contact": "security@validationcloud.io",
+    "details": "Validation Cloud is a Web3 platform that delivers elite, high-performance node and staking infrastructure."
+  },
+  "eots_pk": "0b07aef0b971caeb8d677b5fa56547d07ec45be121575f1b94e4a65930bad272",
+  "commission": "0.05"
+}
