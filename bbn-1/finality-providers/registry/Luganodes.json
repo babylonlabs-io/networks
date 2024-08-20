@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Luganodes",
+    "identity": "4F2E11CB85CB269B",
+    "website": "https://luganodes.com/",
+    "security_contact": "devops@luganodes.com",
+    "details": "Swiss-Operated Institutional Grade Staking Provider"
+  },
+  "eots_pk":"104628a84d0926b866e94c35b54e6dc548cbdb4d8db39e48e85e3f1ff53c60ed",
+  "commission": "0.10"
+}
