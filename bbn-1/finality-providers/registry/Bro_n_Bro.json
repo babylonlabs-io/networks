@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bro_n_Bro",
+    "identity": "97EE2A4FADFB1524",
+    "website": "bronbro.io",
+    "security_contact": "bro.n.bro.foundation@gmail.com",
+    "details": "We are a community-driven bare-metal operated validator and interchain relayer fighting for transparency and decentralization on the Great Web."
+  },
+  "eots_pk": "61a9f04212b0f64c906b4b1236b6d6293ec8fc0413ac322bc80fa38cb401486d",
+  "commission": "0.05"
+}
