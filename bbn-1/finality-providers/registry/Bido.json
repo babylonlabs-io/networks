@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bido",
+    "identity": "",
+    "website": "https://app.bido.finance/",
+    "security_contact": "0xmassis@gmail.com",
+    "details": "Bido is a liquid-staking protocol for BTC on the BEVM network, which is developed based on the lido on the Ethereum."
+  },
+  "eots_pk": "deae6b0dc5a0f2cc264513cdd3c1203b417976ccf242d22b238fac4c78b29179",
+  "commission": "0.1"
+}
