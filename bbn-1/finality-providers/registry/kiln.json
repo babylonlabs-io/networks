@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Kiln",
+    "identity": "9B74364A5E526BED",
+    "website": "https://www.kiln.fi/",
+    "security_contact": "security@kiln.fi",
+    "details": "Enterprise-grade staking made easy"
+  },
+  "eots_pk": "053107172a3d5a2715754cd5793efdcf5e54364b855ed2305819e372aa685d76",
+  "commission": "0.05"
+}

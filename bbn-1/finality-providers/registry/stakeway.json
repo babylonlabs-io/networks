@@ -1,0 +1,11 @@
+{
+    "description": {
+        "moniker": "Stakeway",
+        "identity": "8950F17AEC66D51C",
+        "website": "https://stakeway.com/",
+        "security_contact": "staking@gateway.fm",
+        "details": "Stakeway by Gateway.fm is a premier staking provider offering Enterprise Grade Infrastructure tailored for customers seeking reliable and secure staking solutions. With a focus on performance and trust, we deliver a robust platform. Our services are designed to optimize staking experience, ensuring seamless operation and maximum returns"
+    },
+    "eots_pk": "e245e8c85759d5410c723b69809c405fedbb2393665a43e44b40752452806555",
+    "commission": "0.05"
+}

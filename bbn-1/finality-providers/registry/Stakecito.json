@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Stakecito",
+    "identity": "D16E26E5C8154E17",
+    "website": "https://stakecito.com/",
+    "security_contact": "security@stakecito.de",
+    "details": "Securing & Decentralizing PoS Networks."
+  },
+  "eots_pk": "b7a0bc1270c4691140dd739f2db7917cf281547cafe41a693c5f481ca8fbae8c",
+  "commission": "0.03"
+}

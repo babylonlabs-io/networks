@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Lopez",
+    "identity": "81B08637DE4A9927",
+    "website": "https://github.com/Yserdych",
+    "security_contact": "Yulia_Serdychenko@hotmail.com",
+    "details": "Crypto-activist & node operator"
+  },
+  "eots_pk": "e2fcc437dce7779ec5c95f2ecf2429b16e207bf9efa52274ed5c8dd57caafdd0",
+  "commission": "0.07"
+}

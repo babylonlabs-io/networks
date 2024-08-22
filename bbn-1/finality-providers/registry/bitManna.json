@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "bitManna",
+    "identity": "1D8F197850300072",
+    "website": "https://www.bitmanna.com/",
+    "security_contact": "blockchain@bitManna.com",
+    "details": "bitManna contributes redundant nodes, spec'd for performance at cloud scale. Delegators earn rewards with confidence."
+  },
+  "eots_pk": "a09b7d5463f289b6b2db575abcbf9f482c0fa403581ee56651d8d686bf1d493e",
+  "commission": "0.03"
+}
