@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "blockscape",
+    "identity": "C46C8329BB5F48D8",
+    "website": "https://blockscape.network",
+    "security_contact": "info@blockscape.network",
+    "details": "By delegating, you confirm that you are aware of the risk of slashing and that Blockscape Finance AG is not liable for any potential damages to your investment."
+  },
+  "eots_pk": "82332ddabc9e4bfc9017e14bf0b8188d2219ffd26143a1383a42d90b1ab55caa",
+  "commission": "0.05"
+}

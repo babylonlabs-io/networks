@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "HashKeyCloud",
+    "identity": "CB79CF86DBD56A19",
+    "website": "https://www.hashkey.cloud/",
+    "security_contact": "ops@haskyey.cloud",
+    "details": "Cloud for WEB3 More Than Staking"
+  },
+  "eots_pk": "3a390fa62f5c8975348b0163d4bc59eb879e66cc7d908171202d57776e069ad4",
+  "commission": "0.03"
+}

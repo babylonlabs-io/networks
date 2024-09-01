@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Zellic",
+    "identity": "609C091636D1330B",
+    "website": "https://zellic.io/",
+    "security_contact": "security@zellic.io",
+    "details": "The go-to blockchain security firm for top teams, specializing in Cosmos, EVM, ZK, Move (Aptos and Sui). We solve your hardest security problems. \nTwitter: https://twitter.com/zellic_io\nTelegram: t.me/zellic_io"
+  },
+  "eots_pk": "b0f0fbb9e3b818c2d924632ef80e4718145f394f9cdcc0bd9c8820f309db436b",
+  "commission": "0.05"
+}
