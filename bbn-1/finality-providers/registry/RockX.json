@@ -2,15 +2,9 @@
   "description": {
     "moniker": "RockX",
     "identity": "A15B586AB203F14E",
-<<<<<<< HEAD
     "website": "https://bitcoin-staking.rockx.com/",
     "security_contact": "staking@rockx.com",
     "details": "The largest Asian-based institutional grade staking and RPC provider."
-=======
-    "website": "https://www.rockx.com",
-    "security_contact": "staking@rockx.com",
-    "details": "Stake and build via institutional-grade solutions and a suite of developer tools"
->>>>>>> 8cdcbf78bbc95ae7136c7998ae5ff55b88031cf9
   },
   "eots_pk": "bb0bceda25d82f10a69feca9c076d85f61d750c9a481b8105d8389325538fdd1",
   "commission": "0.03"
