@@ -1,0 +1,58 @@
+{
+  "body": {
+    "messages": [
+      {
+        "@type": "/babylon.btcstaking.v1.MsgCreateFinalityProvider",
+        "addr": "bbn1megscjjgnm5ljetl9df8znynawzt47ghqk3kkc",
+        "description": {
+          "moniker": "fp-3",
+          "identity": "",
+          "website": "fp3.com.br",
+          "security_contact": "fp.3@email.com",
+          "details": "best-fp-3"
+        },
+        "commission": "0.500000000000000000",
+        "btc_pk": "30423d02a85ad13fd72bdd8145ca446703e31fd7a4933b4f92c18632a4e33f39",
+        "pop": {
+          "btc_sig_type": "BIP340",
+          "btc_sig": "LmtNljWh4IVAwLyRK+7rBi/UHJ/16M9cz8D7VqaVKcpfLmD0osMU8PeOsb7G/6D8JvMDxox3z3l12S9omW8FBw=="
+        }
+      }
+    ],
+    "memo": "",
+    "timeout_height": "0",
+    "extension_options": [],
+    "non_critical_extension_options": []
+  },
+  "auth_info": {
+    "signer_infos": [
+      {
+        "public_key": {
+          "@type": "/cosmos.crypto.secp256k1.PubKey",
+          "key": "A0o9TOtNXRmD9JSvNxN0I7nyji2wquUji2Ok9T3Rg0Kg"
+        },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
+        "sequence": "0"
+      }
+    ],
+    "fee": {
+      "amount": [
+        {
+          "denom": "ubbn",
+          "amount": "2000000"
+        }
+      ],
+      "gas_limit": "200000",
+      "payer": "",
+      "granter": ""
+    },
+    "tip": null
+  },
+  "signatures": [
+    "dUXBDyPZMLDnNUvbjkRVLsoUp0g86GiIbNly34YvffxVVbBkQvsr3R49wNICmNzciqcLxSwKjZikxl2x0YW/ug=="
+  ]
+}
