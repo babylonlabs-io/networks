@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "allo",
+    "identity": "",
+    "website": "btc.allo.xyz",
+    "security_contact": "kingsley@allo.xyz",
+    "details": "alloBTC Staking & Lending Protocol"
+  },
+  "eots_pk": "513a1cb80aa73b32bec9bfa0bee7406543d64f4fc2f4041a9d40d7bbd01f3fbc",
+  "commission": "0.05"
+}
