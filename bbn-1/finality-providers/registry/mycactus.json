@@ -1,0 +1,11 @@
+{
+    "description": {
+        "moniker": "Cactus",
+        "identity": "",
+        "website": "https://www.mycactus.com",
+        "security_contact": "msrc@mycactus.com",
+        "details": "Leading Qualified Custodian for Digital Assets"
+    },
+    "eots_pk":"f039a30b58a92fe4aee582b47216a04bd487acb0307f32fe69c3fe0760cd01ca",
+    "commission": "0.03"
+}

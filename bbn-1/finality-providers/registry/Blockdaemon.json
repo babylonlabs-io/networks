@@ -2,7 +2,7 @@
   "description": {
     "moniker": "Blockdaemon",
     "identity": "35892AC552B8A0A8",
-    "website": "www.blockdaemon.com",
+    "website": "https://www.blockdaemon.com",
     "security_contact": "support@blockdaemon.com",
     "details": "Blockdaemon provides maximum uptime for the Babylon network so that you can be confident your node will be there, ready and secure, for optimal reward generation. Contact us to stake on Bitcoin today."
   },

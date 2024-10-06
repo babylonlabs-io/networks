@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Allo",
+    "identity": "",
+    "website": "https://www.allo.xyz",
+    "security_contact": "kingsley@allo.xyz",
+    "details": "Allo is a protocol that facilitates Bitcoin staking and lending"
+  },
+  "eots_pk": "4444a8922b22aaa156fd7d6f3423c581d74156cdccea12fabe98f31d230e463f",
+  "commission": "0.05"
+}
