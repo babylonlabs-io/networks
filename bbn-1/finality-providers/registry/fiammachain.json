@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Fiamma",
+    "identity": "75F444F526970D6F",
+    "website": "https://fiammachain.io",
+    "security_contact": "contact@fiammachain.io",
+    "details": "The First ZKP Verification Network Secured by Bitcoin Blockchain"
+  },
+  "eots_pk": "8ab7651c38b03aeaf04545dee23b5964d88852adf77e3941615d34f726229305",
+  "commission": "0.05"
+}

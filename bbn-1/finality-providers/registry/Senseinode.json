@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "senseinode",
+    "identity": "",
+    "website": "https://senseinode.com",
+    "security_contact": "infra@senseinode.com",
+    "details": "Institutional Grade Staking as a Service"
+  },
+  "eots_pk": "ae41630bcd400338c0fcabf7f2c174a2d2539c7f9333ed0b79159ad1e2ab01c6",
+  "commission": "0.05"
+}
