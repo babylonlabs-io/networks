@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Chainbase Staking",
+    "identity": "4D45BA765886068F",
+    "website": "https://staking.chainbase.com",
+    "security_contact": "staking@chainbase.com",
+    "details": "Chainbase staking are not just a validator provider, we are your powerful ecosystem collaborator"
+  },
+  "eots_pk": "687404a5f247f1c363a324a4a591475c8097bacd56e874f6672c2383afe458b6",
+  "commission": "0.05"
+}
