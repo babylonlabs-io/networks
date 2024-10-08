@@ -358,9 +358,8 @@ During the operation of the first stage of the Babylon mainnet,
 a finality provider can/can't perform the following updates.
 
 - ❌ Commission can not be changed
-- ❌ Moniker can not be changed
 - ❌ Finality Provider EOTS key can not be changed
-- ✅ Identity, website, security contact, and details can be changed.
+- ✅ Moniker, identity, website, security contact, and details can be changed.
 
 To update the changeable fields, the finality provider should
 modify the JSON object containing their information,
