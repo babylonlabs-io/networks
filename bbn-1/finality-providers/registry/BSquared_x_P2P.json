@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "BSquared_x_P2P.org",
+    "identity": "",
+    "website": "https://www.bsquared.network",
+    "security_contact": "cosmos-security@p2p.org",
+    "details": "BSquared Network is the Most Practical Bitcoin Layer-2 Network | the First Bitcoin DA Layer."
+  },
+  "eots_pk": "522c8443813f19a2d9d8d1149f9ba6a8028f778ba5e681ea98b872e17ccb37ef",
+  "commission": "0.05"
+}
