@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Family Node",
+    "identity": "72C45ECF5AE2116F",
+    "website": "https://github.com/FamilyNode",
+    "security_contact": "vladilenaksana@gmail.com",
+    "details": "alice, bob and charlie are family."
+  },
+  "eots_pk": "1d538cc1a9c1df5a904272dabe94f5e815b51dd1471ee27aaf0b5a499db3567b",
+  "commission": "0.03"
+}
