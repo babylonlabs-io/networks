@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Chainflow",
+    "identity": "103DCE407C9F1D13",
+    "website": "https://chainflow.io",
+    "security_contact": "babylon_security_public@chainflow.io",
+    "details": "Crypto infrastructure for a brighter future."
+  },
+  "eots_pk": "db6787653d996feae94bf9b1dcf7a300fe8e0ddbf043ae44e97638e0d685acae",
+  "commission": "0.05"
+}
