@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "Imperator.co",
+      "identity": "0878BA6BE556C132",
+      "website": "https://www.imperator.co",
+      "security_contact": "contact@imperator.co",
+      "details": "Imperator empowers investors and token holders to effortlessly secure blockchain networks through non-custodial staking"
+    },
+    "eots_pk": "e672df73c301e9f040f79460b0f990001af18f1d421d2e6ed0b9e9c566b1414b",
+    "commission": "0.03"
+}

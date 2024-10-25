@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "OrangeBob",
+    "identity": "3A4D5732E464C7BD",
+    "website": "https://val.orangebob.buzz",
+    "security_contact": "erhamreza3@gmail.com",
+    "details": "High uptime & Low commision"
+  },
+  "eots_pk": "2c961b25702189ebeac186b087a122998be2cdebb2845f70477d061de2123f2d",
+  "commission": "0.05"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Renderlynx",
+    "identity": "858CFD395B18E495",
+    "website": "https://x.renderlyn.xyz",
+    "security_contact": "Renderl4nxer@hotmail.com",
+    "details": "Node operator, miner and validator"
+  },
+  "eots_pk": "8eb8b2eaec6c80a74b1318f61e3a34ce6e801f68617dd24b4ba4017a7fa2cc4d",
+  "commission": "0.07"
+}

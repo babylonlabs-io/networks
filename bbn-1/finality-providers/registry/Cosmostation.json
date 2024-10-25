@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Cosmostation",
+    "identity": "AE4C403A6E7AA1AC",
+    "website": "https://www.cosmostation.io",
+    "security_contact": "node@stamper.network",
+    "details": "Cosmostation is an institutional-grade cryptocurrency infrastructure provider, managing billions of dollars across 70 protocols. Since 2018, we have served more than 500k users globally, providing products that enable protocols to scale."
+  },
+  "eots_pk": "17167ce2e362080c11e580d4d34f34b8e73ac9f84545dcf391ae56056dc9c32f",
+  "commission": "0.03"
+}

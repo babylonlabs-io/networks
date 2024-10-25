@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "BSquared_x_Bedrock",
+    "identity": "",
+    "website": "https://www.bsquared.network/",
+    "security_contact": "contact@bsqaured.network",
+    "details": "The Most Practical Bitcoin Layer-2 Network | The First Bitcoin DA Layer"
+  },
+  "eots_pk": "f0427621d40010e09d26b34358a8a4e688f8f8a98303af9815c1341b008fda6a",
+  "commission": "0.05"
+}
