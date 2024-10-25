@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "OWALLET",
+    "identity": "4554D347D0EBCAA7",
+    "website": "https://owallet.io/",
+    "security_contact": "phu.tx@orai.io",
+    "details": "OWallet is a secure, easy-to-use Web3 crypto wallet that puts you in control of your digital assets"
+  },
+  "eots_pk": "3f7399d0783099f96e713b74efe45e71eb8f5d232306a3eed5ed2ed94ee8a724",
+  "commission": "0.05"
+}
