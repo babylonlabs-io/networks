@@ -200,11 +200,8 @@ Lets go through the flags of the above command:
 - `--minimum-gas-prices=0.005ubbn`: This flag sets the minimum gas price for transactions the node will accept. This can also be manually set in the `app.toml`
 #### Connect to Nodes
 
-To connect your node to the network, you'll need peer addresses. You can find these in 
-several places:
-- Official [Babylon Discord]([http://discord.gg/babylonglobal)) under the `#testnet-peers` 
-  channel
-- Chain registry %%will we be listing this somewhere? https://github.com/informalsystems/babylon-networks  %%
+To connect your node to the network, you'll need peer addresses.
+<!-- insert links when we have them -->
 
 As mentioned in the configuration step, add these to your `config.toml` under `persistent_peers` or `seeds`.
 #### Use a Snapshot
