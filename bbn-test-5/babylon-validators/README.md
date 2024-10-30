@@ -71,7 +71,7 @@ And should return something such as below:
 go install -mod=readonly -tags "netgo ledger mainnet" -ldflags '-X github.com/cosmos/cosmos-sdk/version.Name=babylon -X github.com/cosmos/cosmos-sdk/version.AppName=babylond -X github.com/cosmos/cosmos-sdk/version.Version=v0.13.0 -X github.com/cosmos/cosmos-sdk/version.Commit=976e94b926dcf287cb487e8f35dbf400c7d930cc -X "github.com/cosmos/cosmos-sdk/version.BuildTags=netgo,ledger" -w -s' -trimpath  ./...
 ```
 
-Now it has successfully compiled lets check. 
+Now it has successfully compiled, lets check the available actions.
 
 ```shell
 babylond
