@@ -208,9 +208,7 @@ As mentioned in the configuration step, add these to your `config.toml` under `p
 
 For faster syncing, you can use a snapshot instead of syncing from genesis. Snapshots are 
 periodic backups of the chain state. Find them at:
-- Community snapshots in Discord `#testnet-snapshots` channel
-- Official snapshot endpoints (coming soon)
-- Third-party snapshot providers
+<!-- - add link here -->
 
 Note: Always verify snapshot sources and checksums before using them to ensure security.
 
