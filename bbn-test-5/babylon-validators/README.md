@@ -4,11 +4,13 @@
 
 1. [System Requirements](#system-requirements)
 2. [Install Babylon Binary](#install-babylon-binary)
-3. [Setup Node and Configure](#setup-node-and-configure)
-4. [Setup Required Keys](#setup-required-keys)
+3. [Setup Node Home Directory and Configure](#setup-your-node-home-directory-and-configure)
+4. [Setup Required Keys](#setup-the-required-keys-for-operating-a-validator)
 5. [Sync Node](#sync-node)
 6. [Get Funds](#get-funds)
 7. [Create Validator](#create-validator)
+
+## System Requirements
 
 The Babylon node is built using the Cosmos SDK and has similar system requirements with typical Cosmos SDK ecosystem nodes.
 
@@ -22,7 +24,7 @@ As a reference, the following system specification is typically used by validato
 Note: the above is a sample system specification that might not fit your specific infrastructure. Please do your own research before committing to a
 setup and verifying that it can scale well depending on your operations and needs.
 
-## Install Babylon binary 
+## Install Babylon Binary 
 <!-- TODO: check add in the correct tag for the testnet -->
 Download [Golang 1.21](https://go.dev/dl) 
 
@@ -139,9 +141,9 @@ mv genesis.json ~/.babylond/config/genesis.json
 ```
 
 This file needs to overwrite the existing genesis file in the `~/.babylond/config/genesis.json` and please ensure that the `chain-id` is correct. The chain id is what you used in the `babylond init` command above.
-### Setup the required keys for operating a validator 
+## Setup the required keys for operating a validator 
 
-#### Keys for a CometBFT validator
+### Keys for a CometBFT validator
 
 Setting up the key is crucial as it serves as the validator's identity. The key-pair will be used for signing blocks, participating in consensus and managing validator operations. To add a key run the following command:
 
@@ -181,7 +183,8 @@ babylond create-bls-key <address>
 Your address should be the one that was generated in the keyring generation step and looks something like this: `bbn1kvajzzn6gtfn2x6ujfvd6q54etzxnqg7pkylk9`.
 
 This command will create a BLS key and add it to the `~/.babylond/config/priv_validator_key.json` that was generated when `init` was run.
-### Sync Node
+
+## Sync Node
 
 We are now ready to sync the node.
 
@@ -213,11 +216,13 @@ periodic backups of the chain state. Find them at:
 - Third-party snapshot providers
 
 Note: Always verify snapshot sources and checksums before using them to ensure security.
-### Fund your Node
+
+## Get Funds
 <!-- This needs to be updated to the correct testnet and potentially need help with the correct instructions as I cant access the faucet -->
 
 Request Funds from the Babylon Testnet Faucet​ [here](https://faucet.devnet.babylonlabs.io/)
-### Create Validator
+
+## Create Validator
 
 Contrary to a vanilla Cosmos SDK chain, a validator for Babylon is created through the `babylond tx checkpointing create-validator` command. This command expects that a BLS validator key exists under the `~/.babylond/config/priv_validator_key.json`.
 
