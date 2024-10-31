@@ -100,8 +100,10 @@ If it hasn't saved successfully in your gopath then it might have saved in the `
 Next we initialize the node and home directory. It should generate all of the necessary files such as `app.toml`, `client.toml`, `genesis.json` with the below command.
 
 ```shell
-babylond init --chain-id bbn-test-5
+babylond init <moniker> --chain-id bbn-test-5 --home=./nodeDir
 ```
+
+The `<moniker>` is a unique identifier for your node. So for example `node0`.
 
   Next we should navigate to `app.toml`, update the following section:
 
@@ -148,7 +150,7 @@ This file needs to overwrite the existing genesis file in the `~/.babylond/confi
 Setting up the key is crucial as it serves as the validator's identity. The key-pair will be used for signing blocks, participating in consensus and managing validator operations. To add a key run the following command:
 
 ```shell
-babylond --keyring-backend test keys add <name>`
+babylond --keyring-backend test keys add <name> --home=./nodeDir
 ```
   
 We use `--keyring-backend test`, which specifies which backend to use for the keyring, `test` stores keys unencrypted on disk. The `<name>` specifies a unique identifier for the key.
