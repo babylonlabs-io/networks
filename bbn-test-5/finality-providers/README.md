@@ -15,7 +15,8 @@ network. Running one is not a strict requirement, but it is recommended for
 security compared to trusting a third-party RPC node.  - _Extractable One-Time
 Signature (EOTS) manager_: A daemon responsible for securely maintaining the
 finality provider’s private key and producing extractable one time signatures
-from it.  - _Finality Provider_: A daemon managing the finality provider. It
+from it.  
+- _Finality Provider_: A daemon managing the finality provider. It
 connects to the EOTS manager to generate EOTS public randomness and finality
 votes for Babylon blocks, which it submits to Babylon through the node
 connection.
@@ -23,8 +24,9 @@ connection.
 The following graphic demonstrates the interconnections for parts of the above
 programs.
 
-## Install Finality Provider Binary <!-- TODO: check add in the correct tag for
-the testnet --> Download [Golang 1.21](https://go.dev/dl) 
+## Install Finality Provider Binary 
+<!-- TODO: check add in the correct tag for testnet --> 
+Download [Golang 1.21](https://go.dev/dl) 
 
 Using the go version 1.21.x (where x is any patch version like 1.21.0, 1.21.1,
 etc.) Once installed run:
@@ -57,9 +59,9 @@ make install
 The above command will build and install the following binaries
 to `$GOPATH/bin`:
 
-- `eotsd`: The daemon program for the EOTS manager.  - `fpd`: The daemon program
-for the finality-provider.  - `fpcli`: The CLI tool for interacting with the
-finality-provider daemon.
+- `eotsd`: The daemon program for the EOTS manager.  
+- `fpd`: The daemon program for the finality-provider.  
+- `fpcli`: The CLI tool for interacting with the finality-provider daemon.
 
 Now it has successfully compiled, lets check with the following command:
 
@@ -71,7 +73,8 @@ This will give you a list of available actions.
 
 ```shell 
 NAME:
-   eotsd - Extractable One Time Signature Daemon (eotsd).
+   eotsd 
+   - Extractable One Time Signature Daemon (eotsd).
 
 USAGE:
    eotsd [global options] command [command options] [arguments...]
@@ -119,9 +122,12 @@ repository you just cloned and run the following:
 make install 
 ```
 
-This command does the following: - Builds the daemon - Compile all Go packages
-in the project - Installs the binary - Makes the `babylond` command globally
-accessible from your terminal - Build and install the binaries to `$GOPATH/bin`:
+This command does the following: 
+- Builds the daemon 
+- Compile all Go packages in the project 
+- Installs the binary 
+- Makes the `babylond` command globally accessible from your terminal 
+- Build and install the binaries to `$GOPATH/bin`:
 
 And should return something such as below:
 
@@ -223,14 +229,17 @@ babylond start --chain-id=bbn-test-5 --home=./nodeDir
 
 Lets go through the flags of the above command:
 
-- `start`: This is the command to start the Babylon node.  - `--chain-id
-bbn-test-5`: Specifies the ID of the blockchain network you're connecting to.  -
-`--home=./nodeDir`: Sets the directory for the node's data and configuration
+- `start`: This is the command to start the Babylon node.  
+- `--chain-id bbn-test-5`: Specifies the ID of the blockchain network you're 
+connecting to.  
+- `--home=./nodeDir`: Sets the directory for the node's data and configuration
 files and is dependant on where the files were generated for you from the
 initialization. In this case, it's using a directory named "nodeDir" in the
-current path.  - `--minimum-gas-prices=0.005ubbn`: This flag sets the minimum
+current path.  
+- `--minimum-gas-prices=0.005ubbn`: This flag sets the minimum
 gas price for transactions the node will accept. This can also be manually set
-in the `app.toml - `--x-crisis-skip-assert-invariants` : This flag is used to
+in the `app.toml` file.  
+- `--x-crisis-skip-assert-invariants` : This flag is used to
 skip the crisis module's invariant checks, used during testing and development.
 
 ## Setting up the EOTS Manager
@@ -339,11 +348,11 @@ use `file` or `os` backend.
  There are three options for the keyring backend:
 
  `test`: Stores keys unencrypted on disk. It’s meant for testing purposes and
- should never be used in production.  `file`: Stores encrypted keys on disk,
- which is a more secure option than test but less secure than using the OS
- keyring.  `os`: Uses the operating system's native keyring, providing the
- highest level of security by relying on OS-managed encryption and access
- controls.
+ should never be used in production.  
+ `file`: Stores encrypted keys on disk, which is a more secure option than test
+ but less secure than using the OS keyring.  
+ `os`: Uses the operating system's native keyring, providing the highest level of
+ security by relying on OS-managed encryption and access controls.
 
 This command will create a new key pair and store it in your keyring. The output
 should look similar to the below.
@@ -432,22 +441,31 @@ instance locally. This command:
 Creates a Babylon account to receive staking rewards
 
 ``` shell
-fpd create-finality-provider \ --daemon-address 127.0.0.1:12581 \ --chain-id
-bbn-test-5 \ --commission 0.05 \ --key-name finality-provider \ --moniker
-"MyFinalityProvider" \ --website "https://myfinalityprovider.com" \
+fpd create-finality-provider \ 
+--daemon-address 127.0.0.1:12581 \ 
+--chain-id bbn-test-5 \ 
+--commission 0.05 \ 
+--key-name finality-provider \ 
+--moniker "MyFinalityProvider" \ 
+--website "https://myfinalityprovider.com" \
 --security-contact "security@myfinalityprovider.com" \ --details "finality
 provider for the Babylon network" \ --home ./fp \ --passphrase "passphrase" 
 ```
 
-Required parameters: - `--chain-id`: The Babylon chain ID (`bbn-test-5`) -
-`--commission`: The commission rate (between 0 and 1) that you'll receive from
-delegators - `--key-name`: Name of the key in your keyring for signing
-transactions - `--moniker`: A human-readable name for your finality provider
+Required parameters: 
+- `--chain-id`: The Babylon chain ID (`bbn-test-5`) 
+- `--commission`: The commission rate (between 0 and 1) that you'll receive from
+delegators 
+- `--key-name`: Name of the key in your keyring for signing
+transactions 
+- `--moniker`: A human-readable name for your finality provider
 
-Optional parameters: - `--website`: Your finality provider's website -
-`--security-contact`: Contact email for security issues - `--details`:
-Additional description of your finality provider - `--daemon-address`: RPC
-address of the finality provider daemon (default: 127.0.0.1:12581)
+Optional parameters: 
+- `--website`: Your finality provider's website 
+- `--security-contact`: Contact email for security issues 
+- `--details`: Additional description of your finality provider 
+- `--daemon-address`: RPC address of the finality provider daemon (default:
+127.0.0.1:12581)
 
 Upon successful creation, the command will return a JSON response containing
 your finality provider's details:
@@ -465,9 +483,11 @@ your finality provider's details:
 } 
 ```
 
-The response includes: - `fp_addr`: Your Babylon account address for receiving
-rewards - `btc_pk_hex`: Your unique BTC public key identifier (needed for
-registration) - `description`: Your finality provider's metadata - `commission`:
+The response includes: 
+- `fp_addr`: Your Babylon account address for receiving rewards 
+- `btc_pk_hex`: Your unique BTC public key identifier (needed for registration) 
+- `description`: Your finality provider's metadata 
+- `commission`: Your set commission rate 
 Your set commission rate - `status`: Current status of the finality provider
 
 ## Register Finality Provider
