@@ -428,8 +428,8 @@ options can also be set in the configuration file.
 The `create-finality-provider` command initializes a new finality provider
 instance locally. This command:
 
-- Generates a BTC public key that uniquely identifies your finality provider -
-Creates a Babylon account to receive staking rewards
+- Generates a BTC public key that uniquely identifies your finality provider 
+- Creates a Babylon account to receive staking rewards
 
 ``` shell
 fpd create-finality-provider \ --daemon-address 127.0.0.1:12581 \ --chain-id
@@ -475,9 +475,9 @@ Your set commission rate - `status`: Current status of the finality provider
 The `register-finality-provider` command registers your finality provider on the
 Babylon chain. This command requires:
 
-1. The BTC public key (obtained from the `create-finality-provider` command) 2.
-A funded Babylon account (needs BBN tokens for transaction fees) 3. A running
-FPD daemon
+1. The BTC public key (obtained from the `create-finality-provider` command) 
+2. A funded Babylon account (needs BBN tokens for transaction fees) 
+3. A running FPD daemon
 
 ``` shell
 fpd register-finality-provider \
