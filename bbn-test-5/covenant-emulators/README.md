@@ -213,7 +213,8 @@ If successful it will output the below:
     "name": "covenant-key",
 	"public-key":
 	"829efe41163002144df5dce3c681f741a85cf4742490686c281bfdea94c0e162"
-} ```
+} 
+```
 
 After executing the above command, the key name will be saved in the config file
 created in the `--home` directory within `keyring-test`
