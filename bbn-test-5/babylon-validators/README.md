@@ -18,7 +18,7 @@ As a reference, the following system specification is typically used by validato
 
 - Quad Core or larger AMD or Intel (amd64) CPU
 - 32GB RAM
-- 1TB NVMe Storage
+- 2TB NVMe Storage
 - 100MBps bidirectional internet connection
 
 Note: the above is a sample system specification that might not fit your specific infrastructure. Please do your own research before committing to a
@@ -35,19 +35,13 @@ Once installed run:
 go version
 ```
 
-To ensure you are using the correct version, the terminal should return something similar to the below.
-
-```shell
-go: downloading go1.21 (darwin/arm64)
-```
-
 Subsequently clone the babylon [repository](https://github.com/babylonlabs-io/babylon).
 
 ```shell
 git clone git@github.com:babylonlabs-io/babylon.git
 ```
 
-Once the `babylon` repository is downloaded then checkout the corresponding tag for `bbn-testnet-5`.
+Once the `babylon` repository is downloaded then checkout the corresponding tag for `bbn-testnet-5`  (to be specified once available).
 
 ``` shell
 git checkout <tag>
@@ -109,7 +103,9 @@ The `<moniker>` is a unique identifier for your node. So for example `node0`.
 
 ```shell
 Base configuration
+minimum-gas-prices = "0.005ubbn"
 iavl-cache-size = 0
+iavl-disable-fastnode=true
 
 [btc-config]
 
@@ -118,7 +114,7 @@ iavl-cache-size = 0
 network = "signet"
 ```
 
-In `app.toml` under `[btc-network]`change network to `signet` and `iavl-cache-size = 0` instead of what is listed in the automatically generated template.
+In `app.toml` under `[btc-network]`change network to `signet` and under `Base Configuration` set `iavl-cache-size = 0` and `iavl-disable-fastnode=true` instead of what is listed in the automatically generated template. Additionally, add `minimum-gas-prices = "0.005ubbn"`
 
 Navigate to `config.toml`. Add in your seed that should look something like this `8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656`
 
@@ -153,14 +149,22 @@ Setting up the key is crucial as it serves as the validator's identity. The key-
 babylond --keyring-backend test keys add <name> --home=./nodeDir
 ```
   
-We use `--keyring-backend test`, which specifies which backend to use for the keyring, `test` stores keys unencrypted on disk. The `<name>` specifies a unique identifier for the key.
+We use `--keyring-backend test`, which specifies which backend to use for the keyring, `test` stores keys unencrypted on disk. 
+
+There are three options for the keyring backend:
+
+`test`: Stores keys unencrypted on disk. It’s meant for testing purposes and should never be used in production.
+`file`: Stores encrypted keys on disk, which is a more secure option than test but less secure than using the OS keyring.
+`os`: Uses the operating system's native keyring, providing the highest level of security by relying on OS-managed encryption and access controls.
+
+The `<name>` specifies a unique identifier for the key.
 
 The execution result displays the address of the newly generated key and its public key. Following is a sample output for the command:
 
 ```shell
 - address: bbn1kvajzzn6gtfn2x6ujfvd6q54etzxnqg7pkylk9
 
-name: test-val
+name: <name>
 
 pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Ayau+8f945c1iQp9tfTVaCT5lzhD8n4MRkZNqpoL6Tpo"}'
 
@@ -184,14 +188,14 @@ babylond create-bls-key <address>
 
 Your address should be the one that was generated in the keyring generation step and looks something like this: `bbn1kvajzzn6gtfn2x6ujfvd6q54etzxnqg7pkylk9`.
 
-This command will create a BLS key and add it to the `~/.babylond/config/priv_validator_key.json` that was generated when `init` was run.
+This command will create a BLS key and add it to the `~/.nodeDir/config/priv_validator_key.json` that was generated when `init` was run.
 
 ## Sync Node
 
 We are now ready to sync the node.
 
 ```shell
-babylond start --chain-id=bbn-test-5 --home=./nodeDir --minimum-gas-prices=0.005ubbn
+babylond start --chain-id=bbn-test-5 --home=./nodeDir --x-crisis-skip-assert-invariants
 ```
 
 Lets go through the flags of the above command:
@@ -217,7 +221,15 @@ Note: Always verify snapshot sources and checksums before using them to ensure s
 ## Get Funds
 <!-- This needs to be updated to the correct testnet and potentially need help with the correct instructions as I cant access the faucet -->
 
+To create a validator, you'll need some BBN tokens to:
+1. Pay for transaction fees (gas)
+2. Meet the minimum self-delegation requirement
+3. Stake as your initial validator bond
+
 Request Funds from the Babylon Testnet Faucet​ [here](https://faucet.devnet.babylonlabs.io/)
+
+Note: These are testnet tokens with no real value, used only for testing and development 
+purposes.
 
 ## Create Validator
 
@@ -227,10 +239,10 @@ To create the validator (using sample parameters):
 
 ```
 babylond tx checkpointing create-validator ./dir/node0/babylond/config/priv_validator_key.json\
---chain-id="devnet-2" \
+--chain-id="bbn-test-5" \
 --gas="auto" \
 --gas-adjustment="1.5" \
---gas-prices="0.025ubbn" \
+--gas-prices="0.005ubbn" \
 --from=bbn12k7w0mtdqp5yff8hr9gj6xe3uq7hnfhgpzwa7f
 ```
 
