@@ -315,6 +315,10 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 // are applicable at the given BTC btcHeight. If there in no versioned global params
 // applicable at the given btcHeight, it will return nil.
 func (g *ParsedGlobalParams) GetVersionedGlobalParamsByHeight(btcHeight uint64) *ParsedVersionedGlobalParams {
+	// Check if the Versions slice is empty
+	if len(g.Versions) == 0 {
+		return nil
+	}
 	// Iterate the list in reverse (i.e. decreasing ActivationHeight)
 	// and identify the first element that has an activation height below
 	// the specified BTC height.
@@ -328,10 +332,10 @@ func (g *ParsedGlobalParams) GetVersionedGlobalParamsByHeight(btcHeight uint64) 
 }
 
 // FindLastStakingCap finds the last staking cap that is not zero
-// it returns zero if not non-zero value is found
+// it returns zero if no non-zero value is found
 func FindLastStakingCap(prevVersions []*VersionedGlobalParams) uint64 {
 	numPrevVersions := len(prevVersions)
-	if len(prevVersions) == 0 {
+	if numPrevVersions == 0 {
 		return 0
 	}
 
