@@ -3,8 +3,8 @@
 Before setting up a validator, you'll need:
 1. A fully synced Babylon node. For node setup instructions, see our 
 [Node Setup Guide](../babylon-node/README.md)
-2. Sufficient BBN tokens, which are included in the funding section in the 
-[Node Setup Guide](../babylon-node/README.md)
+2. Sufficient BBN tokens. For instructions on obtaining BBN tokens, see the 
+[Get Funds section](../babylon-node/README.md#get-funds) in the Node Setup Guide.
 
 ## System Requirements
 
