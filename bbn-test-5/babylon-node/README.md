@@ -127,8 +127,8 @@ correct point. You have two options:
 
 2. Or use these commands in your terminal:
 
-```
-wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 # update this file name if necessary
+```shell
+wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 # TODO: update this file name if necessary
 tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
 mv genesis.json ~/.babylond/config/genesis.json
 ```

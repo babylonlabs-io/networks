@@ -34,7 +34,8 @@ babylond tx checkpointing create-validator \
 ```
 
 Upon successful creation, you'll receive a transaction hash and your validator
-operator address (e.g., `bbnvaloper12k7w0mtdqp5yff8hr9gj6xe3uq7hnfhguqyqjg`).
+operator address 
+(e.g., `bbnvaloper12k7w0mtdqp5yff8hr9gj6xe3uq7hnfhguqyqjg`).
 
 ### Verifying Validator Setup
 
