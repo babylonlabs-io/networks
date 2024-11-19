@@ -38,14 +38,16 @@ the usage of the `test` backend which stores the keys unencrypted on disk.
 
 Alternatively, there are three options for the keyring backend:
 
-`test`: Stores keys unencrypted on disk. It’s meant for testing purposes and 
+- `test`: Stores keys unencrypted on disk. It’s meant for testing purposes and 
 should never be used in production.
-`file`: Stores encrypted keys on disk, which is a more secure option than test but 
+- `file`: Stores encrypted keys on disk, which is a more secure option than test but 
 less secure than using the OS keyring.
-`os`: Uses the operating system's native keyring, providing the highest level of 
+- `os`: Uses the operating system's native keyring, providing the highest level of 
 security by relying on OS-managed encryption and access controls.
 
 The `<name>` specifies a unique identifier for the key.
+The `--home` flag specifies the directory where your node files will be stored 
+(e.g. `--home ./nodeDir`)
 
 The execution result displays the address of the newly generated key and its 
 public key. Following is a sample output for the command:
@@ -126,9 +128,9 @@ This command creates the configuration file with your validator settings:
 - `pubkey`: Your validator's public key
 - `amount`: Initial self-delegation amount
 - `moniker`: Your validator's name
-- `commission-rate`: Current commission rate (10%)
-- `commission-max-rate`: Maximum commission rate (20%)
-- `commission-max-change-rate`: Maximum daily commission change (1%)
+- `commission-rate`: Current commission rate
+- `commission-max-rate`: Maximum commission rate
+- `commission-max-change-rate`: Maximum daily commission change 
 - `min-self-delegation`: Minimum self-delegation amount
 
 > Note: The command will create the file if it doesn't exist. No need for a separate `touch` command.
