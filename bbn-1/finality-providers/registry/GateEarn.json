@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Gate Earn",
+    "identity": "51EE937969F9BB4D",
+    "website": "https://www.gate.io/web3",
+    "security_contact": "web3-earn@gate.io",
+    "details": "Gate.io Earn serves as a one-stop shop for all the decentralised earning options available on the Gate.io Web3 platform and we are the leading staking service provider for blockchain projects."
+  },
+  "eots_pk": "2877658a1e7608fe84543a75ca879334bb8f2e7aecae71adb7767192bda50739",
+  "commission": "0.03"
+}
