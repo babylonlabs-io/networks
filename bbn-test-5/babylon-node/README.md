@@ -79,8 +79,7 @@ babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
 The `<moniker>` is a unique identifier for your node (e.g. `node0`).
-The `<path>` is the home directory of the node in which the relevant node files will be stored 
-(e.g. `--home ./nodeDir`).
+The `--home` flag specifies the directory where your node files will be stored (e.g. `--home ./nodeDir`).
 
 After initialization, you'll need to modify two important configuration files:
 
@@ -119,7 +118,7 @@ your node. You can get it from:
 ```shell
 wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 # TODO: update this file name if necessary
 tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
-mv genesis.json ~/<path>/config/genesis.json #insert your --home 
+mv genesis.json ~/<path>/config/genesis.json #insert your --home <path>
 ```
 
 >Note: Verify that the `chain-id` in the genesis file matches the one used in 
@@ -138,19 +137,22 @@ To generate your key, use the following command:
 ```shell
 babylond --keyring-backend test keys add <name> --home <path>
 ```
+
+The `<name>` specifies a unique identifier for the key.
+The `--home` flag specifies the directory where your node files are
+stored (the same path used in the initialization step e.g. `--home ./nodeDir`).
+
 In this example, we use `--keyring-backend test`, that specifies 
 the usage of the `test` backend which stores the keys unencrypted on disk.
 
 Alternatively, there are three options for the keyring backend:
 
-`test`: Stores keys unencrypted on disk. It’s meant for testing purposes and 
+- `test`: Stores keys unencrypted on disk. It’s meant for testing purposes and 
 should never be used in production.
-`file`: Stores encrypted keys on disk, which is a more secure option than test but 
+- `file`: Stores encrypted keys on disk, which is a more secure option than test but 
 less secure than using the OS keyring.
-`os`: Uses the operating system's native keyring, providing the highest level of 
+- `os`: Uses the operating system's native keyring, providing the highest level of 
 security by relying on OS-managed encryption and access controls.
-
-The `<name>` specifies a unique identifier for the key.
 
 The execution result displays the address of the newly generated key and its 
 public key. Following is a sample output for the command:
@@ -180,8 +182,7 @@ Lets go through the flags of the above command:
 - `start`: This is the command to start the Babylon node.
 - `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
 - `--home`: Sets the directory for the node's data and configuration files and 
-is dependant on where the files were generated for you from the initialization 
-(e.g. `--home ./nodeDir`)
+is dependant on where the files were generated for you from the initialization (e.g. `--home ./nodeDir`)
 
 ### Options for Syncing
 
@@ -197,7 +198,7 @@ You have two options for syncing your node:
    - Snapshots are periodic backups of the chain state
    - Find available snapshots at: <!-- Add link when available -->
    
-   Note: Always verify snapshot sources and checksums before using them to ensure security.
+>Note: Always verify snapshot sources and checksums before using them to ensure security.
 
 ## Get Funds
 
@@ -209,8 +210,8 @@ To interact with the Babylon network, you'll need some BBN tokens to:
 You can obtain testnet tokens through two methods:
 
 1. Request funds from the Babylon Testnet Faucet 
-[here](#tbd)
-
+[here](#tbd) 
+<!-- add link to faucet -->
 2. Join our Discord server and visit the #faucet channel: 
 [Discord Server](https://discord.com/channels/1046686458070700112/1075371070493831259)
 
