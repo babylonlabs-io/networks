@@ -3,8 +3,8 @@
 ## Table of Contents
 
 1. [Install Babylon Binary](#install-babylon-binary)
-2. [Setup Node Home Directory and Configure](#setup-your-node-home-directory-and-configure)
-4. [Setup Required Keys](#setup-the-required-keys-for-operating-a-validator)
+2. [Setup Node Home Directory and Configure](#setup-your-node-home-directory-and-configuration)
+4. [Create Keys](#create-keys)
 5. [Sync Node](#sync-node)
 6. [Get Funds](#get-funds)
 
@@ -126,7 +126,7 @@ mv genesis.json ~/<path>/config/genesis.json #insert your --home
 your initialization command (`bbn-test-5`). This ensures your node connects 
 to the correct network.
 
-## Create a Keyring
+## Create Keys
 
 Keys are a fundamental component of your node's identity within the 
 Babylon network. This cryptographic key-pair serves multiple critical functions: 
