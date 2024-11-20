@@ -245,17 +245,15 @@ Basic health monitoring should check:
 1. **Secure Key Management**
    - Store keys in a separate, encrypted storage system
    - Currently no secure keyring backend is supported for production use
-   - Maintain offline backups of key material
+   - Offline backups
 
 2. **Network Security**
-   - Configure firewalls to restrict port access
-   - Only expose necessary API endpoints
-   - Enable rate limiting on public endpoints
-   - Use TLS for all external connections
+   - Only expose necessary RPC endpoints in `app.toml` and `config.toml`
+   - Configure rate limiting in your reverse proxy (nginx/caddy) for public endpoints
+   - Use SSL/TLS certificates when exposing endpoints externally
 
 3. **System Security**
    - Keep the host system updated
-   - Use minimal base images/OS installations
    - Monitor system logs for suspicious activity
    - Implement regular security patches
 

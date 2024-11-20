@@ -249,7 +249,56 @@ In addition to basic node monitoring, validators should:
    - Validator status changes
    - Network participation metrics
    - System resource thresholds
-   
+
+### Prometheus Configuration
+
+The Babylon node exposes metrics through two Prometheus endpoints:
+- Port 1317: API metrics
+- Port 26660: Tendermint metrics
+
+To enable these endpoints, modify your `app.toml`:
+```toml
+[api]
+enable = true
+address = "0.0.0.0:1317"
+
+[telemetry]
+enabled = true
+prometheus-retention-time = 60
+prometheus = true
+prometheus-listen-addr = ":26660"
+```
+
+Example Prometheus scrape configuration:
+```yaml
+scrape_configs:
+  - job_name: 'babylon_validator'
+    static_configs:
+      - targets: ['localhost:26660', 'localhost:1317']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+```
+
+### Basic Health Checks
+
+Implement these essential health checks:
+```bash
+# Check node sync status
+curl -s localhost:26657/status | jq '.result.sync_info.catching_up'
+
+# Compare local vs network height
+curl -s localhost:26657/status | jq '.result.sync_info.latest_block_height'
+
+# Monitor validator signing status
+curl -s localhost:26657/consensus_state | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
+```
+
+We recommend setting up alerts when:
+- Node falls out of sync (catching_up = true)
+- Block height falls behind network
+- Missing validator signatures
+- Prometheus metrics become unavailable
+
 Congratulations! Your validator is now part of the Babylon network. Remember to
 monitor your validator's performance and maintain good uptime to avoid
 penalties.
