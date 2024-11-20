@@ -218,9 +218,52 @@ You can obtain testnet tokens through two methods:
 Note: These are testnet tokens with no real value, used only for testing 
 and development purposes.
 
+## Monitoring Your Node
+
+Your Babylon node exposes metrics through two Prometheus endpoints:
+- Port 1317: API metrics
+- Port 26660: Tendermint metrics
+
+To enable metric collection, modify your `app.toml`:
+```
+[telemetry]
+enabled = true
+prometheus-retention-time = 60
+[api]
+enable = true
+address = "0.0.0.0:1317"
+```
+
+Basic health monitoring should check:
+- Node synchronization status
+- Block height compared to network
+- Connected peers count
+- System resource usage (CPU, RAM, Disk)
+
 ## Security Recommendations
 
-<!-- TODO: add security recommendations -->
+1. **Secure Key Management**
+   - Store keys in a separate, encrypted storage system
+   - Currently no secure keyring backend is supported for production use
+   - Maintain offline backups of key material
+
+2. **Network Security**
+   - Configure firewalls to restrict port access
+   - Only expose necessary API endpoints
+   - Enable rate limiting on public endpoints
+   - Use TLS for all external connections
+
+3. **System Security**
+   - Keep the host system updated
+   - Use minimal base images/OS installations
+   - Monitor system logs for suspicious activity
+   - Implement regular security patches
+
+4. **Performance Considerations**
+   - The node handles approximately 2,500 RPS on basic endpoints
+   - Monitor resource usage during peak periods
+   - Ensure adequate disk space for chain growth
+   - Set up alerts for resource thresholds
 
 ## Next Steps
 

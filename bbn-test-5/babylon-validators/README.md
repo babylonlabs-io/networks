@@ -13,6 +13,10 @@ Recommended specifications for running a Babylon validator node:
 - RAM: 32GB
 - Storage: 2TB NVMe
 - Network: 100MBps bidirectional
+- Encrypted storage for keys and sensitive data
+- Regular system backups (hourly, daily, weekly)
+- DDoS protection
+- Hardware security modules (HSMs) recommended for key storage
 
 >Note: These are reference specifications for a production validator. 
 >Requirements may vary based on network activity and your operational needs.
@@ -216,6 +220,36 @@ This is because standard staking module messages are disabled in Babylon.
 For detailed information about these operations, visit our
 [documentation](https://docs.babylonlabs.io/docs/developer-guides/modules/epoching#delaying-wrapped-messages-to-the-end-of-epochs).
 
+## Advanced Security Architecture
+
+Validators should be run with additional security measures:
+
+**Sentry Node Architecture**  
+For enhanced security, validators should implement a sentry node architecture. 
+This involves deploying sentry nodes as a protective layer around your 
+validator node, following the established [Cosmos Sentry Node Architecture](https://forum.cosmos.network/t/sentry-node-architecture-overview/454). 
+The sentry nodes act as a buffer between your validator and the public network, 
+with a private network maintained between your validator and its sentry nodes. 
+This architecture helps protect your validator from DDoS attacks and other 
+network-level threats by ensuring your validator only communicates with trusted 
+sentry nodes rather than directly with the public network.
+
+## Enhanced Monitoring
+
+In addition to basic node monitoring, validators should:
+
+1. Monitor validator performance metrics
+   - Signing performance
+   - Missed blocks
+   - Voting power changes
+   - BLS signing status
+
+2. Set up alerts for:
+   - Slashing conditions
+   - Validator status changes
+   - Network participation metrics
+   - System resource thresholds
+   
 Congratulations! Your validator is now part of the Babylon network. Remember to
 monitor your validator's performance and maintain good uptime to avoid
 penalties.
