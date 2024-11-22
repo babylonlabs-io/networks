@@ -96,6 +96,24 @@ Make sure to securely store this information, particularly your address and
 private key details. Losing access to these credentials would mean losing 
 control of your validator and any staked funds.
 
+## Get Funds
+
+To interact with the Babylon network, you'll need some BBN tokens to:
+1. Pay for transaction fees (gas)
+2. Send transactions
+3. Participate in network activities
+
+You can obtain testnet tokens through two methods:
+
+1. Request funds from the Babylon Testnet Faucet 
+[here](#tbd) 
+<!-- add link to faucet -->
+2. Join our Discord server and visit the `#faucet` channel: 
+[Discord Server](https://discord.com/channels/1046686458070700112/1075371070493831259)
+
+Note: These are testnet tokens with no real value, used only for testing 
+and development purposes.
+
 ## Keys for a BLS Voting
 ### What is BLS Voting
 

@@ -1,17 +1,15 @@
 # Babylon Node Setup
 
+# Babylon Node Setup
+
 ## Table of Contents
 
 1. [Install Babylon Binary](#install-babylon-binary)
 2. [Setup Node Home Directory and Configure](#setup-your-node-home-directory-and-configuration)
-3. [Create Keys](#create-keys)
-4. [Sync Node](#sync-node)
-   - [Options for Syncing](#options-for-syncing)
-5. [Get Funds](#get-funds)
-6. [Monitoring Your Node](#monitoring-your-node)
-7. [Security Recommendations](#security-recommendations)
-8. [Next Steps](#next-steps)
-
+3. [Sync Node](#sync-node)
+4. [Monitoring Your Node](#monitoring-your-node)
+5. [Security Recommendations](#security-recommendations)
+6. [Next Steps](#next-steps)
 
 ## Install Babylon Binary 
 
@@ -115,50 +113,6 @@ mv genesis.json <path>/config/genesis.json #insert your --home <path>
 your initialization command (`bbn-test-5`). This ensures your node connects 
 to the correct network.
 
-## Create Keys
-
-Keys are a fundamental component of your node's identity within the 
-Babylon network. This cryptographic key-pair serves multiple critical functions: 
-it allows you to interact with the network, send transactions, and manage your account. 
-Creating and securing your keys is one of the most important steps in setting up your node.
-
-To generate your key, use the following command:
-
-```shell
-babylond --keyring-backend test keys add <name> --home <path>
-```
-
-The `<name>` specifies a unique identifier for the key.
-The `--home` flag specifies the directory where your node files are
-stored (the same path used in the initialization step e.g. `--home ./nodeDir`).
-
-In this example, we use `--keyring-backend test`, that specifies 
-the usage of the `test` backend which stores the keys unencrypted on disk.
-
-Alternatively, there are three options for the keyring backend:
-
-- `test`: Stores keys unencrypted on disk. It’s meant for testing purposes and 
-should never be used in production.
-- `file`: Stores encrypted keys on disk, which is a more secure option than test but 
-less secure than using the OS keyring.
-- `os`: Uses the operating system's native keyring, providing the highest level of 
-security by relying on OS-managed encryption and access controls.
-
-The execution result displays the address of the newly generated key and its 
-public key. Following is a sample output for the command:
-
-```shell
-- address: bbn1kvajzzn6gtfn2x6ujfvd6q54etzxnqg7pkylk9
-  name: <name>
-  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey",
-           key: "Ayau+8f945c1iQp9tfTVaCT5lzhD8n4MRkZNqpoL6Tpo"}'
-  type: local
-```
-
-Make sure to securely store this information, particularly your 
-address and private key details. Losing access to these credentials 
-would mean losing access to your account and any funds associated with it.
-
 ## Sync Node
 
 We are now ready to sync the node.
@@ -190,24 +144,6 @@ You have two options for syncing your node:
    - Find available snapshots at: <!-- Add link when available -->
    
 >Note: Always verify snapshot sources and checksums before using them to ensure security.
-
-## Get Funds
-
-To interact with the Babylon network, you'll need some BBN tokens to:
-1. Pay for transaction fees (gas)
-2. Send transactions
-3. Participate in network activities
-
-You can obtain testnet tokens through two methods:
-
-1. Request funds from the Babylon Testnet Faucet 
-[here](#tbd) 
-<!-- add link to faucet -->
-2. Join our Discord server and visit the `#faucet` channel: 
-[Discord Server](https://discord.com/channels/1046686458070700112/1075371070493831259)
-
-Note: These are testnet tokens with no real value, used only for testing 
-and development purposes.
 
 ## Monitoring Your Node
 
