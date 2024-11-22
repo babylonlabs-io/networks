@@ -5,7 +5,7 @@
 ## Table of Contents
 
 1. [Install Babylon Binary](#install-babylon-binary)
-2. [Setup Node Home Directory and Configure](#setup-your-node-home-directory-and-configuration)
+2. [Setup Node Home Directory and Configuration](#setup-your-node-home-directory-and-configuration)
 3. [Sync Node](#sync-node)
 4. [Monitoring Your Node](#monitoring-your-node)
 5. [Security Recommendations](#security-recommendations)
