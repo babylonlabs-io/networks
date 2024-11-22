@@ -1,5 +1,33 @@
 # Babylon Validator Setup
 
+# Babylon Validator Setup
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+
+2. [System Requirements](#system-requirements)
+
+3. [Key Management](#setup-the-required-keys-for-operating-a-validator)
+   - [CometBFT Validator Keys](#keys-for-a-comebft-validator)
+   - [BLS Voting Keys](#keys-for-a-bls-voting)
+     - [What is BLS Voting](#what-is-bls-voting)
+     - [Create BLS Key](#create-bls-key)
+
+4. [Validator Configuration](#prepare-validator-configuration)
+
+5. [Creating Validator](#creating-validator)
+   - [Verifying Validator Setup](#verifying-validator-setup)
+   - [Understanding Validator Status](#understanding-validator-status)
+   - [Managing Your Validator](#managing-your-validator)
+
+6. [Advanced Security Architecture](#advanced-security-architecture)
+   - [Sentry Node Architecture](#advanced-security-architecture)
+
+7. [Enhanced Monitoring](#enhanced-monitoring)
+   - [Prometheus Configuration](#prometheus-configuration)
+   - [Basic Health Checks](#basic-health-checks)
+
 Before setting up a validator, you'll need:
 1. A fully synced Babylon node. For node setup instructions, see our 
 [Node Setup Guide](../babylon-node/README.md)
@@ -9,6 +37,7 @@ Before setting up a validator, you'll need:
 ## System Requirements
 
 Recommended specifications for running a Babylon validator node:
+<!-- TODO: RPC Nodes more ram is required add when we have completed node load test  -->
 - CPU: Quad Core AMD/Intel (amd64)
 - RAM: 32GB
 - Storage: 2TB NVMe
@@ -16,7 +45,6 @@ Recommended specifications for running a Babylon validator node:
 - Encrypted storage for keys and sensitive data
 - Regular system backups (hourly, daily, weekly)
 - DDoS protection
-- Hardware security modules (HSMs) recommended for key storage
 
 >Note: These are reference specifications for a production validator. 
 >Requirements may vary based on network activity and your operational needs.
@@ -124,6 +152,9 @@ cat > <path>/config/validator.json << EOF
   "commission-max-rate": "0.20",
   "commission-max-change-rate": "0.01",
   "min-self-delegation": "1"
+  "website": "https://myweb.site",
+  "security": "security-contact@gmail.com",
+  "details": "description of your validator",
 }
 EOF
 ```
@@ -131,18 +162,22 @@ EOF
 This command creates the configuration file with your validator settings:
 - `pubkey`: Your validator's public key
 - `amount`: Initial self-delegation amount
-- `moniker`: Your validator's name
-- `commission-rate`: Current commission rate
-- `commission-max-rate`: Maximum commission rate
-- `commission-max-change-rate`: Maximum daily commission change 
-- `min-self-delegation`: Minimum self-delegation amount
+- `moniker`: Your validator's name/identifier
+- `commission-rate`: Current commission rate 
+- `commission-max-rate`: Maximum commission rate allowed
+- `commission-max-change-rate`: Maximum daily commission change rate
+- `min-self-delegation`: Minimum amount you must keep self-delegated
+- `website`: (Optional) Your validator's website
+- `security`: (Optional) Security contact email
+- `details`: (Optional) Description of your validator
 
 > Note: The command will create the file if it doesn't exist. No need for a separate `touch` command.
 
 ## Creating Validator
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
-Babylon uses the `checkpointing` module for validator creation and management.
+Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) 
+module for validator creation and management.
 
 The creation process requires your previously generated BLS key, 
 which should be located at `<path>/config/priv_validator_key.json`, 
@@ -159,6 +194,7 @@ babylond tx checkpointing create-validator \
     --gas-prices "0.005ubbn" \
     --from <your-key-name>
 ```
+
 - `--chain-id`: The network identifier
 - `--gas`: Set to "auto" to automatically calculate the gas needed
 - `--gas-adjustment`: A multiplier for the estimated gas (1.5 adds 50% extra for safety)
@@ -174,7 +210,7 @@ operator address
 
 1. First, get your validator's operator address using your Babylon address: 
 ```shell
-babylond keys show <your-key-name> --address --bech val --home <path>--keyring-backend test
+babylond keys show <your-key-name> --address --bech val --home <path> --keyring-backend test
 ```
 
 For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k85teavxmuq`, 
@@ -252,24 +288,10 @@ In addition to basic node monitoring, validators should:
 
 ### Prometheus Configuration
 
-The Babylon node exposes metrics through two Prometheus endpoints:
-- Port 1317: API metrics
-- Port 26660: Tendermint metrics
-
-To enable these endpoints, modify your `app.toml`:
-```toml
-[api]
-enable = true
-address = "0.0.0.0:1317"
-
-[telemetry]
-enabled = true
-prometheus-retention-time = 60
-prometheus = true
-prometheus-listen-addr = ":26660"
-```
+This information can be found in the [Node Monitoring](../babylon-node/README.md#monitoring-your-node) section.
 
 Example Prometheus scrape configuration:
+
 ```yaml
 scrape_configs:
   - job_name: 'babylon_validator'
@@ -278,6 +300,8 @@ scrape_configs:
     metrics_path: '/metrics'
     scrape_interval: 10s
 ```
+
+We do this to scrape metrics to monitor your validator's health and performance.
 
 ### Basic Health Checks
 

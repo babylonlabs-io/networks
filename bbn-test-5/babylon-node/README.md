@@ -4,14 +4,18 @@
 
 1. [Install Babylon Binary](#install-babylon-binary)
 2. [Setup Node Home Directory and Configure](#setup-your-node-home-directory-and-configuration)
-4. [Create Keys](#create-keys)
-5. [Sync Node](#sync-node)
-6. [Get Funds](#get-funds)
+3. [Create Keys](#create-keys)
+4. [Sync Node](#sync-node)
+   - [Options for Syncing](#options-for-syncing)
+5. [Get Funds](#get-funds)
+6. [Monitoring Your Node](#monitoring-your-node)
+7. [Security Recommendations](#security-recommendations)
+8. [Next Steps](#next-steps)
 
 
 ## Install Babylon Binary 
 
-1. Install [Golang 1.21](https://go.dev/dl)
+1. Install [Golang 1.23](https://go.dev/dl)
 2. Verify installation:
 
 ```shell
@@ -31,22 +35,6 @@ This command does the following:
 - Compiles all the Go packages in the project
 - Installs the binary 
 - Makes the `babylond` command globally accessible from your terminal
-
-You should expect to see the following output:
-
-```shell
-# Build output will show:
-go install -mod=readonly -tags "netgo ledger mainnet" \
-    -ldflags '\
-        -X github.com/cosmos/cosmos-sdk/version.Name=babylon \
-        -X github.com/cosmos/cosmos-sdk/version.AppName=babylond \
-        -X github.com/cosmos/cosmos-sdk/version.Version=v0.13.0 \
-        -X github.com/cosmos/cosmos-sdk/version.
-        Commit=976e94b926dcf287cb487e8f35dbf400c7d930cc \
-        -X "github.com/cosmos/cosmos-sdk/version.BuildTags=netgo,ledger" \
-        -w -s' \
-    -trimpath ./...
-```
 
 Now that the binary has been successfully installed, 
 let's check the available actions through the `babylond` command:
@@ -81,9 +69,9 @@ babylond init <moniker> --chain-id bbn-test-5 --home <path>
 The `<moniker>` is a unique identifier for your node (e.g. `node0`).
 The `--home` flag specifies the directory where your node files will be stored (e.g. `--home ./nodeDir`).
 
-After initialization, you'll need to modify two important configuration files:
+After initialization, you'll need to modify the following configuration files:
 
-1. First, open `app.toml` and update these essential settings from what is auto-generated:
+1. First, open `app.toml` and update these the following settings:
 
 ```shell
 # Base configuration
@@ -104,8 +92,10 @@ Navigate to `config.toml`. Add in your seed, as shown below:
  #P2P Configuration Options    
 
 # Comma separated list of seed nodes to connect to
-seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656"
+seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656" # This is only an example of the testnet seed and should be replaced with the actual seed node.
 ```
+Please head to [Nodes.Guru](https://nodes.guru) for the latest seed node.
+<!-- update with link to seed node when available -->
 
 Next, you'll need to obtain the network's genesis file. This file contains 
 the initial state of the blockchain and is crucial for successfully syncing 
@@ -118,7 +108,7 @@ your node. You can get it from:
 ```shell
 wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 # TODO: update this file name if necessary
 tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
-mv genesis.json ~/<path>/config/genesis.json #insert your --home <path>
+mv genesis.json <path>/config/genesis.json #insert your --home <path>
 ```
 
 >Note: Verify that the `chain-id` in the genesis file matches the one used in 
@@ -185,6 +175,7 @@ Lets go through the flags of the above command:
 is dependant on where the files were generated for you from the initialization (e.g. `--home ./nodeDir`)
 
 ### Options for Syncing
+<!-- TODO: update accordingly with the new sync method when available -->
 
 You have two options for syncing your node:
 
@@ -212,7 +203,7 @@ You can obtain testnet tokens through two methods:
 1. Request funds from the Babylon Testnet Faucet 
 [here](#tbd) 
 <!-- add link to faucet -->
-2. Join our Discord server and visit the #faucet channel: 
+2. Join our Discord server and visit the `#faucet` channel: 
 [Discord Server](https://discord.com/channels/1046686458070700112/1075371070493831259)
 
 Note: These are testnet tokens with no real value, used only for testing 
@@ -221,14 +212,14 @@ and development purposes.
 ## Monitoring Your Node
 
 Your Babylon node exposes metrics through two Prometheus endpoints:
-- Port 1317: API metrics
-- Port 26660: Tendermint metrics
+- `Port 1317`: API metrics
+- `Port 26660`: CometBFT metrics
 
 To enable metric collection, modify your `app.toml`:
 ```
 [telemetry]
 enabled = true
-prometheus-retention-time = 60
+prometheus-retention-time = 600 # 10 minutes
 [api]
 enable = true
 address = "0.0.0.0:1317"
@@ -248,17 +239,17 @@ Basic health monitoring should check:
    - Offline backups
 
 2. **Network Security**
-   - Only expose necessary RPC endpoints in `app.toml` and `config.toml`
+   - Only expose necessary gRPC, REST, and CometBFT Endpoints in app.toml and config.toml
+   as seen [here](https://docs.cosmos.network/main/learn/advanced/grpc_rest)
    - Configure rate limiting in your reverse proxy (nginx/caddy) for public endpoints
    - Use SSL/TLS certificates when exposing endpoints externally
 
 3. **System Security**
    - Keep the host system updated
    - Monitor system logs for suspicious activity
-   - Implement regular security patches
 
 4. **Performance Considerations**
-   - The node handles approximately 2,500 RPS on basic endpoints
+   - The node handles approximately 2,500 RPS on the native Cosmos SDK RPC endpoints
    - Monitor resource usage during peak periods
    - Ensure adequate disk space for chain growth
    - Set up alerts for resource thresholds
