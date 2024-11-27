@@ -53,6 +53,8 @@ depending on your shell:
  echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile 
  ```
 
+Make sure to restart your terminal session after running the above command.
+
 ## 2. Setup your node, home directory, and configuration
 
 In this section we will initialize your node and create the necessary 
@@ -200,7 +202,7 @@ Basic health monitoring should check:
    - Ensure adequate disk space for chain growth
    - Set up alerts for resource thresholds
 
-## 6.Next Steps
+## 6. Next Steps
 
 For information about becoming a Finality Provider in the Babylon network, 
 see our [Finality Provider Guide](../babylon-validators/README.md).
