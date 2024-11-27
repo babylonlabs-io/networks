@@ -1,32 +1,26 @@
 # Babylon Validator Setup
 
-# Babylon Validator Setup
-
 ## Table of Contents
 
-1. [Prerequisites](#prerequisites)
+1. [Prerequisites](#1prerequisites)
+2. [System Requirements](#2system-requirements)
+3. [Key Management](#3-key-management)
+   3.1 [CometBFT Validator Keys](#31-keys-for-a-comebft-validator)
+   3.2 [BLS Voting Keys](#32-keys-for-a-bls-voting)
+     3.2.1 [What is BLS Voting](#321-what-is-bls-voting)
+     3.2.2 [Create BLS Key](#322-create-bls-key)
+  4. [Validator Configuration](#4-prepare-validator-configuration)
+5. [Creating Validator](#5-creating-validator)
+   5.1 [Verifying Validator Setup](#51-verifying-validator-setup)
+   5.2 [Understanding Validator Status](#52-understanding-validator-status)
+   5.3 [Managing Your Validator](#53-managing-your-validator)
+6. [Advanced Security Architecture](#6-advanced-security-architecture)
+   6.1 [Sentry Node Architecture](#61-sentry-node-architecture)
+7. [Enhanced Monitoring](#7-enhanced-monitoring)
+   7.1 [Prometheus Configuration](#71-prometheus-configuration)
+   7.2 [Basic Health Checks](#72-basic-health-checks)
 
-2. [System Requirements](#system-requirements)
-
-3. [Key Management](#setup-the-required-keys-for-operating-a-validator)
-   - [CometBFT Validator Keys](#keys-for-a-comebft-validator)
-   - [BLS Voting Keys](#keys-for-a-bls-voting)
-     - [What is BLS Voting](#what-is-bls-voting)
-     - [Create BLS Key](#create-bls-key)
-
-4. [Validator Configuration](#prepare-validator-configuration)
-
-5. [Creating Validator](#creating-validator)
-   - [Verifying Validator Setup](#verifying-validator-setup)
-   - [Understanding Validator Status](#understanding-validator-status)
-   - [Managing Your Validator](#managing-your-validator)
-
-6. [Advanced Security Architecture](#advanced-security-architecture)
-   - [Sentry Node Architecture](#advanced-security-architecture)
-
-7. [Enhanced Monitoring](#enhanced-monitoring)
-   - [Prometheus Configuration](#prometheus-configuration)
-   - [Basic Health Checks](#basic-health-checks)
+## 1. Prerequisites
 
 Before setting up a validator, you'll need:
 1. A fully synced Babylon node. For node setup instructions, see our 
@@ -34,7 +28,7 @@ Before setting up a validator, you'll need:
 2. Sufficient BBN tokens. For instructions on obtaining BBN tokens, see the 
 [Get Funds section](../babylon-node/README.md#get-funds) in the Node Setup Guide.
 
-## System Requirements
+## 2.System Requirements
 
 Recommended specifications for running a Babylon validator node:
 <!-- TODO: RPC Nodes more ram is required add when we have completed node load test  -->
@@ -46,11 +40,11 @@ Recommended specifications for running a Babylon validator node:
 - Regular system backups (hourly, daily, weekly)
 - DDoS protection
 
->Note: These are reference specifications for a production validator. 
->Requirements may vary based on network activity and your operational needs.
+These are reference specifications for a production validator. 
+Requirements may vary based on network activity and your operational needs.
 
-## Setup the required keys for operating a validator 
-### Keys for a CometBFT validator
+## 3. Key Management
+### 3.1 Keys for a CometBFT validator
 
 >Note: if you already have set up a key, you can skip this section.
 
@@ -60,26 +54,26 @@ functions: it signs blocks during the consensus process, validates transactions,
 and manages your validator's operations on the network. Creating and securing this 
 key is one of the most important steps in setting up your validator.
 
+We will be using [Cosmos SDK]https://docs.cosmos.network/v0.52/user/run-node/keyring) 
+backends for key storage, which offer support for the following 
+keyrings:
+
+- `test` is a password-less keyring and is unencrypted on disk.
+- `os` uses the system's secure keyring and will prompt for a passphrase at startup.
+- `file` encrypts the keyring with a passphrase and stores it on disk.
+
+
 To generate your validator key, use the following command:
 
 ```shell
-babylond --keyring-backend test keys add <name> --home <path>
+babylond keys add <name> --home <path> --keyring-backend <keyring-backend>
 ```
-In this example, we use `--keyring-backend test`, that specifies 
-the usage of the `test` backend which stores the keys unencrypted on disk.
 
-Alternatively, there are three options for the keyring backend:
-
-- `test`: Stores keys unencrypted on disk. It’s meant for testing purposes and 
-should never be used in production.
-- `file`: Stores encrypted keys on disk, which is a more secure option than test but 
-less secure than using the OS keyring.
-- `os`: Uses the operating system's native keyring, providing the highest level of 
-security by relying on OS-managed encryption and access controls.
-
+Parameters:
 The `<name>` specifies a unique identifier for the key.
-The `--home` flag specifies the directory where your node files will be stored 
-(e.g. `--home ./nodeDir`)
+- `--home` specifies the directory where your node files will be stored 
+  (e.g. `--home ./nodeDir`)
+- `--keyring-backend` specifies the keyring backend to use, can be `test`, `file`, or `os`.
 
 The execution result displays the address of the newly generated key and its 
 public key. Following is a sample output for the command:
@@ -132,7 +126,9 @@ for checkpointing in the Bitcoin blockchain.
 
 ### Create BLS Key
 
-To generate your BLS key, you'll need to use your validator address from the previous step. 
+To generate your BLS key, you'll need to use your validator address from the 
+previous step. 
+
 Run this command:
 
 ```shell
@@ -193,9 +189,10 @@ This command creates the configuration file with your validator settings:
 
 ## Creating Validator
 
+> ⚠️ **Important:** You will need a funded account for this step
+
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
-Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) 
-module for validator creation and management.
+Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
 
 The creation process requires your previously generated BLS key, 
 which should be located at `<path>/config/priv_validator_key.json`, 
@@ -226,7 +223,10 @@ operator address
 
 ### Verifying Validator Setup
 
-1. First, get your validator's operator address using your Babylon address: 
+To verify your validator setup, you can use the following steps:
+
+First, get your validator's operator address using your Babylon address: 
+
 ```shell
 babylond keys show <your-key-name> --address --bech val --home <path> --keyring-backend test
 ```
@@ -234,13 +234,13 @@ babylond keys show <your-key-name> --address --bech val --home <path> --keyring-
 For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k85teavxmuq`, 
 the operator address is `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`. 
 
-2. Then, inspect your validator's details: 
+Next, inspect your validator's details: 
 
 ```shell 
 babylond query staking validator <validator-operator-address> --home <path>
 ```
 
-You should see your validator's configuration, including: 
+The output should return your validator's configuration.
 
 ```yaml 
 validator:

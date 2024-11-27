@@ -4,14 +4,15 @@
 
 ## Table of Contents
 
-1. [Install Babylon Binary](#install-babylon-binary)
-2. [Setup Node Home Directory and Configuration](#setup-your-node-home-directory-and-configuration)
-3. [Sync Node](#sync-node)
-4. [Monitoring Your Node](#monitoring-your-node)
-5. [Security Recommendations](#security-recommendations)
-6. [Next Steps](#next-steps)
+1. [Install Babylon Binary](#1-install-babylon-binary)
+2. [Setup Node Home Directory and Configuration](#2-setup-your-node-home-directory-and-configuration)
+3. [Sync Node](#3-sync-node)
+   1. [Options for Syncing](#31-options-for-syncing)
+5. [Monitoring Your Node](#monitoring-your-node)
+6. [Security Recommendations](#security-recommendations)
+7. [Next Steps](#next-steps)
 
-## Install Babylon Binary 
+## 1. Install Babylon Binary 
 
 1. Install [Golang 1.23](https://go.dev/dl)
 2. Verify installation:
@@ -47,25 +48,28 @@ Available Commands:
   ...
 ```
 
-If the `babylond` command isn't found, ensure `$GOPATH/bin` is in your shell's 
-`$PATH`. Add it with:
-
+If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in 
+your shell's `$PATH`. Use the following commnd to add it to your profile, 
+depending on your shell:
  ```shell 
  echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile 
  ```
 
-## Setup your node, home directory, and configuration
+## 2. Setup your node, home directory, and configuration
 
-Initialize your node and create the necessary configuration directory. 
-This command will generate several important configuration files 
+In this section we will initialize your node and create the necessary 
+configuration directory. This command will generate several important configuration files 
 including `app.toml`, `client.toml`, and `genesis.json`:
 
 ```shell
-babylond init <moniker> --chain-id bbn-test-5 --home <path>
+babylond init <moniker> --chain-id bbn-test-5 --home <path> --keyring-backend <keyring-backend>
 ```
 
-The `<moniker>` is a unique identifier for your node (e.g. `node0`).
-The `--home` flag specifies the directory where your node files will be stored (e.g. `--home ./nodeDir`).
+Parameters:
+- `<moniker>` is a unique identifier for your node (e.g. `node0`).
+- `--home` flag specifies the directory where your node files will be stored 
+   (e.g. `--home ./nodeDir`).
+- `--keyring-backend` is the backend for keyring, can be `test`, `file`, or `os`.
 
 After initialization, you'll need to modify the following configuration files:
 
@@ -84,13 +88,17 @@ iavl-disable-fastnode=true
 network = "signet" # The Babylon testnet connects to the signet Bitcoin network
 ```
 
+In the above configuration, we disable IAVL cache to make the node utilize less memory.
+In case of a node serving heavy RPC query load, these settings shouldn't be used.
+
 Navigate to `config.toml`. Add in your seed, as shown below:
 
 ```shell
  #P2P Configuration Options    
 
 # Comma separated list of seed nodes to connect to
-seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656" # This is only an example of the testnet seed and should be replaced with the actual seed node.
+seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656" 
+# This is only an example of the testnet seed and should be replaced with the actual seed node.
 ```
 Please head to [Nodes.Guru](https://nodes.guru) for the latest seed node.
 <!-- update with link to seed node when available -->
@@ -109,29 +117,33 @@ tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
 mv genesis.json <path>/config/genesis.json #insert your --home <path>
 ```
 
->Note: Verify that the `chain-id` in the genesis file matches the one used in 
+Additionally, verify that the `chain-id` in the genesis file matches the one used in 
 your initialization command (`bbn-test-5`). This ensures your node connects 
 to the correct network.
 
-## Sync Node
+## 3.Sync Node
 
-We are now ready to sync the node.
+We are now ready to sync the node, to this run the following command:
 
 ```shell
 babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
 ```
 
-Lets go through the flags of the above command:
+Parameters:
 
 - `start`: This is the command to start the Babylon node.
 - `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
 - `--home`: Sets the directory for the node's data and configuration files and 
-is dependant on where the files were generated for you from the initialization (e.g. `--home ./nodeDir`)
+   s dependant on where the files were generated for you from the initialization 
+   (e.g. `--home ./nodeDir`)
 
-### Options for Syncing
+### 3.1 Options for Syncing
 <!-- TODO: update accordingly with the new sync method when available -->
 
-You have two options for syncing your node:
+Due to us moving to the next phase of the testnet, we will either need operators 
+to sync from genesis or use a snapshot.
+
+You will see instructions below on how for both methods.
 
 1. **Sync through Network Peers**
    - Use the seed node configuration mentioned earlier in `config.toml`
@@ -143,9 +155,9 @@ You have two options for syncing your node:
    - Snapshots are periodic backups of the chain state
    - Find available snapshots at: <!-- Add link when available -->
    
->Note: Always verify snapshot sources and checksums before using them to ensure security.
+> ⚠️ **Important**: Always verify snapshot sources and checksums before using them to ensure security.
 
-## Monitoring Your Node
+## 4. Monitoring Your Node
 
 Your Babylon node exposes metrics through two Prometheus endpoints:
 - `Port 1317`: API metrics
@@ -167,7 +179,7 @@ Basic health monitoring should check:
 - Connected peers count
 - System resource usage (CPU, RAM, Disk)
 
-## Security Recommendations
+## 5. Security Recommendations
 
 1. **Secure Key Management**
    - Store keys in a separate, encrypted storage system
