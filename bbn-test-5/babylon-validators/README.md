@@ -5,17 +5,17 @@
 1. [Prerequisites](#1-prerequisites)
 2. [System Requirements](#2-system-requirements)
 3. [Key Management](#3-key-management) 
-   1. [CometBFT Validator Keys](#31-keys-for-a-comebft-validator)
+   1. [Keys for a CometBFT validator](#31-keys-for-a-cometbft-validator)
+      1. [Get Funds](#311-get-funds)
    2. [BLS Voting Keys](#32-keys-for-a-bls-voting)
       1. [What is BLS Voting](#321-what-is-bls-voting)
       2. [Create BLS Key](#322-create-bls-key)
-4. [Validator Configuration](#4-prepare-validator-configuration)
-5. [Creating Validator](#5-creating-validator)
+4. [Validator Configuration](#4-validator-configuration)
+5. [Creating a Validator](#5-creating-a-validator)
    1. [Verifying Validator Setup](#51-verifying-validator-setup)
    2. [Understanding Validator Status](#52-understanding-validator-status)
    3. [Managing Your Validator](#53-managing-your-validator)
 6. [Advanced Security Architecture](#6-advanced-security-architecture)
-   1. [Sentry Node Architecture](#61-sentry-node-architecture)
 7. [Enhanced Monitoring](#7-enhanced-monitoring)
    1. [Prometheus Configuration](#71-prometheus-configuration)
    2. [Basic Health Checks](#72-basic-health-checks)
@@ -28,7 +28,7 @@ Before setting up a validator, you'll need:
 2. Sufficient BBN tokens. For instructions on obtaining BBN tokens, see the 
 [Get Funds section](../babylon-node/README.md#get-funds) in the Node Setup Guide.
 
-## 2.System Requirements
+## 2. System Requirements
 
 Recommended specifications for running a Babylon validator node:
 <!-- TODO: RPC Nodes more ram is required add when we have completed node load test  -->
@@ -90,7 +90,7 @@ Make sure to securely store this information, particularly your address and
 private key details. Losing access to these credentials would mean losing 
 control of your validator and any staked funds.
 
-## Get Funds
+### 3.1.1 Get Funds
 
 To interact with the Babylon network, you'll need some BBN tokens to:
 1. Pay for transaction fees (gas)
@@ -108,8 +108,8 @@ You can obtain testnet tokens through two methods:
 > ⚡ **Important**: These are testnet tokens with no real value, used only for 
 > testing and development purposes.
 
-## Keys for a BLS Voting
-### What is BLS Voting
+### 3.2 Keys for a BLS Voting
+#### 3.2.1 What is BLS Voting
 
 Babylon validators are required to participate in
 [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) voting
@@ -124,7 +124,7 @@ The BLS voting mechanism achieves a significant reduction in the cost of
 checkpoints, while the epoching mechanism specifies a defined frequency
 for checkpointing in the Bitcoin blockchain.
 
-### Create BLS Key
+#### 3.2.2 Create BLS Key
 
 To generate your BLS key, you'll need to use your validator address from the 
 previous step. 
@@ -152,7 +152,7 @@ create compact, efficient proofs of consensus that can be later timestamped to B
 > material. Make sure to backup this file and store it securely, as it's 
 > essential for your validator's operation and cannot be recovered if lost.
 
-## Prepare Validator Configuration
+## 4. Validator Configuration
 
 Create your validator configuration file:
 
@@ -188,7 +188,7 @@ This command creates the configuration file with your validator settings:
 > ⚡ **Note**: The command will create the file if it doesn't exist. No need for 
 > a separate `touch` command.
 
-## Creating Validator
+## 5. Creating a Validator
 
 > ⚠️ **Important**: You will need a funded account for this step
 
@@ -223,7 +223,7 @@ Once approved, you'll receive a transaction hash and your validator
 operator address 
 (e.g., `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`).
 
-### Verifying Validator Setup
+### 5.1 Verifying Validator Setup
 
 To verify your validator setup, you can use the following steps:
 
@@ -258,7 +258,7 @@ validator:
   status: 1 tokens: "100"
 ```
 
-### Understanding Validator Status
+### 5.2 Understanding Validator Status
 
 Your validator enters the active set based on two conditions: 
 1. The completion of the current epoch (a network-wide time period for 
@@ -267,7 +267,7 @@ coordinating activities)
 
 When active, your status will show as `BOND_STATUS_BONDED`.
 
-### Managing Your Validator
+### 5.3 Managing Your Validator
 
 For delegation operations (`delegate`, `redelegate`, `unbond`, `cancel-unbond`),
 you must use the wrapped messages in the `checkpointing` and `epoching` modules.
@@ -276,7 +276,7 @@ This is because standard staking module messages are disabled in Babylon.
 For detailed information about these operations, visit our
 [documentation](https://docs.babylonlabs.io/docs/developer-guides/modules/epoching#delaying-wrapped-messages-to-the-end-of-epochs).
 
-## Advanced Security Architecture
+## 6. Advanced Security Architecture
 
 Validators should be run with additional security measures:
 
@@ -290,7 +290,7 @@ This architecture helps protect your validator from DDoS attacks and other
 network-level threats by ensuring your validator only communicates with trusted 
 sentry nodes rather than directly with the public network.
 
-## Enhanced Monitoring
+## 7. Enhanced Monitoring
 
 In addition to basic node monitoring, validators should:
 
@@ -306,7 +306,7 @@ In addition to basic node monitoring, validators should:
    - Network participation metrics
    - System resource thresholds
 
-### Prometheus Configuration
+### 7.1 Prometheus Configuration
 
 This information can be found in the [Node Monitoring](../babylon-node/README.md#monitoring-your-node) section.
 
@@ -323,7 +323,7 @@ scrape_configs:
 
 We do this to scrape metrics to monitor your validator's health and performance.
 
-### Basic Health Checks
+### 7.2 Basic Health Checks
 
 Implement these essential health checks:
 ```bash
