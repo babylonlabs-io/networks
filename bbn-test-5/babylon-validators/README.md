@@ -89,6 +89,9 @@ public key. Following is a sample output for the command:
 > mean losing control of your validator and any staked funds.
 
 #### 3.1.1 Get Funds
+<!-- TODO: we do not need the below section. We can just mention
+that the reader can source funds through the faucet
+when we ask them to submit a transactoin (later) -->
 
 Funds are necessary to interact with the Babylon network and run a validator. 
 There are a few actions that require funds:
@@ -150,7 +153,7 @@ create compact, efficient proofs of consensus that can be later timestamped to B
 > material. Make sure to backup this file and store it securely, as it's 
 > essential for your validator's operation and cannot be recovered if lost.
 
-## 4. Validator Configuration
+## 4. CometBFT Validator Configuration
 
 Next, we need to request the bls public key in order to create the validator 
 configuration file.
@@ -296,16 +299,20 @@ BOND_STATUS_BONDED = 3
 ### 5.3 Managing Your Validator
 
 For delegation operations (`delegate`, `redelegate`, `unbond`, `cancel-unbond`),
-you must use the wrapped messages in the `checkpointing` and `epoching` modules.
+you must use the wrapped messages in the `epoching` modules.
 This is because standard staking module messages are disabled in Babylon.
 
 For detailed information about these operations, visit our
+<!-- TODO: let's point to the github docs on github guides -->
 [documentation](https://docs.babylonlabs.io/docs/developer-guides/modules/epoching#delaying-wrapped-messages-to-the-end-of-epochs).
 
 ## 6. Advanced Security Architecture
 
 We suggest using additional security measures to protect your validator. The best 
 option is to implement a 
+<!-- TODO: there's no such docs. Do we need to outline this setup
+in this guide or can we guide to external maintained guides?
+We have a typical cosmos sdk setup after all. -->
 [Sentry Node Architecture](https://docs.babylonlabs.io/docs/validator-guides/advanced-security-architecture#sentry-node-architecture).
 
 This involves deploying sentry nodes as a protective layer around your 
@@ -317,60 +324,7 @@ This robust security architecture helps protect your validator from DDoS attacks
 and other network-level threats by ensuring your validator only communicates 
 with trusted sentry nodes rather than directly with the public network.
 
-## 7. Enhanced Monitoring
-
-In addition to basic node monitoring, validators should:
-
-1. Monitor validator performance metrics
-   - Signing performance
-   - Missed blocks
-   - Voting power changes
-   - BLS signing status
-
-2. Set up alerts for:
-   - Slashing conditions
-   - Validator status changes
-   - Network participation metrics
-   - System resource thresholds
-
-### 7.1 Prometheus Configuration
-
-This information can be found in the [Node Monitoring](../babylon-node/README.md#monitoring-your-node) section.
-
-Example Prometheus scrape configuration:
-
-```yaml
-scrape_configs:
-  - job_name: 'babylon_validator'
-    static_configs:
-      - targets: ['localhost:26660', 'localhost:1317']
-    metrics_path: '/metrics'
-    scrape_interval: 10s
-```
-
-We do this to scrape metrics to monitor your validator's health and performance.
-
-<!-- TODO add in the new details from devops -->
-
-### 7.2 Basic Health Checks
-
-Implement these essential health checks:
-```bash
-# Check node sync status
-curl -s localhost:26657/status | jq '.result.sync_info.catching_up'
-
-# Compare local vs network height
-curl -s localhost:26657/status | jq '.result.sync_info.latest_block_height'
-
-# Monitor validator signing status
-curl -s localhost:26657/consensus_state | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
-```
-
-We recommend setting up alerts when:
-- Node falls out of sync (`catching_up = true`)
-- Block height falls behind network
-- Missing validator signatures
-- Prometheus metrics become unavailable
+## 7. Conclusion
 
 Congratulations! Your validator is now part of the Babylon network. Remember to
 monitor your validator's performance and maintain good uptime to avoid
