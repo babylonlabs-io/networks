@@ -1,38 +1,11 @@
-# Babylon Networks
+## Babylon Networks
 
-Welcome to the Babylon Networks repository. This is your central hub 
-for network participation information, whether you're running a node, 
-operating as a validator, providing finality services, or participating 
+Welcome to the Babylon Networks repository. This is your central hub
+for network participation information, whether you're running a node,
+operating as a validator, providing finality services, or participating
 in the covenant committee.
 
-## Network Participants
-
-There are three types of participants in the Babylon network please see the 
-setup and configuration guides below:
-
-### Node Operators
-Run a Babylon node to participate in the network
-- [Node Setup Guide](babylon-node/README.md)
-
-### Validators
-Help secure the network by running a validator node and participating in consensus.
-- [Validator Setup Guide](babylon-validators/README.md)
-
-### Finality Providers
-Provide finality services for the Babylon network.
-- [Registration and Phase 2 Guide](https://github.com/babylonlabs-io/finality-provider/blob/sam/docs-fp/docs/finality-provider-operation.md)
-- [Network Information](finality-providers/README.md)
-- [Finality Provider Registry](finality-providers/registry/) 
-- [Finality Provider Signatures](finality-providers/sigs/)
-<!-- add the registry and sigs in when we have it -->
-
-### Covenant Committee
-Information for the Babylon Bitcoin Covenant Committee.
-- [Committee Overview](covenant-committee/README.md)
-
-## Additional Resources
-- [Documentation](https://docs.babylonlabs.io)
-- [Discord Community](https://discord.gg/babylonchain)
-- [GitHub Repository](https://github.com/babylonlabs-io)
-
-<!-- update links when we have them -->
+At the moment, the following networks are live.
+Head over to their pages for more details:
+* [Phase-1 mainnet](./bbn-1)
+* [Phase-2 testnet](./bbn-test-5)
