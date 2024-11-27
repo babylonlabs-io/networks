@@ -20,7 +20,7 @@ Help secure the network by running a validator node and participating in consens
 
 ### Finality Providers
 Provide finality services for the Babylon network.
-- [Registration and Phase 2 Guide](https://github.com/babylonlabs-io/finality-provider/blob/sam/docs-fp/docs/finality-provider-phase2.md)
+- [Registration and Phase 2 Guide](https://github.com/babylonlabs-io/finality-provider/blob/sam/docs-fp/docs/finality-provider-operation.md)
 - [Network Information](finality-providers/README.md)
 - [Finality Provider Registry](finality-providers/registry/) 
 - [Finality Provider Signatures](finality-providers/sigs/)

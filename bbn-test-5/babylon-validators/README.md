@@ -200,8 +200,7 @@ to replace the `pubkey` value with your actual validator public key.
 > ⚠️ **Important**: You will need a funded account for this step
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
-Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) 
-module for validator creation and management.
+Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
 
 The creation process requires your previously generated BLS key, 
 which should be located at `<path>/config/priv_validator_key.json`, 
@@ -220,9 +219,10 @@ babylond tx checkpointing create-validator \
     --keyring-backend <keyring-backend>
 ```
 
+Parameters:
 - `--chain-id`: The network identifier
 - `--gas`: Set to "auto" to automatically calculate the gas needed
-- `--gas-adjustment`: A multiplier for the estimated gas (1.5 adds 50% extra for safety)
+- `--gas-adjustment`: A multiplier for the estimated gas 
 - `--gas-prices`: Transaction fee in ubbn per unit of gas
 - `--from`: Your key name or address that will sign and pay for this transaction
 
@@ -349,6 +349,8 @@ scrape_configs:
 ```
 
 We do this to scrape metrics to monitor your validator's health and performance.
+
+<!-- TODO add in the new details from devops -->
 
 ### 7.2 Basic Health Checks
 
