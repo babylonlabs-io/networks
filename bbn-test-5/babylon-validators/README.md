@@ -90,7 +90,7 @@ Make sure to securely store this information, particularly your address and
 private key details. Losing access to these credentials would mean losing 
 control of your validator and any staked funds.
 
-### 3.1.1 Get Funds
+#### 3.1.1 Get Funds
 
 To interact with the Babylon network, you'll need some BBN tokens to:
 1. Pay for transaction fees (gas)
@@ -338,7 +338,7 @@ curl -s localhost:26657/consensus_state | jq '.result.round_state.height_vote_se
 ```
 
 We recommend setting up alerts when:
-- Node falls out of sync (catching_up = true)
+- Node falls out of sync (`catching_up = true`)
 - Block height falls behind network
 - Missing validator signatures
 - Prometheus metrics become unavailable

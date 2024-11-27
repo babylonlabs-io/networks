@@ -60,7 +60,7 @@ configuration directory. This command will generate several important configurat
 including `app.toml`, `client.toml`, and `genesis.json`:
 
 ```shell
-babylond init <moniker> --chain-id bbn-test-5 --home <path> --keyring-backend <keyring-backend>
+babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
 Parameters:
@@ -200,7 +200,7 @@ Basic health monitoring should check:
    - Ensure adequate disk space for chain growth
    - Set up alerts for resource thresholds
 
-## Next Steps
+## 6.Next Steps
 
 For information about becoming a Finality Provider in the Babylon network, 
 see our [Finality Provider Guide](../babylon-validators/README.md).
