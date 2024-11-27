@@ -6,9 +6,9 @@
 2. [Setup Node Home Directory and Configuration](#2-setup-your-node-home-directory-and-configuration)
 3. [Sync Node](#3-sync-node)
    1. [Options for Syncing](#31-options-for-syncing)
-5. [Monitoring Your Node](#5-monitoring-your-node)
-6. [Security Recommendations](#6-security-recommendations)
-7. [Next Steps](#7-next-steps)
+4. [Monitoring Your Node](#4-monitoring-your-node)
+5. [Security Recommendations](#5-security-recommendations)
+6. [Next Steps](#6-next-steps)
 
 ## 1. Install Babylon Binary 
 
@@ -119,7 +119,7 @@ Additionally, verify that the `chain-id` in the genesis file matches the one use
 your initialization command (`bbn-test-5`). This ensures your node connects 
 to the correct network.
 
-## 3.Sync Node
+## 3. Sync Node
 
 We are now ready to sync the node, to this run the following command:
 

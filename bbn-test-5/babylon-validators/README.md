@@ -2,23 +2,23 @@
 
 ## Table of Contents
 
-1. [Prerequisites](#1prerequisites)
-2. [System Requirements](#2system-requirements)
-3. [Key Management](#3-key-management)
-   3.1 [CometBFT Validator Keys](#31-keys-for-a-comebft-validator)
-   3.2 [BLS Voting Keys](#32-keys-for-a-bls-voting)
-     3.2.1 [What is BLS Voting](#321-what-is-bls-voting)
-     3.2.2 [Create BLS Key](#322-create-bls-key)
-  4. [Validator Configuration](#4-prepare-validator-configuration)
+1. [Prerequisites](#1-prerequisites)
+2. [System Requirements](#2-system-requirements)
+3. [Key Management](#3-key-management) 
+   1. [CometBFT Validator Keys](#31-keys-for-a-comebft-validator)
+   2. [BLS Voting Keys](#32-keys-for-a-bls-voting)
+      1. [What is BLS Voting](#321-what-is-bls-voting)
+      2. [Create BLS Key](#322-create-bls-key)
+4. [Validator Configuration](#4-prepare-validator-configuration)
 5. [Creating Validator](#5-creating-validator)
-   5.1 [Verifying Validator Setup](#51-verifying-validator-setup)
-   5.2 [Understanding Validator Status](#52-understanding-validator-status)
-   5.3 [Managing Your Validator](#53-managing-your-validator)
+   1. [Verifying Validator Setup](#51-verifying-validator-setup)
+   2. [Understanding Validator Status](#52-understanding-validator-status)
+   3. [Managing Your Validator](#53-managing-your-validator)
 6. [Advanced Security Architecture](#6-advanced-security-architecture)
-   6.1 [Sentry Node Architecture](#61-sentry-node-architecture)
+   1. [Sentry Node Architecture](#61-sentry-node-architecture)
 7. [Enhanced Monitoring](#7-enhanced-monitoring)
-   7.1 [Prometheus Configuration](#71-prometheus-configuration)
-   7.2 [Basic Health Checks](#72-basic-health-checks)
+   1. [Prometheus Configuration](#71-prometheus-configuration)
+   2. [Basic Health Checks](#72-basic-health-checks)
 
 ## 1. Prerequisites
 
@@ -54,7 +54,7 @@ functions: it signs blocks during the consensus process, validates transactions,
 and manages your validator's operations on the network. Creating and securing this 
 key is one of the most important steps in setting up your validator.
 
-We will be using [Cosmos SDK]https://docs.cosmos.network/v0.52/user/run-node/keyring) 
+We will be using [Cosmos SDK](https://docs.cosmos.network/v0.52/user/run-node/keyring) 
 backends for key storage, which offer support for the following 
 keyrings:
 
@@ -105,8 +105,8 @@ You can obtain testnet tokens through two methods:
 2. Join our Discord server and visit the `#faucet` channel: 
 [Discord Server](https://discord.com/channels/1046686458070700112/1075371070493831259)
 
-Note: These are testnet tokens with no real value, used only for testing 
-and development purposes.
+> ⚡ **Important**: These are testnet tokens with no real value, used only for 
+> testing and development purposes.
 
 ## Keys for a BLS Voting
 ### What is BLS Voting
@@ -148,9 +148,9 @@ This key will be used automatically by your validator software when it needs
 to participate in epoch-end signature collection. The BLS signatures help 
 create compact, efficient proofs of consensus that can be later timestamped to Bitcoin.
 
-Important: The `priv_validator_key.json` file contains sensitive key material. 
-Make sure to backup this file and store it securely, as it's essential for your 
-validator's operation and cannot be recovered if lost.
+> ⚠️ **Important**: The `priv_validator_key.json` file contains sensitive key 
+> material. Make sure to backup this file and store it securely, as it's 
+> essential for your validator's operation and cannot be recovered if lost.
 
 ## Prepare Validator Configuration
 
@@ -185,14 +185,16 @@ This command creates the configuration file with your validator settings:
 - `security`: (Optional) Security contact email
 - `details`: (Optional) Description of your validator
 
-> Note: The command will create the file if it doesn't exist. No need for a separate `touch` command.
+> ⚡ **Note**: The command will create the file if it doesn't exist. No need for 
+> a separate `touch` command.
 
 ## Creating Validator
 
-> ⚠️ **Important:** You will need a funded account for this step
+> ⚠️ **Important**: You will need a funded account for this step
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
-Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
+Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) 
+module for validator creation and management.
 
 The creation process requires your previously generated BLS key, 
 which should be located at `<path>/config/priv_validator_key.json`, 
