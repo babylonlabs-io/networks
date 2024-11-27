@@ -46,8 +46,6 @@ Requirements may vary based on network activity and your operational needs.
 ## 3. Key Management
 ### 3.1 Keys for a CometBFT validator
 
->Note: if you already have set up a key, you can skip this section.
-
 The validator key is a fundamental component of your validator's identity 
 within the Babylon network. This cryptographic key-pair serves multiple critical 
 functions: it signs blocks during the consensus process, validates transactions, 
@@ -62,7 +60,6 @@ keyrings:
 - `os` uses the system's secure keyring and will prompt for a passphrase at startup.
 - `file` encrypts the keyring with a passphrase and stores it on disk.
 
-
 To generate your validator key, use the following command:
 
 ```shell
@@ -73,7 +70,8 @@ Parameters:
 The `<name>` specifies a unique identifier for the key.
 - `--home` specifies the directory where your node files will be stored 
   (e.g. `--home ./nodeDir`)
-- `--keyring-backend` specifies the keyring backend to use, can be `test`, `file`, or `os`.
+- `--keyring-backend` specifies the keyring backend to use, can be `test`, `file`, 
+or `os`.
 
 The execution result displays the address of the newly generated key and its 
 public key. Following is a sample output for the command:
@@ -86,19 +84,19 @@ public key. Following is a sample output for the command:
   type: local
 ```
 
-Make sure to securely store this information, particularly your address and 
-private key details. Losing access to these credentials would mean losing 
-control of your validator and any staked funds.
+> **Security Tip 🔒**: Make sure to securely store this information, particularly 
+> your address and private key details. Losing access to these credentials would 
+> mean losing control of your validator and any staked funds.
 
 #### 3.1.1 Get Funds
 
-To interact with the Babylon network, you'll need some BBN tokens to:
+Funds are necessary to interact with the Babylon network and run a validator. 
+There are a few actions that require funds:
 1. Pay for transaction fees (gas)
 2. Send transactions
 3. Participate in network activities
 
 You can obtain testnet tokens through two methods:
-
 1. Request funds from the Babylon Testnet Faucet 
 [here](#tbd) 
 <!-- add link to faucet -->
@@ -135,10 +133,10 @@ Run this command:
 babylond create-bls-key <address>
 ```
 
-Replace `<address>` with your validator address from the earlier keyring 
+Replace `<address>` with your address from the earlier keyring 
 generation (it should look similar to `bbn1kvajzzn6gtfn2x6ujfvd6q54etzxnqg7pkylk9`). 
 
-The system will automatically:
+The above command will:
 1. Generate a new BLS key pair
 2. Associate it with your validator address
 3. Store it in your node's configuration file at 
@@ -154,26 +152,37 @@ create compact, efficient proofs of consensus that can be later timestamped to B
 
 ## 4. Validator Configuration
 
-Create your validator configuration file:
+Next, we need to request the bls public key in order to create the validator 
+configuration file.
 
 ```shell
-cat > <path>/config/validator.json << EOF
+babylond tendermint show-validator --home <home>
+```
+
+It will output a public key in the following format:
+
+```shell
+{"@type":"/cosmos.crypto.ed25519.PubKey","key":"0Wlt7ZPl0uvv7onsw4gP8FSQJUk986zMcOdWselDPM4="}
+```
+
+Use the output of the command above and replace the `pubkey` value in the example below. 
+Then subsequently run the following command to create the validator configuration file:
+
+```shell
+cat > <home>/config/validator.json << EOF
 {
-  "pubkey": $(cat pubkey.json),
-  "amount": "1000ubbn",
+  "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"0Wlt7ZPl0uvv7onsw4gP8FSQJUk986zMcOdWselDPM4="},
+  "amount": "1000000ubbn",
   "moniker": "my-validator",
   "commission-rate": "0.10",
   "commission-max-rate": "0.20",
   "commission-max-change-rate": "0.01",
   "min-self-delegation": "1"
-  "website": "https://myweb.site",
-  "security": "security-contact@gmail.com",
-  "details": "description of your validator",
 }
 EOF
 ```
 
-This command creates the configuration file with your validator settings:
+Parameters:
 - `pubkey`: Your validator's public key
 - `amount`: Initial self-delegation amount
 - `moniker`: Your validator's name/identifier
@@ -181,12 +190,10 @@ This command creates the configuration file with your validator settings:
 - `commission-max-rate`: Maximum commission rate allowed
 - `commission-max-change-rate`: Maximum daily commission change rate
 - `min-self-delegation`: Minimum amount you must keep self-delegated
-- `website`: (Optional) Your validator's website
-- `security`: (Optional) Security contact email
-- `details`: (Optional) Description of your validator
 
-> ⚡ **Note**: The command will create the file if it doesn't exist. No need for 
-> a separate `touch` command.
+If you prefer to add this manually or are having issues, another option is to 
+create a `validator.json` file and then paste the above json into it but remember
+to replace the `pubkey` value with your actual validator public key.
 
 ## 5. Creating a Validator
 
@@ -204,12 +211,13 @@ To create your validator, run the following command:
 
 ```shell 
 babylond tx checkpointing create-validator \
-    ./<path>/config/validator.json \
+    ./<home-path>/config/validator.json \
     --chain-id bbn-test-5 \
     --gas "auto" \
     --gas-adjustment 1.5 \
     --gas-prices "0.005ubbn" \
     --from <your-key-name>
+    --keyring-backend <keyring-backend>
 ```
 
 - `--chain-id`: The network identifier
@@ -230,7 +238,7 @@ To verify your validator setup, you can use the following steps:
 First, get your validator's operator address using your Babylon address: 
 
 ```shell
-babylond keys show <your-key-name> --address --bech val --home <path> --keyring-backend test
+babylond keys show <your-key-name> --address --bech val --home <path> --keyring-backend <keyring-backend>
 ```
 
 For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k85teavxmuq`, 
@@ -239,10 +247,10 @@ the operator address is `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`.
 Next, inspect your validator's details: 
 
 ```shell 
-babylond query staking validator <validator-operator-address> --home <path>
+babylond query staking validator <validator-operator-address>
 ```
 
-The output should return your validator's configuration.
+The output should return the selected validator's configuration.
 
 ```yaml 
 validator:
@@ -255,7 +263,16 @@ validator:
     moniker: "my-validator" 
     website: "https://myweb.site" 
     security_contact: "my-validator0@gmail.com"
-  status: 1 tokens: "100"
+  status: 1 
+  tokens: "100"
+```
+
+Usually when first creating a validator, the immediate status will be 
+`BOND_STATUS_UNBONDED`. To see your validators status change you will need to 
+wait for the epoch to end.
+
+```shell 
+babylond query staking validators
 ```
 
 ### 5.2 Understanding Validator Status
@@ -266,6 +283,15 @@ coordinating activities)
 2. Having sufficient stake to qualify for the active set.
 
 When active, your status will show as `BOND_STATUS_BONDED`.
+
+The other status codes are:
+
+```shell
+BOND_STATUS_UNSPECIFIED = 0
+BOND_STATUS_UNBONDED = 1
+BOND_STATUS_UNBONDING = 2
+BOND_STATUS_BONDED = 3
+```
 
 ### 5.3 Managing Your Validator
 
@@ -278,17 +304,18 @@ For detailed information about these operations, visit our
 
 ## 6. Advanced Security Architecture
 
-Validators should be run with additional security measures:
+We suggest using additional security measures to protect your validator. The best 
+option is to implement a 
+[Sentry Node Architecture](https://docs.babylonlabs.io/docs/validator-guides/advanced-security-architecture#sentry-node-architecture).
 
-**Sentry Node Architecture**  
-For enhanced security, validators should implement a sentry node architecture. 
 This involves deploying sentry nodes as a protective layer around your 
-validator node, following the established [Cosmos Sentry Node Architecture](https://forum.cosmos.network/t/sentry-node-architecture-overview/454). 
-The sentry nodes act as a buffer between your validator and the public network, 
-with a private network maintained between your validator and its sentry nodes. 
-This architecture helps protect your validator from DDoS attacks and other 
-network-level threats by ensuring your validator only communicates with trusted 
-sentry nodes rather than directly with the public network.
+validator node. The sentry nodes act as a buffer between your validator and the 
+public network, with a private network maintained between your validator and its 
+sentry nodes. 
+
+This robust security architecture helps protect your validator from DDoS attacks 
+and other network-level threats by ensuring your validator only communicates 
+with trusted sentry nodes rather than directly with the public network.
 
 ## 7. Enhanced Monitoring
 
