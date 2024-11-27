@@ -1,16 +1,14 @@
 # Babylon Node Setup
 
-# Babylon Node Setup
-
 ## Table of Contents
 
 1. [Install Babylon Binary](#1-install-babylon-binary)
 2. [Setup Node Home Directory and Configuration](#2-setup-your-node-home-directory-and-configuration)
 3. [Sync Node](#3-sync-node)
    1. [Options for Syncing](#31-options-for-syncing)
-5. [Monitoring Your Node](#monitoring-your-node)
-6. [Security Recommendations](#security-recommendations)
-7. [Next Steps](#next-steps)
+5. [Monitoring Your Node](#5-monitoring-your-node)
+6. [Security Recommendations](#6-security-recommendations)
+7. [Next Steps](#7-next-steps)
 
 ## 1. Install Babylon Binary 
 

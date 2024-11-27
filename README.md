@@ -5,8 +5,10 @@ for network participation information, whether you're running a node,
 operating as a validator, providing finality services, or participating 
 in the covenant committee.
 
-
 ## Network Participants
+
+There are three types of participants in the Babylon network please see the 
+setup and configuration guides below:
 
 ### Node Operators
 Run a Babylon node to participate in the network
