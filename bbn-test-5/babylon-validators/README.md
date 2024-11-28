@@ -89,25 +89,11 @@ public key. Following is a sample output for the command:
 > mean losing control of your validator and any staked funds.
 
 #### 3.1.1 Get Funds
-<!-- TODO: we do not need the below section. We can just mention
-that the reader can source funds through the faucet
-when we ask them to submit a transactoin (later) -->
 
 Funds are necessary to interact with the Babylon network and run a validator. 
-There are a few actions that require funds:
-1. Pay for transaction fees (gas)
-2. Send transactions
-3. Participate in network activities
+To source funds you will need to request them from the Babylon Testnet Faucet.
 
-You can obtain testnet tokens through two methods:
-1. Request funds from the Babylon Testnet Faucet 
-[here](#tbd) 
-<!-- add link to faucet -->
-2. Join our Discord server and visit the `#faucet` channel: 
-[Discord Server](https://discord.com/channels/1046686458070700112/1075371070493831259)
-
-> ⚡ **Important**: These are testnet tokens with no real value, used only for 
-> testing and development purposes.
+<!-- TODO: add information or commands on how to request funds from the faucet -->
 
 ### 3.2 Keys for a BLS Voting
 #### 3.2.1 What is BLS Voting
@@ -298,22 +284,35 @@ BOND_STATUS_BONDED = 3
 
 ### 5.3 Managing Your Validator
 
-For delegation operations (`delegate`, `redelegate`, `unbond`, `cancel-unbond`),
-you must use the wrapped messages in the `epoching` modules.
-This is because standard staking module messages are disabled in Babylon.
+For validator operations, use the standard Cosmos SDK staking module commands:
 
-For detailed information about these operations, visit our
-<!-- TODO: let's point to the github docs on github guides -->
-[documentation](https://docs.babylonlabs.io/docs/developer-guides/modules/epoching#delaying-wrapped-messages-to-the-end-of-epochs).
+```shell
+# Delegate tokens to a validator
+babylond tx staking delegate [validator-addr] [amount] --from <delegator-key> --chain-id <chain-id>
+```
+
+```shell
+# Redelegate tokens from one validator to another
+babylond tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] --from <delegator-key> --chain-id <chain-id>
+```
+
+```shell
+# Unbond tokens from a validator
+babylond tx staking unbond [validator-addr] [amount] --from <delegator-key> --chain-id <chain-id>
+```
+
+We use wrapped messages for BTC staking operations, where operations need to be 
+synchronized with Bitcoin epochs. For more information on the epoching module and 
+wrapped messages, see the [Epoching Module](https://github.com/babylonlabs-io/babylon/blob/main/x/epoching/README.md?plain=1#L150-L155) documentation. 
+Regular validator operations use the standard Cosmos SDK staking commands, see 
+the [Cosmos SDK Staking documentation](https://docs.cosmos.network/main/build/modules/staking) 
+for more information.
+
 
 ## 6. Advanced Security Architecture
 
 We suggest using additional security measures to protect your validator. The best 
-option is to implement a 
-<!-- TODO: there's no such docs. Do we need to outline this setup
-in this guide or can we guide to external maintained guides?
-We have a typical cosmos sdk setup after all. -->
-[Sentry Node Architecture](https://docs.babylonlabs.io/docs/validator-guides/advanced-security-architecture#sentry-node-architecture).
+option is to implement a [Sentry Node Architecture](https://hub.cosmos.network/main/validators/security#sentry-nodes-ddos-protection).
 
 This involves deploying sentry nodes as a protective layer around your 
 validator node. The sentry nodes act as a buffer between your validator and the 

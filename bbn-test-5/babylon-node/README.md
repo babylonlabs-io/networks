@@ -3,12 +3,8 @@
 ## Table of Contents
 
 1. [Install Babylon Binary](#1-install-babylon-binary)
-2. [Setup Node Home Directory and Configuration](#2-setup-your-node-home-directory-and-configuration)
+2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
 3. [Sync Node](#3-sync-node)
-   1. [Options for Syncing](#31-options-for-syncing)
-4. [Monitoring Your Node](#4-monitoring-your-node)
-5. [Security Recommendations](#5-security-recommendations)
-6. [Next Steps](#6-next-steps)
 
 ## 1. Install Babylon Binary 
 
@@ -146,5 +142,7 @@ Parameters:
 - `--home`: Sets the directory for the node's data and configuration files and 
    dependent on where the files were generated for you from the initialization 
    (e.g. `--home ./nodeDir`)
+- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve performance. 
+   Not recommended for validator nodes.
 
-<!-- TODO: let's add a congrats message for setting up the node -->
+Congratulations! Your Babylon node is now set up and syncing with the network.
