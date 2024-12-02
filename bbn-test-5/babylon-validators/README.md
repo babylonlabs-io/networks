@@ -22,11 +22,8 @@
 
 ## 1. Prerequisites
 
-Before setting up a validator, you'll need:
-1. A fully synced Babylon node. For node setup instructions, see our 
-[Node Setup Guide](../babylon-node/README.md)
-2. Sufficient BBN tokens. For instructions on obtaining BBN tokens, see the 
-[Get Funds section](../babylon-node/README.md#get-funds) in the Node Setup Guide.
+Before setting up a validator, you'll need a fully synced Babylon node. For 
+node setup instructions, see our [Node Setup Guide](../babylon-node/README.md).
 
 ## 2. System Requirements
 
@@ -44,7 +41,7 @@ These are reference specifications for a production validator.
 Requirements may vary based on network activity and your operational needs.
 
 ## 3. Key Management
-### 3.1 Keys for a CometBFT validator
+### 3.1 Key for CometBFT consensus
 
 The validator key is a fundamental component of your validator's identity 
 within the Babylon network. This cryptographic key-pair serves multiple critical 
@@ -52,7 +49,7 @@ functions: it signs blocks during the consensus process, validates transactions,
 and manages your validator's operations on the network. Creating and securing this 
 key is one of the most important steps in setting up your validator.
 
-We will be using [Cosmos SDK](https://docs.cosmos.network/v0.52/user/run-node/keyring) 
+We will be using [Cosmos SDK](https://docs.cosmos.network/v0.50/user/run-node/keyring) 
 backends for key storage, which offer support for the following 
 keyrings:
 
@@ -84,9 +81,13 @@ public key. Following is a sample output for the command:
   type: local
 ```
 
-> **Security Tip 🔒**: Make sure to securely store this information, particularly 
-> your address and private key details. Losing access to these credentials would 
-> mean losing control of your validator and any staked funds.
+> **🔒 Security Tip**: Make sure to securely store this information, particularly 
+> your private key details. Losing access to the private key would 
+> mean losing control of your validator.
+
+Before creating a validator, you will need sufficient BBN tokens. For instructions 
+on obtaining BBN tokens, see the [Get Funds section](../babylon-node/README.md#get-funds) 
+in the Node Setup Guide.
 
 #### 3.1.1 Get Funds
 
@@ -95,14 +96,14 @@ To source funds you will need to request them from the Babylon Testnet Faucet.
 
 <!-- TODO: add information or commands on how to request funds from the faucet -->
 
-### 3.2 Keys for a BLS Voting
+### 3.2  Key for BLS Voting
 #### 3.2.1 What is BLS Voting
 
 Babylon validators are required to participate in
 [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) voting
 at the end of each epoch.
 The Babylon blockchain defines epochs as a fixed period
-within the blockchain, defined or set by a number of blocks,
+within the blockchain, defined by a number of blocks,
 during which the validator set remains consistent. 
 At the end of the epoch,
 the validator BLS signatures are aggregated to create a compact checkpoint
@@ -138,11 +139,13 @@ create compact, efficient proofs of consensus that can be later timestamped to B
 > ⚠️ **Important**: The `priv_validator_key.json` file contains sensitive key 
 > material. Make sure to backup this file and store it securely, as it's 
 > essential for your validator's operation and cannot be recovered if lost.
+> Note that BLS keys are currently not supported by Horcrux or other remote signing 
+> solutions, so additional security measures should be considered for key management.
 
 ## 4. CometBFT Validator Configuration
 
-Next, we need to request the bls public key in order to create the validator 
-configuration file.
+First, we need to get the validator's consensus public key to create the 
+validator configuration file:
 
 ```shell
 babylond tendermint show-validator --home <home>
@@ -172,21 +175,24 @@ EOF
 ```
 
 Parameters:
-- `pubkey`: Your validator's public key
+- `pubkey`: Your validator's public key (the output you received before)
 - `amount`: Initial self-delegation amount
 - `moniker`: Your validator's name/identifier
-- `commission-rate`: Current commission rate 
-- `commission-max-rate`: Maximum commission rate allowed
+- `commission-rate`: Validator commission rate 
+- `commission-max-rate`: Specifies the maximum you can raise your commission in the future.
 - `commission-max-change-rate`: Maximum daily commission change rate
 - `min-self-delegation`: Minimum amount you must keep self-delegated
 
 If you prefer to add this manually or are having issues, another option is to 
 create a `validator.json` file and then paste the above json into it but remember
-to replace the `pubkey` value with your actual validator public key.
+to replace all values with the actual values you want to use.
 
 ## 5. Creating a Validator
 
 > ⚠️ **Important**: You will need a funded account for this step
+
+> ⚠️ **Important**: Please make sure to read through this section
+> as it might not work with your automations for creating validators.
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
 Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
@@ -257,7 +263,7 @@ validator:
 ```
 
 Usually when first creating a validator, the immediate status will be 
-`BOND_STATUS_UNBONDED`. To see your validators status change you will need to 
+`BOND_STATUS_UNBONDED`. To see your validator's status change you will need to 
 wait for the epoch to end.
 
 ```shell 
@@ -267,9 +273,9 @@ babylond query staking validators
 ### 5.2 Understanding Validator Status
 
 Your validator enters the active set based on two conditions: 
-1. The completion of the current epoch (a network-wide time period for 
-coordinating activities) 
-2. Having sufficient stake to qualify for the active set.
+1. Having sufficient stake to qualify for the active set.
+2. The completion of the epoch (a network-wide time period for 
+coordinating activities) in which your validator qualified for the active set.
 
 When active, your status will show as `BOND_STATUS_BONDED`.
 

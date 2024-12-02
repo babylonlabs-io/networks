@@ -57,9 +57,10 @@ babylond init <moniker> --chain-id bbn-test-5 --home <path>
 
 Parameters:
 - `<moniker>` is a unique identifier for your node (e.g. `node0`).
-- `--home` flag specifies the directory where your node files will be stored 
-   (e.g. `--home ./nodeDir`).
-- `--chain-id` is the chain ID of the Babylon chain you connect to (e.g. `bbn-test-5`)
+- `--home` *optional* flag that specifies the directory where your 
+node files will be stored (e.g. `--home ./nodeDir`).
+- `--chain-id` is the chain ID of the Babylon chain you connect to. You should 
+   use `bbn-test-5`. 
 
 After initialization, you'll need to modify the following configuration files:
 
@@ -67,7 +68,9 @@ After initialization, you'll need to modify the following configuration files:
 
 ```shell
 # Base configuration
+# Minimum gas prices that this node will accept
 minimum-gas-prices = "0.005ubbn"
+
 iavl-cache-size = 0
 iavl-disable-fastnode=true
 
@@ -100,9 +103,9 @@ your node. You can get it from:
 1. The Babylon Networks repository: [bbn-test-5](../genesis.tar.bz2)
 2. Or download directly using these commands:
 ```shell
-wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 # TODO: update this file name if necessary
+wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 
 tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
-mv genesis.json <path>/config/genesis.json #insert your --home <path>
+mv genesis.json <path>/config/genesis.json # insert the home directory of your node
 ```
 
 Additionally, verify that the `chain-id` in the genesis file matches the one used in 

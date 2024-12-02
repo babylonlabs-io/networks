@@ -22,7 +22,7 @@ We can fully link to our partners here.
 
 ## Network Participants
 
-There are three types of participants in the Babylon network.
+There are four types of participants in the Babylon network.
 Please see the setup and configuration guides below:
 
 - [Babylon Node Operators](babylon-node/README.md)
