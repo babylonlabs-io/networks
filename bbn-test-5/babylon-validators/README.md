@@ -220,6 +220,8 @@ Parameters:
 - `--gas-adjustment`: A multiplier for the estimated gas 
 - `--gas-prices`: Transaction fee in ubbn per unit of gas
 - `--from`: Your key name or address that will sign and pay for this transaction
+- `--keyring-backend`: Specifies the keyring backend to use for key management. 
+  We have used `test` in our example.
 
 Upon successful creation, you'll be asked to approve the transaction. 
 Once approved, you'll receive a transaction hash and your validator
