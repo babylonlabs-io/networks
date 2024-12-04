@@ -120,7 +120,7 @@ previous step.
 Run this command:
 
 ```shell
-babylond create-bls-key <address>
+babylond create-bls-key <address> --home <path>
 ```
 
 Replace `<address>` with your address from the earlier keyring 
@@ -157,7 +157,8 @@ It will output a public key in the following format:
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"0Wlt7ZPl0uvv7onsw4gP8FSQJUk986zMcOdWselDPM4="}
 ```
 
-Use the output of the command above and replace the `pubkey` value in the example below. 
+Use the output of the command above and replace the `pubkey` and `<home>` 
+value in the example below. 
 Then subsequently run the following command to create the validator configuration file:
 
 ```shell
@@ -197,9 +198,12 @@ to replace all values with the actual values you want to use.
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
 Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
 
-The creation process requires your previously generated BLS key, 
-which should be located at `<path>/config/priv_validator_key.json`, 
+The creation process requires your previously generated BLS key and your validator 
+key, which should be located at `<path>/config/validator.json`, 
 where `<path>` is the `--home` directory you specified when setting up your node.
+
+The BLS key in the file is required as validators use their BLS key to sign 
+checkpoint messages, which are aggregated and submitted to Bitcoin for finality.
 
 To create your validator, run the following command:
 
@@ -210,8 +214,9 @@ babylond tx checkpointing create-validator \
     --gas "auto" \
     --gas-adjustment 1.5 \
     --gas-prices "0.005ubbn" \
-    --from <your-key-name>
-    --keyring-backend <keyring-backend>
+    --from <your-key-name> \
+    --keyring-backend <keyring-backend> \
+    --home <path>
 ```
 
 Parameters:
@@ -222,6 +227,7 @@ Parameters:
 - `--from`: Your key name or address that will sign and pay for this transaction
 - `--keyring-backend`: Specifies the keyring backend to use for key management. 
   We have used `test` in our example.
+- `--home`: Specifies the directory where your node files will be stored 
 
 Upon successful creation, you'll be asked to approve the transaction. 
 Once approved, you'll receive a transaction hash and your validator
@@ -241,7 +247,14 @@ babylond keys show <your-key-name> --address --bech val --home <path> --keyring-
 For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k85teavxmuq`, 
 the operator address is `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`. 
 
-Next, inspect your validator's details: 
+For the next step, we will have to wait till the beginning of the next epoch 
+(this will take approx 10 minutes) for the command to be valid. This is due to 
+Babylon's epoched staking design, where the blockchain is divided into epochs.
+Messages that affect the validator set are delayed to the end of each epoch for 
+execution. Meaning that your validator creation transaction will be processed 
+at the end of the current epoch, and you won't be able to query your validator 
+details until the next epoch begins. In the meantime, you can verify your 
+transaction was successful by checking its hash.
 
 ```shell 
 babylond query staking validator <validator-operator-address>
@@ -268,10 +281,6 @@ Usually when first creating a validator, the immediate status will be
 `BOND_STATUS_UNBONDED`. To see your validator's status change you will need to 
 wait for the epoch to end.
 
-```shell 
-babylond query staking validators
-```
-
 ### 5.2 Understanding Validator Status
 
 Your validator enters the active set based on two conditions: 
@@ -292,44 +301,50 @@ BOND_STATUS_BONDED = 3
 
 ### 5.3 Managing Your Validator
 
+> ⚠️ **Important**: Babylon uses the `epoching` module to wrap staking 
+> operations. 
+> All staking-related transactions (delegate, redelegate, unbond) must be 
+> executed through the `x/epoching` module, the `x/epoching` module wraps the 
+> commands of `x/staking` and all staking related transactions will take 
+> into effect at the end of the epoch.
+
 For validator operations, use the standard Cosmos SDK staking module commands:
 
 ```shell
 # Delegate tokens to a validator
-babylond tx staking delegate [validator-addr] [amount] --from <delegator-key> --chain-id <chain-id>
-```
+babylond tx epoching delegate [validator-addr] [amount] \
+    --from <delegator-key> \
+    --chain-id <chain-id>
 
-```shell
 # Redelegate tokens from one validator to another
-babylond tx staking redelegate [src-validator-addr] [dst-validator-addr] [amount] --from <delegator-key> --chain-id <chain-id>
-```
+babylond tx epoching redelegate [src-validator-addr] [dst-validator-addr] [amount] \
+    --from <delegator-key> \
+    --chain-id <chain-id>
 
-```shell
 # Unbond tokens from a validator
-babylond tx staking unbond [validator-addr] [amount] --from <delegator-key> --chain-id <chain-id>
+babylond tx epoching unbond [validator-addr] [amount] \
+    --from <delegator-key> \
+    --chain-id <chain-id>
 ```
 
-We use wrapped messages for BTC staking operations, where operations need to be 
-synchronized with Bitcoin epochs. For more information on the epoching module and 
-wrapped messages, see the [Epoching Module](https://github.com/babylonlabs-io/babylon/blob/main/x/epoching/README.md?plain=1#L150-L155) documentation. 
-Regular validator operations use the standard Cosmos SDK staking commands, see 
-the [Cosmos SDK Staking documentation](https://docs.cosmos.network/main/build/modules/staking) 
-for more information.
-
+For more information on the epoching module and wrapped messages, see the 
+[Epoching Module](https://github.com/babylonlabs-io/babylon/blob/main/x/epoching/README.md?plain=1#L150-L155) 
+documentation. 
 
 ## 6. Advanced Security Architecture
 
-We suggest using additional security measures to protect your validator. The best 
-option is to implement a [Sentry Node Architecture](https://hub.cosmos.network/main/validators/security#sentry-nodes-ddos-protection).
+Each validator's needs significantly vary based on their operational needs and 
+the environment they are running in. Before setting up your validator 
+infrastructure, take time to research different security architectures, including 
+the [Sentry Node Architecture](https://hub.cosmos.network/main/validators/security#sentry-nodes-ddos-protection). 
+This setup involves using intermediary nodes to protect your validator from 
+direct exposure to the public network.
 
-This involves deploying sentry nodes as a protective layer around your 
-validator node. The sentry nodes act as a buffer between your validator and the 
-public network, with a private network maintained between your validator and its 
-sentry nodes. 
-
-This robust security architecture helps protect your validator from DDoS attacks 
-and other network-level threats by ensuring your validator only communicates 
-with trusted sentry nodes rather than directly with the public network.
+Handling of the `priv_validator_key.json` file is critical. This file contains 
+sensitive private key material vital for your validator's operation. 
+If lost or compromised, it could lead to severe consequences including slashing 
+penalties. Store this file securely using encrypted storage and maintain 
+robust backup procedures.
 
 ## 7. Conclusion
 
