@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Anchorage Digital",
+    "identity": "17D0A114A90FD55F",
+    "website": "https://www.anchorage.com/",
+    "security_contact": "babylon-operator@anchorage.com",
+    "details": "Anchorage Digital, a regulated crypto platform, offers institutions an unparalleled combination of secure custody, regulatory compliance, product breadth, and client service."
+  },
+  "eots_pk": "c405fd997340c532a3b788b3186e779ed7cf9b5f2d6b8c8ad2351d82cfd0fb87",
+  "commission": "0.05"
+}
