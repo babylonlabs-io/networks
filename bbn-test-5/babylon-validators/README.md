@@ -5,20 +5,22 @@
 1. [Prerequisites](#1-prerequisites)
 2. [System Requirements](#2-system-requirements)
 3. [Key Management](#3-key-management) 
-   1. [Keys for a CometBFT validator](#31-keys-for-a-cometbft-validator)
+   1. [Key for CometBFT consensus](#31-key-for-cometbft-consensus)
       1. [Get Funds](#311-get-funds)
-   2. [BLS Voting Keys](#32-keys-for-a-bls-voting)
+   2. [Key for BLS Voting](#32-key-for-bls-voting)
       1. [What is BLS Voting](#321-what-is-bls-voting)
       2. [Create BLS Key](#322-create-bls-key)
-4. [Validator Configuration](#4-validator-configuration)
+4.  [CometBFT Validator Configuration](#4-cometbft-validator-configuration)
 5. [Creating a Validator](#5-creating-a-validator)
    1. [Verifying Validator Setup](#51-verifying-validator-setup)
    2. [Understanding Validator Status](#52-understanding-validator-status)
    3. [Managing Your Validator](#53-managing-your-validator)
 6. [Advanced Security Architecture](#6-advanced-security-architecture)
-7. [Enhanced Monitoring](#7-enhanced-monitoring)
+7. [Conclusion](#7-conclusion)
+<!-- 7. [Enhanced Monitoring](#7-enhanced-monitoring)
    1. [Prometheus Configuration](#71-prometheus-configuration)
-   2. [Basic Health Checks](#72-basic-health-checks)
+   2. [Basic Health Checks](#72-basic-health-checks) -->
+
 
 ## 1. Prerequisites
 
@@ -96,7 +98,7 @@ To source funds you will need to request them from the Babylon Testnet Faucet.
 
 <!-- TODO: add information or commands on how to request funds from the faucet -->
 
-### 3.2  Key for BLS Voting
+### 3.2 Key for BLS Voting
 #### 3.2.1 What is BLS Voting
 
 Babylon validators are required to participate in
