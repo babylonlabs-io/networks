@@ -1,10 +1,10 @@
 {
   "description": {
-    "moniker": "Unifra-Network",
+    "moniker": "BabylonScan",
     "identity": "",
     "website": "https://unifra.io",
-    "security_contact": "devops@unifra.io",
-    "details": "Unifra provides open, reliable infrastructure service for all web3 developers"
+    "security_contact": "al@unifra.io",
+    "details": "Everything about Babylon and its ecosystem"
   },
   "eots_pk": "ed555025e04ae3825e3618b959fedeaa281bc91c0d5e5bda5ae7a7e7c002ae58",
   "commission": "0.03"
