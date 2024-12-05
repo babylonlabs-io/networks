@@ -4,10 +4,11 @@
 
 1. [Install Babylon Binary](#1-install-babylon-binary)
 2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
-3. [Sync Node](#3-sync-node)
+3. [Prepare for sync](#3-sync-node)
   1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
   2. [Sync through state sync](#32-sync-through-state-sync)
   3. [Sync from scratch](#33-sync-from-scratch)
+4. [Start the node](#4-start-the-node)
 
 ## 1. Install Babylon Binary 
 
@@ -115,7 +116,7 @@ Additionally, verify that the `chain-id` in the genesis file matches the one use
 your initialization command (`bbn-test-5`). This ensures your node connects 
 to the correct network.
 
-## 3. Sync Node
+## 3. Prepare for sync
 
 <!-- TODO: Specify height and version -->
 Testnet-5 underwent a software upgrade at height `X`, upgrading babylond from
@@ -141,26 +142,8 @@ tar -xvf bbn-test-5.tar.gz -C <path>
 
 , where <path> your node's home directory.
 
-<!-- TODO: How to prevent duplication of the start command? -->
-After importing the state, you can now start your node:
-
-```shell
-babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
-```
-
-Parameters:
-
-- `start`: This is the command to start the Babylon node.
-- `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
-- `--home`: Sets the directory for the node's data and configuration files and 
-   dependent on where the files were generated for you from the initialization 
-   (e.g. `--home ./nodeDir`)
-- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve 
-   performance. Not recommended for validator nodes.
-
-Congratulations! Your Babylon node is now set up and syncing blocks.
-
-<!-- TODO: Do we need a section on verifying that we are in sync? -->
+After importing the state, you can now start your node as specified in section
+[Start the node](#4-start-the-node).
 
 ### 3.2. Sync through state sync
 
@@ -183,7 +166,33 @@ In the above configuration, we've specified `X` as the upgrade height. You can
 use any **later** height of your choice as well, updating the trust hash
 accordingly.
 
-You can now start your node:
+You can now start your node as specified in section
+[Start the node](#4-start-the-node).
+
+### 3.3. Sync from scratch
+
+Is it also possible to sync from scratch, i.e., block `1`. This will require
+you to use 2 different babylond binaries and perform the babylon software
+upgrade when needed.
+
+Initially, install babylon
+[v0.9.0](https://github.com/babylonlabs-io/babylon/releases/tag/v0.9.0) and
+start your node as specified in section [Start the node](#4-start-the-node).
+
+<!-- TODO: Specify height -->
+Your node will start syncing blocks and will halt at height `X`, which is the
+height that the software upgrade occurred.
+
+<!-- TODO: Add log -->
+
+<!-- TODO: Specify version -->
+At this point, you can install babylon
+`vA.B.C` and restart your node. Your node will then start syncing the rest of
+the blocks.
+
+## 4. Start the node
+
+You can start your node in the following manner:
 
 ```shell
 babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
@@ -200,38 +209,3 @@ Parameters:
    performance. Not recommended for validator nodes.
 
 Congratulations! Your Babylon node is now set up and syncing blocks.
-
-### 3.3. Sync from scratch
-
-Is it also possible to sync from scratch, i.e., block `1`. This will require
-you to use 2 different babylond binaries and perform the babylon software
-upgrade when needed.
-
-Initially, install babylon
-[v0.9.0](https://github.com/babylonlabs-io/babylon/releases/tag/v0.9.0) and
-start your node:
-
-```shell
-babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
-```
-
-Parameters:
-
-- `start`: This is the command to start the Babylon node.
-- `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
-- `--home`: Sets the directory for the node's data and configuration files and 
-   dependent on where the files were generated for you from the initialization 
-   (e.g. `--home ./nodeDir`)
-- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve 
-   performance. Not recommended for validator nodes.
-
-<!-- TODO: Specify height -->
-Your node will start syncing blocks and will halt at height `X`, which is the
-height that the software upgrade occurred.
-
-<!-- TODO: Add log -->
-
-<!-- TODO: Specify version -->
-At this point, you can install babylon
-`vA.B.C` and restart your node. Your node will then start syncing the rest of
-the blocks.
