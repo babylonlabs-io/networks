@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Finoa-Consensus-Services",
+    "identity": "0FA38A5EDF5FA362",
+    "website": "https://www.finoa.io/staking-delegation",
+    "security_contact": "operations@consensus.finoa.io",
+    "details": "Stake and grow your assets using Finoa's institutional-grade infrastructure."
+  },
+  "eots_pk": "217ac8c60f4a0c75e28922a8478ed2605a31fec8ede23ed922425d58ac47e4ac",
+  "commission": "0.03"
+}
