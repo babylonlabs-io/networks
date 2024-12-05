@@ -5,6 +5,9 @@
 1. [Install Babylon Binary](#1-install-babylon-binary)
 2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
 3. [Sync Node](#3-sync-node)
+  1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
+  2. [Sync through state sync](#32-sync-through-state-sync)
+  3. [Sync from scratch](#33-sync-from-scratch)
 
 ## 1. Install Babylon Binary 
 
@@ -56,15 +59,14 @@ babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
 Parameters:
-- `<moniker>` is a unique identifier for your node (e.g. `node0`).
+- `<moniker>` is a unique identifier for your node (e.g. `node0`)
 - `--home` *optional* flag that specifies the directory where your 
-node files will be stored (e.g. `--home ./nodeDir`).
-- `--chain-id` is the chain ID of the Babylon chain you connect to. You should 
-   use `bbn-test-5`. 
+node files will be stored (e.g. `--home ./nodeDir`)
+- `--chain-id` is the chain ID of the Babylon chain you connect to
 
 After initialization, you'll need to modify the following configuration files:
 
-1. First, open `app.toml` and update these the following settings:
+1. On `app.toml`, update these the following settings:
 
 ```shell
 # Base configuration
@@ -85,17 +87,17 @@ In the above configuration, we disable IAVL cache to make the node utilize less
 memory.
 In case of a node serving heavy RPC query load, these settings shouldn't be used.
 
-Navigate to `config.toml`. Add in your seed, as shown below:
+<!-- TODO: Add a link to the seed file once the PR is merged -->
+2. On `config.toml`, populate your seed nodes using entries from this list:
 
 ```shell
- #P2P Configuration Options    
+# P2P Configuration Options    
 
+# This is only an example and should be replaced with actual testnet seed
+# nodes.
 # Comma separated list of seed nodes to connect to
 seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656" 
-# This is only an example of the testnet seed and should be replaced with the actual seed node.
 ```
-Please refer to our [network specification page](../README.md)
-to find the latest seed node and sync details.
 
 Next, you'll need to obtain the network's genesis file. This file contains 
 the initial state of the blockchain and is crucial for successfully syncing 
@@ -115,26 +117,32 @@ to the correct network.
 
 ## 3. Sync Node
 
-<!-- TODO: update accordingly with the new sync method when available -->
+<!-- TODO: Specify height and version -->
+Testnet-5 underwent a software upgrade at height `X`, upgrading babylond from
+[v0.9.0](https://github.com/babylonlabs-io/babylon/releases/tag/v0.9.0) to
+`vA.B.C`.
 
-Node operators have the option to sync either from
-genesis or through a snapshot:
+We will analyze several strategies below to sync your node in accordance with
+this event.
 
-<!-- TODO: the below does not seem right -->
-1. **Sync through Network Peers**
-   - Use the seed node configuration mentioned earlier in `config.toml`
-   - Additional peers can be added under the `persistent_peers` setting
-   <!-- Add peer list when available -->
-2. **Sync from Snapshot**
-   - For faster syncing, you can use a snapshot instead of syncing from genesis
-   - Snapshots are periodic backups of the chain state
-   - Find available snapshots at: <!-- Add link when available -->
+### 3.1. Sync through a network snapshot
 
-> ⚠️ **Important**: Always verify snapshot sources and checksums before using 
-them to ensure security.
+<!-- TODO: Specify height -->
+You can obtain the network snapshot containing blocks up to height `X` from
+[here](./network-artifacts/bbn-test-5.tar.gz).
 
-<!-- TODO: we do not have a smooth transition to this from before -->
-We are now ready to sync the node. To do this run the following command:
+<!-- TODO: We can add other snapshot sources as they appear -->
+
+To extract the snapshot, utilize the following command:
+
+```shell
+tar -xvf bbn-test-5.tar.gz -C <path>
+```
+
+, where <path> your node's home directory.
+
+<!-- TODO: How to prevent duplication of the start command? -->
+After importing the state, you can now start your node:
 
 ```shell
 babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
@@ -150,4 +158,80 @@ Parameters:
 - `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve 
    performance. Not recommended for validator nodes.
 
-Congratulations! Your Babylon node is now set up and syncing with the network.
+Congratulations! Your Babylon node is now set up and syncing blocks.
+
+<!-- TODO: Do we need a section on verifying that we are in sync? -->
+
+### 3.2. Sync through state sync
+
+State sync allows your node to quickly catch up to the current state without
+downloading and verifying the entire blockchain history.
+
+To utilize state sync, you'll need to update a few flags in your `config.toml`:
+
+<!-- Add state-sync server from Nodes.Guru, height and hash-->
+```shell
+[statesync]
+enable = true
+
+rpc_servers = "Y"
+trust_height = X
+trust_hash = "Z"
+```
+
+In the above configuration, we've specified `X` as the upgrade height. You can
+use any **later** height of your choice as well, updating the trust hash
+accordingly.
+
+You can now start your node:
+
+```shell
+babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
+```
+
+Parameters:
+
+- `start`: This is the command to start the Babylon node.
+- `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
+- `--home`: Sets the directory for the node's data and configuration files and 
+   dependent on where the files were generated for you from the initialization 
+   (e.g. `--home ./nodeDir`)
+- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve 
+   performance. Not recommended for validator nodes.
+
+Congratulations! Your Babylon node is now set up and syncing blocks.
+
+### 3.3. Sync from scratch
+
+Is it also possible to sync from scratch, i.e., block `1`. This will require
+you to use 2 different babylond binaries and perform the babylon software
+upgrade when needed.
+
+Initially, install babylon
+[v0.9.0](https://github.com/babylonlabs-io/babylon/releases/tag/v0.9.0) and
+start your node:
+
+```shell
+babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
+```
+
+Parameters:
+
+- `start`: This is the command to start the Babylon node.
+- `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
+- `--home`: Sets the directory for the node's data and configuration files and 
+   dependent on where the files were generated for you from the initialization 
+   (e.g. `--home ./nodeDir`)
+- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve 
+   performance. Not recommended for validator nodes.
+
+<!-- TODO: Specify height -->
+Your node will start syncing blocks and will halt at height `X`, which is the
+height that the software upgrade occurred.
+
+<!-- TODO: Add log -->
+
+<!-- TODO: Specify version -->
+At this point, you can install babylon
+`vA.B.C` and restart your node. Your node will then start syncing the rest of
+the blocks.
