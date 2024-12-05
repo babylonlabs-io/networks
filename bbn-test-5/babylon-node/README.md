@@ -169,7 +169,7 @@ downloading and verifying the entire blockchain history.
 
 To utilize state sync, you'll need to update a few flags in your `config.toml`:
 
-<!-- Add state-sync server from Nodes.Guru, height and hash-->
+<!-- TODO: Add state-sync server from Nodes.Guru, height and hash-->
 ```shell
 [statesync]
 enable = true
