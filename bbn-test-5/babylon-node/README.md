@@ -115,8 +115,8 @@ Next, you'll need to obtain the network's genesis file. This file contains
 the initial state of the blockchain and is crucial for successfully syncing 
 your node. You can download it from either:
 
-1. The Babylon Networks repository: [bbn-test-5](../genesis.tar.bz2)
-2. Directly using these commands:
+- The Babylon Networks repository: [bbn-test-5](../genesis.tar.bz2)
+- Directly using these commands:
 ```shell
 wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 
 tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
