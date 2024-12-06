@@ -40,17 +40,17 @@ Peers can be retrieved from [here](./peers.txt).
 1. RPC
 
 - https://babylon-testnet-rpc.nodes.guru
-<!-- TODO: Add Polkachu when endpoint available -->
+- https://babylon-testnet-rpc.polkachu.com
 
 2. LCD (node API)
 
 - https://babylon-testnet-api.nodes.guru
-<!-- TODO: Add Polkachu when endpoint available -->
+- https://babylon-testnet-api.polkachu.com
 
 3. gRPC
 
 - https://babylon-testnet-grpc.nodes.guru
-<!-- TODO: Add Polkachu when endpoint available -->
+- http://babylon-testnet-grpc.polkachu.com:20690
 
 ## Network Participants
 
