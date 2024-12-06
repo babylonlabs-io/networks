@@ -4,10 +4,10 @@
 
 1. [Install Babylon Binary](#1-install-babylon-binary)
 2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
-3. [Prepare for sync](#3-sync-node)
-  1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
-  2. [Sync through state sync](#32-sync-through-state-sync)
-  3. [Sync from scratch](#33-sync-from-scratch)
+3. [Prepare for sync](#3-prepare-for-sync)
+   1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
+   2. [Sync through state sync](#32-sync-through-state-sync)
+   3. [Sync from scratch](#33-sync-from-scratch)
 4. [Start the node](#4-start-the-node)
 
 ## 1. Install Babylon Binary 
@@ -60,10 +60,10 @@ babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
 Parameters:
-- `<moniker>` is a unique identifier for your node (e.g. `node0`)
-- `--home` *optional* flag that specifies the directory where your 
-node files will be stored (e.g. `--home ./nodeDir`)
-- `--chain-id` is the chain ID of the Babylon chain you connect to
+- `<moniker>`: a unique identifier for your node for example `node0`
+- `--home`: *optional* flag that specifies the directory where your 
+node files will be stored, for example `--home ./nodeDir`
+- `--chain-id`: the chain ID of the Babylon chain you connect to
 
 After initialization, you'll need to modify the following configuration files:
 
@@ -84,9 +84,15 @@ iavl-disable-fastnode=true
 network = "signet" # The Babylon testnet connects to the signet Bitcoin network
 ```
 
-In the above configuration, we disable IAVL cache to make the node utilize less 
-memory.
-In case of a node serving heavy RPC query load, these settings shouldn't be used.
+Parameters:
+- `minimum-gas-prices`: The minimum gas price (in this example we use 0.005ubbn)
+   that your node will accept for transactions. Transactions with lower gas 
+   prices will be rejected.
+- `iavl-cache-size`: Set to 0 to disable the IAVL tree caching. This reduces 
+   memory usage.
+- `iavl-disable-fastnode`: Set to true to disable the fast node feature.
+- `btc-config.network`: Specifies which Bitcoin network to connect to for 
+   checkpointing. For testnet-5, we use "signet" which is Bitcoin's test network.
 
 <!-- TODO: Add a link to the seed file once the PR is merged -->
 2. On `config.toml`, populate your seed nodes using entries from this list:
@@ -99,6 +105,10 @@ In case of a node serving heavy RPC query load, these settings shouldn't be used
 # Comma separated list of seed nodes to connect to
 seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656" 
 ```
+
+Parameters:
+- `seeds`: List of seed nodes that your node will connect to for discovering 
+other peers in the network
 
 Next, you'll need to obtain the network's genesis file. This file contains 
 the initial state of the blockchain and is crucial for successfully syncing 
@@ -117,14 +127,22 @@ your initialization command (`bbn-test-5`). This ensures your node connects
 to the correct network.
 
 ## 3. Prepare for sync
-
 <!-- TODO: Specify height and version -->
-Testnet-5 underwent a software upgrade at height `X`, upgrading babylond from
+Before starting your node sync, it's important to understand that Testnet-5 
+underwent a software upgrade at height `X`, upgrading babylond from
 [v0.9.0](https://github.com/babylonlabs-io/babylon/releases/tag/v0.9.0) to
 `vA.B.C`.
 
-We will analyze several strategies below to sync your node in accordance with
-this event.
+There are three options you can choose from when syncing:
+1. Sync through a network snapshot (fastest method)
+2. Sync through state sync (quick catch-up without full history)
+3. Sync from scratch (complete sync from block 1)
+
+If you're syncing from scratch, you'll need to first sync with v0.9.0 
+until height `X`, then upgrade your binary to `vA.B.C` to continue syncing. 
+Alternatively, you can use state sync or a snapshot from after the upgrade 
+height to start directly with `vA.B.C`. Below are several strategies to sync 
+your node, choose the one that best fits your needs.
 
 ### 3.1. Sync through a network snapshot
 
@@ -140,7 +158,9 @@ To extract the snapshot, utilize the following command:
 tar -xvf bbn-test-5.tar.gz -C <path>
 ```
 
-, where <path> your node's home directory.
+Parameters:
+- `bbn-test-5.tar.gz`: Name of the compressed blockchain snapshot file
+- <path> : Your node's home directory
 
 After importing the state, you can now start your node as specified in section
 [Start the node](#4-start-the-node).
@@ -162,6 +182,12 @@ trust_height = X
 trust_hash = "Z"
 ```
 
+Parameters:
+- `enable`: Activates state sync functionality
+- `rpc_servers`: List of RPC servers to fetch state sync data from
+- `trust_height`: Block height to trust for state sync 
+- `trust_hash`: Block hash corresponding to the trusted height
+
 In the above configuration, we've specified `X` as the upgrade height. You can
 use any **later** height of your choice as well, updating the trust hash
 accordingly.
@@ -171,7 +197,7 @@ You can now start your node as specified in section
 
 ### 3.3. Sync from scratch
 
-Is it also possible to sync from scratch, i.e., block `1`. This will require
+Lastly, you can also sync from scratch, i.e., block `1`. This will require
 you to use 2 different babylond binaries and perform the babylon software
 upgrade when needed.
 
@@ -199,7 +225,6 @@ babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invari
 ```
 
 Parameters:
-
 - `start`: This is the command to start the Babylon node.
 - `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
 - `--home`: Sets the directory for the node's data and configuration files and 
