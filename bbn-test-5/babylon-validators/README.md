@@ -87,13 +87,11 @@ public key. Following is a sample output for the command:
 > your private key details. Losing access to the private key would 
 > mean losing control of your validator.
 
-Before creating a validator, you will need sufficient BBN tokens. For instructions 
-on obtaining BBN tokens, see the [Get Funds section](../babylon-node/README.md#get-funds) 
-in the Node Setup Guide.
-
 #### 3.1.1 Get Funds
 
-Funds are necessary to interact with the Babylon network and run a validator. 
+Before creating a validator, you will need sufficient BBN tokens and are 
+necessary to interact with the Babylon network and run a validator. 
+
 To source funds you will need to request them from the Babylon Testnet Faucet.
 
 <!-- TODO: add information or commands on how to request funds from the faucet -->
@@ -132,11 +130,12 @@ The above command will:
 1. Generate a new BLS key pair
 2. Associate it with your validator address
 3. Store it in your node's configuration file at 
-`~/.<path>/config/priv_validator_key.json`
+`~/.<path>/config/priv_validator_key.json` alongside your validator key
 
 This key will be used automatically by your validator software when it needs 
 to participate in epoch-end signature collection. The BLS signatures help 
-create compact, efficient proofs of consensus that can be later timestamped to Bitcoin.
+create compact, efficient proofs of consensus that can be later timestamped to 
+Bitcoin.
 
 > ⚠️ **Important**: The `priv_validator_key.json` file contains sensitive key 
 > material. Make sure to backup this file and store it securely, as it's 
@@ -146,22 +145,27 @@ create compact, efficient proofs of consensus that can be later timestamped to B
 
 ## 4. CometBFT Validator Configuration
 
-First, we need to get the validator's consensus public key to create the 
-validator configuration file:
+First, retrieve your validator's consensus public key using the following 
+command: 
 
 ```shell
 babylond tendermint show-validator --home <home>
 ```
 
-It will output a public key in the following format:
+This command reads your validator's key information from 
+`priv_validator_key.json` and outputs only the public key in a specific format 
+required for validator registration. The output will look like:
 
 ```shell
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"0Wlt7ZPl0uvv7onsw4gP8FSQJUk986zMcOdWselDPM4="}
 ```
 
-Use the output of the command above and replace the `pubkey` and `<home>` 
-value in the example below. 
-Then subsequently run the following command to create the validator configuration file:
+You'll need this formatted public key output to create your validator's 
+configuration file in the next step.
+
+Now we can use the output of the command above and replace the `pubkey` and
+`<home>` value in the example below. Subsequently run the following command to 
+create the validator configuration file:
 
 ```shell
 cat > <home>/config/validator.json << EOF
@@ -187,8 +191,8 @@ Parameters:
 - `min-self-delegation`: Minimum amount you must keep self-delegated
 
 If you prefer to add this manually or are having issues, another option is to 
-create a `validator.json` file and then paste the above json into it but remember
-to replace all values with the actual values you want to use.
+create a `validator.json` file manually and then paste the above json into it 
+but remember to replace all values with the actual values you want to use.
 
 ## 5. Creating a Validator
 
@@ -198,10 +202,10 @@ to replace all values with the actual values you want to use.
 > as it might not work with your automations for creating validators.
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
-Babylon uses the [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
+Babylon uses the Babylon [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
 
-The creation process requires your previously generated BLS key and your validator 
-key, which should be located at `<path>/config/validator.json`, 
+The creation process requires your previously generated BLS key and your 
+validator key, which should be located at `<path>/config/validator.json`, 
 where `<path>` is the `--home` directory you specified when setting up your node.
 
 The BLS key in the file is required as validators use their BLS key to sign 
@@ -335,18 +339,18 @@ documentation.
 
 ## 6. Advanced Security Architecture
 
-Each validator's needs significantly vary based on their operational needs and 
-the environment they are running in. Before setting up your validator 
+Each validator's needs are significantly varied based on their operational needs 
+and the environment they are running in. Before setting up your validator 
 infrastructure, take time to research different security architectures, including 
 the [Sentry Node Architecture](https://hub.cosmos.network/main/validators/security#sentry-nodes-ddos-protection). 
 This setup involves using intermediary nodes to protect your validator from 
 direct exposure to the public network.
 
-Handling of the `priv_validator_key.json` file is critical. This file contains 
-sensitive private key material vital for your validator's operation. 
-If lost or compromised, it could lead to severe consequences including slashing 
-penalties. Store this file securely using encrypted storage and maintain 
-robust backup procedures.
+Additionally, the andling of the `priv_validator_key.json` file is critical. 
+This file contains sensitive private key material vital for your validator's 
+operation. If lost or compromised, it could lead to severe consequences 
+including slashing penalties. Store this file securely using encrypted storage 
+and maintain robust backup procedures.
 
 ## 7. Conclusion
 
