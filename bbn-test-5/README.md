@@ -6,6 +6,8 @@ for network participation information, whether you're running a node,
 operating as a validator, providing finality services, or participating 
 in the covenant committee.
 
+## Network Parameters
+
 ### Babylon Version
 
 <!-- TODO: Specify version when available -->
