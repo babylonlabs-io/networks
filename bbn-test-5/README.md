@@ -6,20 +6,6 @@ for network participation information, whether you're running a node,
 operating as a validator, providing finality services, or participating 
 in the covenant committee.
 
-<!-- TODO: sync with devops on the things we should add here.
-## Network Parameters
-
-<<<<<<< Updated upstream
-Off the top of my head:
-* Chain ID
-* Genesis file location
-* Seed nodes
-* RPC nodes
-* Snapshot
-
-We can fully link to our partners here.
--->
-=======
 ### Babylon Version
 
 <!-- TODO: Specify version when available -->
@@ -63,10 +49,7 @@ Peers can be retrieved from [here](./peers.txt).
 
 - https://babylon-testnet-grpc.nodes.guru
 <!-- TODO: Add Polkachu when endpoint available -->
->>>>>>> Stashed changes
 
-<!-- TODO: Uncover the following sections
-with each PR that is getting merged
 ## Network Participants
 
 There are four types of participants in the Babylon network.
@@ -76,7 +59,3 @@ Please see the setup and configuration guides below:
 - [Validators](babylon-validators/README.md)
 - [Finality Providers](https://github.com/babylonlabs-io/finality-providers)
 - [Covenant Committee](covenant-committee/README.md)
-<<<<<<< Updated upstream
--->
-=======
->>>>>>> Stashed changes
