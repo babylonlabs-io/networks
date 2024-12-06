@@ -115,7 +115,7 @@ Next, you'll need to obtain the network's genesis file. This file contains
 the initial state of the blockchain and is crucial for successfully syncing 
 your node. You can download it from either:
 
-- The Babylon Networks repository: [bbn-test-5](../genesis.tar.bz2)
+- Networks page on [bbn-test-5](../README.md#genesis)
 - Directly using these commands:
 ```shell
 wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 
@@ -165,7 +165,7 @@ tar -xvf bbn-test-5.tar.gz -C <path>
 
 Parameters:
 - `bbn-test-5.tar.gz`: Name of the compressed blockchain snapshot file
-- <path> : Your node's home directory
+- `<path>` : Your node's home directory
 
 After importing the state, you can now start your node as specified in section
 [Start the node](#4-start-the-node).
@@ -222,9 +222,8 @@ Your node will start syncing blocks and will halt at height `X`, which is the
 height that the software upgrade occurred.
 
 <!-- TODO: Add log -->
-
-3. <!-- TODO: Specify version -->
-At this point, return to [Section 1](#1-install-babylon-binary) and install 
+ <!-- TODO: Specify version -->
+3.At this point, return to [Section 1](#1-install-babylon-binary) and install 
 version `vA.B.C`.
 
 4. Restart your node. Your node will then start syncing the rest of the blocks
