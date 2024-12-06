@@ -12,14 +12,15 @@
 
 ## 1. Install Babylon Binary 
 
-1. Install [Golang 1.23](https://go.dev/dl)
-2. Verify installation:
+Install [Golang 1.23](https://go.dev/dl)
+
+Once installed run:
 
 ```shell
 go version
 ```
 
-3. Clone and build Babylon:
+Clone and build Babylon:
 ```shell
 git clone git@github.com:babylonlabs-io/babylon.git
 cd babylon
@@ -85,7 +86,7 @@ network = "signet" # The Babylon testnet connects to the signet Bitcoin network
 ```
 
 Parameters:
-- `minimum-gas-prices`: The minimum gas price (in this example we use 0.005ubbn)
+- `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
    that your node will accept for transactions. Transactions with lower gas 
    prices will be rejected.
 - `iavl-cache-size`: Set to 0 to disable the IAVL tree caching. This reduces 
@@ -112,14 +113,14 @@ other peers in the network
 
 Next, you'll need to obtain the network's genesis file. This file contains 
 the initial state of the blockchain and is crucial for successfully syncing 
-your node. You can get it from:
+your node. You can download it from either:
 
 1. The Babylon Networks repository: [bbn-test-5](../genesis.tar.bz2)
-2. Or download directly using these commands:
+2. Directly using these commands:
 ```shell
 wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 
 tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
-mv genesis.json <path>/config/genesis.json # insert the home directory of your node
+mv genesis.json <path>/config/genesis.json # You must insert the home directory of your node
 ```
 
 Additionally, verify that the `chain-id` in the genesis file matches the one used in 
@@ -146,12 +147,16 @@ your node, choose the one that best fits your needs.
 
 ### 3.1. Sync through a network snapshot
 
+Snapshot syncing is the fastest way to get your node up to date with the network. 
+A snapshot is a compressed backup of the blockchain data taken at a specific 
+height. Instead of processing all blocks from the beginning, you can download 
+and import this snapshot to quickly reach a recent block height.
+
 <!-- TODO: Specify height -->
 You can obtain the network snapshot containing blocks up to height `X` from
 [here](./network-artifacts/bbn-test-5.tar.gz).
 
 <!-- TODO: We can add other snapshot sources as they appear -->
-
 To extract the snapshot, utilize the following command:
 
 ```shell
@@ -167,8 +172,11 @@ After importing the state, you can now start your node as specified in section
 
 ### 3.2. Sync through state sync
 
-State sync allows your node to quickly catch up to the current state without
-downloading and verifying the entire blockchain history.
+State sync downloads only the current blockchain state (account balances, 
+validator set, and module states) instead of processing the entire chain history.
+While this means you won't have historical data, state sync allows your node to 
+quickly catch up to the current state without downloading and verifying the 
+entire blockchain history.
 
 To utilize state sync, you'll need to update a few flags in your `config.toml`:
 
@@ -197,13 +205,17 @@ You can now start your node as specified in section
 
 ### 3.3. Sync from scratch
 
-Lastly, you can also sync from scratch, i.e., block `1`. This will require
-you to use 2 different babylond binaries and perform the babylon software
-upgrade when needed.
+Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from 
+scratch means downloading and verifying every block from the beginning 
+of the blockchain (genesis block) to the current block.
 
-Initially, install babylon
-[v0.9.0](https://github.com/babylonlabs-io/babylon/releases/tag/v0.9.0) and
-start your node as specified in section [Start the node](#4-start-the-node).
+This will require you to use 2 different babylond binaries and perform the 
+babylon software upgrade when needed.
+
+1. First, follow the installation steps in [Section 1](#1-install-babylon-binary), 
+but use tag `v0.9.0` instead of `bbn-test-5`.
+
+2. Start your node as specified in section [Start the node](#4-start-the-node).
 
 <!-- TODO: Specify height -->
 Your node will start syncing blocks and will halt at height `X`, which is the
@@ -211,14 +223,15 @@ height that the software upgrade occurred.
 
 <!-- TODO: Add log -->
 
-<!-- TODO: Specify version -->
-At this point, you can install babylon
-`vA.B.C` and restart your node. Your node will then start syncing the rest of
-the blocks.
+3. <!-- TODO: Specify version -->
+At this point, return to [Section 1](#1-install-babylon-binary) and install 
+version `vA.B.C`.
+
+4. Restart your node. Your node will then start syncing the rest of the blocks
 
 ## 4. Start the node
 
-You can start your node in the following manner:
+You can start your node using the following command:
 
 ```shell
 babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invariants
