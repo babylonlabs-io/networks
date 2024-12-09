@@ -6,21 +6,50 @@ for network participation information, whether you're running a node,
 operating as a validator, providing finality services, or participating 
 in the covenant committee.
 
-<!-- TODO: sync with devops on the things we should add here.
 ## Network Parameters
 
-Off the top of my head:
-* Chain ID
-* Genesis file location
-* Seed nodes
-* RPC nodes
-* Snapshot
+### Chain ID
 
-We can fully link to our partners here.
--->
+`bbn-test-5`
 
-<!-- TODO: Uncover the following sections
-with each PR that is getting merged
+### Genesis
+
+The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
+
+### State snapshot
+
+<!-- TODO: Specify height -->
+A snapshot including state up to height `X` can be retrieved from
+[here](./network-artifacts/bbn-test-5.tar.gz).
+
+<!-- TODO: Specify version when available -->
+To boot a node with this snapshot, Babylon version `vX.Y.Z` should be used.
+
+### Seed nodes
+
+Seed nodes can be retrieved from [here](./seeds.txt).
+
+### Peers
+
+Peers can be retrieved from [here](./peers.txt).
+
+### Endpoints
+
+1. RPC
+
+- https://babylon-testnet-rpc.nodes.guru
+- https://babylon-testnet-rpc.polkachu.com
+
+2. LCD (node API)
+
+- https://babylon-testnet-api.nodes.guru
+- https://babylon-testnet-api.polkachu.com
+
+3. gRPC
+
+- https://babylon-testnet-grpc.nodes.guru
+- http://babylon-testnet-grpc.polkachu.com:20690
+
 ## Network Participants
 
 There are four types of participants in the Babylon network.
@@ -30,4 +59,3 @@ Please see the setup and configuration guides below:
 - [Validators](babylon-validators/README.md)
 - [Finality Providers](https://github.com/babylonlabs-io/finality-providers)
 - [Covenant Committee](covenant-committee/README.md)
--->
