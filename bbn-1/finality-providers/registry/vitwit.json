@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "vitwit",
+    "identity": "51468B615127273A",
+    "website": "https://vitwit.com",
+    "security_contact": "validators@vitwit.com",
+    "details": "Vitwit, has been at the forefront of the blockchain industry since 2017. With extensive experience and expertise, we have established ourselves as a reliable validator across more than 2>
+  },
+  "eots_pk": "0a5abe0399fd1008a620bc5f4b9cf5f76ce1bc34df35b244be95535bd9057a9f",
+  "commission": "0.05"
+}
