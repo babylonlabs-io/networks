@@ -29,6 +29,9 @@ and install the Babylon binary:
 ```shell
 git clone git@github.com:babylonlabs-io/babylon.git
 cd babylon
+# tag corresponds to the version of the software
+# you want to install -- depends on which
+# height you sync from
 git checkout <tag>
 make install
 ```
@@ -75,7 +78,7 @@ Parameters:
 
 After initialization, you'll need to modify the following configuration files:
 
-1. On `app.toml`, update these the following settings:
+1. On `app.toml`, update the the following settings:
 
 ```shell
 # Base configuration
@@ -132,8 +135,8 @@ mv genesis.json <path>/config/genesis.json # You must insert the home directory 
 ```
 
 ## 3. Prepare for sync
-Before starting your node sync, it's important to that the initial release at 
-genesis was `v0.9.0`, while subsequently there have been software upgrades.
+Before starting your node sync, it's important to note that the initial release 
+at genesis was `v0.9.0`, while subsequently there have been software upgrades.
 
 There are three options you can choose from when syncing:
 1. Sync through a network snapshot (fastest method)
@@ -199,23 +202,21 @@ Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from
 scratch means downloading and verifying every block from the beginning 
 of the blockchain (genesis block) to the current block.
 
-This will require you to use 2 different babylond binaries and perform the 
-babylon software upgrade when needed.
+This will require you to use different `babylond` binaries for each version and 
+perform the babylon software upgrade when needed.
 
-1. First, follow the installation steps in [Section 1](#1-install-babylon-binary), 
-but use tag `v0.9.0` instead of `bbn-test-5`. 
-<!-- TODO: Update tag -->
+1. First, follow the installation steps in [Section 1](#1-install-babylon-binary)
+using the genesis software version `v0.9.0` in place of `<tag>`. 
 
 2. Start your node as specified in section [Start the node](#4-start-the-node).
 
-Your node will sync blocks until it reaches the specified upgrade height.
+Your node will sync blocks until it reaches an upgrade height.
 
-<!-- TODO: Add log -->
- <!-- TODO: Specify version -->
-3.At this point, return to [Section 1](#1-install-babylon-binary) and install 
-version `vA.B.C`.
+At that point, you will have to get the new software version defined by that
+height, and go back to step (1) in order to install it and restart.
 
-4. Restart your node. Your node will then start syncing the rest of the blocks
+You will have to repeat the above two steps until you sync with the 
+full blockchain.
 
 ## 4. Start the node
 
