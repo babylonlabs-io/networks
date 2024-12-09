@@ -8,11 +8,6 @@ in the covenant committee.
 
 ## Network Parameters
 
-### Babylon Version
-
-<!-- TODO: Specify version when available -->
-`vX.Y.Z`
-
 ### Chain ID
 
 `bbn-test-5`
@@ -22,6 +17,9 @@ in the covenant committee.
 The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 
 ### State snapshot
+
+<!-- TODO: Specify version when available -->
+State Snapshot Babylon Version: `vX.Y.Z`
 
 <!-- TODO: Specify height -->
 A snapshot including state up to height `X` can be retrieved from
