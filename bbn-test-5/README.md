@@ -18,12 +18,12 @@ The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 
 ### State snapshot
 
-<!-- TODO: Specify version when available -->
-State Snapshot Babylon Version: `vX.Y.Z`
-
 <!-- TODO: Specify height -->
 A snapshot including state up to height `X` can be retrieved from
 [here](./network-artifacts/bbn-test-5.tar.gz).
+
+<!-- TODO: Specify version when available -->
+To boot a node with this snapshot, Babylon Version `vX.Y.Z` should be used.
 
 ### Seed nodes
 
