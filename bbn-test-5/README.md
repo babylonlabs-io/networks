@@ -23,7 +23,7 @@ A snapshot including state up to height `X` can be retrieved from
 [here](./network-artifacts/bbn-test-5.tar.gz).
 
 <!-- TODO: Specify version when available -->
-To boot a node with this snapshot, Babylon Version `vX.Y.Z` should be used.
+To boot a node with this snapshot, Babylon version `vX.Y.Z` should be used.
 
 ### Seed nodes
 
