@@ -29,6 +29,6 @@ the following ways:
 2. **Support of Bitcoin staking**: Participate in Bitcoin staking
    by integrating with a web application or by natively integrating
    Bitcoin staking functionality directly to your wallet,
-   whether it's a browser extension mobile app, or hardware wallet.
-  * For detailed instructions,
-    refer to the [Bitcoin Staking Integration guide](./bitcoin-staking.md)
+   whether it's a browser extension, mobile app, or hardware wallet.
+   * For detailed instructions,
+     refer to the [Bitcoin Staking Integration guide](./bitcoin-staking.md)

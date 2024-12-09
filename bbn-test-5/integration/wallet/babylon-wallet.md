@@ -103,12 +103,12 @@ This process works as follows:
   Bitcoin blockchain through a Bitcoin timestamp.
 * **Bitcoin Confirmations**: Once the timestamp receives
   a sufficient number of confirmations on the Bitcoin blockchain
-  (a parameter configurable in Babylon), hte state of the epoch
+  (a parameter configurable in Babylon), the state of the epoch
   if considered finalized.
   * The number of required Bitcoin confirmations is set by the
     `x/btccheckpoint` module, detailed
     [here](https://github.com/babylonlabs-io/babylon/blob/main/proto/babylon/btccheckpoint/v1/params.proto#L24)
-  * On the Phase-2 testnet, this value wil be set to 100 confirmations,
+  * On the Phase-2 testnet, this value will be set to 100 confirmations,
     corresponding to roughly 16-17 hours for unbonding to be completed,
     assuming an average Bitcoin block time of 10 minutes.
 * **Unbonding Finalization**: All unbonding requests submitted

@@ -33,7 +33,6 @@ staking information from a back-end you operate.
     - our [documentation](https://github.com/babylonlabs-io/babylon/tree/main/x/btcstaking)
       on the flow of Bitcoin Staking transaction creation and submission in
       conjunction with Bitcoin and Babylon blockchains.
-      <!-- TODO: these docs are missing -->
 - For information about the reference Babylon staking back-end, please read this
   [document](../staking-backend.md)
 
@@ -49,7 +48,6 @@ which connects to either third party APIs
     - our [documentation](https://github.com/babylonlabs-io/babylon/tree/main/x/btcstaking)
     on the flow of Bitcoin Staking transaction creation and submission in
     conjunction with Bitcoin and Babylon blockchains.
-    <!-- TODO: these docs are missing -->
 - For information about the reference Babylon staking back-end, please read this
   [document](../staking-backend.md)
 
@@ -77,7 +75,6 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
     - our [documentation](https://github.com/babylonlabs-io/babylon/tree/main/x/btcstaking)
       on the flow of Bitcoin Staking transaction creation and submission in
       conjunction with Bitcoin and Babylon blockchains.
-      <!-- TODO: these docs are missing -->
 - For information about the reference Babylon staking back-end, please read this
   [document](../staking-backend.md)
 
@@ -93,7 +90,6 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
     - our [documentation](https://github.com/babylonlabs-io/babylon/tree/main/x/btcstaking)
       on the flow of Bitcoin Staking transaction creation and submission in
       conjunction with Bitcoin and Babylon blockchains.
-  <!-- TODO: these docs are missing -->
 - For information about the reference Babylon staking back-end, please read this
   [document](../staking-backend.md)
 
@@ -111,7 +107,6 @@ which connects to either third party APIs
     - our [documentation](https://github.com/babylonlabs-io/babylon/tree/main/x/btcstaking)
       on the flow of Bitcoin Staking transaction creation and submission in
       conjunction with Bitcoin and Babylon blockchains.
-  <!-- TODO: these docs are missing -->
 - For information about the reference Babylon staking back-end, please read this
   [document](../staking-backend.md)
 
