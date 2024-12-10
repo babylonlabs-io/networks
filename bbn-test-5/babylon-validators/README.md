@@ -30,14 +30,12 @@ node setup instructions, see our [Node Setup Guide](../babylon-node/README.md).
 ## 2. System Requirements
 
 Recommended specifications for running a Babylon validator node:
-<!-- TODO: RPC Nodes more ram is required add when we have completed node load test  -->
 - CPU: Quad Core AMD/Intel (amd64)
 - RAM: 32GB
 - Storage: 2TB NVMe
 - Network: 100MBps bidirectional
 - Encrypted storage for keys and sensitive data
 - Regular system backups (hourly, daily, weekly)
-- DDoS protection
 
 These are reference specifications for a production validator. 
 Requirements may vary based on network activity and your operational needs.
@@ -141,7 +139,8 @@ Bitcoin.
 > material. Make sure to backup this file and store it securely, as it's 
 > essential for your validator's operation and cannot be recovered if lost.
 > Note that BLS keys are currently not supported by Horcrux or other remote signing 
-> solutions, so additional security measures should be considered for key management.
+> solutions, so alternative security measures should be considered for key 
+> management such as hardware wallets or offline solutions.
 
 ## 4. CometBFT Validator Configuration
 
@@ -254,7 +253,7 @@ For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k8
 the operator address is `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`. 
 
 For the next step, we will have to wait till the beginning of the next epoch 
-(this will take approx 10 minutes) for the command to be valid. This is due to 
+(this will take up to 10 minutes) for the command to be valid. This is due to 
 Babylon's epoched staking design, where the blockchain is divided into epochs.
 Messages that affect the validator set are delayed to the end of each epoch for 
 execution. Meaning that your validator creation transaction will be processed 
@@ -346,7 +345,7 @@ the [Sentry Node Architecture](https://hub.cosmos.network/main/validators/securi
 This setup involves using intermediary nodes to protect your validator from 
 direct exposure to the public network.
 
-Additionally, the andling of the `priv_validator_key.json` file is critical. 
+Additionally, the handling of the `priv_validator_key.json` file is critical. 
 This file contains sensitive private key material vital for your validator's 
 operation. If lost or compromised, it could lead to severe consequences 
 including slashing penalties. Store this file securely using encrypted storage 
