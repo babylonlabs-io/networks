@@ -118,7 +118,7 @@ previous step.
 Run this command:
 
 ```shell
-babylond create-bls-key <address> --home <path>
+babylond create-bls-key <bbn-address> --home <path>
 ```
 
 Replace `<address>` with your address from the earlier keyring 
@@ -313,7 +313,7 @@ BOND_STATUS_BONDED = 3
 > commands of `x/staking` and all staking related transactions will take 
 > into effect at the end of the epoch.
 
-For validator operations, use the standard Cosmos SDK staking module commands:
+For validator operations, please use the commands below:
 
 ```shell
 # Delegate tokens to a validator
