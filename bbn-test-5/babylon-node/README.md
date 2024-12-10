@@ -12,8 +12,7 @@
 
 ## 1. Install Babylon Binary 
 
-Installing the Babylon binary requires
-a Golang installation.
+Installing the Babylon binary requires a Golang installation.
 
 Install Golang 1.23 by following the instructions
 [here](https://go.dev/dl)
@@ -85,8 +84,8 @@ After initialization, you'll need to modify the following configuration files:
 # Minimum gas prices that this node will accept
 minimum-gas-prices = "0.005ubbn"
 
-iavl-cache-size = 0
-iavl-disable-fastnode=true
+iavl-cache-size ="5000"  # will result in 3GB of memory usage
+iavl-disable-fastnode=false
 
 [btc-config]
 
@@ -99,13 +98,18 @@ Parameters:
 - `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
    that your node will accept for transactions. Transactions with lower gas 
    prices will be rejected.
-- `iavl-cache-size`: Set to 0 to disable the IAVL tree caching. This reduces 
-   memory usage.
-- `iavl-disable-fastnode`: Set to true to disable the fast node feature. This
-   reduces memory usage.
+- `iavl-cache-size`: Default is "5000" (uses ~3GB of memory). Setting to 
+   0 disables the IAVL tree caching, which reduces memory usage but significantly 
+   impacts RPC query performance.
+- `iavl-disable-fastnode`: Default is false. Setting to true disables the 
+   fast node feature, which reduces memory usage but significantly 
+   impacts RPC query performance.
 - `btc-config.network`: Specifies which Bitcoin network to connect to for 
    checkpointing. For testnet-5, we use "signet" which is Bitcoin's test network.
 
+Note: If you're running a validator or RPC node that needs to handle queries, 
+it's recommended to keep these default values for optimal performance. Only 
+adjust these if you're running a node with limited memory resources.
 
 2. On `config.toml`, populate your seed nodes using entries from the 
 [network page](../README.md#seed-nodes):
