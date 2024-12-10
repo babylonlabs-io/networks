@@ -188,6 +188,7 @@ rpc_servers = "Y"
 trust_height = X
 trust_hash = "Z"
 ```
+<!-- TODO add the servers, height and hash above when available -->
 
 Parameters:
 - `enable`: Activates state sync functionality
