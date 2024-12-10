@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "StakeCapital",
+    "identity": "1417DBC57CB3EB69",
+    "website": "https://stake.capital",
+    "security_contact": "validators@stake.capital",
+    "details": "Stake Capital is a group run by Blockchain and DeFi pioneers standing at the intersection of traditional industries and blockchain technology."
+  },
+  "eots_pk": "e3b057e67c335bafc50e63a03d18a74e9e06ee70bf1eefd2d614ad278cac1871",
+  "commission": "0.08"
+}
