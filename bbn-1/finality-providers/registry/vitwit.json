@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "vitwit",
+    "identity": "51468B615127273A",
+    "website": "https://vitwit.com",
+    "security_contact": "validators@vitwit.com",
+    "details": "Vitwit, has been at the forefront of the blockchain industry since 2017. With extensive experience and expertise, we have established ourselves as a reliable validator across more than 20 Proof-of-Stake (PoS) networks, including prominent ones like Polygon, Cosmoshub, Akash, Osmosis, Passage, dYdX, and Oasis, with staked assets totaling over 34 million USD"
+  },
+  "eots_pk": "1ee1dcc3d355aa87aa7a6261b25b9aae41200ac3d54142bc131a140675400d2f",
+  "commission": "0.05"
+}
