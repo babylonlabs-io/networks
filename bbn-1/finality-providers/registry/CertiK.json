@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "CertiK",
+    "identity": "AB3900C319A37B3D",
+    "website": "https://www.certik.com",
+    "security_contact": "node@certik.com",
+    "details": "CertiK is the world's leading smart contract auditor. We provide full-cycle security solutions for enterprises, including auditing, security rating,Compliance&AML,investment and other security-related services, elevating the entire Web3 journey of our clients."
+  },
+  "eots_pk": "ff138a766bc7a52f0002719b6ecf9b9519ee315ff7e7ad2cb0b952313c2179cb",
+  "commission": "0.03"
+}
