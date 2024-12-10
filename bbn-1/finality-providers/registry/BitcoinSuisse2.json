@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "BitcoinSuissePrivate",
+    "identity": "",
+    "website": "https://bitcoinsuisse.com/",
+    "security_contact": "staking@bitcoinsuisse.com",
+    "details": "Bitcoin Suisse offers the staking of all major proof-of-stake crypto assets."
+  },
+  "eots_pk": "be2f7942c5dfaa826aec61355ef427fad1095491aa04850c450f812f9b9ca9ed",
+  "commission": "0.99"
+}
