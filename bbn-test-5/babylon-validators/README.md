@@ -104,9 +104,9 @@ public key. Following is a sample output for the command:
 Before creating a validator, you will need sufficient BBN tokensin order 
 to interact with the Babylon network and run a validator. 
 
-To source funds you will need to request them from the Babylon Testnet Faucet.
-
-<!-- TODO: add information or commands on how to request funds from the faucet -->
+To source funds you will need to request them from the Babylon Testnet Faucet, 
+for information on the faucet visit our
+[networks page](https://github.com/babylonlabs-io/networks/blob/main/bbn-test-5/README.md)
 
 ### 3.3 Key for BLS Voting
 #### 3.3.1 What is BLS Voting
