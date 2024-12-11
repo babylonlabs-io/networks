@@ -58,4 +58,4 @@ Please see the setup and configuration guides below:
 - [Babylon Node Operators](babylon-node/README.md)
 - [Validators](babylon-validators/README.md)
 - [Finality Providers](https://github.com/babylonlabs-io/finality-provider/blob/main/README.md)
-- [Covenant Committee](https://github.com/babylonlabs-io/networks/tree/main/bbn-1/covenant-committee)
+- [Covenant Committee](https://github.com/babylonlabs-io/networks/blob/main/bbn-1/covenant-committee/README.md)
