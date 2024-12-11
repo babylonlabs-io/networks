@@ -6,21 +6,17 @@
 2. [System Requirements](#2-system-requirements)
 3. [Key Management](#3-key-management) 
    1. [Key for CometBFT consensus](#31-key-for-cometbft-consensus)
-      1. [Get Funds](#311-get-funds)
-   2. [Key for BLS Voting](#32-key-for-bls-voting)
-      1. [What is BLS Voting](#321-what-is-bls-voting)
-      2. [Create BLS Key](#322-create-bls-key)
-4.  [CometBFT Validator Configuration](#4-cometbft-validator-configuration)
+   2. [Babylon validator account keyring](#32-babylon-validator-account-keyring)
+   3. [Keyfor BLS Voting](#33-key-for-bls-voting)
+      1. [What is BLS Voting](#331-what-is-bls-voting)
+      2. [Create BLS Key](#332-create-bls-key)
+4. [CometBFT Validator Configuration](#4-cometbft-validator-configuration)
 5. [Creating a Validator](#5-creating-a-validator)
    1. [Verifying Validator Setup](#51-verifying-validator-setup)
    2. [Understanding Validator Status](#52-understanding-validator-status)
-   3. [Managing Your Validator](#53-managing-your-validator)
+   3. [Staking with your Validator](#53-staking-with-your-validator)
 6. [Advanced Security Architecture](#6-advanced-security-architecture)
 7. [Conclusion](#7-conclusion)
-<!-- 7. [Enhanced Monitoring](#7-enhanced-monitoring)
-   1. [Prometheus Configuration](#71-prometheus-configuration)
-   2. [Basic Health Checks](#72-basic-health-checks) -->
-
 
 ## 1. Prerequisites
 
@@ -49,6 +45,10 @@ consensus key pair is automatically generated and stored in
 block creation and signing during the consensus process at the CometBFT layer. 
 The key file location is specified in your node's `config.toml` file.
 
+> **🔒 Security Tip**: Make sure to securely store the `priv_validator_key.json` 
+  file, as it contains your validator's private key. Losing access to this file 
+  would mean losing control of your validator.
+
 ### 3.2 Babylon validator account keyring
 
 The validator key is a fundamental component of your validator's identity 
@@ -60,7 +60,7 @@ this key is one of the most important steps in setting up your validator.
 > **⚡ Note:** This key represents your validator's application layer account 
 > and is different from the CometBFT Key for consensus. While the CometBFT key 
 > is used for consensus-level operations, this key will be for the application-level
->operations such as managing delegations and withdrawing rewards.
+> operations such as managing your validator and withdrawing rewards.
 
 We will be using [Cosmos SDK](https://docs.cosmos.network/v0.50/user/run-node/keyring) 
 backends for key storage, which offer support for the following 
@@ -101,15 +101,15 @@ public key. Following is a sample output for the command:
 
 #### 3.2.1 Get Funds
 
-Before creating a validator, you will need sufficient BBN tokens and are 
-necessary to interact with the Babylon network and run a validator. 
+Before creating a validator, you will need sufficient BBN tokensin order 
+to interact with the Babylon network and run a validator. 
 
 To source funds you will need to request them from the Babylon Testnet Faucet.
 
 <!-- TODO: add information or commands on how to request funds from the faucet -->
 
-### 3.2 Key for BLS Voting
-#### 3.2.1 What is BLS Voting
+### 3.3 Key for BLS Voting
+#### 3.3.1 What is BLS Voting
 
 Babylon validators are required to participate in
 [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) voting
@@ -124,7 +124,7 @@ The BLS voting mechanism achieves a significant reduction in the cost of
 checkpoints, while the epoching mechanism specifies a defined frequency
 for checkpointing in the Bitcoin blockchain.
 
-#### 3.2.2 Create BLS Key
+#### 3.3.2 Create BLS Key
 
 To generate your BLS key, you'll need to use your validator address from the 
 previous step. 
@@ -159,7 +159,7 @@ Bitcoin.
 ## 4. CometBFT Validator Configuration
 
 In this section, we are going to create a configuration file
-that specifies the properties of our validator.
+that specifies the properties of your validator.
 
 First, retrieve your validator's consensus public key using the following:
 
@@ -215,16 +215,15 @@ but remember to replace all values with the actual values you want to use.
 > as it might not work with your automations for creating validators.
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
-Babylon uses the Babylon [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing) module for validator creation and management.
+Babylon uses the Babylon
+[`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing)
+module for validator creation and management.
 
-The creation process requires your previously generated BLS key and your 
-validator key, which should be located at 
-`<path>/config/priv_validator_key.json`, where `<path>` is the `--home` 
-directory you specified when setting up your node.
-
-The BLS key in the file under `bls_pub_key` and `bls_priv_key` at the end of 
-the document and is required as validators use their BLS key to sign 
-checkpoint messages, which are aggregated and submitted to Bitcoin for finality.
+Before proceeding, ensure that your
+`<path>/config/priv_validator_key.json` file contains both your CometBFT 
+consensus and BLS key pair as they are both required for the 
+validator creation process. Recall that `<path>` is the `--home` directory 
+you specified when setting up your node..
 
 > ⚠️ **Important**: You will need a funded account for this step.
 
@@ -247,33 +246,31 @@ Parameters:
 - `--gas`: Set to "auto" to automatically calculate the gas needed
 - `--gas-adjustment`: A multiplier for the estimated gas 
 - `--gas-prices`: Transaction fee in ubbn per unit of gas
-- `--from`: Your key name or address that will sign and pay for this transaction
+- `--from`: The name of your validator key in the keyring
+- `--keyring-backend`: The keyring backend type in which the above validator 
+  key is stored
 - `--home`: Specifies the directory where your node files will be stored. 
-- `--keyring-backend`: Specifies the keyring backend to use for key management. 
-  This should correspond to your validator key that you set in 
-  [Step 3](#32-babylon-validator-account-keyring), 
-  in our example we used `test`.
 
-> **Note**: Make sure the account specified by `--from` has enough tokens to 
+> **⚡ Note:**: Make sure the account specified by `--from` has enough tokens to 
 > cover both the stake amount and transaction fees. This is the same account 
 > you created and funded earlier in 
 > [Section 3](#32-babylon-validator-account-keyring).
 
-Upon successful creation, you'll be asked to approve the transaction, 
-within the transaction you will find your validator's operator address.
-(e.g., `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`).
+Upon successful creation, you'll be asked to approve the transaction.
+Within the transaction result output, you will find your validator's 
+operator address (e.g., `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`).
 
-Although your validator has been created and you have your operator address, 
-it will not be active until the end of the current epoch. This means you will 
-not receive delegations until then. This delay is due to Babylon's epoched 
-staking design, where the blockchain operates in defined epochs.
+After your validator creation transaction has been successfully submitted,
+the Babylon blockchain will register your validator, but it will not activate
+it until the end of the epoch. This is due to Babylon's epoched validator
+set rotation mechanism, in which validator set and stake updates can
+only happen at the end of each epoch. Each epoch lasts for about
+60 minutes in the current testnet.
 
-Messages affecting the validator set are processed at the end of each epoch, 
-so your validator creation transaction will only take effect at that time. 
-Additionally, you will only be able to query your validator details once the 
-next epoch begins. In the meantime, you can verify the success of your 
-transaction by checking its hash, which was generated and outputted following 
-the signing process in the previous step.
+> **⚡ Note:** You will not be able to query your validator details until
+> the start of the next epoch. You can verify that your creation
+> transaction has been registered by verifying the inclusion
+> of its transaction hash in the blockchain.
 
 ### 5.1 Verifying Validator Setup
 
@@ -289,9 +286,8 @@ For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k8
 the operator address is `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`. 
 
 For the next step, we will query your validator's details; however, results 
-will not appear until the current epoch concludes, which typically takes 10 to 
-60 minutes. This delay is due to the network's epoching mechanism, as mentioned 
-earlier.
+will not appear until the current epoch concludes (epochs last for 60 minutes).
+This delay is due to the network's epoching mechanism, as mentioned earlier.
 
 ```shell 
 babylond query staking validator <validator-operator-address>
