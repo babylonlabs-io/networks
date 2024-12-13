@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Pivotal",
+    "identity": "",
+    "website": "https://www/pivotalchain.io",
+    "security_contact": "christel@pivotalresear.ch",
+    "details": "Stake BTC to earn protocol revenue with plusBTC - institutional custody, always 1:1 redeemable"
+  },
+  "eots_pk": "34f2c1d07e3c83b7382cbecd73a06315b7067e75a78986c51f9d38d501078f91",
+  "commission": "0.03"
+}
