@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "AtlasStaking",
+    "identity": "3FAA58BDC270427D",
+    "website": "https://atlas-staking.com",
+    "security_contact": "info@atlasstaking.com",
+    "details": "The Strong Validator"
+  },
+  "eots_pk": "f60090c0a81d68b54ae2691ae47afc83b1cd5becf7c91f0278f3b743c45c9749",
+  "commission": "0.05"
+}
