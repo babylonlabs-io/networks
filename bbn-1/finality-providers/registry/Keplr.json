@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Keplr",
+    "identity": "55AE6F8C61BF4749",
+    "website": "https://keplr.app",
+    "security_contact": "node-operator@chainapsis.com",
+    "details": "Keplr Infra handles hundreds of millions of requests from all Keplr wallet users with robust, high SLA promised infrastructure and holds 7th largest TVL in the Cosmos ecosystem, including Celestia and dYdX as a validator."
+  },
+  "eots_pk": "4c353255924d6da7c953ebdb262d21970515ead8ffb817efaf89ec444c0631fa",
+  "commission": "0.03"
+}
