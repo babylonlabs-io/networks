@@ -6,8 +6,7 @@
 2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
 3. [Prepare for sync](#3-prepare-for-sync)
    1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
-   2. [Sync through state sync](#32-sync-through-state-sync)
-   3. [Sync from scratch](#33-sync-from-scratch)
+   2. [Sync from scratch](#32-sync-from-scratch)
 4. [Start the node](#4-start-the-node)
 
 ## 1. Install Babylon Binary 
@@ -152,10 +151,9 @@ mv genesis.json <path>/config/genesis.json # You must insert the home directory 
 Before starting your node sync, it's important to note that the initial release 
 at genesis was `v0.9.0`, while subsequently there have been software upgrades.
 
-There are three options you can choose from when syncing:
+There are two options you can choose from when syncing:
 1. Sync through a network snapshot (fastest method)
-2. Sync through state sync (quick catch-up without full history)
-3. Sync from scratch (complete sync from block 1)
+2. Sync from scratch (complete sync from block 1)
 
 ### 3.1. Sync through a network snapshot
 
@@ -179,37 +177,7 @@ Parameters:
 After importing the state, you can now start your node as specified in section
 [Start the node](#4-start-the-node).
 
-### 3.2. Sync through state sync
-
-State sync downloads only the current blockchain state (account balances, 
-validator set, and module states) instead of processing the entire chain history.
-While this means you won't have historical data, state sync allows your node to 
-quickly catch up to the current state without downloading and verifying the 
-entire blockchain history. To find the state-sync server from our 
-[networks homepage](../README.md).
-
-To utilize state sync, you'll need to update a few flags in your `config.toml`:
-```shell
-[statesync]
-enable = true
-
-rpc_servers = "4fd0303f110abe7567f318be659ce3b99436e895@65.108.198.118:20656,https://babylon-testnet-rpc-pruned-1.nodes.guru:443"
-trust_height = 200
-trust_hash = "4BCA43567339FD376F5C2C4DE75C4496181A0D169E79F65058D3EEDAAD714B6E"
-```
-
-Parameters:
-- `enable`: Activates state sync functionality
-- `rpc_servers`: List of RPC servers to fetch state sync data from
-- `trust_height`: Block height to trust for state sync 
-- `trust_hash`: Block hash corresponding to the trusted height
-
-You can find the current state sync configuration values on our 
-[networks homepage](../README.md#state-sync).
-
-Once configured, proceed to [Start the node](#4-start-the-node).
-
-### 3.3. Sync from scratch
+### 3.2. Sync from scratch
 
 Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from 
 scratch means downloading and verifying every block from the beginning 
