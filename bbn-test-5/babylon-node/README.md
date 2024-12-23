@@ -98,10 +98,10 @@ Parameters:
 - `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
    that your node will accept for transactions. Transactions with lower gas 
    prices will be rejected.
-- `iavl-cache-size`: Default is "781250" Setting to 
+- `iavl-cache-size`: Default is "781250". Setting to 
    0 disables the IAVL tree caching, which reduces memory usage but significantly 
    impacts RPC query performance.
-- `iavl-disable-fastnode`: Default is false. Setting to true disables the 
+- `iavl-disable-fastnode`: Default is `false`. Setting to true disables the 
    fast node feature, which reduces memory usage but significantly 
    impacts RPC query performance.
 - `btc-config.network`: Specifies which Bitcoin network to connect to for 
