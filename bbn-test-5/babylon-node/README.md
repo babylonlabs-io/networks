@@ -84,8 +84,8 @@ After initialization, you'll need to modify the following configuration files:
 # Minimum gas prices that this node will accept
 minimum-gas-prices = "0.005ubbn"
 
-iavl-cache-size ="5000"  # will result in 3GB of memory usage
-iavl-disable-fastnode=false
+iavl-cache-size ="0"  # will result in 3GB of memory usage
+iavl-disable-fastnode=true
 
 [btc-config]
 
@@ -98,7 +98,7 @@ Parameters:
 - `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
    that your node will accept for transactions. Transactions with lower gas 
    prices will be rejected.
-- `iavl-cache-size`: Default is "5000" (uses ~3GB of memory). Setting to 
+- `iavl-cache-size`: Default is "781250" Setting to 
    0 disables the IAVL tree caching, which reduces memory usage but significantly 
    impacts RPC query performance.
 - `iavl-disable-fastnode`: Default is false. Setting to true disables the 
@@ -111,21 +111,31 @@ Note: If you're running a validator or RPC node that needs to handle queries,
 it's recommended to keep these default values for optimal performance. Only 
 adjust these if you're running a node with limited memory resources.
 
-2. On `config.toml`, populate your seed nodes using entries from the 
-[network page](../README.md#seed-nodes):
+2. On `config.toml`, update the the following settings:
 
 ```shell
-# P2P Configuration Options    
+[p2p]
 
-# This is only an example and should be replaced with actual testnet seed
-# nodes.
-# Comma separated list of seed nodes to connect to
-seeds = "8fa2d1ab10dfd99a51703ba760f0ef555ae88f36@16.162.207.201:26656" 
+# These are placeholder values and should be replaced
+seeds = "NODE_ID1@NODE_ENDPOINT1:PORT1,NODE_ID2@NODE_ENDPOINT2:PORT2"
+
+# These are placeholder values and should be replaced
+persistent_peers = "NODE_ID1@NODE_ENDPOINT1:PORT1,NODE_ID2@NODE_ENDPOINT2:PORT2"
+
+[consensus]
+
+timeout_commit = "10s"
 ```
 
 Parameters:
 - `seeds`: Comma separated list of seed nodes that your node will connect to for 
-discovering other peers in the network
+discovering other peers in the network; you can obtain seed endpoints from
+[here](../README.md#seed-nodes)
+- `persistent_peers`: Comma separated list of nodes that your node will use as
+persistent peers; you can obtain peers from [here](../README.md#peers)
+- `timeout_commit`: The Babylon network block time
+
+Note: You can use either seeds, persistent peers or both.
 
 Next, you'll need to obtain the network's genesis file. This file contains 
 the initial state of the blockchain and is crucial for successfully syncing 
@@ -133,8 +143,7 @@ your node. You can inspect the file [here](../README.md#genesis) or use the
 following commands to download it directly:
 
 ```shell
-wget https://github.com/babylonlabs-io/networks/raw/main/bbn-test-5/genesis.tar.bz2 
-tar -xjf genesis.tar.bz2 && rm genesis.tar.bz2
+wget https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/main/bbn-test-5/network-artifacts/genesis.json
 mv genesis.json <path>/config/genesis.json # You must insert the home directory of your node
 ```
 
