@@ -193,7 +193,9 @@ To utilize state sync, you'll need to update a few flags in your `config.toml`:
 [statesync]
 enable = true
 
-rpc_servers = "4fd0303f110abe7567f318be659ce3b99436e895@65.108.198.118:20656"
+# 2 RPC endpoints with state sync enabled are required for state sync; we will
+# add endpoints here as they become available
+rpc_servers = "4fd0303f110abe7567f318be659ce3b99436e895@65.108.198.118:20656,NODE_ID2@NODE_ENDPOINT2:PORT2"
 trust_height = 200
 trust_hash = "4BCA43567339FD376F5C2C4DE75C4496181A0D169E79F65058D3EEDAAD714B6E"
 ```
