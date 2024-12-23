@@ -164,9 +164,8 @@ A snapshot is a compressed backup of the blockchain data taken at a specific
 height. Instead of processing all blocks from the beginning, you can download 
 and import this snapshot to quickly reach a recent block height.
 
-You can obtain the network snapshot [here](../README.md).
+You can obtain the network snapshot [here](../README.md#state-snapshot).
 
-<!-- TODO: We can add other snapshot sources as they appear -->
 To extract the snapshot, utilize the following command:
 
 ```shell
@@ -194,11 +193,10 @@ To utilize state sync, you'll need to update a few flags in your `config.toml`:
 [statesync]
 enable = true
 
-rpc_servers = "Y"
-trust_height = X
-trust_hash = "Z"
+rpc_servers = "4fd0303f110abe7567f318be659ce3b99436e895@65.108.198.118:20656"
+trust_height = 200
+trust_hash = "4BCA43567339FD376F5C2C4DE75C4496181A0D169E79F65058D3EEDAAD714B6E"
 ```
-<!-- TODO add the servers, height and hash above when available -->
 
 Parameters:
 - `enable`: Activates state sync functionality
@@ -229,6 +227,13 @@ Your node will sync blocks until it reaches an upgrade height.
 
 At that point, you will have to get the new software version defined by that
 height, and go back to step (1) in order to install it and restart.
+
+Note: When building the upgrade binary, include the following build flag so that
+testnet-specific upgrade data are included in the binary:
+
+```shell
+BABYLON_BUILD_OPTIONS="testnet" make install
+```
 
 You will have to repeat the above two steps until you sync with the 
 full blockchain.
