@@ -129,11 +129,12 @@ timeout_commit = "10s"
 
 Parameters:
 - `seeds`: Comma separated list of seed nodes that your node will connect to for 
-discovering other peers in the network; you can obtain seed endpoints from
-[here](../README.md#seed-nodes)
+   discovering other peers in the network; you can obtain seed endpoints from
+   [here](../README.md#seed-nodes)
 - `persistent_peers`: Comma separated list of nodes that your node will use as
-persistent peers; you can obtain peers from [here](../README.md#peers)
-- `timeout_commit`: The Babylon network block time
+   persistent peers; you can obtain peers from [here](../README.md#peers)
+- `timeout_commit`: The Babylon network block time has to be set to 
+   **10 seconds**
 
 Note: You can use either seeds, persistent peers or both.
 
