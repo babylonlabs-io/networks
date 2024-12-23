@@ -84,8 +84,8 @@ After initialization, you'll need to modify the following configuration files:
 # Minimum gas prices that this node will accept
 minimum-gas-prices = "0.005ubbn"
 
-iavl-cache-size ="0"  # will result in 3GB of memory usage
-iavl-disable-fastnode=true
+iavl-cache-size = 0
+iavl-disable-fastnode = true
 
 [btc-config]
 
@@ -98,9 +98,9 @@ Parameters:
 - `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
    that your node will accept for transactions. Transactions with lower gas 
    prices will be rejected.
-- `iavl-cache-size`: Default is "781250". Setting to 
-   0 disables the IAVL tree caching, which reduces memory usage but significantly 
-   impacts RPC query performance.
+- `iavl-cache-size`: Default is `781250`. Setting to `0` disables the IAVL tree
+   caching, which reduces memory usage but significantly impacts RPC query
+   performance.
 - `iavl-disable-fastnode`: Default is `false`. Setting to true disables the 
    fast node feature, which reduces memory usage but significantly 
    impacts RPC query performance.
