@@ -6,8 +6,7 @@
 2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
 3. [Prepare for sync](#3-prepare-for-sync)
    1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
-   2. [Sync through state sync](#32-sync-through-state-sync)
-   3. [Sync from scratch](#33-sync-from-scratch)
+   2. [Sync from scratch](#32-sync-from-scratch)
 4. [Start the node](#4-start-the-node)
 
 ## 1. Install Babylon Binary 
@@ -84,8 +83,8 @@ After initialization, you'll need to modify the following configuration files:
 # Minimum gas prices that this node will accept
 minimum-gas-prices = "0.005ubbn"
 
-iavl-cache-size ="0"  # will result in 3GB of memory usage
-iavl-disable-fastnode=true
+iavl-cache-size = 0
+iavl-disable-fastnode = true
 
 [btc-config]
 
@@ -98,9 +97,9 @@ Parameters:
 - `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
    that your node will accept for transactions. Transactions with lower gas 
    prices will be rejected.
-- `iavl-cache-size`: Default is "781250". Setting to 
-   0 disables the IAVL tree caching, which reduces memory usage but significantly 
-   impacts RPC query performance.
+- `iavl-cache-size`: Default is `781250`. Setting to `0` disables the IAVL tree
+   caching, which reduces memory usage but significantly impacts RPC query
+   performance.
 - `iavl-disable-fastnode`: Default is `false`. Setting to true disables the 
    fast node feature, which reduces memory usage but significantly 
    impacts RPC query performance.
@@ -152,10 +151,9 @@ mv genesis.json <path>/config/genesis.json # You must insert the home directory 
 Before starting your node sync, it's important to note that the initial release 
 at genesis was `v0.9.0`, while subsequently there have been software upgrades.
 
-There are three options you can choose from when syncing:
+There are two options you can choose from when syncing:
 1. Sync through a network snapshot (fastest method)
-2. Sync through state sync (quick catch-up without full history)
-3. Sync from scratch (complete sync from block 1)
+2. Sync from scratch (complete sync from block 1)
 
 ### 3.1. Sync through a network snapshot
 
@@ -164,9 +162,8 @@ A snapshot is a compressed backup of the blockchain data taken at a specific
 height. Instead of processing all blocks from the beginning, you can download 
 and import this snapshot to quickly reach a recent block height.
 
-You can obtain the network snapshot [here](../README.md).
+You can obtain the network snapshot [here](../README.md#state-snapshot).
 
-<!-- TODO: We can add other snapshot sources as they appear -->
 To extract the snapshot, utilize the following command:
 
 ```shell
@@ -180,38 +177,7 @@ Parameters:
 After importing the state, you can now start your node as specified in section
 [Start the node](#4-start-the-node).
 
-### 3.2. Sync through state sync
-
-State sync downloads only the current blockchain state (account balances, 
-validator set, and module states) instead of processing the entire chain history.
-While this means you won't have historical data, state sync allows your node to 
-quickly catch up to the current state without downloading and verifying the 
-entire blockchain history. To find the state-sync server from our 
-[networks homepage](../README.md).
-
-To utilize state sync, you'll need to update a few flags in your `config.toml`:
-```shell
-[statesync]
-enable = true
-
-rpc_servers = "Y"
-trust_height = X
-trust_hash = "Z"
-```
-<!-- TODO add the servers, height and hash above when available -->
-
-Parameters:
-- `enable`: Activates state sync functionality
-- `rpc_servers`: List of RPC servers to fetch state sync data from
-- `trust_height`: Block height to trust for state sync 
-- `trust_hash`: Block hash corresponding to the trusted height
-
-You can find the current state sync configuration values on our 
-[networks homepage](../README.md#state-sync).
-
-Once configured, proceed to [Start the node](#4-start-the-node).
-
-### 3.3. Sync from scratch
+### 3.2. Sync from scratch
 
 Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from 
 scratch means downloading and verifying every block from the beginning 
@@ -229,6 +195,13 @@ Your node will sync blocks until it reaches an upgrade height.
 
 At that point, you will have to get the new software version defined by that
 height, and go back to step (1) in order to install it and restart.
+
+Note: When building the upgrade binary, include the following build flag so that
+testnet-specific upgrade data are included in the binary:
+
+```shell
+BABYLON_BUILD_OPTIONS="testnet" make install
+```
 
 You will have to repeat the above two steps until you sync with the 
 full blockchain.
