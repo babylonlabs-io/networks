@@ -122,4 +122,4 @@ there’s consensus on the following:
   staking parameters.
 - *Staking Transactions*: All staking providers validate the
   staking transactions in the same way and reach the same conclusions on their
-  status (e.g. actie, expired, unbonding, etc.)
+  status (e.g. active, expired, unbonding, etc.)
