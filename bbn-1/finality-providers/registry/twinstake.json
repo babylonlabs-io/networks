@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Twinstake",
+    "identity": "A7823F4D765E18AB",
+    "website": "https://www.twinstake.io",
+    "security_contact": "security@twinstake.io",
+    "details": "Twinstake is an institutional-grade non-custodial staking provider"
+  },
+  "eots_pk": "99fcdc40b7f4bf65043230a188f87f4c11ec72617c797ac00775e40a4d90aaaf",
+  "commission": "0.10"
+}
