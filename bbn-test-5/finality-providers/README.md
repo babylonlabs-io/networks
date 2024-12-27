@@ -26,7 +26,7 @@ go version
 Subsequently clone the finality provider [repository](https://github.com/babylonlabs-io/finality-provider).
 
 ```shell
-git clone https://github.com/babylonchain/finality-provider.git
+git clone https://github.com/babylonlabs-io/finality-provider.git
 ```
 
 Once the `babylon` repository is downloaded then checkout the corresponding tag for `bbn-testnet-5`.
