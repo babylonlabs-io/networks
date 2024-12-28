@@ -268,7 +268,7 @@ func TestFailGlobalParamsValidation(t *testing.T) {
 	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
 	assert.Equal(t, "invalid params with version 0: covenant quorum 6 cannot be more than the amount of covenants 5", err.Error())
 
-	// test invalid convenant pks
+	// test invalid covenant pks
 	deepCopy(&defaultGlobalParams, &clonedParams)
 	clonedParams.Versions[0].CovenantPks = []string{
 		"04ffeaec52a9b407b355ef6967a7ffc15fd6c3fe07de2844d61550475e7a5233e5",
