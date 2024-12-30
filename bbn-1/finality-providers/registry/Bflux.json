@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bflux",
+    "identity": "35892AC552B8A0A8",
+    "website": "",
+    "security_contact": "support@blockdaemon.com",
+    "details": "Bflux provides maximum uptime for the Babylon network so that you can be confident your node will be there, ready and secure, for optimal reward generation. Contact us to stake on Bitcoin today."
+  },
+  "eots_pk": "21e31a028dd0972780e479cfc20518176bf0b89874100621b280dd28bbd27cc4",
+  "commission": "0.05"
+}
