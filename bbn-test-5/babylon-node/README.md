@@ -31,7 +31,9 @@ cd babylon
 # you want to install -- depends on which
 # height you sync from
 git checkout <tag>
-make install
+# we use this to ensure that the testnet-specific upgrade data 
+# are included in the binary
+BABYLON_BUILD_OPTIONS="testnet" make install 
 ```
 <!-- TODO: testnet tag to be defined -->
 This command does the following:
@@ -94,9 +96,9 @@ network = "signet" # The Babylon testnet connects to the signet Bitcoin network
 ```
 
 Parameters:
-- `minimum-gas-prices`: The minimum gas price (in this example we use `0.005ubbn`)
-   that your node will accept for transactions. Transactions with lower gas 
-   prices will be rejected.
+- `minimum-gas-prices`: The minimum gas price your node will accept for 
+   transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and 
+   any transactions with gas prices below your node's minimum will be rejected.
 - `iavl-cache-size`: Default is `781250`. Setting to `0` disables the IAVL tree
    caching, which reduces memory usage but significantly impacts RPC query
    performance.
