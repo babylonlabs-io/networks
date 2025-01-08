@@ -83,7 +83,7 @@ After initialization, you'll need to modify the following configuration files:
 ```shell
 # Base configuration
 # Minimum gas prices that this node will accept
-minimum-gas-prices = "0.005ubbn"
+minimum-gas-prices = "0.002ubbn"
 
 iavl-cache-size = 0
 iavl-disable-fastnode = true
