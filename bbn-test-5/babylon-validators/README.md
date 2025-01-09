@@ -146,7 +146,8 @@ The above command will:
 
 > ❗**Critical**: After executing the above command, **restart your validator node**
 > so that the BLS key is loaded into memory and can be utilized. Failure to do
-> this will result in a broken validator setup.
+> this will result in a broken validator setup, as the validator will not be able to generate
+> and submit BLS signatures.
 
 This key will be used automatically by your validator software when it needs 
 to participate in epoch-end signature collection. The BLS signatures help 
