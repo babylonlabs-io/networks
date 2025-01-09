@@ -60,5 +60,5 @@ Please see the setup and configuration guides below:
 
 - [Babylon Node Operators](babylon-node/README.md)
 - [Validators](babylon-validators/README.md)
-- [Finality Providers](https://github.com/babylonlabs-io/finality-providers)
-- [Covenant Committee](covenant-committee/README.md)
+- [Finality Providers](https://github.com/babylonlabs-io/finality-provider/blob/main/README.md)
+- [Covenant Committee](https://github.com/babylonlabs-io/covenant-emulator/blob/main/README.md)
