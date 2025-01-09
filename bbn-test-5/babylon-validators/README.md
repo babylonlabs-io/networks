@@ -144,6 +144,11 @@ The above command will:
 3. Store it in your node's configuration file at 
 `<path>/config/priv_validator_key.json` alongside your validator key
 
+> ❗**Critical**: After executing the above command, **restart your validator node**
+> so that the BLS key is loaded into memory and can be utilized. Failure to do
+> this will result in a broken validator setup, as the validator will not be able to generate
+> and submit BLS signatures.
+
 This key will be used automatically by your validator software when it needs 
 to participate in epoch-end signature collection. The BLS signatures help 
 create compact, efficient proofs of consensus that can be later timestamped to 
