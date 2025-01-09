@@ -18,12 +18,15 @@ The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 
 ### State snapshot
 
-<!-- TODO: Specify height -->
-A snapshot including state up to height `X` can be retrieved from
+A snapshot including state up to height `200` can be retrieved from
 [here](./network-artifacts/bbn-test-5.tar.gz).
 
-<!-- TODO: Specify version when available -->
-To boot a node with this snapshot, Babylon version `vX.Y.Z` should be used.
+To boot a node with this snapshot, Babylon version `v1.0.0-rc.3` should be used
+([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0-rc.3)).
+
+Some additional network snapshot sources are also listed:
+
+- https://polkachu.com/testnets/babylon/snapshots
 
 ### Seed nodes
 
@@ -57,5 +60,5 @@ Please see the setup and configuration guides below:
 
 - [Babylon Node Operators](babylon-node/README.md)
 - [Validators](babylon-validators/README.md)
-- [Finality Providers](https://github.com/babylonlabs-io/finality-providers)
-- [Covenant Committee](covenant-committee/README.md)
+- [Finality Providers](https://github.com/babylonlabs-io/finality-provider/blob/main/README.md)
+- [Covenant Committee](https://github.com/babylonlabs-io/covenant-emulator/blob/main/README.md)
