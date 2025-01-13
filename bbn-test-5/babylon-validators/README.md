@@ -228,7 +228,12 @@ Before proceeding, ensure that your
 `<path>/config/priv_validator_key.json` file contains both your CometBFT 
 consensus and BLS key pair as they are both required for the 
 validator creation process. Recall that `<path>` is the `--home` directory 
-you specified when setting up your node..
+you specified when setting up your node.
+
+> ⚠️ **Warning**: When troubleshooting your validator, do not use `unsafe-reset-all` 
+> unless you have backed up `priv_validator_key.json` and have a secure backup 
+> plan in place. Running `unsafe-reset-all` will result in the removal of the BLS 
+> keys within the `priv_validator_key.json` file.
 
 > ⚠️ **Important**: You will need a funded account for this step.
 
