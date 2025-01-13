@@ -232,7 +232,8 @@ you specified when setting up your node.
 
 > ⚠️ **Warning**: When troubleshooting your validator, do not use `unsafe-reset-all` 
 > unless you have backed up `priv_validator_key.json` and have a secure backup 
-> plan in place.
+> plan in place. Running `unsafe-reset-all` will result in the removal of the BLS 
+> keys within the `priv_validator_key.json` file.
 
 > ⚠️ **Important**: You will need a funded account for this step.
 
