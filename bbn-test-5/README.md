@@ -27,6 +27,7 @@ To boot a node with this snapshot, Babylon version `v1.0.0-rc.3` should be used
 Some additional network snapshot sources are also listed:
 
 - https://polkachu.com/testnets/babylon/snapshots
+- https://www.imperator.co/services/chain-services/testnets/babylon
 
 ### Seed nodes
 
@@ -42,16 +43,19 @@ Peers can be retrieved from [here](./peers.txt).
 
 - https://babylon-testnet-rpc.nodes.guru
 - https://babylon-testnet-rpc.polkachu.com
+- https://rpc-babylon-testnet.imperator.co
 
 2. LCD (node API)
 
 - https://babylon-testnet-api.nodes.guru
 - https://babylon-testnet-api.polkachu.com
+- https://lcd-babylon-testnet.imperator.co
 
 3. gRPC
 
 - https://babylon-testnet-grpc.nodes.guru
 - http://babylon-testnet-grpc.polkachu.com:20690
+- grpc-babylon-testnet.imperator.co:443
 
 ## Network Participants
 
