@@ -107,8 +107,8 @@ bad mnemonic private split escape wage suit banner affair home fine rent erosion
 ### 1.3. Import existing wallet
 
 If you wish to import an existing wallet with your mnemonic seed phrase,
-you can use the below command. Note that not all of the params below are
-required, please see the parameters list below to see which are optional.
+you can use the below command. Note that not all of the flags are
+required, check the ones that are needed for the recovery use case `--recover`
 
 `babylond keys add <wallet-name> --recover --hd-path <hd-path> --home <home> --keyring-backend <backend>`
 
@@ -256,7 +256,7 @@ This command has several flag options:
 To validate the JSON file that contains the PoP, run `eotsd pop validate` command:
 
 ```bash
- $ eotsd pop validate /path/to/pop.json
+ $ eotsd pop validate /path/to/pop_fp.json
  Proof of Possession is valid!
 ```
 
