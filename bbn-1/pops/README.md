@@ -155,7 +155,8 @@ Detailed specification of each field:
   sha256(`BabyAddress`) with the EOTS private key.
 - `BabySignEotsPk`: A signature of the EotsPublicKey, created by the Babylon
   private key. This signature follows the Cosmos ADR-036 specification and is
-  encoded in base64.
+  encoded in base64. The signing doc spec can be found
+  [here](https://github.com/babylonlabs-io/finality-provider/blob/1e727508536fb26aa658489374b3b9bb632d2ac3/eotsmanager/cmd/eotsd/daemon/pop.go#L578).
 
 One can develop tools by themselves following the above spec, or they can
 use our [reference implementation](https://github.com/babylonlabs-io/finality-provider/blob/1e727508536fb26aa658489374b3b9bb632d2ac3/eotsmanager/cmd/eotsd/daemon/pop.go) and follow the guidance below.
@@ -313,7 +314,8 @@ Detailed specification of each field:
 - `btcSignBaby`: The BI322 signature made by `btcAddress`. Base64 encoded.
 - `babySignBtc`: The ADR36 signature made by `babyPublicKey`. Base64 encoded.
 - `babyPublicKey`: The Babylon public key, corresponding to
-  the `babyAddress`. Base64 encoded.
+  the `babyAddress`. Base64 encoded. The signing doc spec can be found
+  [here](https://github.com/babylonlabs-io/btc-staker/blob/d2be612891a4a351de63643886951555d87b01bb/staker/pop_creator.go#L115).
 
 One can develop tools by themselves following the above spec, or they can
 use our [reference implementation](https://github.com/babylonlabs-io/btc-staker/blob/65393565b8277d70badd4aeecdf523745158041d/cmd/stakercli/pop/pop.go) and follow the guidance below.
