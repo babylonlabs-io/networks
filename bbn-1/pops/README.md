@@ -12,6 +12,7 @@ In general, the process is as follows:
 1. Create Babylon keys and address that receives BABY tokens.
 2. Generate PoP in a JSON file.
 3. Check validity of the JSON file.
+4. Submit PoP JSON files through pull request.
 
 ## 1. Create Babylon keys and addresses
 
@@ -130,6 +131,35 @@ The output of the above command will be similar to the following:
 registered for phase-1 following the instructions in the
 [official documentation](https://github.com/babylonlabs-io/networks/tree/main/bbn-1/finality-providers).
 
+The JSON format of a PoP for finality providers looks like the follows:
+
+```json
+{
+  "eotsPublicKey": "3d0bebcbe800236ce8603c5bb1ab6c2af0932e947db4956a338f119797c37f1e",
+  "babyPublicKey": "A0V6yw74EdvoAWVauFqkH/GVM9YIpZitZf6bVEzG69tT",
+  "babySignEotsPk": "AOoIG2cwC2IMiJL3OL0zLEIUY201X1qKumDr/1qDJ4oQvAp78W1nb5EnVasRPQ/XrKXqudUDnZFprLd0jaRJtQ==",
+  "eotsSignBaby": "pR6vxgU0gXq+VqO+y7dHpZgHTz3zr5hdqXXh0WcWNkqUnRjHrizhYAHDMV8gh4vks4PqzKAIgZ779Wqwf5UrXQ==",
+  "babyAddress": "bbn17ew0he6svxrqj2c7mef7qsyg0assc2upa5gy7w"
+}
+```
+
+Detailed specification of each field:
+
+- `EotsPublicKey`: The EOTS public key of the finality provider in hexadecimal
+  format.
+- `BabyPublicKey`: The Babylon secp256k1 public key in base64 format.
+- `BabyAddress`: The Babylon account address (bbn prefix). The address is
+  derived from the BabyPublicKey and used as the primary identifier on the
+  Babylon network.
+- `EotsSignBaby`: A Schnorr signature in base64 format, created by signing the
+  sha256(`BabyAddress`) with the EOTS private key.
+- `BabySignEotsPk`: A signature of the EotsPublicKey, created by the Babylon
+  private key. This signature follows the Cosmos ADR-036 specification and is
+  encoded in base64.
+
+One can develop tools by themselves following the above spec, or they can
+use our [reference implementation](https://github.com/babylonlabs-io/finality-provider/blob/1e727508536fb26aa658489374b3b9bb632d2ac3/eotsmanager/cmd/eotsd/daemon/pop.go) and follow the guidance below.
+
 ### 2.1. Setup the EOTS Daemon
 
 The EOTS daemon is utilized to create and manage the EOTS key of the
@@ -152,7 +182,7 @@ Cloning into 'finality-provider'...
 
 Then, checkout to the `v0.4.3` release tag:
 
-```
+```bash
 $ cd finality-provider # cd into the project directory
 $ git checkout v0.4.3
 
@@ -214,10 +244,6 @@ $~ eotsd pop export --home /path/to/eotsd/home/ --key-name <my-key-name> --keyri
 }
 ```
 
-> Detailed explanation about the output can be found
-> [here](https://github.com/babylonlabs-io/finality-provider/blob/c1a77bfbb54b9ac0891c2f3b1b39ae0f88885261/docs/pop_format_spec.md#L1).
-> 
-
 This command has several flag options:
 
 - `--home` specifies the home directory of the EOTS daemon in which the EOTS
@@ -264,11 +290,33 @@ If `Proof of Possession is valid!` is shown, the pop is successfully validated.
 
 ## 3. Generate PoP for stakers
 
-It is possible that the stakers BTC keys are stored in different type of
-wallets, so one may need to develope their own software to generate PoP
-for stakers. For the format of PoP and how it is generated, refer
-to [3.3. Create the Proof of Possession](#33-create-the-proof-of-possession-pop).
-Below is instructions of using `btc-staker`.
+The JSON format of a PoP for stakers looks like the follows:
+
+```bash
+{
+    "babyAddress": "bbn1xjz8fs9vkmefdqaxan5kv2d09vmwzru7jhy424",
+    "btcAddress": "bc1qcpty6lpueassw9rhfrvkq6h0ufnhmc2nhgvpcr",
+    "btcPublicKey": "79f71003589158b2579345540b08bbc74974c49dd5e0782e31d0de674540d513",
+    "btcSignBaby": "AkcwRAIgcrI2IdD2JSFVIeQmtRA3wFjjiy+qEvqbX57rn6xvWWECIDis7vHSJeR8X91uMQReG0pPQFFLpeM0ga4BW+Tt2V54ASEDefcQA1iRWLJXk0VUCwi7x0l0xJ3V4HguMdDeZ0VA1RM=",
+    "babySignBtc": "FnYTm9ZbhJZY202R9YBkjGEJqeJ/n5McZBpGH38P2pt0YRcjwOh8XgoeVQTU9So7/RHVHHdKNB09DVmtQJ7xtw==",
+    "babyPublicKey": "Asezdqkvh+kLbuD75DirSwi/QFbJjFe2SquiivMaPS65"
+}
+```
+
+Detailed specification of each field:
+
+- `babyAddress`: The address of the BABY key created in step 1.
+  Bech-32 encoded.
+- `btcAddress`: The address of corresponding to the BTC key used
+  when staking in phase-1. Bech-32 encoded.
+- `btcPublicKey`: The staker public key used. Hex encoded.
+- `btcSignBaby`: The BI322 signature made by `btcAddress`. Base64 encoded.
+- `babySignBtc`: The ADR36 signature made by `babyPublicKey`. Base64 encoded.
+- `babyPublicKey`: The Babylon public key, corresponding to
+  the `babyAddress`. Base64 encoded.
+
+One can develop tools by themselves following the above spec, or they can
+use our [reference implementation](https://github.com/babylonlabs-io/btc-staker/blob/65393565b8277d70badd4aeecdf523745158041d/cmd/stakercli/pop/pop.go) and follow the guidance below.
 
 ### 3.1. Prepare the BTC wallet
 
@@ -376,31 +424,6 @@ specified output path. It has several flag options:
 - `--output-file` specifies the file path of the raw JSON result. Note
   that if the flag is not specified, the JSON file won't be generated.
 
-This command will produce json output:
-
-```bash
-{
-    "babyAddress": "bbn1xjz8fs9vkmefdqaxan5kv2d09vmwzru7jhy424",
-    "btcAddress": "bc1qcpty6lpueassw9rhfrvkq6h0ufnhmc2nhgvpcr",
-    "btcPublicKey": "79f71003589158b2579345540b08bbc74974c49dd5e0782e31d0de674540d513",
-    "btcSignBaby": "AkcwRAIgcrI2IdD2JSFVIeQmtRA3wFjjiy+qEvqbX57rn6xvWWECIDis7vHSJeR8X91uMQReG0pPQFFLpeM0ga4BW+Tt2V54ASEDefcQA1iRWLJXk0VUCwi7x0l0xJ3V4HguMdDeZ0VA1RM=",
-    "babySignBtc": "FnYTm9ZbhJZY202R9YBkjGEJqeJ/n5McZBpGH38P2pt0YRcjwOh8XgoeVQTU9So7/RHVHHdKNB09DVmtQJ7xtw==",
-    "babyPublicKey": "Asezdqkvh+kLbuD75DirSwi/QFbJjFe2SquiivMaPS65"
-}
-```
-
-where:
-
-- `babyAddress` is the address of the BABY key created in step 1.
-  Bech-32 encoded.
-- `btcAddress` is the address of corresponding to the BTC key used
-  when staking in phase-1. Bech-32 encoded.
-- `btcPublicKey` is the staker public key used. Hex encoded.
-- `btcSignBaby` is the BI322 signature made by `btcAddress`. Base64 encoded.
-- `babySignBtc` is the ADR36 signature made by `babyPublicKey`. Base64 encoded.
-- `babyPublicKey` is the Babylon public key, corresponding to
-  the `babyAddress`. Base64 encoded.
-
 ### 3.4. Validate the Proof of Possession (PoP)
 
 To validate the JSON file that contains the PoP,
@@ -415,8 +438,12 @@ If `Proof of Possession is valid!` is shown, the pop is successfully validated.
 
 ## 4. Create Pull Request
 
+After generation and validation of PoPs, please submit the PoP JSON
+files through PRs to this repo.
+
 The PoP JSON files for finality providers and stakers are stored under the
-`fps` and `stakers` directories respectively. Each file should be identified
-by a unique name, e.g., `${btc_pk_pop}.json`, with `.json` extension.
+`bbn-1/pops/fps` and `bbn-1/pops/stakers` directories respectively.
+Each file should be identified by a unique name, e.g., `${btc_pk_pop}.json`,
+with `.json` extension.
 
 The pull request should be titled with the company's name.
