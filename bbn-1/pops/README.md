@@ -324,7 +324,7 @@ Launch bitcoind instance and load the wallet that was used to stake in phase-1
 (see [instructions](https://github.com/babylonlabs-io/btc-staker) of bitcoind for phase-1):
 
 ```bash
-$ bitcoind bitcoin-cli -rpcuser=user -rpcpassword=pass loadwallet "walletName"
+$ bitcoin-cli -rpcuser=user -rpcpassword=pass loadwallet "walletName"
 ```
 
 where:
