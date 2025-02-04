@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bevm",
+    "identity": "",
+    "website": "https://bevm.io",
+    "security_contact": "0xmassis@gmail.com",
+    "details": "BEVM is the first fully decentralized EVM-compatible Bitcoin L2 that uses BTC as Gas."
+  },
+  "eots_pk": "3e1d931ca6fdd448873da7c5f995b044d3e5641e6981280d8743547c90aaf812",
+  "commission": "0.1"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "proofgroup",
+    "identity": "",
+    "website": "https://proofgroup.xyz/",
+    "security_contact": "m3diumrare@proton.me",
+    "details": ""
+  },
+  "eots_pk": "12fe87f124cc169e3fcec9885e2ab3c986e0f46bd60ec290995a1ca03d69d006",
+  "commission": "0.05"
+}

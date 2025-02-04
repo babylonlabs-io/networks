@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Colossus",
+    "identity": "32A5F1629806ED70",
+    "website": "https://colossus.digital",
+    "security_contact": "babylon@colossus.digital",
+    "details": "Institutional BTC staking from regulated custody"
+  },
+  "eots_pk": "b5b2e5acbfebb565074cbaabc5fe414ce2a7aeddb05c811b2785b8397cffd591",
+  "commission": "0.05"
+}

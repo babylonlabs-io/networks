@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Bitrue",
+    "identity": "",
+    "website": "https://www.bitrue.com",
+    "security_contact": "evan@bitrue.com",
+    "details": "Bitrue is a long-standing cryptocurrency platform that offers industry-leading staking returns on a wide range of assets, as well as providing a complete suite of digital asset services including purchasing, trading, launchpools, and more."
+  },
+  "eots_pk": "3eaab89389d4c8e820c356eea1a20104f6ac6b4e1a5b3605047336c6dcedaa99",
+  "commission": "0.03"
+}

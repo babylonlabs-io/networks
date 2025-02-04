@@ -1,0 +1,3 @@
+be232be53f7ac3c4a6628f98becb48fd25df1adf@babylon-testnet-seed.nodes.guru:55706
+ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:20656
+59df4b3832446cd0f9c369da01f2aa5fe9647248@65.109.49.115:16256

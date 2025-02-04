@@ -1,0 +1,2 @@
+fe62e0a38eb7694080c83a84225a6bb33be01fed@babylon-testnet-rpc-pruned-1.nodes.guru:55706
+4a3dd7deb4770c06e05849a4128fea1a7439a9d9@65.109.106.210:20656

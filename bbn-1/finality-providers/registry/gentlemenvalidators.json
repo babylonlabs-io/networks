@@ -1,10 +1,10 @@
 {
   "description": {
-    "moniker": "GentlemenValidators",
-    "identity": "CCD2E0C1AD90602A",
-    "website": "https://gentlemenvalidators.com",
-    "security_contact": "info@gentlemenvalidators.com",
-    "details": "Checkmate!."
+    "moniker": "AtlasNodes",
+    "identity": "3CD0822953717425",
+    "website": "https://atlas-nodes.com",
+    "security_contact": "info@atlas-nodes.com",
+    "details": "Professional Ecosystem Builders and Decentralization."
   },
   "eots_pk": "33bb950d3dfa51c59b7c50b074c70c2404d0c2c48abb60008cbc8b69d54c73bb",
   "commission": "0.05"

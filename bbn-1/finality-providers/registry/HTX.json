@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "HTX",
+    "identity": "",
+    "website": "https://www.htx.com/",
+    "security_contact": "huobi-pos@outlook.com",
+    "details": "As a world-leading company in the blockchain industry, HTX Group was founded in 2013 with a mission to make breakthroughs in core blockchain technology and the integration of blockchain technology to other industries."
+  },
+  "eots_pk": "bb90cbe7d0afb84fda8b4d440ddce1a394878a32aad29929c86e0e9188b003ba",
+  "commission": "0.03"
+}
