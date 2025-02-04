@@ -1,0 +1,11 @@
+{
+   "description": {
+    "moniker": "pSTAKE",
+    "identity": "CCD58C1559B694A8",
+    "website": "https://pstake.finance/",
+    "security_contact": "Hello@pstake.finance",
+    "details": "pSTAKE Finance is a multichain liquid staking protocol, backed by Binance Labs."
+  },
+  "eots_pk": "fc8a5b9930c3383e94bd940890e93cfcf95b2571ad50df8063b7011f120b918a",
+  "commission": "0.03"
+}

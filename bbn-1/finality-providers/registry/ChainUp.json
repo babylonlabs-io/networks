@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "ChainUp",
+    "identity": "986C0C86F27510DE",
+    "website": "https://www.chainup.com/",
+    "security_contact": "randd@chainup.com",
+    "details": "ChainUp is an enterprise-grade blockchain and web3 development firm."
+  },
+  "eots_pk": "31287a9728f7b11863b9c56fc4cca103f0473dcdc6746ed7f79050d3adff644b",
+  "commission": "0.05"
+}

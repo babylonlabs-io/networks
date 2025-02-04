@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Undefined Labs",
+    "identity": "",
+    "website": "https://undefinedlabs.xyz",
+    "security_contact": "michael@undefinedlabs.xyz",
+    "details": "We define the undefined and build the Crypto Narrative."
+  },
+  "eots_pk": "e7b20e731f84fb98b7525e7696da077eb7f6155d5534a789b5c7bab9d3257afd",
+  "commission": "0.03"
+}

@@ -1,0 +1,11 @@
+{
+    "description": {
+      "moniker": "SnowFall",
+      "identity": "AE7E53FAC7B1CD90",
+      "website": "https://www.snow-fall.io",
+      "security_contact": "contact@snow-fall.io",
+      "details": "Backed by 5+ years of experience, we offer security and stability. Stake now for easy."
+    },
+    "eots_pk": "eff010c66fc56784e708202e49bd875f8b08b8a1a40f0e7638e93ef1366a13d7",
+    "commission": "0.05"
+  }

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Simply Staking",
+    "identity": "4095165BF57B60BE",
+    "website": "https://simplystaking.com/",
+    "security_contact": "staking@simplystaking.com",
+    "details": "At Simply Staking, we are a globally recognised leader in blockchain infrastructure provision and development, dedicated to the advancement and security of decentralised technologies."
+  },
+  "eots_pk": "03f0aa09112a19685e1514c9fc768a27df953db6abddcb453b96cc3265469af6",
+  "commission": "0.03"
+}

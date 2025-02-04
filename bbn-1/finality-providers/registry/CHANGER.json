@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "CHANGER",
+    "identity": "1247E3A2464E6835",
+    "website": "https://yong.land/",
+    "security_contact": "soaryong.c@gmail.com",
+    "details": "Changer serves as a guardian of truth, ensuring the accuracy and integrity of transactions and records on the blockchain."
+  },
+  "eots_pk": "32009354f274871178dbb4ab7fa789f4a96fea8f0ff5de105b306c046e256769",
+  "commission": "0.05"
+}

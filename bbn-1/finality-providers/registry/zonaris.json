@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "zonaris",
+    "identity": "CB2A5469006ED319",
+    "website": "https://zonaris.io",
+    "security_contact": "contact@zonaris.com",
+    "details": "Bitcoin staking powered by zonaris' green, institutional-grade, CO2-neutral infrastructure."
+  },
+  "eots_pk": "b4cf2cf2b7b3c1d42b5ed7e2f0811e61474eaae2819698b149635656676bd28c",
+  "commission": "0.05"
+}

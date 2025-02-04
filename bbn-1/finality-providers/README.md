@@ -39,8 +39,8 @@ requirements:
 - having participated in the
 [Babylon testnet-4](https://github.com/babylonchain/networks/tree/ac531139d5a75e575b34a80c9f8fc841cc33adab/bbn-test-4),
 - to go through a know your business (KYB) process conducted by Babylon Labs, and
-- to submit a pull request (PR) before the deadline of **August 16th, end of
-the day (EoD) anywhere on earth (AoE)**.
+- to submit a pull request (PR) before the deadline of **August 20th, 12pm
+coordinated universal time (UTC)**.
 
 The pull request created should contain the finality provider's information
 combined with its EOTS public key, and a signature signed over the information
@@ -358,9 +358,8 @@ During the operation of the first stage of the Babylon mainnet,
 a finality provider can/can't perform the following updates.
 
 - ❌ Commission can not be changed
-- ❌ Moniker can not be changed
 - ❌ Finality Provider EOTS key can not be changed
-- ✅ Identity, website, security contact, and details can be changed.
+- ✅ Moniker, identity, website, security contact, and details can be changed.
 
 To update the changeable fields, the finality provider should
 modify the JSON object containing their information,
