@@ -14,6 +14,10 @@ In general, the process is as follows:
 3. Check validity of the JSON file.
 4. Submit PoP JSON files through pull request.
 
+Note that submitting PRs in Step 4 is only for testing purposes. Therefore,
+PRs that are approved will not be merged. Operators
+**MUST** submit their PoPs via API after the API is public.
+
 ## 1. Create Babylon keys and addresses
 
 Your Babylon keys will be used to specify the address in which the BABY token
