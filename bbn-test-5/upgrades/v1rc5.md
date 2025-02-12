@@ -22,7 +22,8 @@ signers impossible.
 
 With this upgrade, the BLS key is now separated from the Validator signing key
 (`priv_validator_key.json`) and stored on a separate, password-protected file
-named `bls_key.json`.  The BLS key is encrypted using ERC-2335 and the
+named `bls_key.json`.  The BLS key is encrypted using
+[ERC-2335](https://eips.ethereum.org/EIPS/eip-2335) and the
 encryption password is located in a txt file named `bls_password.txt`. The
 existence of the BLS key is verified during node startup, with the node unable
 to start unless the BLS key exists.
@@ -33,7 +34,9 @@ to setup their BLS files:
 - **CometBFT Validators** will have to migrate their BLS keys outside of the
   `priv_validator_key.json` file.
   - With the removal of the BLS key from your CometBFT keys file, you can now
-    use remote signing software to operate your Validator (TMKMS, horcrux)!
+    use remote signing software to operate your Validator (
+    [TMKMS](https://github.com/iqlusioninc/tmkms),
+    [horcrux](https://github.com/strangelove-ventures/horcrux))!
 - **Node operators without BLS keys** will have to set up a BLS key, similar to
   being required to have a `priv_validator_key.json`.
 
