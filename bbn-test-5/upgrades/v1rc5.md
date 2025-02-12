@@ -78,10 +78,6 @@ auto-generated through the babylond init command.
     node. You will be asked to insert a password to encrypt the BLS key, which
     will be automatically saved in a file named `$HOME/config/bls_password.txt`.
     Your BLS key will be saved in a file named `$HOME/config/bls_key.json`.
-  - Verify that $HOME/config/bls_key.json and $HOME/config/bls_password.txt
+  - Verify that `$HOME/config/bls_key.json` and `$HOME/config/bls_password.txt`
     files exist
 - Start your Babylon node
-  - **If you are a CometBFT Validator**, verify that your node is signing new blocks
-    and is sending BLS signatures at the epoch boundary
-  - **If you are not a CometBFT Validator**, verify that your node is syncing the
-    latest blocks
