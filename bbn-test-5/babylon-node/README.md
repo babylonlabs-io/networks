@@ -195,7 +195,7 @@ using the genesis software version `v0.9.0` in place of `<tag>`.
 
 Your node will sync blocks until it reaches a software upgrade height.
 
-At that point, you will have to perform the steps matching by the corresponding
+At that point, you will have to perform the steps matching the corresponding
 [upgrade height](./upgrades/README.md).
 
 You will have to go over all the software upgrades until you sync with the 
