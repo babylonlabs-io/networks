@@ -48,18 +48,16 @@ auto-generated through the babylond init command.
 ### Prepare the upgrade binary
 
 - Obtain the `v1.0.0-rc.5` binary. You can achieve this in multiple ways:
-  - Download the binary from the releases page
-    - Linux (TODO: Add link)
-    - Mac (TODO: Add link)
+  - Download the binary from the [releases page](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0-rc.5)
   - Build the binary on your machine
     ```shell
     git checkout v1.0.0-rc.5
     BABYLON_BUILD_OPTIONS="testnet" make install
     ```
-  - In case you work with Docker images, download a Docker image from Dockerhub
-    - Linux (TODO: Add link)
-    - Mac (TODO: Add link)
-
+  - If you’re working with Docker images, you can pull the pre-built Docker image:
+    ```shell
+    docker pull babylonlabs/babylond:v1.0.0-rc.5-testnet
+    ```
 ### Perform the upgrade
 
 - Stop your Babylon node
