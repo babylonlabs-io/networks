@@ -184,10 +184,10 @@ using the genesis software version `v0.9.0` in place of `<tag>`.
 
 2. Start your node as specified in section [Start the node](#4-start-the-node).
 
-Your node will sync blocks until it reaches an upgrade height.
+Your node will sync blocks until it reaches a software upgrade height.
 
-At that point, you will have to get the new software version defined by that
-height, and go back to step (1) in order to install it and restart.
+At that point, you will have to perform the steps matching the corresponding
+[upgrade height](./upgrades/README.md).
 
 Note: When building the upgrade binary, include the following build flag so that
 testnet-specific upgrade data are included in the binary:
@@ -196,7 +196,7 @@ testnet-specific upgrade data are included in the binary:
 BABYLON_BUILD_OPTIONS="testnet" make install
 ```
 
-You will have to repeat the above two steps until you sync with the
+You will have to go over all the software upgrades until you sync with the
 full blockchain.
 
 ## 4. Start the node
