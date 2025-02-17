@@ -64,8 +64,9 @@ auto-generated through the babylond init command.
 - Swap your babylon binary with the prepared `v1.0.0-rc.5` binary
 - **If you are a CometBFT Validator**: Migrate your BLS key away from your
   Validator’s private key
+  - Backup the `$HOME/config/priv_validator_key.json` file before the migration.
   - Verify that the `$HOME/config/priv_validator_key.json` contains the
-    Validator singing key and a BLS key, and take a backup of the file
+    Validator singing key and a BLS key.
   - Execute the command `babylond migrate-bls-key` to separate your BLS key and
     store it in  `$HOME/config/bls_key.json`. You will be asked to insert a
     password to encrypt the BLS key, which will be automatically saved in
