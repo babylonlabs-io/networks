@@ -3,7 +3,7 @@
 ## Upgrade overview
 
 - **Upgrade version**: `v1.0.0-rc.5`
-- **Upgrade height**: `330959`
+- **Upgrade height**: `326120`
 - **Upgrade overview**: This upgrade introduces major changes to BLS key management,
   to improve operational experience and enable usage of remote and threshold
   signing.
