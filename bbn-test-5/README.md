@@ -29,6 +29,7 @@ Some additional network snapshot sources are also listed:
 - https://polkachu.com/testnets/babylon/snapshots
 - https://www.imperator.co/services/chain-services/testnets/babylon
 - https://services.contributiondao.com/testnet/babylon/snapshots
+- https://itrocket.net/services/testnet/babylon/#snap
 
 ### Seed nodes
 
@@ -46,6 +47,7 @@ Peers can be retrieved from [here](./peers.txt).
 - https://babylon-testnet-rpc.polkachu.com
 - https://rpc-babylon-testnet.imperator.co
 - https://babylon-testnet-rpc.contributiondao.com
+- https://babylon-testnet-rpc.itrocket.net
 
 2. LCD (node API)
 
@@ -53,12 +55,14 @@ Peers can be retrieved from [here](./peers.txt).
 - https://babylon-testnet-api.polkachu.com
 - https://lcd-babylon-testnet.imperator.co
 - https://babylon-testnet-api.contributiondao.com
+- https://babylon-testnet-api.itrocket.net
 
 3. gRPC
 
 - https://babylon-testnet-grpc.nodes.guru
 - http://babylon-testnet-grpc.polkachu.com:20690
 - grpc-babylon-testnet.imperator.co:443
+- babylon-testnet-grpc.itrocket.net:443
 
 ### Covenant Committee
 
