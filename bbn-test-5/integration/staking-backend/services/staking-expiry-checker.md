@@ -3,7 +3,7 @@
 ## 1. Hardware Requirements
 
 - CPU: Multi-core processor (4 cores minimum)
-- Memory: Minimum 4GB RAM (recommended 8GB RAM)
+- Memory: Minimum 8GB RAM (recommended 16GB RAM)
 
 ## 2. Install Staking Expiry Checker
 
