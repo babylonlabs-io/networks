@@ -2,14 +2,16 @@
 
 ## Table of Contents
 
-1. [Install Babylon Binary](#1-install-babylon-binary)
-2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
-3. [Prepare for sync](#3-prepare-for-sync)
-   1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
-   2. [Sync from scratch](#32-sync-from-scratch)
-4. [Start the node](#4-start-the-node)
+- [Babylon Node Setup](#babylon-node-setup)
+  - [Table of Contents](#table-of-contents)
+  - [1. Install Babylon Binary](#1-install-babylon-binary)
+  - [2. Set up your node, home directory, and configuration](#2-set-up-your-node-home-directory-and-configuration)
+  - [3. Prepare for sync](#3-prepare-for-sync)
+    - [3.1. Sync through a network snapshot](#31-sync-through-a-network-snapshot)
+    - [3.2. Sync from scratch](#32-sync-from-scratch)
+  - [4. Start the node](#4-start-the-node)
 
-## 1. Install Babylon Binary 
+## 1. Install Babylon Binary
 
 Installing the Babylon binary requires a Golang installation.
 
@@ -30,12 +32,11 @@ cd babylon
 # tag corresponds to the version of the software
 # you want to install -- depends on which
 # height you sync from
-git checkout <tag>
+git checkout v1.0.0-rc.5
 # we use this to ensure that the testnet-specific upgrade data 
 # are included in the binary
 BABYLON_BUILD_OPTIONS="testnet" make install 
 ```
-<!-- TODO: testnet tag to be defined -->
 This command does the following:
 - Builds the daemon
 - Installs the binary 
@@ -45,6 +46,7 @@ You can verify your installation by executing the `version` command:
 
 ```shell
 babylond version
+v1.0.0-rc.5
 ```
 
 If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in 
@@ -60,25 +62,44 @@ Make sure to restart your terminal session after running the above command.
 
 In this section we will initialize your node and create the necessary 
 configuration directory through the `init` command.
-This command will generate several important configuration files 
-including `app.toml`, `client.toml`, and `genesis.json`:
 
 ```shell
 babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
-Parameters:
+where:
 - `<moniker>`: A unique identifier for your node for example `node0`
 - `--chain-id`: The chain ID of the Babylon chain you connect to
-- `--home`: *optional* flag that specifies the directory where your 
-   node files will be stored, for example `--home ./nodeDir`
-   The default home directory for your Babylon node is:
-   - Linux/Mac: `~/.babylond/`
-   - Windows: `%USERPROFILE%\.babylond\`
+- `--home`: *optional* flag that specifies the directory where your
+  node files will be stored, for example `--home ./nodeDir`
+  The default home directory for your Babylon node is:
+    - Linux/Mac: `~/.babylond/`
+    - Windows: `%USERPROFILE%\.babylond\`
+
+Note that a prompt will happen for the password of the generated BLS key.
+This command will generate all the important configuration files structured
+as below:
+
+```
+$HOME/.babylond/
+├── config/
+│   ├── app.toml         # Application-specific configuration
+│   ├── bls_key.json     # BLS key for the node
+│   ├── bls_password.txt # Password file for the BLS key
+│   ├── client.toml      # Client configuration
+│   ├── config.toml      # Tendermint core configuration
+│   ├── genesis.json     # Genesis state of the network
+│   ├── node_key.json    # Node's p2p identity key
+│   └── priv_validator_key.json  # Validator's consensus key (if running a validator)
+├── data/                # Blockchain data directory
+│   └── ...
+└── keyring-test/       # Key management directory
+    └── ...
+```
 
 After initialization, you'll need to modify the following configuration files:
 
-1. On `app.toml`, update the the following settings:
+1. On `app.toml`, update the following settings:
 
 ```shell
 # Base configuration
