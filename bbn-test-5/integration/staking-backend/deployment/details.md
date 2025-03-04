@@ -33,12 +33,10 @@ Once all prerequisites are checked off, deploy these services in the following o
 ### 1. Deploy Staking Indexer
 - [Staking Indexer Setup Guide](../services/staking-indexer.md)
 - _This service monitors both blockchains and processes all staking events_
-- ✓ Verify it's running before proceeding to the next step
 
 ### 2. Deploy Staking Expiry Checker
 - [Staking Expiry Checker Setup Guide](../services/staking-expiry-checker.md)
 - _Manages expired delegations and state transitions_
-- ✓ Confirm it's properly connected to MongoDB
 
 ### 3. Deploy Staking API Service
 - [Staking API Service Setup Guide](../services/staking-api-service.md)

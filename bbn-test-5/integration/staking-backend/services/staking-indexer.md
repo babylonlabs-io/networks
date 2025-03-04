@@ -1,129 +1,167 @@
 # Babylon Staking Indexer
 
-The Babylon Staking Indexer is a tool that extracts staking-relevant data from both the Babylon blockchain and the Bitcoin blockchain. It processes, validates, and stores staking transactions—ensuring they adhere to valid staking prerequisites—and determines whether stakes should be active. All valid staking transactions are transformed into a structured format, stored in a MongoDB database, and published as events in a RabbitMQ messaging queue for consumption. This indexer serves as the ground truth for the Bitcoin Staking system, enforcing the Bitcoin Staking protocol.
+The Babylon Staking Indexer is a tool that extracts staking-relevant data from both the Babylon blockchain and the Bitcoin blockchain. It processes, validates, and stores staking transactions, and gathers data about their status. This indexer serves as a data aggregation and transformation layer, making blockchain data available in an API-friendly format for dApps to use. 
 
-## 1. Hardware Requirements
+## Hardware Requirements
 
 - **CPU:** Multi-core processor (4 cores minimum)
-- **Memory:** Minimum 8GB RAM (recommended 16GB RAM)
+- **Memory:** Minimum 4GB RAM (recommended 8GB RAM)
 - **Storage:** Sufficient space for MongoDB data (at least 10GB recommended)
 
-## 2. Install Babylon Staking Indexer
+## Configuration
 
-### 2.1 Clone the Repository
-Clone the repository to your local machine from GitHub:
+### 1. Create Home Directory
+```bash
+mkdir -p ~/.babylon-staking-indexer/
+```
+
+### 2. Copy the Default Configuration
+```bash
+cp ~/babylon-staking-indexer/config/config-local.yml ~/.babylon-staking-indexer/config.yml
+```
+
+### 3. Update Default Configurations
+
+Edit the `config.yml` file to match your environment:
+
+#### MongoDB Cluster Connection
+Set the MongoDB connection address (`address`) and credentials (`username`, `password`, and `db-name`) to match the information from your installed MongoDB cluster.
+
+```yaml
+db:
+  address: "mongodb://localhost:27019/?replicaSet=RS&directConnection=true"
+  username: "root"
+  password: "example"
+  db-name: "babylon-staking-indexer"
+```
+
+#### Bitcoin Node Connection
+Configure the Bitcoin node connection details to match your Bitcoin node installation.
+
+```yaml
+btc:
+  rpchost: 127.0.0.1:38332 
+  rpcuser: rpcuser
+  rpcpass: rpcpass
+  netparams: signet
+```
+
+#### Babylon Node Connection
+Set the Babylon RPC address and connection parameters.
+
+```yaml
+bbn:
+  rpc-addr: https://rpc-dapp.devnet.babylonlabs.io:443
+  timeout: 30s
+```
+
+#### RabbitMQ Cluster Connection
+Set the RabbitMQ connection address (`url`) and credentials (`queue_user` and `queue_password`) to match the information from your installed RabbitMQ cluster.
+
+```yaml
+queue:
+  queue_user: user
+  queue_password: password
+  url: "localhost:5672"
+  queue_type: quorum
+```
+
+#### Prometheus Metrics Configuration
+Set the host and port to customize how the metrics are exposed.
+
+```yaml
+metrics:
+  host: 0.0.0.0
+  port: 2112
+```
+
+## Start the Service
+
+### Method A: Docker Deployment (Recommended)
+
+Runs the Babylon Staking Indexer image from official Babylon Docker Hub repository:
+
+```bash
+docker run -d --name babylon-staking-indexer \
+  -v ~/.babylon-staking-indexer/config.yml:/app/config.yml \
+  babylonlabs/babylon-staking-indexer:latest --config /app/config.yml
+```
+
+This approach is recommended for production environments as it provides better isolation and simplified deployment.
+
+### Method B: Local Binary Execution
+
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/babylonlabs-io/babylon-staking-indexer.git
 ```
 
-### 2.2 Check Out the Desired Version
-Check out the desired version. You can find the latest release [here](#).
+#### 2. Check Out the Desired Version
+You can find the latest release [here](https://github.com/babylonlabs-io/babylon-staking-indexer/releases).
 
-### 2.3 Install the Binary
-Install the babylon-staking-indexer binary by running:
+```bash
+cd babylon-staking-indexer
+git checkout tags/{VERSION}
+```
+
+#### 3. Install the Binary
 ```bash
 make install
 ```
 This command will build and install the binary to your GOPATH.
 
-## 3. Configuration
+#### 4. Start the Indexer
+You can start the Staking Indexer by running:
 
-### 3.1 Create a Configuration File
-Create a `config.yml` file in your home directory. Default locations:
-- **MacOS/Linux:** `~/config.yml`
-- **Windows:** `C:\Users\<username>\config.yml`
-
-You can use the provided sample configuration files as a template.
-
-### 3.2 Update Configuration Settings
-Edit the `config.yml` file to match your environment:
-- **MongoDB Connection:** indexer
-- **Bitcoin Node Connection:** needed
-- **Babylon Node Connection:** 500ms
-- **RabbitMQ Configuration:** quorum
-- **Prometheus Metrics Configuration:** 2112
-
-## 4. Start Babylon Staking Indexer
-
-### 4.1 Start the Indexer
-Start the indexer with your configuration file:
 ```bash
-./babylon-staking-indexer --config config.yml
+babylon-staking-indexer --config ~/.babylon-staking-indexer/config.yml
 ```
-Alternatively, use the provided script to run locally:
+
+## Create Systemd Service (Linux Only)
+
+#### 1. Create Systemd Service Definition
+Run the following command, replacing `system_username` with the appropriate system user or service account name:
+
 ```bash
-./run-local.sh
+cat <<EOF | sudo tee /etc/systemd/system/babylon-staking-indexer.service
+[Unit]
+Description=Babylon Staking Indexer service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=$(which babylon-staking-indexer) --config /home/system_username/.babylon-staking-indexer/config.yml
+Restart=on-failure
+User=system_username
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
-This uses the local configuration file at `config/config-local.yml`.
 
-## 5. Create systemd Service (Optional - Linux Only)
-
-### 5.1 Create a systemd Service Definition
-Create a service file (e.g., `/etc/systemd/system/babylon-staking-indexer.service`) with the appropriate configuration. Replace `system_username` with the correct system user or service account.
-
-### 5.2 Reload systemd Configuration
+#### 2. Reload Systemd Configuration
 ```bash
 sudo systemctl daemon-reload
 ```
 
-### 5.3 Enable the Service at Boot
+#### 3. Enable the Service at Boot
 ```bash
-sudo systemctl enable babylon-staking-indexer
+sudo systemctl enable babylon-staking-indexer.service
 ```
 
-### 5.4 Start the Service
+#### 4. Start the Service
 ```bash
-sudo systemctl start babylon-staking-indexer
+sudo systemctl start babylon-staking-indexer.service
 ```
 
-### 5.5 Verify the Service
-Check the status to ensure the indexer is running:
+#### 5. Verify the Service
+Check service status:
 ```bash
-sudo systemctl status babylon-staking-indexer
-```
-(Expected log output will confirm the service is active.)
-
-## 6. Docker Deployment (Alternative)
-
-### 6.1 Build the Docker Image
-```bash
-docker build -t babylon-staking-indexer .
+sudo systemctl status babylon-staking-indexer.service
 ```
 
-### 6.2 Start the Service with Docker
-```bash
-docker run -d --name staking-indexer \
-  -v $(pwd)/config.yml:/app/config.yml \
-  babylonlabs/babylon-staking-indexer:latest --config /app/config.yml
-```
+Expected log output will confirm the service is active.
 
-### 6.3 Stop the Docker Container
-```bash
-docker stop staking-indexer
-```
+## Monitoring
 
-## 7. Monitoring
-
-The service exposes Prometheus metrics through a Prometheus server. By default, it is available at `0.0.0.0:2112`. Configure the metrics endpoint in your `config.yml` file as needed.
-
-## 8. Troubleshooting
-
-### 8.1 Connection Issues with Babylon Node
-- Verify that the Babylon node is running and accessible.
-- Check the `rpc-addr` in your configuration file.
-- Ensure network connectivity between the indexer and the Babylon node.
-
-### 8.2 Connection Issues with Bitcoin Node
-- Verify that the Bitcoin node is running and accessible.
-- Check the `rpchost`, `rpcuser`, and `rpcpass` in your configuration file.
-- Ensure network connectivity between the indexer and the Bitcoin node.
-
-### 8.3 MongoDB Connection Issues
-- Ensure MongoDB is running with replica set enabled.
-- Verify the MongoDB connection string in your configuration file.
-- Check network connectivity between the indexer and MongoDB.
-
-### 8.4 RabbitMQ Connection Issues
-- Verify that RabbitMQ is running and accessible.
-- Check the RabbitMQ connection details in your configuration file.
-- Ensure network connectivity between the indexer and RabbitMQ.
+The service exposes Prometheus metrics through a Prometheus server. By default, it is available at the address configured in the metrics configuration section (0.0.0.0:2112). Configure the metrics endpoint in your configuration file as needed.
