@@ -2,14 +2,12 @@
 
 ## Table of Contents
 
-- [Babylon Node Setup](#babylon-node-setup)
-  - [Table of Contents](#table-of-contents)
-  - [1. Install Babylon Binary](#1-install-babylon-binary)
-  - [2. Set up your node, home directory, and configuration](#2-set-up-your-node-home-directory-and-configuration)
-  - [3. Prepare for sync](#3-prepare-for-sync)
-    - [3.1. Sync through a network snapshot](#31-sync-through-a-network-snapshot)
-    - [3.2. Sync from scratch](#32-sync-from-scratch)
-  - [4. Start the node](#4-start-the-node)
+1. [Install Babylon Binary](#1-install-babylon-binary)
+2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
+3. [Prepare for sync](#3-prepare-for-sync)
+    1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
+    2. [Sync from scratch](#32-sync-from-scratch)
+4. [Start the node](#4-start-the-node)
 
 ## 1. Install Babylon Binary
 
@@ -67,7 +65,7 @@ configuration directory through the `init` command.
 babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
-where:
+Parameters:
 - `<moniker>`: A unique identifier for your node for example `node0`
 - `--chain-id`: The chain ID of the Babylon chain you connect to
 - `--home`: *optional* flag that specifies the directory where your

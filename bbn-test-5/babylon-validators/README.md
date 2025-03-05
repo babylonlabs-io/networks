@@ -44,9 +44,20 @@ validator to participate in block creation and signing during the
 consensus process at the CometBFT layer.
 The other is BLS key pair, which is stored in `bls_key.json` along with
 `bls_password.txt` following [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335).
-This key is used for signing checkpoints at each epoch boundary.
+The key file location for both types of keys
+is specified in your node's `config.toml` file.
 
-The key file location is specified in your node's `config.toml` file.
+Babylon validators are required to participate in
+[BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) voting
+at the end of each epoch.
+The Babylon blockchain defines epochs as a fixed number of blocks,
+during which the validator set remains consistent.
+At the end of the epoch,
+the validator BLS signatures are aggregated to create a compact checkpoint
+that is timestamped on the Bitcoin ledger.
+The BLS voting mechanism achieves a significant reduction in the cost of
+checkpoints, while the epoching mechanism specifies a defined frequency
+for checkpointing in the Bitcoin blockchain.
 
 > **🔒 Security Tip**: Make sure to securely store these key files. Losing
   either of them would mean losing control of your validator.
