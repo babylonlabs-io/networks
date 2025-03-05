@@ -7,9 +7,6 @@
 3. [Key Management](#3-key-management) 
    1. [Key for CometBFT consensus](#31-key-for-cometbft-consensus)
    2. [Babylon validator account keyring](#32-babylon-validator-account-keyring)
-   3. [Keyfor BLS Voting](#33-key-for-bls-voting)
-      1. [What is BLS Voting](#331-what-is-bls-voting)
-      2. [Create BLS Key](#332-create-bls-key)
 4. [CometBFT Validator Configuration](#4-cometbft-validator-configuration)
 5. [Creating a Validator](#5-creating-a-validator)
    1. [Verifying Validator Setup](#51-verifying-validator-setup)
@@ -37,17 +34,33 @@ These are reference specifications for a production validator.
 Requirements may vary based on network activity and your operational needs.
 
 ## 3. Key Management
-### 3.1 Key for CometBFT consensus
 
-When you initialize your node using `babylond init` (part of the node setup) a 
-consensus key pair is automatically generated and stored in 
-`priv_validator_key.json`. This key is used by your validator to participate in 
-block creation and signing during the consensus process at the CometBFT layer. 
-The key file location is specified in your node's `config.toml` file.
+### 3.1 Keys for Babylon validators
 
-> **🔒 Security Tip**: Make sure to securely store the `priv_validator_key.json` 
-  file, as it contains your validator's private key. Losing access to this file 
-  would mean losing control of your validator.
+When you initialize your node using `babylond init` (part of the node setup),
+two types of keys are generated automatically. One is a CometBFT consensus key
+pair, which is stored in `priv_validator_key.json`. This key is used by your
+validator to participate in block creation and signing during the
+consensus process at the CometBFT layer.
+The other is BLS key pair, which is stored in `bls_key.json` along with
+`bls_password.txt` following [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335).
+The key file location for both types of keys
+is specified in your node's `config.toml` file.
+
+Babylon validators are required to participate in
+[BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) voting
+at the end of each epoch.
+The Babylon blockchain defines epochs as a fixed number of blocks,
+during which the validator set remains consistent.
+At the end of the epoch,
+the validator BLS signatures are aggregated to create a compact checkpoint
+that is timestamped on the Bitcoin ledger.
+The BLS voting mechanism achieves a significant reduction in the cost of
+checkpoints, while the epoching mechanism specifies a defined frequency
+for checkpointing in the Bitcoin blockchain.
+
+> **🔒 Security Tip**: Make sure to securely store these key files. Losing
+  either of them would mean losing control of your validator.
 
 ### 3.2 Babylon validator account keyring
 
@@ -107,59 +120,6 @@ to interact with the Babylon network and run a validator.
 To source funds you will need to request them from the Babylon Testnet Faucet, 
 for information on the faucet visit our
 [networks page](https://github.com/babylonlabs-io/networks/blob/main/bbn-test-5/README.md)
-
-### 3.3 Key for BLS Voting
-#### 3.3.1 What is BLS Voting
-
-Babylon validators are required to participate in
-[BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) voting
-at the end of each epoch.
-The Babylon blockchain defines epochs as a fixed period
-within the blockchain, defined by a number of blocks,
-during which the validator set remains consistent. 
-At the end of the epoch,
-the validator BLS signatures are aggregated to create a compact checkpoint
-that is timestamped on the Bitcoin ledger.
-The BLS voting mechanism achieves a significant reduction in the cost of
-checkpoints, while the epoching mechanism specifies a defined frequency
-for checkpointing in the Bitcoin blockchain.
-
-#### 3.3.2 Create BLS Key
-
-To generate your BLS key, you'll need to use your validator address from the 
-previous step. 
-
-Run this command:
-
-```shell
-babylond create-bls-key <bbn-address> --home <path>
-```
-
-Replace `<address>` with your address from the earlier keyring 
-generation (it should look similar to `bbn1kvajzzn6gtfn2x6ujfvd6q54etzxnqg7pkylk9`). 
-
-The above command will:
-1. Generate a new BLS key pair
-2. Associate it with your validator address
-3. Store it in your node's configuration file at 
-`<path>/config/priv_validator_key.json` alongside your validator key
-
-> ❗**Critical**: After executing the above command, **restart your validator node**
-> so that the BLS key is loaded into memory and can be utilized. Failure to do
-> this will result in a broken validator setup, as the validator will not be able to generate
-> and submit BLS signatures.
-
-This key will be used automatically by your validator software when it needs 
-to participate in epoch-end signature collection. The BLS signatures help 
-create compact, efficient proofs of consensus that can be later timestamped to 
-Bitcoin.
-
-> ⚠️ **Important**: The `priv_validator_key.json` file contains sensitive key 
-> material. Make sure to backup this file and store it securely, as it's 
-> essential for your validator's operation and cannot be recovered if lost.
-> Note that BLS keys are currently not supported by Horcrux or other remote signing 
-> solutions, so alternative security measures should be considered for key 
-> management such as hardware wallets or offline storage.
 
 ## 4. CometBFT Validator Configuration
 
