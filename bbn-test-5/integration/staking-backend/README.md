@@ -2,8 +2,6 @@
 
 ## Overview
 
-The Bitcoin Staking Backend is a comprehensive system designed to help facilitate Bitcoin staking operations on the Babylon network. It consists of multiple specialized services working in concert to ensure secure and efficient staking operations.
+The Bitcoin Staking Backend is a robust system designed to facilitate Bitcoin staking operations on the Babylon network. It comprises specialized services that extract, validate, and transform blockchain data from both the Bitcoin and Babylon chains. These services provide performant, API-friendly interfaces for decentralized applications (dApps), manage staking lifecycle states, and ensure secure and efficient handling of staking transactions such as withdrawal processes.
 
 For detailed deployment instructions, refer to [Deployment](./deployment/README.md) 
-
-For a detailed overview of the services that make up the Bitcoin Staking Backend, refer to [Services](./services/README.md) 
