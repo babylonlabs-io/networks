@@ -1,8 +1,8 @@
 {
   "app_name": "babylond",
   "app_version": "v0.9.0",
-  "genesis_time": "2024-12-06T05:26:51Z",
-  "chain_id": "bbn-test-5",
+  "genesis_time": "2025-03-06T14:29:44Z",
+  "chain_id": "bbn-mock-1",
   "initial_height": 1,
   "app_hash": null,
   "app_state": {
@@ -21,14 +21,14 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "bbn1py58qvyyz6lcp9fhulwh5av8a4sllx6hm0f60v",
+          "address": "bbn1m7ht7cz30cqplnuepf9rp9gschfe0q5zzd8vjc",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "bbn1w9cfa0qzlx8ktdecnctpxe0en0ct2985v0c42g",
+          "address": "bbn19xnhxtp8k354cu6tjjpg0esfruefhjnqnfn4fu",
           "pub_key": null,
           "account_number": "1",
           "sequence": "0"
@@ -45,20 +45,20 @@
       },
       "balances": [
         {
-          "address": "bbn1py58qvyyz6lcp9fhulwh5av8a4sllx6hm0f60v",
-          "coins": [
-            {
-              "denom": "ubbn",
-              "amount": "1000000000"
-            }
-          ]
-        },
-        {
-          "address": "bbn1w9cfa0qzlx8ktdecnctpxe0en0ct2985v0c42g",
+          "address": "bbn19xnhxtp8k354cu6tjjpg0esfruefhjnqnfn4fu",
           "coins": [
             {
               "denom": "ubbn",
               "amount": "9999999000000000"
+            }
+          ]
+        },
+        {
+          "address": "bbn1m7ht7cz30cqplnuepf9rp9gschfe0q5zzd8vjc",
+          "coins": [
+            {
+              "denom": "ubbn",
+              "amount": "1000000000"
             }
           ]
         }
@@ -74,23 +74,21 @@
     },
     "btccheckpoint": {
       "params": {
-        "btc_confirmation_depth": "10",
+        "btc_confirmation_depth": "30",
         "checkpoint_finalization_timeout": "100",
-        "checkpoint_tag": "62627434"
+        "checkpoint_tag": "62626235"
       }
     },
     "btclightclient": {
       "params": {
-        "insert_headers_allow_list": [
-          "bbn1mzghl5csl75wz86e70j6ggdll4huazgfmeucyx"
-        ]
+        "insert_headers_allow_list": []
       },
       "btc_headers": [
         {
-          "header": "00000020c8710c5662ab0a4680963697765a390cba4814f95f0556fc5fb3b446b2000000fa9b80e52653455e5d4a4648fbe1f62854a07dbec0633a42ef595431de9be36dccb64366934f011ef3d98200",
-          "hash": "0000006ef8eb3d3d964cc401790776d11150c4a81116340a9b0e9ec8636b7431",
-          "height": "195552",
-          "work": "12798859"
+          "header": "0000002023c717b751327a3c3351a061eb632e8d1a376a7ea8a2000000000000000000001e24087e007cd943c9d851e81954ad3d461f08091ccb24605df4e2de4f95a3e6cadf4e66f05503171250de7a",
+          "hash": "000000000000000000019afb7e91fe04ab7b825fce2801dd90c76129f0bec38d",
+          "height": "844704",
+          "work": "362421148879566793500438"
         }
       ]
     },
@@ -98,21 +96,15 @@
       "params": [
         {
           "covenant_pks": [
-            "fa9d882d45f4060bdb8042183828cd87544f1ea997380e586cab77d5fd698737",
-            "0aee0509b16db71c999238a4827db945526859b13c95487ab46725357c9a9f25",
-            "17921cf156ccb4e73d428f996ed11b245313e37e27c978ac4d2cc21eca4672e4",
-            "113c3a32a9d320b72190a04a020a0db3976ef36972673258e9a38a364f3dc3b0",
-            "79a71ffd71c503ef2e2f91bccfc8fcda7946f4653cef0d9f3dde20795ef3b9f0",
-            "3bb93dfc8b61887d771f3630e9a63e97cbafcfcc78556a474df83a31a0ef899c",
-            "d21faf78c6751a0d38e6bd8028b907ff07e9a869a43fc837d6b3f8dff6119a36",
-            "40afaf47c4ffa56de86410d8e47baa2bb6f04b604f4ea24323737ddc3fe092df",
-            "f5199efae3f28bb82476163a7e458c7ad445d9bffb0682d10d3bdb2cb41f8e8e"
+            "8c1716ebbc505e842107137501e9d10271a32085e04ae3be8cff5d3edc4b83c9",
+            "92c3409b169508129e2cfdd13727e8fd882e829998e27f86f90b37033ff2f002",
+            "aa357bc493c51e7d413f99babdc128d2140d3a6bcf39859bd52a417bc0f8d4e9"
           ],
-          "covenant_quorum": "6",
+          "covenant_quorum": "2",
           "slashing_address": "1111111111111111111114oLvT2",
-          "min_slashing_tx_fee_sat": "100000",
-          "min_commission_rate": "0.03",
-          "slashing_rate": "0.5",
+          "min_slashing_tx_fee_sat": "1000",
+          "min_commission_rate": "0.05",
+          "slashing_rate": "0.1",
           "max_active_finality_providers": "100",
           "min_unbonding_time": "1008",
           "min_unbonding_rate": "0.8"
@@ -133,16 +125,16 @@
     "checkpointing": {
       "genesis_keys": [
         {
-          "validator_address": "bbnvaloper1py58qvyyz6lcp9fhulwh5av8a4sllx6hxdr8rd",
+          "validator_address": "bbnvaloper1m7ht7cz30cqplnuepf9rp9gschfe0q5zl0d37e",
           "bls_key": {
-            "pubkey": "tgX+/QbXVEY/AsWb3x0ptag8KfBc4yvcYR9JHNKELabvKOv1mj7+BoLSym2cTSnZFfzrvdIOO7T9W64Akdz1ri8aJjpLtdfUtZsMnRPv7tdkJ1VLfw5bE+51ngNOThxj",
+            "pubkey": "qfmzS+eh2qh3wl6kE+dgxl3pGw3YBDcWEPKjoHNBUYF7mnMKJVbS+wWGv6TD5WCuB3cAXQoJHX+ikMcR95vguYQJRnrQqiM9C3cyGQ0qjCLpbj0C9hq0yLqB8SHQXfrf",
             "pop": {
-              "ed25519_sig": "Zr9yP3eGRNKckUjx8aALBkjIX2/MtUm4XfiwneFpfWOEHhrlnni2eZsWAy69JHeNojI+EBeWOk3FJzCcV6AkCA==",
-              "bls_sig": "pDI6p6BYjL4mY3ByP8jHIDB3ESFXnWtujWVLhim3BxjUk4M+AzT0duv194etMtZk"
+              "ed25519_sig": "M1AbLqhNIAkiyQsYb9sfEihNXB2/mkv91BnnwJijGHwJvdgYa7LjH+Pjc9V0s98K4TWUTzB23cUJTlQpz5l4AQ==",
+              "bls_sig": "mR2tKv1KDotIU4KsOegRcFNozLbpHhK8Y8zOdY6Sipjq8ruuKSQEFxOLJih9zlFh"
             }
           },
           "val_pubkey": {
-            "key": "Lw8uplrZsYNz0KcJZSiBXAOZG0M5YHt8j2VHiAVTE9o="
+            "key": "NnYnhXgRiFzL0KwKVY2VoUYCTlvFg0jDNVJ4S4V2gmU="
           }
         }
       ]
@@ -218,7 +210,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "Babylon Worker Co-Op 0",
+                  "moniker": "Babylon Foundation 0",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -231,10 +223,10 @@
                 },
                 "min_self_delegation": "1",
                 "delegator_address": "",
-                "validator_address": "bbnvaloper1py58qvyyz6lcp9fhulwh5av8a4sllx6hxdr8rd",
+                "validator_address": "bbnvaloper1m7ht7cz30cqplnuepf9rp9gschfe0q5zl0d37e",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "Lw8uplrZsYNz0KcJZSiBXAOZG0M5YHt8j2VHiAVTE9o="
+                  "key": "NnYnhXgRiFzL0KwKVY2VoUYCTlvFg0jDNVJ4S4V2gmU="
                 },
                 "value": {
                   "denom": "ubbn",
@@ -242,7 +234,7 @@
                 }
               }
             ],
-            "memo": "ce5568e20c6688bed0ab3ba0b2272f5bc6539af7@10.151.73.30:26656",
+            "memo": "93e59c52a924e40b5cd06f1e1269e3bbef7be795@10.151.78.244:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -252,7 +244,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AiuYYcL30ZPg50241U/PyzTcK+MZzRKj4V4GQMh8M0Qt"
+                  "key": "AxRv0BhfMuwlNeFRAqTDXAl2px4MLFmxN0FfNDiZAmWb"
                 },
                 "mode_info": {
                   "single": {
@@ -276,7 +268,7 @@
             "tip": null
           },
           "signatures": [
-            "ZNifZ9NSFATNTI4sX7yZp4CEWButxBBdLRRvUaYZaGk1ficKHIdl4zMc+oX3tOPwIHHdWHoMHZEznM8oFThpoQ=="
+            "YXXyogK9fgJuAmTJu/3EqsMEe7+mISatRhzNExA/og5W6ow9QO0br/IMWrt8dEyEA9wVd7WRLgnYB/xnYXdLvg=="
           ]
         }
       ]
@@ -297,14 +289,14 @@
           }
         ],
         "max_deposit_period": "172800s",
-        "voting_period": "300s",
+        "voting_period": "80s",
         "quorum": "0.334000000000000000",
         "threshold": "0.500000000000000000",
         "veto_threshold": "0.334000000000000000",
         "min_initial_deposit_ratio": "0.000000000000000000",
         "proposal_cancel_ratio": "0.500000000000000000",
         "proposal_cancel_dest": "",
-        "expedited_voting_period": "120s",
+        "expedited_voting_period": "50s",
         "expedited_threshold": "0.667000000000000000",
         "expedited_min_deposit": [
           {
