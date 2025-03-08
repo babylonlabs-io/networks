@@ -164,7 +164,7 @@ your node. You can inspect the file [here](../README.md#genesis) or use the
 following commands to download it directly:
 
 ```shell
-wget https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/main/bbn-mock-1/network-artifacts/genesis.json
+wget https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/mock-mainnet/bbn-mock-1/network-artifacts/genesis.json
 mv genesis.json <path>/config/genesis.json # You must insert the home directory of your node
 ```
 
