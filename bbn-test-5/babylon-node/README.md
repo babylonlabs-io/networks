@@ -25,7 +25,7 @@ Next, clone the Babylon codebase
 and install the Babylon binary:
 
 ```shell
-git clone git@github.com:babylonlabs-io/babylon.git
+git clone https://github.com/babylonlabs-io/babylon.git
 cd babylon
 # tag corresponds to the version of the software
 # you want to install -- depends on which
