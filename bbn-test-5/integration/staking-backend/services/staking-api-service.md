@@ -1,6 +1,9 @@
 # Babylon Staking API Service
 
-The Babylon Staking API Service provides a performant interface between Babylon Phase-2 and application layers. It transforms blockchain data for efficient access by dApps, serves network state information, and processes unbonding requests for Phase-1 delegations.
+The Babylon Staking API Service provides a performant interface between Babylon
+Phase-2 and application layers. It transforms blockchain data for efficient
+access by dApps, serves network state information, and processes unbonding
+requests for Phase-1 delegations.
 
 > **Note:** Phase-1 delegations are now in maintenance mode.
 
@@ -26,7 +29,9 @@ cp ~/staking-api-service/config/config-local.yml ~/.staking-api-service/config.y
 Edit the `config.yml` file to match your environment:
 
 #### MongoDB Cluster Connection
-Set the MongoDB connection address (`address`) and credentials (`username`, `password`, and `db-name`) to match the information from your installed MongoDB cluster.
+Set the MongoDB connection address (`address`) and credentials (`username`,
+`password`, and `db-name`) to match the information from your installed MongoDB
+cluster.
 
 ```yaml
 db:
@@ -37,7 +42,8 @@ db:
 ```
 
 #### RabbitMQ Cluster Connection
-Set the RabbitMQ connection address (`url`) and credentials (`queue_user` and `queue_password`) to match the information from your installed RabbitMQ cluster.
+Set the RabbitMQ connection address (`url`) and credentials (`queue_user` and
+`queue_password`) to match the information from your installed RabbitMQ cluster.
 
 ```yaml
 queue:
@@ -57,16 +63,20 @@ metrics:
 
 ### 4. Download Global Parameters
 
-To run the Staking API, a `global-params.json` file which defines all the staking parameters is needed.
+To run the Staking API, a `global-params.json` file which defines all the
+staking parameters is needed.
 
 To download the global parameters, follow the instructions at:
 [Staking Parameters Documentation](https://docs.babylonlabs.io/docs/user-guides/bitcoin-staking-phase1/backend-deployment/global-params#staking-parameters)
 
 ### 5. Download Finality Providers
 
-To run the Staking API, a `finality-provider.json` file that associates finality provider BTC public keys with additional information about them such as their moniker and commission is needed.
+To run the Staking API, a `finality-provider.json` file that associates finality
+provider BTC public keys with additional information about them such as their
+moniker and commission is needed.
 
-To generate the concatenated finality providers information from Babylon registry, follow the instructions at:
+To generate the concatenated finality providers information from Babylon
+registry, follow the instructions at:
 [Finality Providers Documentation](https://docs.babylonlabs.io/docs/user-guides/bitcoin-staking-phase1/backend-deployment/global-params#22-generating-concatenated-finality-provider-information)
 
 ## Start the Service
@@ -86,7 +96,8 @@ docker run -d --name staking-api-service \
   --finality-providers /app/finality-providers.json
 ```
 
-This approach is recommended for production environments as it provides better isolation and simplified deployment.
+This approach is recommended for production environments as it provides better
+isolation and simplified deployment.
 
 ### Method B: Local Binary Execution
 
@@ -96,7 +107,8 @@ git clone https://github.com/babylonlabs-io/staking-api-service.git
 ```
 
 #### 2. Check Out the Desired Version
-You can find the latest release [here](https://github.com/babylonlabs-io/staking-api-service/releases).
+You can find the latest release
+[here](https://github.com/babylonlabs-io/staking-api-service/releases).
 
 ```bash
 cd staking-api-service
@@ -121,7 +133,8 @@ staking-api-service --config ~/.staking-api-service/config.yml \
 ## Create Systemd Service (Linux Only)
 
 #### 1. Create Systemd Service Definition
-Run the following command, replacing `system_username` with the appropriate system user or service account name:
+Run the following command, replacing `system_username` with the appropriate
+system user or service account name:
 
 ```bash
 cat <<EOF | sudo tee /etc/systemd/system/staking-api-service.service
@@ -180,4 +193,7 @@ Jul 04 03:36:05 system_username staking-api-service[824224]: {"level":"info","ti
 
 ## Monitoring
 
-The service exposes Prometheus metrics through a Prometheus server. By default, it is available at the address configured in the metrics configuration section (0.0.0.0:2112). Configure the metrics endpoint in your configuration file as needed.
+The service exposes Prometheus metrics through a Prometheus server. By default,
+it is available at the address configured in the metrics configuration section
+(0.0.0.0:2112). Configure the metrics endpoint in your configuration file as
+needed.

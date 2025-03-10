@@ -1,10 +1,12 @@
 # Deployment Overview for Bitcoin Staking Backend
 
-This guide outlines the deployment process for the Bitcoin Staking Backend system. Follow the steps in sequence for successful installation or upgrade.
+This guide outlines the deployment process for the Bitcoin Staking Backend
+system. Follow the steps in sequence for successful installation or upgrade.
 
 ## Prerequisites
 
-Before deploying the staking services, ensure the following components are properly set up:
+Before deploying the staking services, ensure the following components are
+properly set up:
 
 - [ ] **Bitcoin Full Node** - [Setup Guide]()  
   _Powers transaction verification on the Bitcoin network_
@@ -24,11 +26,13 @@ Before deploying the staking services, ensure the following components are prope
 <!-- - [ ] **Database Migration (Optional)** - Clone Phase-1 database snapshot, apply snapshot to new MongoDB clusters.  
   _Required only if supporting Phase-1 registration data_ -->
 
-> **Note:** If upgrading an existing deployment, ensure you gracefully shut down any legacy indexer services before proceeding.
+> **Note:** If upgrading an existing deployment, ensure you gracefully shut down
+> any legacy indexer services before proceeding.
 
 ## Launching Services
 
-Once all prerequisites are checked off, deploy these services in the following order:
+Once all prerequisites are checked off, deploy these services in the following
+order:
 
 ### 1. Deploy Staking Indexer
 - [Staking Indexer Setup Guide](../services/staking-indexer.md)

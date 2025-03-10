@@ -1,6 +1,9 @@
 # Babylon Staking Expiry Checker
 
-The Babylon Staking Expiry Checker is a service that manages unbonding and withdrawal processes for Phase 1 delegations that haven't transitioned to Phase 2. This service ensures the integrity and proper state management of staking transactions throughout their lifecycle.
+The Babylon Staking Expiry Checker is a service that manages unbonding and
+withdrawal processes for Phase 1 delegations that haven't transitioned to Phase
+2. This service ensures the integrity and proper state management of staking
+transactions throughout their lifecycle.
 
 ## Hardware Requirements
 
@@ -24,7 +27,9 @@ cp ~/staking-expiry-checker/config/config-local.yml ~/.staking-expiry-checker/co
 Edit the `config.yml` file to match your environment:
 
 #### MongoDB Cluster Connection
-Set the MongoDB connection address (`address`) and credentials (`username`, `password`, and `db-name`) to match the information from your installed MongoDB cluster.
+Set the MongoDB connection address (`address`) and credentials (`username`,
+`password`, and `db-name`) to match the information from your installed MongoDB
+cluster.
 
 ```yaml
 db:
@@ -35,7 +40,8 @@ db:
 ```
 
 #### Bitcoin Node Connection
-Configure the Bitcoin node connection details to match your Bitcoin node installation.
+Configure the Bitcoin node connection details to match your Bitcoin node
+installation.
 
 ```yaml
 btc:
@@ -47,7 +53,8 @@ btc:
 ```
 
 #### RabbitMQ Cluster Connection
-Set the RabbitMQ connection address (`url`) and credentials (`queue_user` and `queue_password`) to match the information from your installed RabbitMQ cluster.
+Set the RabbitMQ connection address (`url`) and credentials (`queue_user` and
+`queue_password`) to match the information from your installed RabbitMQ cluster.
 
 ```yaml
 queue:
@@ -69,7 +76,8 @@ metrics:
 
 ### Method A: Docker Deployment (Recommended)
 
-Runs the Staking Expiry Checker image from official Babylon Docker Hub repository:
+Runs the Staking Expiry Checker image from official Babylon Docker Hub
+repository:
 
 ```bash
 docker run -d --name staking-expiry-checker \
@@ -77,7 +85,8 @@ docker run -d --name staking-expiry-checker \
   babylonlabs/staking-expiry-checker:latest --config /app/config.yml
 ```
 
-This approach is recommended for production environments as it provides better isolation and simplified deployment.
+This approach is recommended for production environments as it provides better
+isolation and simplified deployment.
 
 ### Method B: Local Binary Execution
 
@@ -87,7 +96,8 @@ git clone https://github.com/babylonlabs-io/staking-expiry-checker.git
 ```
 
 #### 2. Check Out the Desired Version
-You can find the latest release [here](https://github.com/babylonlabs-io/staking-expiry-checker/releases).
+You can find the latest release
+[here](https://github.com/babylonlabs-io/staking-expiry-checker/releases).
 
 ```bash
 cd staking-expiry-checker
@@ -110,7 +120,8 @@ staking-expiry-checker --config ~/.staking-expiry-checker/config.yml
 ## Create Systemd Service (Linux Only)
 
 #### 1. Create Systemd Service Definition
-Run the following command, replacing `system_username` with the appropriate system user or service account name:
+Run the following command, replacing `system_username` with the appropriate
+system user or service account name:
 
 ```bash
 cat <<EOF | sudo tee /etc/systemd/system/staking-expiry-checker.service
@@ -154,4 +165,7 @@ Expected log output will confirm the service is active.
 
 ## Monitoring
 
-The service exposes Prometheus metrics through a Prometheus server. By default, it is available at the address configured in the metrics configuration section (0.0.0.0:2112). Configure the metrics endpoint in your configuration file as needed.
+The service exposes Prometheus metrics through a Prometheus server. By default,
+it is available at the address configured in the metrics configuration section
+(0.0.0.0:2112). Configure the metrics endpoint in your configuration file as
+needed.
