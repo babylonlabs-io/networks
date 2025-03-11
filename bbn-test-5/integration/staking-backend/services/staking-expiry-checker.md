@@ -82,7 +82,7 @@ repository:
 ```bash
 docker run -d --name staking-expiry-checker \
   -v ~/.staking-expiry-checker/config.yml:/app/config.yml \
-  babylonlabs/staking-expiry-checker:latest --config /app/config.yml
+  babylonlabs/staking-expiry-checker:v1.0.0 --config /app/config.yml
 ```
 
 This approach is recommended for production environments as it provides better
@@ -169,3 +169,7 @@ The service exposes Prometheus metrics through a Prometheus server. By default,
 it is available at the address configured in the metrics configuration section
 (0.0.0.0:2112). Configure the metrics endpoint in your configuration file as
 needed.
+
+## Backup
+
+The Staking Expiry Checker is stateless, so no backups are needed.  

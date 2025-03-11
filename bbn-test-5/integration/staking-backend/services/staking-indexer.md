@@ -10,7 +10,6 @@ data available in an API-friendly format for dApps to use.
 
 - **CPU:** Multi-core processor (4 cores minimum)
 - **Memory:** Minimum 4GB RAM (recommended 8GB RAM)
-- **Storage:** Sufficient space for MongoDB data (at least 10GB recommended)
 
 ## Configuration
 
@@ -93,7 +92,7 @@ repository:
 ```bash
 docker run -d --name babylon-staking-indexer \
   -v ~/.babylon-staking-indexer/config.yml:/app/config.yml \
-  babylonlabs/babylon-staking-indexer:latest --config /app/config.yml
+  babylonlabs/babylon-staking-indexer:v1.0.0 --config /app/config.yml
 ```
 
 This approach is recommended for production environments as it provides better
@@ -180,3 +179,7 @@ The service exposes Prometheus metrics through a Prometheus server. By default,
 it is available at the address configured in the metrics configuration section
 (0.0.0.0:2112). Configure the metrics endpoint in your configuration file as
 needed.
+
+## Backup  
+
+The Babylon Staking Indexer is stateless, so no backups are needed.  

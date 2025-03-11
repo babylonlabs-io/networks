@@ -10,7 +10,7 @@ requests for Phase-1 delegations.
 ## Hardware Requirements
 
 - **CPU:** Multi-core processor (4 cores minimum)
-- **Memory:** Minimum 4GB RAM (recommended 8GB RAM)
+- **Memory:** Minimum 1GB RAM
 
 ## Configuration
 
@@ -90,7 +90,7 @@ docker run -d --name staking-api-service \
   -v ~/.staking-api-service/config.yml:/app/config.yml \
   -v ~/.staking-api-service/global-params.json:/app/global-params.json \
   -v ~/.staking-api-service/finality-providers.json:/app/finality-providers.json \
-  babylonlabs/staking-api-service:latest \
+  babylonlabs/staking-api-service:v1.0.0 \
   --config /app/config.yml \
   --params /app/global-params.json \
   --finality-providers /app/finality-providers.json
@@ -197,3 +197,7 @@ The service exposes Prometheus metrics through a Prometheus server. By default,
 it is available at the address configured in the metrics configuration section
 (0.0.0.0:2112). Configure the metrics endpoint in your configuration file as
 needed.
+
+## Backup  
+
+The Staking API Service is stateless, so no backups are needed.  

@@ -1,7 +1,8 @@
 # Deployment Overview for Bitcoin Staking Backend
 
-This guide outlines the deployment process for the Bitcoin Staking Backend
-system. Follow the steps in sequence for successful installation or upgrade.
+This guide outlines the deployment process for the Phase-2 Bitcoin Staking
+Backend system. Follow the steps in sequence for successful installation or
+upgrade from the corresponding Phase-1 system.
 
 ## Prerequisites
 
@@ -28,6 +29,10 @@ properly set up:
 
 > **Note:** If upgrading an existing deployment, ensure you gracefully shut down
 > any legacy indexer services before proceeding.
+
+<!-- ## Upgrade Process
+
+// TODO -->
 
 ## Launching Services
 
