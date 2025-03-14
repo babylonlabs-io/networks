@@ -67,7 +67,7 @@ Archive:
 
 - https://babylon-testnet-grpc.nodes.guru
 - http://babylon-testnet-grpc.polkachu.com:20690
-- grpc-babylon-testnet.imperator.co:443
+- https://grpc-babylon-testnet.imperator.co:443
 
 ### Covenant Committee
 
