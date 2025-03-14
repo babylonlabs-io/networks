@@ -1,3 +1,0 @@
-# Staking Back-End
-
-TODO
