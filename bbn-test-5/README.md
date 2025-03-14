@@ -92,6 +92,8 @@ BTC public keys associated with them.
 * CoinSummer Labs
   * `40afaf47c4ffa56de86410d8e47baa2bb6f04b604f4ea24323737ddc3fe092df`
 
+Alternatively, the list can be retrieved from [here](./covenant-committee.json).
+
 ## Network Participants
 
 There are four types of participants in the Babylon network.
