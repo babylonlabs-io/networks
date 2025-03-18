@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Bitcoin Staking Backend System Architecture](./assets/staking-backend-system-detailed.png)
+![Bitcoin Staking Backend System Architecture](./assets/staking_backend.png)
 
 The Bitcoin Staking Backend is a robust system designed to facilitate Bitcoin
 staking operations on the Babylon network. It comprises specialized services that
