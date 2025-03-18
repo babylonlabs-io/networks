@@ -42,17 +42,26 @@ Peers can be retrieved from [here](./peers.txt).
 
 1. RPC
 
+
+Pruned:
 - https://babylon-testnet-rpc.nodes.guru
 - https://babylon-testnet-rpc.polkachu.com
 - https://rpc-babylon-testnet.imperator.co
 - https://babylon-testnet-rpc.contributiondao.com
 
+Archive:
+- https://babylon-testnet-rpc-archive-1.nodes.guru
+
 2. LCD (node API)
 
+Pruned:
 - https://babylon-testnet-api.nodes.guru
 - https://babylon-testnet-api.polkachu.com
 - https://lcd-babylon-testnet.imperator.co
 - https://babylon-testnet-api.contributiondao.com
+
+Archive:
+- https://babylon-testnet-api-archive-1.nodes.guru
 
 3. gRPC
 
