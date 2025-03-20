@@ -12,3 +12,4 @@ At the moment, the following networks are live.
 Head over to their pages for more details:
 * [Phase-1 mainnet](./bbn-1)
 * [Phase-2 testnet](./bbn-test-5)
+* [Babylon Genesis Mainnet](./baby_3535-1)
