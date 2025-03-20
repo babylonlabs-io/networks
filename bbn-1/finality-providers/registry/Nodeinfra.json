@@ -1,10 +1,10 @@
 {
   "description": {
-    "moniker": "Nodeinfra-Decenter",
+    "moniker": "Nodeinfra",
     "identity": "81397DB8B13AAE2F",
     "website": "https://nodeinfra.com",
     "security_contact": "security@nodeinfra.com",
-    "details": "Trusted Korean validator partnered with top Korean crypto media"
+    "details": "Korean validator focused on reliability and security"
   },
   "eots_pk": "a1f8176fef4f689bfa5f4704255cc566562a13de6f1f1e546413d46aa4dd6f64",
   "commission": "0.05"
