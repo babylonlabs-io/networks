@@ -38,7 +38,8 @@ staking information from a back-end you operate.
 
 **Option-3**, develop Bitcoin staking as a feature of your extension wallet,
 which connects to either third party APIs
-(such as the Babylon [API](https://staking-api.testnet.babylonlabs.io/swagger/index.html)) or a back-end you operate.
+(such as the Babylon
+[API](https://staking-api.testnet.babylonlabs.io/swagger/doc.json)) or a back-end you operate.
 - For information about developing your own Bitcoin staking as a feature, please check
     - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
     - our
@@ -80,7 +81,8 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
 
 **Option-3**, develop Bitcoin staking as a feature of your mobile wallet,
   which connects to either third party APIs
-  (such as the Babylon [API](https://staking-api.testnet.babylonlabs.io/swagger/index.html)) or a back-end you operate.
+  (such as the Babylon
+  [API](https://staking-api.testnet.babylonlabs.io/swagger/doc.json)) or a back-end you operate.
 - For information about developing your own Bitcoin staking as a feature, please check
     - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
     - our
@@ -97,7 +99,8 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
 
 **Option-1**, develop Bitcoin staking as a feature of your hardware wallet,
 which connects to either third party APIs
-(such as the Babylon [API](https://staking-api.testnet.babylonlabs.io/swagger/index.html)) or a back-end you operate.
+(such as the Babylon
+[API](https://staking-api.testnet.babylonlabs.io/swagger/doc.json)) or a back-end you operate.
 - For information about developing your own Bitcoin staking as a feature, please check
     - our reference web application [implementation](https://github.com/babylonlabs-io/simple-staking/tree/main).
     - our

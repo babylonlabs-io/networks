@@ -30,7 +30,7 @@ cd babylon
 # tag corresponds to the version of the software
 # you want to install -- depends on which
 # height you sync from
-git checkout v1.0.0-rc.6-hot-fix
+git checkout v1.0.0-rc.6-fix
 # we use this to ensure that the testnet-specific upgrade data
 # are included in the binary
 BABYLON_BUILD_OPTIONS="testnet" make install
@@ -44,7 +44,7 @@ You can verify your installation by executing the `version` command:
 
 ```shell
 babylond version
-v1.0.0-rc.6-hot-fix
+v1.0.0-rc.6-fix
 ```
 
 If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in
