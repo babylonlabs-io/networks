@@ -24,7 +24,6 @@ go version
 Next, clone the Babylon codebase
 and install the Babylon binary:
 
-<!---TODO(@filippos, konrad): Verify tag and build instructions -->
 ```shell
 git clone git@github.com:babylonlabs-io/babylon.git
 cd babylon
@@ -32,9 +31,8 @@ cd babylon
 # you want to install -- depends on which
 # height you sync from
 git checkout v1.0.0
-# we use this to ensure that the testnet-specific upgrade data
-# are included in the binary
-BABYLON_BUILD_OPTIONS="mainnet" make install
+# install the binary
+make install
 ```
 This command does the following:
 - Builds the daemon
@@ -43,7 +41,6 @@ This command does the following:
 
 You can verify your installation by executing the `version` command:
 
-<!--TODO(@filippos, konrad): Verify version -->
 ```shell
 babylond version
 v1.0.0
