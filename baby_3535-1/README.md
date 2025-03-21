@@ -49,35 +49,31 @@ Peers can be retrieved from [here](./peers.txt).
 
 ### Endpoints
 
-<!-- TODO(@filippos): Endpoints 
 1. RPC
 
 Pruned:
-- https://babylon-testnet-rpc.nodes.guru
-- https://babylon-testnet-rpc.polkachu.com
-- https://rpc-babylon-testnet.imperator.co
-- https://babylon-testnet-rpc.contributiondao.com
+- https://babylon-rpc.polkachu.com
 
 Archive:
-- https://babylon-testnet-rpc-archive-1.nodes.guru
+- https://babylon-archive-rpc.polkachu.com
 
 2. LCD (node API)
 
 Pruned:
-- https://babylon-testnet-api.nodes.guru
-- https://babylon-testnet-api.polkachu.com
-- https://lcd-babylon-testnet.imperator.co
-- https://babylon-testnet-api.contributiondao.com
+- https://babylon-api.polkachu.com
 
 Archive:
-- https://babylon-testnet-api-archive-1.nodes.guru
+- https://babylon-archive-api.polkachu.com
 
 3. gRPC
 
-- https://babylon-testnet-grpc.nodes.guru
-- http://babylon-testnet-grpc.polkachu.com:20690
-- grpc-babylon-testnet.imperator.co:443
--->
+Pruned:
+- babylon-grpc.polkachu.com:20690
+
+Archive:
+- babylon-archive-grpc.polkachu.com:20690
+
+<!-- TODO(@filippos): Endpoints nodes.guru and imperator? -->
 
 ### Covenant Committee
 
