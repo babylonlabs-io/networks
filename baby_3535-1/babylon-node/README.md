@@ -216,7 +216,7 @@ Note: When building the upgrade binary, include the following build flag so that
 mainnet-specific upgrade data are included in the binary:
 
 ```shell
-BABYLON_BUILD_OPTIONS="mainnet" make install
+make install
 ```
 
 You will have to go over all the software upgrades until you sync with the
