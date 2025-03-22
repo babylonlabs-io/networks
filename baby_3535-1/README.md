@@ -49,9 +49,11 @@ Peers can be retrieved from [here](./peers.txt).
 
 ### Endpoints
 
+
 1. RPC
 
 Pruned:
+- https://babylon.nodes.guru/rpc
 - https://babylon-rpc.polkachu.com
 
 Archive:
@@ -60,6 +62,7 @@ Archive:
 2. LCD (node API)
 
 Pruned:
+- https://babylon.nodes.guru/api
 - https://babylon-api.polkachu.com
 
 Archive:
@@ -68,6 +71,7 @@ Archive:
 3. gRPC
 
 Pruned:
+- babylon.nodes.guru:443/grpc
 - babylon-grpc.polkachu.com:20690
 
 Archive:
