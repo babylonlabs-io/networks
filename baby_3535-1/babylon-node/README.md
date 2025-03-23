@@ -25,7 +25,7 @@ Next, clone the Babylon codebase
 and install the Babylon binary:
 
 ```shell
-git clone git@github.com:babylonlabs-io/babylon.git
+git clone https://github.com/babylonlabs-io/babylon.git
 cd babylon
 # tag corresponds to the version of the software
 # you want to install -- depends on which
@@ -103,6 +103,15 @@ After initialization, you'll need to modify the following configuration files:
 # Minimum gas prices that this node will accept
 minimum-gas-prices = "0.002ubbn"
 
+[mempool]
+# Setting max-txs to 0 will allow for a unbounded amount of transactions in the mempool.
+# Setting max_txs to negative 1 (-1) will disable transactions from being inserted into the mempool (no-op mempool).
+# Setting max_txs to a positive number (> 0) will limit the number of transactions in the mempool, by the specified amount.
+#
+# Note, this configuration only applies to SDK built-in app-side mempool
+# implementations.
+max-txs = 0
+
 [btc-config]
 
 # Configures which bitcoin network should be used for checkpointing
@@ -112,11 +121,13 @@ network = "mainnet" # The Babylon Genesis mainnet connects to the mainnet Bitcoi
 
 Parameters:
 - `minimum-gas-prices`: The minimum gas price your node will accept for
-   transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and
-   any transactions with gas prices below your node's minimum will be rejected.
+  transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and
+  any transactions with gas prices below your node's minimum will be rejected.
+- `mempool.max-txs`: Set this to `0` in order to utilise the application side
+  mempool.
 - `btc-config.network`: Specifies which Bitcoin network to connect to for
-   checkpointing. For the Babylon Genesis mainnet,
-   we use "mainnet" which is Bitcoin's mainnet network.
+  checkpointing. For the Babylon Genesis mainnet,
+  we use "mainnet" which is Bitcoin's mainnet network.
 
 Note: If you're running a validator or RPC node that needs to handle queries,
 it's recommended to keep these default values for optimal performance. Only
