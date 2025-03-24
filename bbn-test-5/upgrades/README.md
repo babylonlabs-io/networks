@@ -7,4 +7,4 @@ You can find a list of the Software Upgrades listed in chronological order here:
 
 - The [v1](./v1.md) upgrade was performed at Babylon block `200`
 - The [v1rc5](./v1rc5.md) upgrade was performed at Babylon block `330959`
-- The [v1rc8](./v1rc8/README.md) upgrade was performed at Babylon block `589080`
+- The [v1rc8](./v1rc8/README.md) upgrade was performed at Babylon block `595892`

@@ -3,7 +3,7 @@
 ## Upgrade overview
 
 - **Upgrade version**: `v1.0.0-rc.8`
-- **Upgrade height**: `589080`
+- **Upgrade height**: `595892`
 
 ## Upgrade process
 
