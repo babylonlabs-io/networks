@@ -4,6 +4,8 @@
 
 - **Upgrade version**: `v1.0.0-rc.8`
 - **Upgrade height**: `595892`
+- **Upgrade overview**: This upgrade introduces numerous changes
+as part of the auditing effort. For a detailed changelog, visit the [release note](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0-rc.8).
 
 ## Upgrade process
 
@@ -11,7 +13,7 @@
 
 - Obtain the `v1.0.0-rc.8` binary. You can achieve this in multiple ways:
   - Download the binary from the [releases page](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0-rc.8)
-  - Build the binary on your machine
+  - Build the binary in your machine:
 
     ```shell
     git checkout v1.0.0-rc.8
