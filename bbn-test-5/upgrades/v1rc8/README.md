@@ -7,9 +7,8 @@
 
 ## Upgrade process
 
-To upgrade your Babylon node, please perform the following steps:
+### Prepare the upgrade binary
 
-- Stop your Babylon node
 - Obtain the `v1.0.0-rc.8` binary. You can achieve this in multiple ways:
   - Download the binary from the [releases page](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0-rc.8)
   - Build the binary on your machine
@@ -25,4 +24,10 @@ To upgrade your Babylon node, please perform the following steps:
     docker pull babylonlabs/babylond:v1.0.0-rc.8-testnet
     ```
 
+### Perform the upgrade
+
+To upgrade your Babylon node at the upgrade height, please perform the following steps:
+
+- Stop your Babylon node
+- Swap your babylon binary with the prepared `v1.0.0-rc.8` binary
 - Start your Babylon node
