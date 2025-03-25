@@ -1,4 +1,8 @@
-# Babylon Genesis Network
+# Babylon Genesis Network (WIP)
+
+> **⚠️ Warning**: This network specification is still WIP.
+> The WIP indication will be removed once the information is ready
+> for consumption.
 
 Welcome to the network page for the Babylon Genesis mainnet (`baby_3535-1`).
 This is your central hub 
@@ -29,22 +33,12 @@ A snapshot including state up to height `X` can be retrieved from
 To boot a node with this snapshot, Babylon version `v1.0.0` should be used
 ([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0)).
 
-Some additional network snapshot sources are also listed:
-
-<!-- TODO(@filippos): get links
-- https://polkachu.com/testnets/babylon/snapshots
-- https://www.imperator.co/services/chain-services/testnets/babylon
-- https://services.contributiondao.com/testnet/babylon/snapshots
--->
-
 ### Seed nodes
 
-<!-- TODO(@filippos): Specify seeds -->
 Seed nodes can be retrieved from [here](./seeds.txt).
 
 ### Peers
 
-<!-- TODO(@filippos): Specify peers -->
 Peers can be retrieved from [here](./peers.txt).
 
 ### Endpoints
