@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
-1. [Install Babylon Binary](#1-install-babylon-binary)
-2. [Set Up Node Home Directory and Configuration](#2-set-up-your-node-home-directory-and-configuration)
+1. [Install Babylon binary](#1-install-babylon-binary)
+2. [Set up node home directory and configuration](#2-set-up-your-node-home-directory-and-configuration)
 3. [Prepare for sync](#3-prepare-for-sync)
     1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
     2. [Sync from scratch](#32-sync-from-scratch)
