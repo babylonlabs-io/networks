@@ -216,12 +216,26 @@ perform the babylon software upgrade when needed.
 1. First, follow the installation steps in [Section 1](#1-install-babylon-binary)
 using the genesis software version `v0.9.0` in place of `<tag>`.
 
-2. Start your node as specified in section [Start the node](#4-start-the-node).
+2. Start your node with the initial chain ID:
 
-Your node will sync blocks until it reaches a software upgrade height.
+```shell
+babylond start --chain-id bbn-test-5 --home <path>
+```
 
+3. Your node will sync blocks until it reaches the v1.0.0 software upgrade height.
+
+4. At the upgrade height, your node will automatically halt. At this point:
+   - Stop your node
+   - Install the v1.0.0 binary as described in [Section 1](#1-install-babylon-binary)
+   - Change your node's configuration to use the new chain ID `baby_3535-1`
+   - Restart your node with the new chain ID:
+   
 At that point, you will have to perform the steps matching the corresponding
 [upgrade height](../upgrades/README.md).
+
+```shell
+babylond start --chain-id baby_3535-1 --home <path>
+```
 
 Note: When building the upgrade binary, include the following build flag so that
 mainnet-specific upgrade data are included in the binary:
@@ -230,7 +244,7 @@ mainnet-specific upgrade data are included in the binary:
 make install
 ```
 
-You will have to go over all the software upgrades until you sync with the
+You will have to go over all subsequent software upgrades until you sync with the
 full blockchain.
 
 ## 4. Start the node
