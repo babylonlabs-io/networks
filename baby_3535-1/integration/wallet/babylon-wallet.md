@@ -30,7 +30,8 @@ the Babylon Genesis Mainnet (`baby_3535-1`):
 The Babylon PoS chain utilises the default Cosmos SDK
 functionality for accounts, message signing,
 token balance, and token transfer.
-Please refer to the relevant Cosmos SDK documentation
+Please refer to the relevant
+[Cosmos SDK documentation](https://docs.cosmos.network/)
 for more details.
 
 ### Staking
@@ -73,17 +74,6 @@ UX considerations for wallet integration:
   if users transfer or spend their funds before staking takes effect,
   the staking transaction will fail.
   Wallets should warn users about this possibility.
-
-The above mechanism presents the following UX considerations
-that wallets should take into account:
-* Delayed staking activation: While the wrapped staking message is executed
-  immediately, the staking operation happens at the end of the epoch.
-  Wallets should indicate to the user that their staking will not take
-  into effect immediately.
-* Delayed funds locking: Due to the delayed staking activation, the user's
-  funds remain liquid until the staking takes into effect. This might
-  lead users to transfer them or spend them in some way, leading
-  to the staking transaction failing at the end of the epoch.
 
 Wallets can provide users with visibility into pending staking
 messages using the

@@ -5,7 +5,7 @@
 1. [Prerequisites](#1-prerequisites)
 2. [System Requirements](#2-system-requirements)
 3. [Key Management](#3-key-management) 
-   1. [Key for CometBFT consensus](#31-key-for-cometbft-consensus)
+   1. [Key for CometBFT consensus](#31-key-for-babylon-validators)
    2. [Babylon validator account keyring](#32-babylon-validator-account-keyring)
 4. [CometBFT Validator Configuration](#4-cometbft-validator-configuration)
 5. [Creating a Validator](#5-creating-a-validator)

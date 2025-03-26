@@ -1,8 +1,8 @@
 # Babylon Staking Expiry Checker
 
 The Babylon Staking Expiry Checker is a service that manages unbonding and
-withdrawal processes for Phase 1 delegations that haven't transitioned to Phase
-2. This service ensures the integrity and proper state management of staking
+withdrawal processes for Phase-1 delegations that haven't transitioned to
+Phase-2. This service ensures the integrity and proper state management of staking
 transactions throughout their lifecycle.
 
 ## Hardware Requirements
