@@ -63,21 +63,29 @@ metrics:
 
 ### 4. Download Global Parameters
 
-To run the Staking API, a `global-params.json` file which defines all the
-staking parameters is needed.
-
-To download the global parameters, follow the instructions at:
-[Staking Parameters Documentation](https://docs.babylonlabs.io/docs/user-guides/bitcoin-staking-phase1/backend-deployment/global-params#staking-parameters)
+The Staking API requires access to both the phase-1 (`global-params.json` file)
+and phase-2 staking parameters:
+* The phase-1 staking parameters can be retrieved in the
+  [staking parameters
+  documentation](https://github.com/babylonlabs-io/networks/tree/main/bbn-1/parameters)
+* The phase-2 staking parameters are retrieved automatically by the connection
+  to the Babylon Genesis blockchain node.
 
 ### 5. Download Finality Providers
 
-To run the Staking API, a `finality-provider.json` file that associates finality
-provider BTC public keys with additional information about them such as their
-moniker and commission is needed.
+The Staking API requires access to both the information for
+finality providers registered for phase-2 and those that still
+haven't registered but participated in phase-1. The latter are stored in a
+`finality-provider.json` file which associates their finality provider
+BTC public keys with addittional information about them.
 
-To generate the concatenated finality providers information from Babylon
-registry, follow the instructions at:
-[Finality Providers Documentation](https://docs.babylonlabs.io/docs/user-guides/bitcoin-staking-phase1/backend-deployment/global-params#22-generating-concatenated-finality-provider-information)
+Both can be retrieved as follows:
+* The phase-1 `finality-providers.json` file can be retrieved by concatanating
+  the information from the phase-1
+  [finality providers
+  registry](https://github.com/babylonlabs-io/networks/tree/main/bbn-1/finality-providers).
+* The phase-2 Babylon Genesis finality providers are automatically retrieved
+  through the connection to the Babylon Genesis node.
 
 ## Start the Service
 
