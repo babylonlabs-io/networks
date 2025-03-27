@@ -9,27 +9,27 @@ Babylon as a supported blockchain.
 
 In this document will walk through the considerations of integrating
 the Babylon blockchain into your wallet:
-* [Babylon Genesis network information](#babylon-genesis-network-information)
+* [Phase-2 Testnet network information](#phase-2-testnet-network-information)
 * [Accounts, message signing, token balance, and token transfer](#accounts-message-signing-token-balance-and-token-transfer)
 * [Staking](#staking)
 * [Unbonding](#unbonding)
 
-### Babylon Genesis Network Information
+### Phase-2 Testnet Network Information
 
 Following is a list of the key network details of
-Babylon Genesis:
-* RPC nodes can be found for the network you are interested in
-  [our networks registry](https://github.com/babylonlabs-io/networks).
+the Babylon Phase-2 Testnet (`testnet-5`):
+* RPC nodes can be found [here](../../README.md)
+* Chain ID: `bbn-test-5`
+* Bech32 Configuration can be found [here](https://github.com/babylonlabs-io/babylon/blob/main/app/params/config.go#L35)
 * Token minimum denomination: `ubbn` (6 decimals)
-* Human-readable denomination: `BABY`
+* Human-readable denomination: `tbaby` (test baby)
 
 ### Accounts, message signing, token balance, and token transfer
 
 The Babylon PoS chain utilises the default Cosmos SDK
 functionality for accounts, message signing,
 token balance, and token transfer.
-Please refer to the relevant
-[Cosmos SDK documentation](https://docs.cosmos.network/)
+Please refer to the relevant Cosmos SDK documentation
 for more details.
 
 ### Staking
@@ -40,7 +40,7 @@ at the end of an epoch rather than immediately.
 * An epoch is defined as a specific block range,
   determined by an epoch interval defined
   in the `x/epoching` module's
-  [parameters](https://github.com/babylonlabs-io/babylon/blob/release/v1.x/proto/babylon/epoching/v1/params.proto).
+  [parameters](https://github.com/babylonlabs-io/babylon/blob/main/proto/babylon/epoching/v1/params.proto).
 * During each epoch, staking messages are queued
   in a delayed execution queue.
 * At the epoch's end, all queued staking messages
@@ -73,6 +73,17 @@ UX considerations for wallet integration:
   the staking transaction will fail.
   Wallets should warn users about this possibility.
 
+The above mechanism presents the following UX considerations
+that wallets should take into account:
+* Delayed staking activation: While the wrapped staking message is executed
+  immediately, the staking operation happens at the end of the epoch.
+  Wallets should indicate to the user that their staking will not take
+  into effect immediately.
+* Delayed funds locking: Due to the delayed staking activation, the user's
+  funds remain liquid until the staking takes into effect. This might
+  lead users to transfer them or spend them in some way, leading
+  to the staking transaction failing at the end of the epoch.
+
 Wallets can provide users with visibility into pending staking
 messages using the
 [LastEpochMsgs query in x/epoching](https://github.com/babylonlabs-io/babylon/blob/main/proto/babylon/epoching/v1/query.proto#L46).
@@ -97,9 +108,8 @@ This process works as follows:
   * The number of required Bitcoin confirmations is set by the
     `x/btccheckpoint` module, detailed
     [here](https://github.com/babylonlabs-io/babylon/blob/main/proto/babylon/btccheckpoint/v1/params.proto#L24)
-  * For example, on the Babylon Genesis mainnet,
-    this value will be set to 300 confirmations,
-    corresponding to roughly ~33 hours for unbonding to be completed,
+  * On the Phase-2 testnet, this value will be set to 100 confirmations,
+    corresponding to roughly 16-17 hours for unbonding to be completed,
     assuming an average Bitcoin block time of 10 minutes.
 * **Unbonding Finalization**: All unbonding requests submitted
   up to the end of that epoch are processed and finalized
