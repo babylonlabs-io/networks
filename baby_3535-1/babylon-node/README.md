@@ -219,7 +219,7 @@ using the genesis software version `v0.9.0` in place of `<tag>`.
 2. Start your node with the initial chain ID:
 
 ```shell
-babylond start --chain-id <mainnet-chain-id> --home <path>
+babylond start --chain-id bbn-1 --home <path>
 ```
 
 3. Your node will sync blocks until it reaches the v1.0.0 software upgrade height.
