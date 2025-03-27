@@ -9,19 +9,17 @@ Babylon as a supported blockchain.
 
 In this document will walk through the considerations of integrating
 the Babylon blockchain into your wallet:
-* [Babylon Genesis Mainnet network information](#babylon-genesis-mainnet-network-information)
+* [Babylon Genesis network information](#babylon-genesis-network-information)
 * [Accounts, message signing, token balance, and token transfer](#accounts-message-signing-token-balance-and-token-transfer)
 * [Staking](#staking)
 * [Unbonding](#unbonding)
 
-### Babylon Genesis Mainnet Network Information
+### Babylon Genesis Network Information
 
 Following is a list of the key network details of
-the Babylon Genesis Mainnet (`baby_3535-1`):
-* RPC nodes can be found [here](../../README.md)
-* Chain ID: `baby_3535-1`
-* Bech32 Configuration can be found
-  [here](https://github.com/babylonlabs-io/babylon/blob/release/v1.x/app/params/config.go#L35)
+Babylon Genesis:
+* RPC nodes can be found for the network you are interested in
+  [our networks registry](https://github.com/babylonlabs-io/networks).
 * Token minimum denomination: `ubbn` (6 decimals)
 * Human-readable denomination: `BABY`
 
@@ -99,8 +97,9 @@ This process works as follows:
   * The number of required Bitcoin confirmations is set by the
     `x/btccheckpoint` module, detailed
     [here](https://github.com/babylonlabs-io/babylon/blob/main/proto/babylon/btccheckpoint/v1/params.proto#L24)
-  * On the Babylon Genesis mainnet, this value will be set to 100 confirmations,
-    corresponding to roughly 16-17 hours for unbonding to be completed,
+  * For example, on the Babylon Genesis mainnet,
+    this value will be set to 300 confirmations,
+    corresponding to roughly ~33 hours for unbonding to be completed,
     assuming an average Bitcoin block time of 10 minutes.
 * **Unbonding Finalization**: All unbonding requests submitted
   up to the end of that epoch are processed and finalized
