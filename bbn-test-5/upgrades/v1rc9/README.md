@@ -3,7 +3,7 @@
 ## Upgrade overview
 
 - **Upgrade version**: `v1.0.0-rc.9`
-- **Upgrade height**: TODO: `XXX`
+- **Upgrade height**: `618500`
 - **Upgrade overview**: This upgrade fixes the `Resume Finality` Babylon node
   handler. For a detailed changelog, visit the [release note](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0-rc.9).
 
