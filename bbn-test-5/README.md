@@ -29,6 +29,7 @@ Some additional network snapshot sources are also listed:
 - https://polkachu.com/testnets/babylon/snapshots
 - https://www.imperator.co/services/chain-services/testnets/babylon
 - https://services.contributiondao.com/testnet/babylon/snapshots
+- https://nodestake.org/babylon
 
 ### Seed nodes
 
@@ -48,6 +49,7 @@ Pruned:
 - https://babylon-testnet-rpc.polkachu.com
 - https://rpc-babylon-testnet.imperator.co
 - https://babylon-testnet-rpc.contributiondao.com
+- https://rpc-t.babylon.nodestake.org
 
 Archive:
 - https://babylon-testnet-rpc-archive-1.nodes.guru
@@ -59,6 +61,7 @@ Pruned:
 - https://babylon-testnet-api.polkachu.com
 - https://lcd-babylon-testnet.imperator.co
 - https://babylon-testnet-api.contributiondao.com
+- https://api-t.babylon.nodestake.org
 
 Archive:
 - https://babylon-testnet-api-archive-1.nodes.guru
@@ -68,6 +71,7 @@ Archive:
 - https://babylon-testnet-grpc.nodes.guru
 - http://babylon-testnet-grpc.polkachu.com:20690
 - grpc-babylon-testnet.imperator.co:443
+- grpc-t.babylon.nodestake.org:443
 
 ### Covenant Committee
 
