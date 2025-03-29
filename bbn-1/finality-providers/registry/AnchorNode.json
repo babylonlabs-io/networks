@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "AnchorNode",
+    "identity": "74AF1386843D8345",
+    "website": "https://anchornode.io",
+    "security_contact": "vickyzhu622@gmail.com",
+    "details": "Anchor Node serves as a symbol of blockchain's decentralized architecture."
+  },
+  "eots_pk": "879270978744dece271e953d78959f7aa93459390a8ac58a32eae43a962f89e3",
+  "commission": "0.05"
+}

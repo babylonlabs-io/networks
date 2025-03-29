@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "B-Harvest/Merkle Alliance",
+    "identity": "8957C5091FBF4192",
+    "website": "https://bharvest.io",
+    "security_contact": "contact@bharvest.io",
+    "details": "Provides secure validation services for dPoS networks"
+  },
+  "eots_pk": "a0cf1cd3a8e2b309dbdccdc8aa82a16c893755bd08b8c4139691f0e38ef4a599",
+  "commission": "0.03"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "CosmosSpaces",
+    "identity": "06B033BAC39DA21C",
+    "website": "https://cosmosspaces.zone",
+    "security_contact": "security@cosmosspaces.zone",
+    "details": "Bare Metal Validators, Relayers, and RPC providers. Top tier infrastructure providers rooted in the Cosmos community."
+  },
+  "eots_pk": "9a5e201fe1c1d381457d9d57689673e871641183ab69ce92f6723e883de4be53",
+  "commission": "0.05"
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Xangle",
+    "identity": "B4036015EC09F392",
+    "website": "https://xangle.io",
+    "security_contact": "validator@crossangle.io",
+    "details": "The largest Web3 market intelligence platform operator in Korea, Xangle provides a comprehensive suite of tools and services designed to support Web3 foundations’ go-to-market strategies in Korea safely under compliance with Korea’s regulatory environment. Since its inception, Xangle has expanded its business by offering information disclosure and evaluation services, gaining extensive experience in distributing information based on transparency and credibility. The company also possesses a deep understanding of, and high level of expertise in, regulatory compliance. By leveraging a vast user base and consolidated data, Xangle supports Web3 foundations with their Go-to-Market strategies in Korea, fostering active, data-driven community building."
+  },
+  "eots_pk": "55649d9864f992b315a16531a23d92951143bf2d390d22689946dcd7556c008f",
+  "commission": "0.03"
+}

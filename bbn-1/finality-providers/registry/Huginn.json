@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Huginn",
+    "identity": "D27EE330254D4F6A",
+    "website": "https://huginn.tech",
+    "security_contact": "stake@huginn.tech",
+    "details": "Professional staking service. 7/24 monitoring and best uptime. Huginn is an organization that aims to teach its community about Cosmos SDK and Blockchain."
+  },
+  "eots_pk": "3c6f137ef7fe2df8fd1e348c9de06eded5cb75393175c3d159090341f203f964",
+  "commission": "0.05"
+}

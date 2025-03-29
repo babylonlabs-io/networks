@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Cubist",
+    "identity": "A56651055B76A453",
+    "website": "https://cubist.dev",
+    "security_contact": "security+babylon-fp@cubist.dev",
+    "details": "Cubist is the creator of CubeSigner, the premier hardware-backed key management infrastructure. CubeSigner gives high-security, low-latency signing for a wide range of Web3 applications including staking, wallets, trading, and more."
+  },
+  "eots_pk": "8e14c575b2cadd5cc0f8584b2dcb98b4c301a53c3cee402a5caf4b4512a1f40a",
+  "commission": "0.05"
+}

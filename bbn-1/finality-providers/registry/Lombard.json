@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Lombard",
+    "identity": "",
+    "website": "https://lombard.finance",
+    "security_contact": "stanley@lombard.finance",
+    "details": "Lombard is dedicated to expanding the digital economy by transforming Bitcoin’s utility from a mere store of value into a productive financial tool."
+  },
+  "eots_pk": "609b4b8e27e214fd830e69a83a8270a03f7af356f64dde433a7e4b81b2399806",
+  "commission": "0.03"
+}

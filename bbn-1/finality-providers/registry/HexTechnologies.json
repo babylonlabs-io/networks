@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Hex Trust",
+    "identity": "DEA21069031BB3F4",
+    "website": "https://hextrust.com",
+    "security_contact": "security@hextrust.com",
+    "details": "Hex Trust is a fully licensed digital asset custodian dedicated to providing solutions for protocols, foundations, financial institutions, and the Web3 ecosystem."
+  },
+  "eots_pk": "289719ef19e455816e474588007f1824df7f6b1bace7decf8bb1c435e4cb849e",
+  "commission": "0.05"
+}
