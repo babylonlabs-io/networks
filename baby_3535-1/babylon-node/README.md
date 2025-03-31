@@ -146,7 +146,7 @@ persistent_peers = "NODE_ID1@NODE_ENDPOINT1:PORT1,NODE_ID2@NODE_ENDPOINT2:PORT2"
 
 [consensus]
 
-timeout_commit = "10s"
+timeout_commit = "9200ms"
 ```
 
 Parameters:
@@ -155,8 +155,9 @@ Parameters:
    [here](../README.md#seed-nodes)
 - `persistent_peers`: Comma separated list of nodes that your node will use as
    persistent peers; you can obtain peers from [here](../README.md#peers)
-- `timeout_commit`: The Babylon network block time has to be set to
-   **10 seconds**
+- `timeout_commit`: The Babylon Genesis network block time has to be set to
+   **9200 milliseconds**. We set a lower value than the target 10s block time,
+   to account for network delays.
 
 Note: You can use either seeds, persistent peers or both.
 
