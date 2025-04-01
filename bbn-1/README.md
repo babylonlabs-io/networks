@@ -1,6 +1,6 @@
 # Babylon Mainnet
 
-Welcome to the network page for the Babylon Mainnet.
+Welcome to the network page for the Babylon mainnet.
 This is your central hub 
 for network participation information, whether you're running a node, 
 operating as a validator, providing finality services, or participating 
