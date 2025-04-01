@@ -9,7 +9,7 @@
    2. [Sync from scratch](#32-sync-from-scratch)
 4. [Start the node](#4-start-the-node)
 
-## 1. Install Babylon Binary 
+## 1. Install Babylon Binary
 
 Installing the Babylon binary requires a Golang installation.
 
@@ -17,6 +17,7 @@ Install Golang 1.23 by following the instructions
 [here](https://go.dev/dl)
 
 Once installed, to verify your installation, run:
+
 ```shell
 go version
 ```
@@ -31,14 +32,15 @@ cd babylon
 # you want to install -- depends on which
 # height you sync from
 git checkout <tag>
-# we use this to ensure that the testnet-specific upgrade data 
+# we use this to ensure that the testnet-specific upgrade data
 # are included in the binary
-BABYLON_BUILD_OPTIONS="testnet" make install 
+BABYLON_BUILD_OPTIONS="testnet" make install
 ```
 <!-- TODO: testnet tag to be defined -->
 This command does the following:
+
 - Builds the daemon
-- Installs the binary 
+- Installs the binary
 - Makes the `babylond` command globally accessible from your terminal
 
 You can verify your installation by executing the `version` command:
@@ -47,20 +49,21 @@ You can verify your installation by executing the `version` command:
 babylond version
 ```
 
-If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in 
-your shell's `$PATH`. Use the following command to add it to your profile, 
+If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in
+your shell's `$PATH`. Use the following command to add it to your profile,
 depending on your shell:
- ```shell 
- echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile 
+
+ ```shell
+ echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile
  ```
 
 Make sure to restart your terminal session after running the above command.
 
 ## 2. Set up your node, home directory, and configuration
 
-In this section we will initialize your node and create the necessary 
+In this section we will initialize your node and create the necessary
 configuration directory through the `init` command.
-This command will generate several important configuration files 
+This command will generate several important configuration files
 including `app.toml`, `client.toml`, and `genesis.json`:
 
 ```shell
@@ -68,13 +71,14 @@ babylond init <moniker> --chain-id bbn-test-5 --home <path>
 ```
 
 Parameters:
+
 - `<moniker>`: A unique identifier for your node for example `node0`
 - `--chain-id`: The chain ID of the Babylon chain you connect to
-- `--home`: *optional* flag that specifies the directory where your 
+- `--home`: *optional* flag that specifies the directory where your
    node files will be stored, for example `--home ./nodeDir`
    The default home directory for your Babylon node is:
-   - Linux/Mac: `~/.babylond/`
-   - Windows: `%USERPROFILE%\.babylond\`
+  - Linux/Mac: `~/.babylond/`
+  - Windows: `%USERPROFILE%\.babylond\`
 
 After initialization, you'll need to modify the following configuration files:
 
@@ -96,20 +100,21 @@ network = "signet" # The Babylon testnet connects to the signet Bitcoin network
 ```
 
 Parameters:
-- `minimum-gas-prices`: The minimum gas price your node will accept for 
-   transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and 
+
+- `minimum-gas-prices`: The minimum gas price your node will accept for
+   transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and
    any transactions with gas prices below your node's minimum will be rejected.
 - `iavl-cache-size`: Default is `781250`. Setting to `0` disables the IAVL tree
    caching, which reduces memory usage but significantly impacts RPC query
    performance.
-- `iavl-disable-fastnode`: Default is `false`. Setting to true disables the 
-   fast node feature, which reduces memory usage but significantly 
+- `iavl-disable-fastnode`: Default is `false`. Setting to true disables the
+   fast node feature, which reduces memory usage but significantly
    impacts RPC query performance.
-- `btc-config.network`: Specifies which Bitcoin network to connect to for 
+- `btc-config.network`: Specifies which Bitcoin network to connect to for
    checkpointing. For testnet-5, we use "signet" which is Bitcoin's test network.
 
-Note: If you're running a validator or RPC node that needs to handle queries, 
-it's recommended to keep these default values for optimal performance. Only 
+Note: If you're running a validator or RPC node that needs to handle queries,
+it's recommended to keep these default values for optimal performance. Only
 adjust these if you're running a node with limited memory resources.
 
 2. On `config.toml`, update the the following settings:
@@ -129,19 +134,20 @@ timeout_commit = "10s"
 ```
 
 Parameters:
-- `seeds`: Comma separated list of seed nodes that your node will connect to for 
+
+- `seeds`: Comma separated list of seed nodes that your node will connect to for
    discovering other peers in the network; you can obtain seed endpoints from
    [here](../README.md#seed-nodes)
 - `persistent_peers`: Comma separated list of nodes that your node will use as
    persistent peers; you can obtain peers from [here](../README.md#peers)
-- `timeout_commit`: The Babylon network block time has to be set to 
+- `timeout_commit`: The Babylon network block time has to be set to
    **10 seconds**
 
 Note: You can use either seeds, persistent peers or both.
 
-Next, you'll need to obtain the network's genesis file. This file contains 
-the initial state of the blockchain and is crucial for successfully syncing 
-your node. You can inspect the file [here](../README.md#genesis) or use the 
+Next, you'll need to obtain the network's genesis file. This file contains
+the initial state of the blockchain and is crucial for successfully syncing
+your node. You can inspect the file [here](../README.md#genesis) or use the
 following commands to download it directly:
 
 ```shell
@@ -150,18 +156,20 @@ mv genesis.json <path>/config/genesis.json # You must insert the home directory 
 ```
 
 ## 3. Prepare for sync
-Before starting your node sync, it's important to note that the initial release 
+
+Before starting your node sync, it's important to note that the initial release
 at genesis was `v0.9.0`, while subsequently there have been software upgrades.
 
 There are two options you can choose from when syncing:
+
 1. Sync through a network snapshot (fastest method)
 2. Sync from scratch (complete sync from block 1)
 
 ### 3.1. Sync through a network snapshot
 
-Snapshot syncing is the fastest way to get your node up to date with the network. 
-A snapshot is a compressed backup of the blockchain data taken at a specific 
-height. Instead of processing all blocks from the beginning, you can download 
+Snapshot syncing is the fastest way to get your node up to date with the network.
+A snapshot is a compressed backup of the blockchain data taken at a specific
+height. Instead of processing all blocks from the beginning, you can download
 and import this snapshot to quickly reach a recent block height.
 
 You can obtain the network snapshot [here](../README.md#state-snapshot).
@@ -173,6 +181,7 @@ tar -xvf bbn-test-5.tar.gz -C <path>
 ```
 
 Parameters:
+
 - `bbn-test-5.tar.gz`: Name of the compressed blockchain snapshot file
 - `<path>` : Your node's home directory
 
@@ -181,15 +190,15 @@ After importing the state, you can now start your node as specified in section
 
 ### 3.2. Sync from scratch
 
-Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from 
-scratch means downloading and verifying every block from the beginning 
+Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from
+scratch means downloading and verifying every block from the beginning
 of the blockchain (genesis block) to the current block.
 
-This will require you to use different `babylond` binaries for each version and 
+This will require you to use different `babylond` binaries for each version and
 perform the babylon software upgrade when needed.
 
 1. First, follow the installation steps in [Section 1](#1-install-babylon-binary)
-using the genesis software version `v0.9.0` in place of `<tag>`. 
+using the genesis software version `v0.9.0` in place of `<tag>`.
 
 2. Start your node as specified in section [Start the node](#4-start-the-node).
 
@@ -205,7 +214,7 @@ testnet-specific upgrade data are included in the binary:
 BABYLON_BUILD_OPTIONS="testnet" make install
 ```
 
-You will have to repeat the above two steps until you sync with the 
+You will have to repeat the above two steps until you sync with the
 full blockchain.
 
 ## 4. Start the node
@@ -217,12 +226,13 @@ babylond start --chain-id bbn-test-5 --home <path> --x-crisis-skip-assert-invari
 ```
 
 Parameters:
+
 - `start`: This is the command to start the Babylon node.
 - `--chain-id`: Specifies the ID of the blockchain network you're connecting to.
-- `--home`: Sets the directory for the node's data and configuration files and 
-   dependent on where the files were generated for you from the initialization 
+- `--home`: Sets the directory for the node's data and configuration files and
+   dependent on where the files were generated for you from the initialization
    (e.g. `--home ./nodeDir`)
-- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve 
+- `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve
    performance. Not recommended for validator nodes.
 
 Congratulations! Your Babylon node is now set up and syncing blocks.
