@@ -1,5 +1,9 @@
 # Staking Parameters
 
+> **Important Note**: These parameters apply only to the Phase-1 of the Babylon
+> launch. From Phase-2 onwards, the parameters listed here will be deprecated,
+> and the Babylon Genesis chain will be the source of all staking parameters.
+
 The staking parameters are governance parameters that specify what constitutes
 a valid staking transaction that should be considered as an active one for
 the lock-only phase-1 system.
