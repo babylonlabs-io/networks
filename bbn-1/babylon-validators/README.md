@@ -198,7 +198,7 @@ To create your validator, run the following command:
 ```shell 
 babylond tx checkpointing create-validator \
     ./<home-path>/config/validator.json \
-    --chain-id baby_3535-1 \
+    --chain-id bbn-1 \
     --gas "auto" \
     --gas-adjustment 1.5 \
     --gas-prices "0.005ubbn" \

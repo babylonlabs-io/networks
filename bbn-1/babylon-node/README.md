@@ -61,7 +61,7 @@ In this section we will initialize your node and create the necessary
 configuration directory through the `init` command.
 
 ```shell
-babylond init <moniker> --chain-id baby_3535-1 --home <path>
+babylond init <moniker> --chain-id bbn-1 --home <path>
 ```
 
 Parameters:
@@ -167,7 +167,8 @@ your node. You can inspect the file [here](../README.md#genesis) or use the
 following commands to download it directly:
 
 ```shell
-wget https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/main/baby_3535-1/network-artifacts/genesis.json
+wget
+https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/main/bbn-1/network-artifacts/genesis.json
 mv genesis.json <path>/config/genesis.json # You must insert the home directory of your node
 ```
 
@@ -195,11 +196,11 @@ You can obtain the network snapshot [here](../README.md#state-snapshot).
 To extract the snapshot, utilize the following command:
 
 ```shell
-tar -xvf baby_3535-1.tar.gz -C <path>
+tar -xvf bbn-1.tar.gz -C <path>
 ```
 
 Parameters:
-- `baby_3535-1.tar.gz`: Name of the compressed blockchain snapshot file
+- `bbn-1.tar.gz`: Name of the compressed blockchain snapshot file
 - `<path>` : Your node's home directory
 
 After importing the state, you can now start your node as specified in section
@@ -222,7 +223,7 @@ using the genesis software version `v0.9.0` in place of `<tag>`.
 Your node will sync blocks until it reaches a software upgrade height.
 
 At that point, you will have to perform the steps matching the corresponding
-[upgrade height](../upgrades/README.md).
+[upgrade height](../network-artifacts/upgrades/README.md).
 
 Note: When building the upgrade binary, include the following build flag so that
 mainnet-specific upgrade data are included in the binary:
@@ -239,7 +240,7 @@ full blockchain.
 You can start your node using the following command:
 
 ```shell
-babylond start --chain-id baby_3535-1 --home <path> --x-crisis-skip-assert-invariants
+babylond start --chain-id bbn-1 --home <path> --x-crisis-skip-assert-invariants
 ```
 
 Parameters:
