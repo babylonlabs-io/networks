@@ -173,9 +173,6 @@ mv genesis.json <path>/config/genesis.json # You must insert the home directory 
 ```
 
 ## 3. Prepare for sync
-<!--TODO(@filippos, konrad):
-Need to update details on syncing to reflect correct versions and the chain ID
-update -->
 
 Before starting your node sync, it's important to note that the initial release
 at genesis was `v0.9.0`, while subsequently there have been software upgrades.
@@ -229,7 +226,7 @@ Note: When building the upgrade binary, include the following build flag so that
 mainnet-specific upgrade data are included in the binary:
 
 ```shell
-make install
+BABYLON_BUILD_OPTIONS="mainnet" make install
 ```
 
 You will have to go over all the software upgrades until you sync with the
