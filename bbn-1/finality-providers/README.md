@@ -1,5 +1,13 @@
 # Finality Provider Information Registry
 
+> **⚠️  Important**: Phase-1 registrations of finality providers are now
+> closed and this guide is a legacy one.
+> Finality providers that intend to register to the Babylon Genesis network
+> (phase-2 mainnet) -- either Phase-1 finality providers or new ones --
+> should follow the
+> [finality provider operation
+> guide](https://github.com/babylonlabs-io/finality-provider/blob/release/v1.x/docs/finality-provider-operation.md)
+
 This is the finality provider registration guide for the first phase of the
 Babylon Bitcoin staking mainnet.
 
