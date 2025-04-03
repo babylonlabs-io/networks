@@ -26,8 +26,8 @@ Obtain the `v1.0.0` binary. You can achieve this in multiple ways:
 Perform the following steps to upgrade your Babylon node:
 - Stop your Babylon node
 - Swap your babylon binary with the prepared `v1.0.0` binary
-- **If you are a CometBFT Validator**: Migrate your BLS key away from your
-  Validator’s private key
+- **If you are a CometBFT Validator**: Separate your BLS key from your Validator’s
+  private key
   - Backup the `$HOME/config/priv_validator_key.json` file before the migration.
   - Verify that the `$HOME/config/priv_validator_key.json` contains the
     Validator signing key and a BLS key.
