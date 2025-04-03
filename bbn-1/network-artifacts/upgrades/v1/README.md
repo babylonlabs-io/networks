@@ -14,7 +14,7 @@ Obtain the `v1.0.0` binary. You can achieve this in multiple ways:
   - Build the binary on your machine
     ```shell
     git checkout v1.0.0
-    BABYLON_BUILD_OPTIONS="mainnet" make install
+    make install
     ```
   - If you’re working with Docker images, you can pull the pre-built Docker image:
     ```shell
