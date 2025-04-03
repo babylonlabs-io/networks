@@ -49,7 +49,7 @@ Perform the following steps to upgrade your Babylon node:
     Your BLS key will be saved in a file named `$HOME/config/bls_key.json`.
     Alternatively, if you prefer not to store the password on disk, you can set
     the environment variable `BABYLON_BLS_PASSWORD` equal to the BLS key
-    password prior to executing the migration command.
+    password prior to executing the creation command.
   - Verify that `$HOME/config/bls_key.json` and `$HOME/config/bls_password.txt`
     files exist
 - Start your Babylon node
