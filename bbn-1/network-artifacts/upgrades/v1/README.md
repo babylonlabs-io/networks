@@ -34,7 +34,10 @@ Perform the following steps to upgrade your Babylon node:
   - Execute the command `babylond migrate-bls-key` to separate your BLS key and
     store it in  `$HOME/config/bls_key.json`. You will be asked to insert a
     password to encrypt the BLS key, which will be automatically saved in
-    `$HOME/config/bls_password.txt`.
+    `$HOME/config/bls_password.txt`. Alternatively, if you prefer not to store
+    the password on disk, you can set the environment variable
+    `BABYLON_BLS_PASSWORD` equal to the BLS key password prior to executing
+    the migration command.
   - Verify that `$HOME/config/bls_key.json` and `$HOME/config/bls_password.txt`
     files exist
   - Verify that $HOME/config/priv_validator_key.json now only contains the
@@ -44,6 +47,9 @@ Perform the following steps to upgrade your Babylon node:
     node. You will be asked to insert a password to encrypt the BLS key, which
     will be automatically saved in a file named `$HOME/config/bls_password.txt`.
     Your BLS key will be saved in a file named `$HOME/config/bls_key.json`.
+    Alternatively, if you prefer not to store the password on disk, you can set
+    the environment variable `BABYLON_BLS_PASSWORD` equal to the BLS key
+    password prior to executing the migration command.
   - Verify that `$HOME/config/bls_key.json` and `$HOME/config/bls_password.txt`
     files exist
 - Start your Babylon node
