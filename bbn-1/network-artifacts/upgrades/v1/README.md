@@ -30,7 +30,7 @@ Perform the following steps to upgrade your Babylon node:
   Validator’s private key
   - Backup the `$HOME/config/priv_validator_key.json` file before the migration.
   - Verify that the `$HOME/config/priv_validator_key.json` contains the
-    Validator singing key and a BLS key.
+    Validator signing key and a BLS key.
   - Execute the command `babylond migrate-bls-key` to separate your BLS key and
     store it in  `$HOME/config/bls_key.json`. You will be asked to insert a
     password to encrypt the BLS key, which will be automatically saved in
