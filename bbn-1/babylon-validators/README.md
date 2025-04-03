@@ -177,7 +177,7 @@ but remember to replace all values with the actual values you want to use.
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
 Babylon uses the Babylon
-[`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing)
+[`checkpointing`](https://docs.babylonlabs.io/guides/architecture/babylon_genesis_modules/checkpointing/)
 module for validator creation and management.
 
 Before proceeding, ensure that your
@@ -301,7 +301,7 @@ BOND_STATUS_BONDED = 3
 ### 5.3 Staking with your Validator
 
 > ⚠️ **Important**: Babylon uses the 
-> [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing)
+> [`checkpointing`](https://docs.babylonlabs.io/guides/architecture/babylon_genesis_modules/checkpointing/)
 > module for validator creation and management.
 > All staking-related transactions (delegate, redelegate, unbond) must be 
 > processed through the `x/epoching` module, which encapsulates the `x/staking` 
