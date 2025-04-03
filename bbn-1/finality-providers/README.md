@@ -64,7 +64,7 @@ is registered. Otherwise, the application will be rejected, no exception.
 
 Ineligible finality providers can still participate in this phase by accepting
 Bitcoin stakes from their users. The
-[Babylon Bitcoin Staking indexer](https://github.com/babylonchain/staking-indexer)
+[Babylon Bitcoin Staking indexer](https://github.com/babylonlabs-io/babylon-staking-indexer)
 will identify such delegations and display the finality providers' EOTS
 public key in the web application to acknowledge their existence. However:
 
