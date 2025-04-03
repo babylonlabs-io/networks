@@ -55,6 +55,9 @@ echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile
 
 Make sure to restart your terminal session after running the above command.
 
+Note: Alternatively, you can use a
+[Docker image](https://hub.docker.com/layers/babylonlabs/babylond/v1.0.0/images/sha256-d250eeb57edb2b66248c23e6ea99bf69b0cdfb7a108239457b25619a0b49f759)
+
 ## 2. Set up your node, home directory, and configuration
 
 In this section we will initialize your node and create the necessary

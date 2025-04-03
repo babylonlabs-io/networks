@@ -21,18 +21,13 @@ in the covenant committee.
 
 #### Genesis
 
-<!--TODO(@filippos): Add genesis file --> 
 The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 
 #### State snapshot
 
-<!--TODO(@filippos): Update snapshot and height.
-    TODO(@konrad): We also need instructions on how someone can sync from
-    scratch due to the chain ID change  --> 
-A snapshot including state up to height `X` can be retrieved from
+A snapshot including state up to height `226` can be retrieved from
 [here](./network-artifacts/bbn-1.tar.gz).
 
-<!--TODO(@filippos): Verify version --> 
 To boot a node with this snapshot, Babylon version `v1.0.0` should be used
 ([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0)).
 
