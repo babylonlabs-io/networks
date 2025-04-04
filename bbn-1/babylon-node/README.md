@@ -99,6 +99,9 @@ $HOME/.babylond/
 > There is also an option to set the BLS key password with `--insecure-bls-password <unsecure-pwd>`
 flag or `--no-bls-password` which will use an empty string to encrypt the key.
 
+> ⚠️ **Important**: Safely backup your `bls_key.json`, `node_key.json` and
+`priv_validator_key.json` files.
+
 After initialization, you'll need to modify the following configuration files:
 
 1. On `app.toml`, update the following settings:
