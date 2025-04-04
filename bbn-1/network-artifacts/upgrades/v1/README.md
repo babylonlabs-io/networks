@@ -32,7 +32,7 @@ Perform the following steps to upgrade your Babylon node:
     (Babylon Genesis height `226`) as at that point there was only one
     validator in the chain.
   * Execute the command `babylond create-bls-key` to generate a BLS key for your
-    node. You will be asked to einsert a password to encrypt the BLS key.
+    node. You will be asked to insert a password to encrypt the BLS key.
     You can specify your BLS password using the following options:
     * **CLI or Environment Variable**: You can specify your password through the
       CLI or an environment variable (note that if both are used concurrently, an
@@ -41,8 +41,6 @@ Perform the following steps to upgrade your Babylon node:
       * **CLI flags**: One of the following CLI options has been set:
         * `--no-bls-key` is a flag that if set designates that an empty BLS
           password should be used.
-        * `--insecure-bls-password=<pass>` allows to specify the BLS password
-          as a CLI argument.
         * `--bls-password-file=<path>` allows to specify a file location that
           contains the plaintext BLS password.
     * **Password Prompt**

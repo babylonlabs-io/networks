@@ -93,8 +93,6 @@ Parameters:
 >   * **CLI flags**: One of the following CLI options has been set:
 >     * `--no-bls-key` is a flag that if set designates that an empty BLS
 >       password should be used.
->     * `--insecure-bls-password=<pass>` allows to specify the BLS password
->       as a CLI argument.
 >     * `--bls-password-file=<path>` allows to specify a file location that
 >       contains the plaintext BLS password.
 > * **(Recommended) Password Prompt**
@@ -289,8 +287,6 @@ Parameters:
 >   * **CLI flags**: One of the following CLI options has been set:
 >     * `--no-bls-key` is a flag that if set designates that an empty BLS
 >       password should be used.
->     * `--insecure-bls-password=<pass>` allows to specify the BLS password
->       as a CLI argument.
 >     * `--bls-password-file=<path>` allows to specify a file location that
 >       contains the plaintext BLS password.
 > * **(Recommended) Password Prompt**
