@@ -82,11 +82,11 @@ Parameters:
 > A prompt will appear for you to enter a password for a BLS key.
 > This password will be used to encrypt your BLS key before storing it in a
 > file (`$HOME/config/bls_key.json`).
-> Having a BLS key is a requirement for all node operators that intend to
-> become validators, similar to the `priv_validator_key.json` file (both the
-> `bls_key.json` and the `priv_validator_key.json` files are used by Babylon).
+> All node operators intending to become validators must have a BLS key,
+> similar to the requirement for a `priv_validator_key.json` file.
+> Babylon uses both the `bls_key.json` and the `priv_validator_key.json` files.
 >
-> You have the following options for specifying your BLS password
+> You can specify your BLS password using the following options:
 > * **CLI or Environment Variable**: You can specify your password through the
 >   CLI or an environment variable (note that if both are used concurrently, an
 >   error will be raised):
@@ -276,9 +276,9 @@ Parameters:
 
 > **⚠️  Important note about BLS keys**
 >
-> The `start` command will needs to decrypt and load your BLS key, which
-> requires your BLS key password. As with the `init` command, you have the
-> following options for specifying your BLS password:
+> The `start` command will need to decrypt and load your BLS key, which
+> requires your BLS key password. As with the `init` command,
+> you can specify your BLS password using the following options:
 > * **CLI or Environment Variable**: You can specify your password through the
 >   CLI or an environment variable (note that if both are used concurrently, an
 >   error will be raised):
