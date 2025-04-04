@@ -230,6 +230,10 @@ After importing the state, you can now start your node as specified in section
 
 ### 3.2. Sync from scratch
 
+> **Important**: If you decide to sync from scratch and target to become a
+> validator, do not create a BLS key before
+> upgrading to a version that is `> 1.0.0`.
+
 Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from
 scratch means downloading and verifying every block from the beginning
 of the blockchain (genesis block) to the current block.

@@ -54,5 +54,6 @@ Perform the following steps to upgrade your Babylon node:
 * **If you already have a BLS key**: You should not have a BLS key included in
   your node at the time of this upgrade. Please back-up your BLS key (if you
   intend to keep it) and restart the process without setting a BLS key for your
-  node prior to applying this upgrade.
+  node prior to applying this upgrade. If you intend to become a validator, you
+  can create your BLS key immediatelly after the upgrade.
 * Start your Babylon node
