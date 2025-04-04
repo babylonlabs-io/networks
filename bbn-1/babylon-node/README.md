@@ -85,7 +85,6 @@ $HOME/.babylond/
 ├── config/
 │   ├── app.toml         # Application-specific configuration
 │   ├── bls_key.json     # BLS key for the node
-│   ├── bls_password.txt # Password file for the BLS key
 │   ├── client.toml      # Client configuration
 │   ├── config.toml      # Tendermint core configuration
 │   ├── genesis.json     # Genesis state of the network
@@ -96,6 +95,9 @@ $HOME/.babylond/
 └── keyring-test/       # Key management directory
     └── ...
 ```
+
+> There is also an option to set the BLS key password with `--insecure-bls-password <unsecure-pwd>`
+flag or `--no-bls-password` which will use an empty string to encrypt the key.
 
 After initialization, you'll need to modify the following configuration files:
 
@@ -240,7 +242,7 @@ full blockchain.
 You can start your node using the following command:
 
 ```shell
-babylond start --chain-id bbn-1 --home <path> --x-crisis-skip-assert-invariants
+babylond start --chain-id bbn-1 --home <path> --no-bls-password=false --x-crisis-skip-assert-invariants
 ```
 
 Parameters:
@@ -251,5 +253,13 @@ Parameters:
    (e.g. `--home ./nodeDir`)
 - `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve
    performance. Not recommended for validator nodes.
+- `--no-bls-password`: As `false` defines that will be a password to the BLS
+key and a propmt will ask to input the password.
+
+> ⚠️ **Important**: You need to set `--no-bls-password=false` or
+`--no-bls-password` or `--insecure-bls-password <unsecure-pwd>` or
+the enviroment variable `BABYLON_BLS_PASSWORD` with the password value.
+Otherwise the `babylon start` command will **OVERWRITE** the previously created
+BLS key file with a new randomly created one without password.
 
 Congratulations! Your Babylon node is now set up and syncing blocks.
