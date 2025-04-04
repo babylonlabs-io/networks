@@ -30,7 +30,7 @@ cd babylon
 # tag corresponds to the version of the software
 # you want to install -- depends on which
 # height you sync from
-git checkout v1.0.0
+git checkout v1.0.1
 # install the binary
 make install
 ```
@@ -43,7 +43,7 @@ You can verify your installation by executing the `version` command:
 
 ```shell
 babylond version
-v1.0.0
+v1.0.1
 ```
 
 If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in
@@ -56,9 +56,9 @@ echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile
 Make sure to restart your terminal session after running the above command.
 
 Note: Alternatively, you can use a
-[Docker image](https://hub.docker.com/layers/babylonlabs/babylond/v1.0.0/images/sha256-d250eeb57edb2b66248c23e6ea99bf69b0cdfb7a108239457b25619a0b49f759)
+[Docker image](https://hub.docker.com/layers/babylonlabs/babylond/v1.0.1/images/sha256-8650aca16af767d844de62d45ff989637aa6009d7d71d19f5a0d2b86198cda94)
 
-## 2. Set up your node, home directory, and configuration
+## 2. Set up your node
 
 In this section we will initialize your node and create the necessary
 configuration directory through the `init` command.
@@ -76,16 +76,35 @@ Parameters:
    - Linux/Mac: `~/.babylond/`
    - Windows: `%USERPROFILE%\.babylond\`
 
-Note that a prompt will happen for the password of the generated BLS key.
-This command will generate all the important configuration files structured
-as below:
+> **⚠️  Important note about BLS keys**
+>
+> A prompt will appear for you to enter a password for a BLS key.
+> This password will be used to encrypt your BLS key before storing it in a
+> file (`$HOME/config/bls_key.json`).
+> All node operators intending to become validators must have a BLS key,
+> similar to the requirement for a `priv_validator_key.json` file.
+> Babylon uses both the `bls_key.json` and the `priv_validator_key.json` files.
+>
+> You can specify your BLS password using the following options:
+> * **CLI or Environment Variable**: You can specify your password through the
+>   CLI or an environment variable (note that if both are used concurrently, an
+>   error will be raised):
+>   * **Environment Variable**: `BABYLON_BLS_PASSWORD` is set.
+>   * **CLI flags**: One of the following CLI options has been set:
+>     * `--no-bls-key` is a flag that if set designates that an empty BLS
+>       password should be used.
+>     * `--bls-password-file=<path>` allows to specify a file location that
+>       contains the plaintext BLS password.
+> * **(Recommended) Password Prompt**
+>   If none of the above is set, a prompt will appear asking you to type your
+>   password.
 
 ```
 $HOME/.babylond/
 ├── config/
 │   ├── app.toml         # Application-specific configuration
 │   ├── bls_key.json     # BLS key for the node
-│   ├── bls_password.txt # Password file for the BLS key
+│   ├── bls_password.txt # Password file for the BLS key (if `--bls-password-file` has been set)
 │   ├── client.toml      # Client configuration
 │   ├── config.toml      # Tendermint core configuration
 │   ├── genesis.json     # Genesis state of the network
@@ -208,6 +227,10 @@ After importing the state, you can now start your node as specified in section
 
 ### 3.2. Sync from scratch
 
+> **Important**: If you decide to sync from scratch and target to become a
+> validator, do not create a BLS key before
+> upgrading to a version that is `> 1.0.0`.
+
 Lastly, you can also sync from scratch, i.e., sync from block `1`. Syncing from
 scratch means downloading and verifying every block from the beginning
 of the blockchain (genesis block) to the current block.
@@ -251,5 +274,23 @@ Parameters:
    (e.g. `--home ./nodeDir`)
 - `--x-crisis-skip-assert-invariants`: Skips state validation checks to improve
    performance. Not recommended for validator nodes.
+
+> **⚠️  Important note about BLS keys**
+>
+> The `start` command will need to decrypt and load your BLS key, which
+> requires your BLS key password. As with the `init` command,
+> you can specify your BLS password using the following options:
+> * **CLI or Environment Variable**: You can specify your password through the
+>   CLI or an environment variable (note that if both are used concurrently, an
+>   error will be raised):
+>   * **Environment Variable**: `BABYLON_BLS_PASSWORD` is set.
+>   * **CLI flags**: One of the following CLI options has been set:
+>     * `--no-bls-key` is a flag that if set designates that an empty BLS
+>       password should be used.
+>     * `--bls-password-file=<path>` allows to specify a file location that
+>       contains the plaintext BLS password.
+> * **(Recommended) Password Prompt**
+>   If none of the above is set, a prompt will appear asking you to type your
+>   password.
 
 Congratulations! Your Babylon node is now set up and syncing blocks.
