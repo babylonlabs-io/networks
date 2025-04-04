@@ -56,17 +56,18 @@ Perform the following steps to upgrade your Babylon node:
 
 Both the `migrate-bls-key` and `create-bls-key` commands will need to create
 and encrypt your BLS key with a password. You have the
-following options for specifying your password,
-ordered by priority (i.e., if one of the options higher in the list is set,
-the subsequent options won't be attempted):
-1. The environment variable `BABYLON_BLS_PASSWORD` is set.
-2. One of the following CLI options has been set (note that they can't be
-   used concurrently)
-   1. `--no-bls-key` is a flag that if set designates that an empty BLS
+following options for specifying your BLS password:
+* **CLI or Environment Variable**: You can specify your password through the
+  CLI or an environment variable (note that if both are used concurrently, an
+  error will be raised):
+  * **Environment Variable**: `BABYLON_BLS_PASSWORD` is set.
+  * **CLI flags**: One of the following CLI options has been set:
+    * `--no-bls-key` is a flag that if set designates that an empty BLS
       password should be used.
-   2. `--insecure-bls-password=<pass>` allows to specify the BLS password
+    * `--insecure-bls-password=<pass>` allows to specify the BLS password
       as a CLI argument.
-   3. `--bls-password-file=<path>` allows to specify a file location that
+    * `--bls-password-file=<path>` allows to specify a file location that
       contains the plaintext BLS password.
-3. (**Recommended**) If none of the above is set, a prompt appears to
-   the user to enter their password.
+* **(Recommended) Password Prompt**
+  If none of the above is set, a prompt will appear asking you to type your
+  password.
