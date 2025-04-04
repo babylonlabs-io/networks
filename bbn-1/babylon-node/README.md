@@ -245,7 +245,8 @@ full blockchain.
 You can start your node using the following command:
 
 ```shell
-babylond start --chain-id bbn-1 --home <path> --no-bls-password=false --x-crisis-skip-assert-invariants
+export BABYLON_BLS_PASSWORD=<your-pwd>
+babylond start --chain-id bbn-1 --home <path> --x-crisis-skip-assert-invariants
 ```
 
 Parameters:
@@ -259,8 +260,7 @@ Parameters:
 - `--no-bls-password`: As `false` defines that will be a password to the BLS
 key and a propmt will ask to input the password.
 
-> ⚠️ **Important**: You need to set `--no-bls-password=false` or
-`--no-bls-password` or `--insecure-bls-password <unsecure-pwd>` or
+> ⚠️ **Important**: You need to set `--insecure-bls-password <unsecure-pwd>` or
 the enviroment variable `BABYLON_BLS_PASSWORD` with the password value.
 Otherwise the `babylon start` command will **OVERWRITE** the previously created
 BLS key file with a new randomly created one without password.
