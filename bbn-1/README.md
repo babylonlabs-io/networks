@@ -23,8 +23,8 @@ The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 A snapshot including state up to height `226` can be retrieved from
 [here](./network-artifacts/bbn-1.tar.gz).
 
-To boot a node with this snapshot, Babylon version `v1.0.0` should be used
-([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0)).
+To boot a node with this snapshot, Babylon version `v1.0.1` should be used
+([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.1)).
 
 #### Seed nodes
 
