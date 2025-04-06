@@ -64,7 +64,7 @@ Pruned:
 
 Archive:
 - babylon-archive.nodes.guru:443/grpc
-- babylon-archive-grpc.polkachu.com:20690
+<!-- - babylon-archive-grpc.polkachu.com:20690 -->
 
 ### Babylon Genesis network participants
 
