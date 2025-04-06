@@ -40,31 +40,31 @@ Peers can be retrieved from [here](./network-artifacts/peers.txt).
 
 Pruned:
 - https://babylon.nodes.guru/rpc
-<!--- - https://babylon-rpc.polkachu.com -->
+- https://babylon-rpc.polkachu.com
 
 Archive:
 - https://babylon-archive.nodes.guru/rpc
-<!--- - https://babylon-archive-rpc.polkachu.com -->
+- https://babylon-archive-rpc.polkachu.com
 
 ##### LCD (node API)
 
 Pruned:
 - https://babylon.nodes.guru/api
-<!--- - https://babylon-api.polkachu.com -->
+- https://babylon-api.polkachu.com
 
 Archive:
 - https://babylon-archive.nodes.guru/api
-<!--- - https://babylon-archive-api.polkachu.com -->
+- https://babylon-archive-api.polkachu.com
 
 ##### gRPC
 
 Pruned:
 - babylon.nodes.guru:443/grpc
-<!-- babylon-grpc.polkachu.com:20690 -->
+- babylon-grpc.polkachu.com:20690
 
 Archive:
 - babylon-archive.nodes.guru:443/grpc
-<!-- - babylon-archive-grpc.polkachu.com:20690 -->
+- babylon-archive-grpc.polkachu.com:20690
 
 ### Babylon Genesis network participants
 
