@@ -59,12 +59,12 @@ Archive:
 ##### gRPC
 
 Pruned:
-<!--- - babylon.nodes.guru:443/grpc -->
+- babylon.nodes.guru:443/grpc
 - babylon-grpc.polkachu.com:20690
 
-<!-- Archive: -->
-<!-- - babylon-archive.nodes.guru:443/grpc -->
-<!-- - babylon-archive-grpc.polkachu.com:20690 -->
+Archive:
+- babylon-archive.nodes.guru:443/grpc
+- babylon-archive-grpc.polkachu.com:20690
 
 ### Babylon Genesis network participants
 
