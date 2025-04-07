@@ -23,8 +23,8 @@ The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 A snapshot including state up to height `226` can be retrieved from
 [here](./network-artifacts/bbn-1.tar.gz).
 
-To boot a node with this snapshot, Babylon version `v1.0.0` should be used
-([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.0)).
+To boot a node with this snapshot, Babylon version `v1.0.1` should be used
+([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.1)).
 
 #### Seed nodes
 
@@ -40,31 +40,31 @@ Peers can be retrieved from [here](./network-artifacts/peers.txt).
 
 Pruned:
 - https://babylon.nodes.guru/rpc
-<!--- - https://babylon-rpc.polkachu.com -->
+- https://babylon-rpc.polkachu.com
 
 Archive:
 - https://babylon-archive.nodes.guru/rpc
-<!--- - https://babylon-archive-rpc.polkachu.com -->
+- https://babylon-archive-rpc.polkachu.com
 
 ##### LCD (node API)
 
 Pruned:
 - https://babylon.nodes.guru/api
-<!--- - https://babylon-api.polkachu.com -->
+- https://babylon-api.polkachu.com
 
 Archive:
 - https://babylon-archive.nodes.guru/api
-<!--- - https://babylon-archive-api.polkachu.com -->
+- https://babylon-archive-api.polkachu.com
 
 ##### gRPC
 
 Pruned:
 - babylon.nodes.guru:443/grpc
-<!-- babylon-grpc.polkachu.com:20690 -->
+- babylon-grpc.polkachu.com:20690
 
 Archive:
 - babylon-archive.nodes.guru:443/grpc
-<!-- - babylon-archive-grpc.polkachu.com:20690 -->
+- babylon-archive-grpc.polkachu.com:20690
 
 ### Babylon Genesis network participants
 
