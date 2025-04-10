@@ -30,6 +30,7 @@ To boot a node with this snapshot, Babylon version `v1.0.1` should be used
 Some additional network snapshot sources are also listed:
 
 - https://babylon.explorers.guru/snapshots
+- https://polkachu.com/babylon_partnership
 
 #### Seed nodes
 
