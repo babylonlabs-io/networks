@@ -17,6 +17,28 @@ will operate separate programs for each stage to support both Phase-1 and
 Phase-2 stakers.
 Below, we detail the specifics of the operation for each phase.
 
+## Phase-2
+
+During Phase-2, the covenant emulation committee is responsible for operationg
+the [covenant-emulator](https://github.com/babylonlabs-io/covenant-emulator),
+a daemon responsible for connecting with a Babylon Genesis node and monitoring
+for staking registrations that are pending verification. Once such a staking
+transaction is identified, the covenant emulator daemon submits signatures for
+the on-demand unbonding, slashing, and unbonding slashing transactions.
+
+> **Note**: The Babylon Genesis chain involves slashing of finality providers
+> for double signing offences. This means that in Phase-2, covenant committee
+> members submit not only unbonding signatures, but slashing signatures as
+> well.
+
+The latest list of covenant public keys and operating entities can be found
+[here](./covenant-committee.json).
+
+> **Important**: The above list might be outdated. The best source of truth on the
+> current covenant committee members and their keys is the Babylon
+> Genesis node parameters. You should aim to retrieve the parameters from
+> there.
+
 ## Phase-1
 
 During Phase-1, the covenant emulation committee is responsible for operating
@@ -65,25 +87,3 @@ for the phase-1 covenant committee follows below, grouped by the operating entit
 * Cubist
   * key: `03de13fc96ea6899acbdc5db3afaa683f62fe35b60ff6eb723dad28a11d2b12f8c`
   * URL: https://bbn-mainnet-covsign.cubestake.xyz
-
-## Phase-2
-
-During Phase-2, the covenant emulation committee is responsible for operationg
-the [covenant-emulator](https://github.com/babylonlabs-io/covenant-emulator),
-a daemon responsible for connecting with a Babylon Genesis node and monitoring
-for staking registrations that are pending verification. Once such a staking
-transaction is identified, the covenant emulator daemon submits signatures for
-the on-demand unbonding, slashing, and unbonding slashing transactions.
-
-> **Note**: The Babylon Genesis chain involves slashing of finality providers
-> for double signing offences. This means that in Phase-2, covenant committee
-> members submit not only unbonding signatures, but slashing signatures as
-> well.
-
-The latest list of covenant public keys and operating entities can be found
-[here](./covenant-committee.json).
-
-> **Important**: The above list might be outdated. The best source of truth on the
-> current covenant committee members and their keys is the Babylon
-> Genesis node parameters. You should aim to retrieve the parameters from
-> there.
