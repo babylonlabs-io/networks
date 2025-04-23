@@ -32,11 +32,11 @@ Some additional network snapshot sources are also listed:
 
 ### Seed nodes
 
-Seed nodes can be retrieved from [here](./seeds.txt).
+Seed nodes can be retrieved from [here](./network-artifacts/seeds.txt).
 
 ### Peers
 
-Peers can be retrieved from [here](./peers.txt).
+Peers can be retrieved from [here](./network-artifacts/peers.txt).
 
 ### Endpoints
 
