@@ -46,6 +46,8 @@ Peers can be retrieved from [here](./network-artifacts/peers.txt).
 Pruned:
 - https://babylon.nodes.guru/rpc
 - https://babylon-rpc.polkachu.com
+- https://babylon-rpc.lavenderfive.com
+- https://babylon-rpc.publicnode.com
 
 Archive:
 - https://babylon-archive.nodes.guru/rpc
@@ -56,6 +58,8 @@ Archive:
 Pruned:
 - https://babylon.nodes.guru/api
 - https://babylon-api.polkachu.com
+- https://babylon-api.lavenderfive.com
+- https://babylon-rest.publicnode.com
 
 Archive:
 - https://babylon-archive.nodes.guru/api
@@ -66,6 +70,8 @@ Archive:
 Pruned:
 - babylon.nodes.guru:443
 - babylon-grpc.polkachu.com:20690
+- babylon-grpc.lavenderfive.com:443
+- babylon-grpc.publicnode.com:443
 
 Archive:
 - babylon-archive.nodes.guru:443
