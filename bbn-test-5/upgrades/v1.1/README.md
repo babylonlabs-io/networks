@@ -15,11 +15,11 @@ Obtain the `v1.1` binary. You can achieve this in multiple ways:
   - Build the binary on your machine
     ```shell
     git checkout v1.1
-    make install
+    BABYLON_BUILD_OPTIONS="testnet" make install
     ```
   - If you’re working with Docker images, you can pull the pre-built Docker image:
     ```shell
-    docker pull babylonlabs/babylond:v1.1
+    docker pull babylonlabs/babylond:v1.1-testnet
     ```
 
 ### Perform the upgrade
