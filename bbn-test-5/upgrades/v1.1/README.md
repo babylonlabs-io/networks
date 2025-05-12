@@ -3,7 +3,7 @@
 ## Upgrade overview
 
 - **Upgrade version**: `v1.1.0`
-- **Upgrade height**: `301450`
+- **Upgrade height**: `975673`
 
 ## Upgrade process
 
@@ -15,11 +15,11 @@ Obtain the `v1.1.0` binary. You can achieve this in multiple ways:
   - Build the binary on your machine
     ```shell
     git checkout v1.1.0
-    make install
+    BABYLON_BUILD_OPTIONS="testnet" make install
     ```
   - If you’re working with Docker images, you can pull the pre-built Docker image:
     ```shell
-    docker pull babylonlabs/babylond:v1.1.0
+    docker pull babylonlabs/babylond:v1.1.0-testnet
     ```
 
 ### Perform the upgrade
