@@ -91,7 +91,7 @@ Parameters:
 >   error will be raised):
 >   * **Environment Variable**: `BABYLON_BLS_PASSWORD` is set.
 >   * **CLI flags**: One of the following CLI options has been set:
->     * `--no-bls-key` is a flag that if set designates that an empty BLS
+>     * `--no-bls-password` is a flag that if set designates that an empty BLS
 >       password should be used.
 >     * `--bls-password-file=<path>` allows to specify a file location that
 >       contains the plaintext BLS password.
