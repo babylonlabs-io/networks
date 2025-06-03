@@ -11,4 +11,4 @@ You can find a list of the Software Upgrades listed in chronological order here:
 - The [v1rc9](./v1rc9/README.md) upgrade was performed at Babylon block `618500`
 - The [v1.1](./v1.1/README.md) upgrade was performed at Babylon block `975673`
 - The [v2](./v2/README.md) upgrade was performed at Babylon block `1047675`
-- The [v2rc2](./v2rc1/README.md) upgrade was performed at Babylon block `1157635`
+- The [v2rc2](./v2rc2/README.md) upgrade was performed at Babylon block `1157635`
