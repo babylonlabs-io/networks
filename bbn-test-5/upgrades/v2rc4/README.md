@@ -3,7 +3,7 @@
 ## Upgrade overview
 
 - **Upgrade version**: `v2rc4`
-- **Upgrade height**: `1210525`
+- **Upgrade height**: `1202565`
 
 ## Upgrade process
 
