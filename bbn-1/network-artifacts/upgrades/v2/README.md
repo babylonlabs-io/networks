@@ -27,4 +27,7 @@ Obtain the `v2.0.0` binary. You can achieve this in multiple ways:
 Perform the following steps to upgrade your Babylon node:
 * Stop your Babylon node
 * Swap your babylon binary with the prepared `v2.0.0` binary
+  * Please remove `--x-crisis-skip-assert-invariants` babylond flag from your
+    node startup command. The `x/crisis` module has been removed in this
+    release.
 * Start your Babylon node
