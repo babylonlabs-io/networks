@@ -19,6 +19,8 @@ to version v2.0.0-rc.0.
 - **Upgrade overview**: This upgrade introduces a major refactoring that
   transforms the Finality Provider into a reusable SDK, to enable the
   development of Finality Provider software for BSNs.
+- **Upgrade participants**: Only Babylon Finality Providers will participate in this
+  upgrade.
 
 ## 2. Technical Deep-dive
 
