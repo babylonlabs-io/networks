@@ -38,7 +38,7 @@ stacks are initially supported:
   randomness to the Contract.
 - Cosmos SDK BSNs, integrating via the deployment of a CosmWasm Smart Contract
   on their respective chains and the establishment of IBC Channels with Babylon.
-  The Cosmos BSN Finality Providerwill be responsible for the submission of
+  The Cosmos BSN Finality Provider will be responsible for the submission of
   finality signature and public randomness to the Contract.
 
 **It's important to emphasize that the BSN Finality Provider software will be
@@ -79,7 +79,7 @@ to reach the upgrade height `X` (TODO: Specify the height).
 
 The Babylon Finality Provider and EOTS daemon upgrades are tightly coupled
 with the Babylon network software upgrade. The following steps must be executed
-with precise ordering and timing, to ensure minimum downtime and no slashihg
+with precise ordering and timing, to ensure minimum downtime and no slashing
 risk for your Finality Provider:
 - Once the Babylon upgrade height `X` (TODO: Specify the height) is reached,
   stop your Babylon Finality Provider and EOTS daemons.
@@ -119,14 +119,14 @@ successfully and is functioning as expected:
     ```shell
     LOG_TIMESTAMP	info	successfully submitted the finality signature to the consumer chain	{"consumer_id": "bbn-test-5", "pk": "FP_BTC_PK_HEX", "start_height": X, "end_height": X, "tx_hash": "TX_HASH"}
     ```
-  - An network explorer can also be consulted (examples:
+  - A network explorer can also be consulted (examples:
    [Xangle](https://babylon-explorer.xangle.io/testnet/finality-providers),
    [Nodes.guru](https://testnet.babylon.explorers.guru/finality-providers),
    [Mintscan](https://www.mintscan.io/babylon-testnet/finality-providers)).
    Explorers have a data indexing overhead, so it's likely that your finality
    signatures will be reflected after ~1 minute.
 
-- Verify that your Babylon Finality Provider is not Jailed or Slashed . You
+- Verify that your Babylon Finality Provider is not in `Slashed` state. You
   can achieve this in many ways:
   - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
     public key of your Babylon Finality Provider in hex format. The result
@@ -137,7 +137,7 @@ successfully and is functioning as expected:
       --node https://babylon-testnet-rpc.polkachu.com:443 -o json \
       | jq -r .finality_provider.slashed_babylon_height
     ```
-  - An network explorer can also be consulted (examples:
+  - A network explorer can also be consulted (examples:
    [Xangle](https://babylon-explorer.xangle.io/testnet/finality-providers),
    [Nodes.guru](https://testnet.babylon.explorers.guru/finality-providers),
    [Mintscan](https://www.mintscan.io/babylon-testnet/finality-providers)).
