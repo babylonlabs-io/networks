@@ -19,8 +19,7 @@ to version v2.0.0-rc.0.
 - **Upgrade overview**: This upgrade introduces a major refactoring that
   transforms the Finality Provider into a reusable SDK, to enable the
   development of Finality Provider software for BSNs.
-- **Upgrade participants**: Only Babylon Finality Providers will participate in this
-  upgrade.
+- **Finality Providers who should participate**: Only Babylon Finality Providers.
 
 ## 2. Technical Deep-dive
 
@@ -46,6 +45,10 @@ stacks are initially supported:
 distinct from the Babylon Finality Provider software, coming with dedicated
 binaries and operational guides. Babylon Finality Providers will continue
 operating the original software.**
+
+*BSN Finality Providers will not participate in this software upgrade, as they
+will start operating their software only after the Babylon Genesis Testnet
+is upgraded to the `v3.0.0-rc.0` version.*
 
 ## 3. Applying the upgrade
 
