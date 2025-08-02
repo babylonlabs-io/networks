@@ -59,18 +59,18 @@ The following actions must be taken prior to the upgrade time:
   operating version `v1.0.0`, `v1.1.0-rc.0` or `v1.1.0-rc.1`.
 - Obtain the `v2.0.0-rc.0` binary. You can achieve this in multiple ways:
   - Download the binary from the [releases
-    page](https://github.com/babylonlabs-io/finality-provider/releases/tag/v2.0.0-rc.0)
-  - Build the binary on your machine
+    page](https://github.com/babylonlabs-io/finality-provider/releases/tag/v2.0.0-rc.0).
+  - Build the binary on your machine:
     ```shell
     git checkout v2.0.0-rc.0
     make install
     ```
-  - If you’re working with Docker images, you can pull the pre-built Docker image:
+  - Pull the pre-built Docker image:
     ```shell
     docker pull babylonlabs/finality-provider:v2.0.0-rc.0
     ```
 - Prepare for the Babylon `v3.0.0-rc.0` node upgrade following the instructions
-  here (TODO: Point to the Babylon node upgrade guide)
+  here (TODO: Point to the Babylon node upgrade guide).
 
 Once the above are completed, patiently wait for the Babylon Genesis Testnet
 to reach the upgrade height `X` (TODO: Specify the height).
