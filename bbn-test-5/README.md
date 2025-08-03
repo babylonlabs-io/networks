@@ -1,9 +1,8 @@
-# Babylon testnet-5 Network
+# Babylon Genesis Testnet Network
 
-Welcome to the network page for the Babylon testnet (`bbn-test-5`).
+Welcome to the network page for the Babylon Genesis Testnet (`bbn-test-5`).
 This is your central hub for network participation information, whether you're
-running a node, operating as a validator, providing finality services, or
-participating in the covenant committee.
+running a node, Validator, Finality Provider, or Covenant Emulator.
 
 ## Network Parameters
 
