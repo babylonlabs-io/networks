@@ -26,10 +26,10 @@ Provider to version v2.0.0-rc.0.
 
 ## 2. Technical Deep-dive
 
-The Babylon Genesis Testnet `v3.0.0-rc.0` upgrade (TODO: link to corresponding
-upgrade doc) is coupled with a coordinated breaking upgrade of the Finality
-Provider software from `v1.x.x` (`v1.0.0`, `v1.1.0-rc.0`, `v1.1.0-rc.1`) to
-`v2.0.0-rc.0`.
+The Babylon Genesis Testnet `v3.0.0-rc.0`
+[upgrade](../../../babylon-node/upgrades/v3/README.md) is coupled with a
+coordinated breaking upgrade of the Finality Provider software from `v1.x.x`
+(`v1.0.0`, `v1.1.0-rc.0`, `v1.1.0-rc.1`) to `v2.0.0-rc.0`.
 
 The Finality Provider `v2.0.0-rc.0` upgrade introduces the following major
 features:
@@ -79,7 +79,7 @@ The following actions must be taken prior to the upgrade time:
     docker pull babylonlabs/finality-provider:v2.0.0-rc.0
     ```
 - Prepare for the Babylon `v3.0.0-rc.0` node upgrade following the instructions
-  here (TODO: Point to the Babylon node upgrade guide).
+  [here](../../../babylon-node/upgrades/v3/README.md#3-1-preparation).
 
 Once the above are completed, wait for the Babylon Genesis Testnet
 to reach the upgrade height `X` (TODO: Specify the height)
@@ -87,30 +87,29 @@ on which the node will halt for the upgrade to be applied.
 
 ### 3.2. Execution
 
-The Babylon Finality Provider and EOTS daemoThe upgraded Babylon Genesis
-Finality Provider and EOTS daemon binaries are tightly coupled with the Babylon
-Genesis Testnet software upgrade.
+The upgraded Babylon Genesis Finality Provider and EOTS daemon binaries are
+tightly coupled with the Babylon Genesis Testnet software upgrade.
 
 The following steps must be executed **with precise ordering and timing**
 to ensure that your finality provider does not experience downtime and/or
 submits invalid finality signatures:
 1. **Stop the Finality Provider and EOTS daemons** once the Babylon Genesis
    Testnet upgrade height `X` (TODO: Specify the height) is reached.
-2. **Upgrade your Babylon node to `v3.0.0-rc.0` following the instructions here.
-   (TODO: Point to the Babylon node upgrade guide)
-3. **Swap the Babylon Genesis finality provider and EOTS daemon binaries with
+2. **Swap the Babylon Genesis finality provider and EOTS daemon binaries with
    the new ones**.
-4. In your Babylon Genesis Finality Provider config, append the following
+3. In your Babylon Genesis Finality Provider config, append the following
    configuration to the `[Application Options]` section
    (TODO: Specify the height):
    ```shell
    [Application Options]
 
    ; The height at which the context signing will start
-   ContextSigningHeight = X + 1
+   ContextSigningHeight = X
    ```
-5. **Start the Finality Provider and the EOTS Daemons.**
-6. Wait until the Babylon produces block `X + 1`. This can take up to 5 minutes,
+4. **Start the Finality Provider and the EOTS Daemons.**
+5. **Upgrade your Babylon node to `v3.0.0-rc.0` following the instructions
+   [here](../../../babylon-node/upgrades/v3/README.md#3-2-execution).**
+6. Wait until the Babylon produces block `X`. This can take up to 5 minutes,
    depending on how fast Babylon CometBFT Validators upgrade their Babylon
    nodes.
 
@@ -119,8 +118,8 @@ submits invalid finality signatures:
 After completing the [execution](#32-execution) section, perform the following
 verifications to ensure that your Babylon Finality Provider was upgraded
 successfully and is functioning as expected:
-- Verify that your Babylon Finality Provider has voted for blocks `X` and
-  `X + 1` (TODO: Specify the height). You can achieve this in many ways:
+- Verify that your Babylon Finality Provider has voted for blocks `X - 1` and
+  `X` (TODO: Specify the height). You can achieve this in many ways:
   - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
     public key of your Babylon Finality Provider in hex format. The resulting
     height should be equal or greater to `X + 1` (TODO: Specify the height).
@@ -134,24 +133,6 @@ successfully and is functioning as expected:
     following format:
     ```shell
     LOG_TIMESTAMP	info	successfully submitted the finality signature to the consumer chain	{"consumer_id": "bbn-test-5", "pk": "FP_BTC_PK_HEX", "start_height": X, "end_height": X, "tx_hash": "TX_HASH"}
-    ```
-  - A network explorer can also be consulted (examples:
-   [Xangle](https://babylon-explorer.xangle.io/testnet/finality-providers),
-   [Nodes.guru](https://testnet.babylon.explorers.guru/finality-providers),
-   [Mintscan](https://www.mintscan.io/babylon-testnet/finality-providers)).
-   Explorers have a data indexing overhead, so it's likely that your finality
-   signatures will be reflected after ~1 minute.
-
-- Verify that your Babylon Finality Provider is not in `Slashed` state. You
-  can achieve this in many ways:
-  - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
-    public key of your Babylon Finality Provider in hex format. The result
-    should be `0`.
-    ```shell
-    babylond q btcstaking finality-provider \
-      FP_BTC_PK_HEX \
-      --node https://babylon-testnet-rpc.polkachu.com:443 -o json \
-      | jq -r .finality_provider.slashed_babylon_height
     ```
   - A network explorer can also be consulted (examples:
    [Xangle](https://babylon-explorer.xangle.io/testnet/finality-providers),
