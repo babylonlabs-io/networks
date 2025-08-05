@@ -1,7 +1,7 @@
 # `v2.0.0-rc.0` Software Upgrade
 
 This document summarizes the procedure to upgrade a Babylon Genesis Finality
-Provider to version v2.0.0-rc.0.
+Provider to version `v2.0.0-rc.0`.
 
 ## Table of Contents
 
@@ -49,7 +49,8 @@ features:
   - **Thus, it's critical that the Babylon Genesis Finality Providers upgrade
     their software and properly configure the context signing height no later
     than the Babylon Genesis Testnet upgrade height `X`**. (TODO: Specify the
-    upgrade height)
+    upgrade height). For safety, it's strongly recommended to complete the
+    Finality Provider upgrade much earlier than that.
 - Major refactoring of the codebase into a reusable SDK. This aims to enable
   the development of Finality Provider software for Bitcoin Supercharged
   Networks (BSNs). The initial BSN stacks will include Ethereum L2 Rollups and
@@ -81,20 +82,17 @@ The following actions must be taken prior to the upgrade time:
 - Prepare for the Babylon `v3.0.0-rc.0` node upgrade following the instructions
   [here](../../../babylon-node/upgrades/v3/README.md#3-1-preparation).
 
-Once the above are completed, wait for the Babylon Genesis Testnet
-to reach the upgrade height `X` (TODO: Specify the height)
-on which the node will halt for the upgrade to be applied.
-
 ### 3.2. Execution
+
+#### 3.2.1. Finality Provider Upgrade
 
 The upgraded Babylon Genesis Finality Provider and EOTS daemon binaries are
 tightly coupled with the Babylon Genesis Testnet software upgrade.
 
-The following steps must be executed **with precise ordering and timing**
-to ensure that your finality provider does not experience downtime and/or
-submits invalid finality signatures:
-1. **Stop the Finality Provider and EOTS daemons** once the Babylon Genesis
-   Testnet upgrade height `X` (TODO: Specify the height) is reached.
+The following steps must be executed **before the Babylon Genesis Testnet
+upgrade height is reached**, to ensure that your finality provider does not
+experience downtime or submit invalid signatures:
+1. **Stop the Finality Provider and EOTS daemons**.
 2. **Swap the Babylon Genesis finality provider and EOTS daemon binaries with
    the new ones**.
 3. In your Babylon Genesis Finality Provider config, append the following
@@ -104,12 +102,21 @@ submits invalid finality signatures:
    [Application Options]
 
    ; The height at which the context signing will start
-   ContextSigningHeight = X
+   ContextSigningHeight = X - 1
    ```
 4. **Start the Finality Provider and the EOTS Daemons.**
-5. **Upgrade your Babylon node to `v3.0.0-rc.0` following the instructions
+
+After these steps are completed, verify your Finality Provider is signing blocks
+following the steps [here](#33-verification) and wait until the Babylon Genesis
+Testnet upgrade height `X` is reached.
+
+### 3.2.2. Babylon Node Upgrade
+
+Once the Babylon Genesis Testnet upgrade height `X` is reached, perform the
+following steps:
+1. **Upgrade your Babylon node to `v3.0.0-rc.0` following the instructions
    [here](../../../babylon-node/upgrades/v3/README.md#3-2-execution).**
-6. Wait until the Babylon produces block `X`. This can take up to 5 minutes,
+2. Wait until the Babylon produces block `X`. This can take up to 5 minutes,
    depending on how fast Babylon CometBFT Validators upgrade their Babylon
    nodes.
 
@@ -122,7 +129,7 @@ successfully and is functioning as expected:
   `X` (TODO: Specify the height). You can achieve this in many ways:
   - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
     public key of your Babylon Finality Provider in hex format. The resulting
-    height should be equal or greater to `X + 1` (TODO: Specify the height).
+    height should be equal or greater to `X` (TODO: Specify the height).
     ```shell
     babylond q btcstaking finality-provider \
       FP_BTC_PK_HEX \
