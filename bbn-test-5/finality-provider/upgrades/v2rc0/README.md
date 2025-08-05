@@ -8,9 +8,14 @@ Provider to version `v2.0.0-rc.0`.
 1. [Overview](#1-overview)
 2. [Technical Deep-dive](#2-technical-deep-dive)
 3. [Applying the upgrade](#3-applying-the-upgrade)
-   1. [Preparation](#31-preparation)
-   2. [Execution](#32-execution)
-   3. [Verification](#33-verification)
+  1. [Upgrade the Finality Provider](#31-upgrade-the-finality-provider) 
+    1. [Preparation](#311-preparation)
+    2. [Execution](#312-execution)
+    3. [Verification](#313-verification)
+  2. [Upgrade the Finality Provider](#32-upgrade-the-babylon-provider) 
+    1. [Preparation](#321-preparation)
+    2. [Execution](#322-execution)
+    3. [Verification](#323-verification)
 
 ## 1. Overview
 
