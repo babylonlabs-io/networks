@@ -110,7 +110,7 @@ After these steps are completed, verify your Finality Provider is signing blocks
 following the steps [here](#33-verification) and wait until the Babylon Genesis
 Testnet upgrade height `X` is reached.
 
-### 3.2.2. Babylon Node Upgrade
+#### 3.2.2. Babylon Node Upgrade
 
 Once the Babylon Genesis Testnet upgrade height `X` is reached, perform the
 following steps:
