@@ -126,7 +126,7 @@ Testnet upgrade height `X` is reached.
 Verify that your Babylon Finality Provider is voting as expected:
   - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
     public key of your Babylon Finality Provider in hex format. The height
-    should be growing
+    should be growing.
     ```shell
     babylond q btcstaking finality-provider \
       FP_BTC_PK_HEX \
