@@ -9,7 +9,6 @@ This document summarizes the procedure to upgrade a Babylon node to version
 2. [Applying the upgrade](#2-applying-the-upgrade)
    1. [Preparation](#21-preparation)
    2. [Execution](#22-execution)
-   3. [Verification](#23-verification)
 
 ## 1. Overview
 
@@ -33,7 +32,7 @@ Obtain the `v3rc0` binary. You can achieve this in multiple ways:
     docker pull babylonlabs/babylond:v3.0.0-rc.0-testnet
     ```
 
-### Perform the upgrade
+### 2.2. Execution
 
 Perform the following steps to upgrade your Babylon node:
 1. Stop your Babylon node
