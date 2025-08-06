@@ -20,7 +20,7 @@ Provider to version `v2.0.0-rc.0`.
 ## 1. Overview
 
 - **Upgrade version**: `v2.0.0-rc.0`
-- **Upgrade Babylon height**: `X` (TODO: specify the height)
+- **Upgrade Babylon height**: `1692200`
 - **Upgrade overview**:
   - **Compatibility with Babylon Genesis v3**
   - **Usage of a signing context** to combat the usage of existing signatures for
@@ -45,7 +45,7 @@ features:
   - Signing context starts getting utilized at the height specified in the
     Babylon Genesis Finality Provider configuration file (value
     `ContextSigningHeight`).
-  - From the upgrade Babylon height `X` (TODO: Specify the height) and onwards,
+  - From the upgrade Babylon height `1692200` and onwards,
     context signing is **required** for finality signatures to be accepted. Finality
     signatures not utilizing context signing will be rejected, and **prevent
     the Babylon Genesis Finality Provider from submitting a valid finality
@@ -53,8 +53,8 @@ features:
     a public randomness commitment of a specific height, which can't be re-used.
   - Thus, it's critical that the Babylon Genesis Finality Providers upgrade
     their software and properly configure the context signing height no later
-    than the Babylon Genesis Testnet upgrade height `X`. (TODO: Specify the
-    upgrade height). **For safety, Finality Provider operators must upgrade
+    than the Babylon Genesis Testnet upgrade height `1692200`.
+    **For safety, Finality Provider operators must upgrade
     their software earlier than the Babylon Genesis Testnet network upgrade.**
 - Major refactoring of the codebase into a reusable SDK. This aims to enable
   the development of Finality Provider software for Bitcoin Supercharged
@@ -69,13 +69,13 @@ features:
 
 Applying the upgrade constitutes of 2 steps:
 - Upgrade your Finality Provider and EOTS daemons **before** the Babylon Genesis
-  Testnet upgrade height `X` (TODO: Specify the height) is reached.
+  Testnet upgrade height `1692200` is reached.
 - Upgrade your Babylon node once the network halts.
 
 ### 3.1. Upgrade the Finality Provider
 
 **NOTE: THIS MUST HAPPEN BEFORE THE BABYLON GENESIS TESTNET UPGRADE HEIGHT
-`X` IS REACHED!**
+`1692200` IS REACHED!**
 
 #### 3.1.1. Preparation
 
@@ -107,8 +107,7 @@ experience downtime or submit invalid signatures:
 2. **Swap the Babylon Genesis finality provider and EOTS daemon binaries with
    the new ones**.
 3. In your Babylon Genesis Finality Provider config, append the following
-   configuration to the `[Application Options]` section
-   (TODO: Specify the height):
+   configuration to the `[Application Options]` section:
    ```shell
    [Application Options]
 
@@ -119,7 +118,7 @@ experience downtime or submit invalid signatures:
 
 After these steps are completed, verify your Finality Provider is signing blocks
 following the steps [here](#313-verification) and wait until the Babylon Genesis
-Testnet upgrade height `X` is reached.
+Testnet upgrade height `1692200` is reached.
 
 #### 3.1.3. Verification
 
@@ -154,11 +153,11 @@ Prepare for the Babylon `v3.0.0-rc.0` node upgrade following the instructions
 
 #### 3.2.2. Babylon Node Upgrade
 
-Once the Babylon Genesis Testnet upgrade height `X` is reached, perform the
+Once the Babylon Genesis Testnet upgrade height `1692200` is reached, perform the
 following steps:
 1. **Upgrade your Babylon node to `v3.0.0-rc.0` following the instructions
    [here](../../../babylon-node/upgrades/v3/README.md#3-2-execution).**
-2. Wait until the Babylon produces block `X`. This can take up to 5 minutes,
+2. Wait until the Babylon produces block `1692200`. This can take up to 5 minutes,
    depending on how fast Babylon CometBFT Validators upgrade their Babylon
    nodes.
 
@@ -167,11 +166,11 @@ following steps:
 After completing the [execution](#322-execution) section, perform the following
 verifications to ensure that your Babylon Finality Provider was upgraded
 successfully and is functioning as expected:
-- Verify that your Babylon Finality Provider has voted for blocks `X - 1` and
-  `X` (TODO: Specify the height). You can achieve this in many ways:
+- Verify that your Babylon Finality Provider has voted for blocks `1692200 - 1` and
+  `1692200`. You can achieve this in many ways:
   - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
     public key of your Babylon Finality Provider in hex format. The resulting
-    height should be equal or greater to `X` (TODO: Specify the height).
+    height should be equal or greater to `1692200`.
     ```shell
     babylond q btcstaking finality-provider \
       FP_BTC_PK_HEX \
