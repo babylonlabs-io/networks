@@ -1,4 +1,4 @@
-# `v3rc0` Software Upgrade
+# `v3` Software Upgrade
 
 This document summarizes the procedure to upgrade a Babylon node to version
 `v3.0.0-rc.0`.
@@ -12,14 +12,14 @@ This document summarizes the procedure to upgrade a Babylon node to version
 
 ## 1. Overview
 
-- **Upgrade version**: `v3rc0`
+- **Upgrade version**: `v3`
 - **Upgrade height**: `1692200`
 
 ## 2. Applying the upgrade
 
 ### 2.1. Preparation
 
-Obtain the `v3rc0` binary. You can achieve this in multiple ways:
+Obtain the `v3` binary. You can achieve this in multiple ways:
   - Download the binary from the [releases
     page](https://github.com/babylonlabs-io/babylon/releases/tag/v3.0.0-rc.0)
   - Build the binary on your machine
