@@ -1,10 +1,8 @@
-# Babylon testnet-5 Network
+# Babylon Genesis Testnet Network
 
-Welcome to the network page for the Babylon Phase-2 testnet (`bbn-test-5`).
-This is your central hub 
-for network participation information, whether you're running a node, 
-operating as a validator, providing finality services, or participating 
-in the covenant committee.
+Welcome to the network page for the Babylon Genesis Testnet (`bbn-test-5`).
+This is your central hub for network participation information, whether you're
+running a node, Validator, Finality Provider, or Covenant Emulator.
 
 ## Network Parameters
 
@@ -101,5 +99,5 @@ Please see the setup and configuration guides below:
 
 - [Babylon Node Operators](babylon-node/README.md)
 - [Validators](babylon-validators/README.md)
-- [Finality Providers](https://github.com/babylonlabs-io/finality-provider/blob/main/README.md)
+- [Finality Providers](finality-provider/README.md)
 - [Covenant Committee](https://github.com/babylonlabs-io/covenant-emulator/blob/main/README.md)

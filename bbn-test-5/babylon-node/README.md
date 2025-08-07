@@ -207,7 +207,7 @@ using the genesis software version `v0.9.0` in place of `<tag>`.
 Your node will sync blocks until it reaches a software upgrade height.
 
 At that point, you will have to perform the steps matching the corresponding
-[upgrade height](../upgrades/README.md).
+[upgrade height](./upgrades/README.md).
 
 Note: When building the upgrade binary, include the following build flag so that
 testnet-specific upgrade data are included in the binary:
