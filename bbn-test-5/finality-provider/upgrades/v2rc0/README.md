@@ -13,9 +13,8 @@ Provider to version `v2.0.0-rc.0`.
       2. [Execution](#312-execution)
       3. [Verification](#313-verification)
    2. [Upgrade the Finality Provider](#32-upgrade-the-babylon-provider) 
-      1. [Preparation](#321-preparation)
-      2. [Execution](#322-execution)
-      3. [Verification](#323-verification)
+      1. [Preparation and execution](#321-preparation-and-execution)
+      2. [Verification](#322-verification)
 
 ## 1. Overview
 
@@ -112,7 +111,7 @@ experience downtime or submit invalid signatures:
    [Application Options]
 
    ; The height at which the context signing will start
-   ContextSigningHeight = X - 1
+   ContextSigningHeight = 1692199
    ```
 4. **Start the Finality Provider and the EOTS Daemons.**
 
@@ -144,29 +143,19 @@ Verify that your Babylon Finality Provider is voting as expected:
    Explorers have a data indexing overhead, so it's likely that your finality
    signatures will be reflected after ~1 minute.
 
-### 3.2. Upgrade the Babylon node
+### 3.2. Upgrade the Babylon Genesis node
 
-#### 3.2.1. Preparation
+#### 3.2.1. Preparation and execution
 
-Prepare for the Babylon `v3.0.0-rc.0` node upgrade following the instructions
-[here](../../../babylon-node/upgrades/v3/README.md#3-1-preparation).
+Refer to the Babylon `v3.0.0-rc.0`
+[node upgrade guide](../../../babylon-node/upgrades/v3/README.md).
 
-#### 3.2.2. Babylon Node Upgrade
+#### 3.2.2. Verification
 
-Once the Babylon Genesis Testnet upgrade height `1692200` is reached, perform the
-following steps:
-1. **Upgrade your Babylon node to `v3.0.0-rc.0` following the instructions
-   [here](../../../babylon-node/upgrades/v3/README.md#3-2-execution).**
-2. Wait until the Babylon produces block `1692200`. This can take up to 5 minutes,
-   depending on how fast Babylon CometBFT Validators upgrade their Babylon
-   nodes.
-
-#### 3.2.3. Verification
-
-After completing the [execution](#322-execution) section, perform the following
+After completing the above section, perform the following
 verifications to ensure that your Babylon Finality Provider was upgraded
 successfully and is functioning as expected:
-- Verify that your Babylon Finality Provider has voted for blocks `1692200 - 1` and
+- Verify that your Babylon Finality Provider has voted for blocks `1692199` and
   `1692200`. You can achieve this in many ways:
   - Query the Babylon node directly, replacing `FP_BTC_PK_HEX` with the BTC
     public key of your Babylon Finality Provider in hex format. The resulting
