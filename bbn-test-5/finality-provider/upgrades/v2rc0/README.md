@@ -30,14 +30,14 @@ Provider to version `v2.0.0-rc.0`.
 
 ## 2. Technical Deep-dive
 
-The Babylon Genesis Testnet `v3.0.0-rc.0`
+The Babylon Genesis Testnet `v3.0.0-rc.1`
 [upgrade](../../../babylon-node/upgrades/v3/README.md) is coupled with a
 coordinated breaking upgrade of the Finality Provider software from `v1.x.x`
 (`v1.0.0`, `v1.1.0-rc.0`, `v1.1.0-rc.1`) to `v2.0.0-rc.0`.
 
 The Finality Provider `v2.0.0-rc.0` upgrade introduces the following major
 features:
-- Compatibility with the Babylon node `v3.0.0-rc.0` version.
+- Compatibility with the Babylon node `v3.0.0-rc.1` version.
 - Introduction of the singing context, which is utilized during the submission
   of finality signatures by the Babylon Genesis Finality Providers. This
   guarantees that existing signatures cannot be re-used for other puproses.
@@ -147,7 +147,7 @@ Verify that your Babylon Finality Provider is voting as expected:
 
 #### 3.2.1. Preparation and execution
 
-Refer to the Babylon `v3.0.0-rc.0`
+Refer to the Babylon `v3.0.0-rc.1`
 [node upgrade guide](../../../babylon-node/upgrades/v3/README.md).
 
 #### 3.2.2. Verification
