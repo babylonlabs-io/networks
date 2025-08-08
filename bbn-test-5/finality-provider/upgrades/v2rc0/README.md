@@ -110,12 +110,21 @@ experience downtime or submit invalid signatures:
    ```shell
    [Application Options]
 
+   ; The upper bound of the number of Schnorr public randomness for each commitment
+   NumPubRandMax = 500000
+   
+   ; The interval between each attempt to commit public randomness
+   RandomnessCommitInterval = 30s
+
    ; The height at which the context signing will start
    ContextSigningHeight = 1692199
    ```
 4. In your Babylon Genesis Finality Provider config, **remove** the following
-   from the `[Application Options]` section:
+   configuration from the `[Application Options]` section:
    ```shell
+   ; the type of the consumer chain
+   ChainType = babylon
+
    ; Bitcoin network to run on
    BitcoinNetwork = signet
    ```
