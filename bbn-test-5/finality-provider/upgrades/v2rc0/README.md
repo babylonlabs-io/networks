@@ -73,7 +73,7 @@ Applying the upgrade constitutes of 2 steps:
 
 ### 3.1. Upgrade the Finality Provider
 
-**NOTE: THIS MUST HAPPEN BEFORE THE BABYLON GENESIS TESTNET UPGRADE HEIGHT
+**⚠️  NOTE: THIS MUST HAPPEN BEFORE THE BABYLON GENESIS TESTNET UPGRADE HEIGHT
 `1692200` IS REACHED!**
 
 #### 3.1.1. Preparation
@@ -113,7 +113,16 @@ experience downtime or submit invalid signatures:
    ; The height at which the context signing will start
    ContextSigningHeight = 1692199
    ```
-4. **Start the Finality Provider and the EOTS Daemons.**
+4. In your Babylon Genesis Finality Provider config, **remove** the following
+   from your configuration:
+   ```shell
+   [Application Options]
+
+   ; Bitcoin network to run on
+   BitcoinNetwork = signet
+   ```
+   **Finality Provider will fail to startup unless this is removed.**
+5. **Start the Finality Provider and the EOTS Daemons.**
 
 After these steps are completed, verify your Finality Provider is signing blocks
 following the steps [here](#313-verification) and wait until the Babylon Genesis
