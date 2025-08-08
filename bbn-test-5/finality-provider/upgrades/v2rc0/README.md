@@ -40,7 +40,7 @@ features:
 - Compatibility with the Babylon node `v3.0.0-rc.1` version.
 - Introduction of the singing context, which is utilized during the submission
   of finality signatures by the Babylon Genesis Finality Providers. This
-  guarantees that existing signatures cannot be re-used for other puproses.
+  guarantees that existing signatures cannot be re-used for other purposes.
   - Signing context starts getting utilized at the height specified in the
     Babylon Genesis Finality Provider configuration file (value
     `ContextSigningHeight`).
