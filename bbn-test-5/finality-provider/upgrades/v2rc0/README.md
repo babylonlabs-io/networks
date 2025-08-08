@@ -114,10 +114,8 @@ experience downtime or submit invalid signatures:
    ContextSigningHeight = 1692199
    ```
 4. In your Babylon Genesis Finality Provider config, **remove** the following
-   from your configuration:
+   from the `[Application Options]` section:
    ```shell
-   [Application Options]
-
    ; Bitcoin network to run on
    BitcoinNetwork = signet
    ```
