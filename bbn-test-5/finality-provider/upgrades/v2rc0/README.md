@@ -119,22 +119,17 @@ experience downtime or submit invalid signatures:
    ; The height at which the context signing will start
    ContextSigningHeight = 1692199
    ```
-4. In your Babylon Genesis Finality Provider config, remove the following
+4. In your Babylon Genesis Finality Provider config, **remove** the following
    configuration from the `[Application Options]` section:
    ```shell
-   [Application Options]
-
    ; the type of the consumer chain
    ChainType = babylon
-   ```
-5. In your Babylon Genesis Finality Provider config, **remove** the following
-   from the `[Application Options]` section:
-   ```shell
+
    ; Bitcoin network to run on
    BitcoinNetwork = signet
    ```
    **Finality Provider will fail to startup unless this is removed.**
-6. **Start the Finality Provider and the EOTS Daemons.**
+5. **Start the Finality Provider and the EOTS Daemons.**
 
 After these steps are completed, verify your Finality Provider is signing blocks
 following the steps [here](#313-verification) and wait until the Babylon Genesis
