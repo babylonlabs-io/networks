@@ -1,24 +1,24 @@
-# `v2.0.0-rc.0` Software Upgrade
+# `v2.0.0-rc.1` Software Upgrade
 
 This document summarizes the procedure to upgrade a Babylon Genesis Finality
-Provider to version `v2.0.0-rc.0`.
+Provider to version `v2.0.0-rc.1`.
 
 ## Table of Contents
 
 1. [Overview](#1-overview)
 2. [Technical Deep-dive](#2-technical-deep-dive)
 3. [Applying the upgrade](#3-applying-the-upgrade)
-   1. [Upgrade the Finality Provider](#31-upgrade-the-finality-provider) 
+   1. [Upgrade the Finality Provider](#31-upgrade-the-finality-provider)
       1. [Preparation](#311-preparation)
       2. [Execution](#312-execution)
       3. [Verification](#313-verification)
-   2. [Upgrade the Finality Provider](#32-upgrade-the-babylon-provider) 
+   2. [Upgrade the Finality Provider](#32-upgrade-the-babylon-provider)
       1. [Preparation and execution](#321-preparation-and-execution)
       2. [Verification](#322-verification)
 
 ## 1. Overview
 
-- **Upgrade version**: `v2.0.0-rc.0`
+- **Upgrade version**: `v2.0.0-rc.1`
 - **Upgrade Babylon height**: `1692200`
 - **Upgrade overview**:
   - **Compatibility with Babylon Genesis v3**
@@ -33,9 +33,9 @@ Provider to version `v2.0.0-rc.0`.
 The Babylon Genesis Testnet `v3.0.0-rc.1`
 [upgrade](../../../babylon-node/upgrades/v3/README.md) is coupled with a
 coordinated breaking upgrade of the Finality Provider software from `v1.x.x`
-(`v1.0.0`, `v1.1.0-rc.0`, `v1.1.0-rc.1`) to `v2.0.0-rc.0`.
+(`v1.0.0`, `v1.1.0-rc.0`, `v1.1.0-rc.1`) to `v2.0.0-rc.1`.
 
-The Finality Provider `v2.0.0-rc.0` upgrade introduces the following major
+The Finality Provider `v2.0.0-rc.1` upgrade introduces the following major
 features:
 - Compatibility with the Babylon node `v3.0.0-rc.1` version.
 - Introduction of the singing context, which is utilized during the submission
@@ -81,17 +81,17 @@ Applying the upgrade constitutes of 2 steps:
 Follow the steps below:
 - Ensure that your Babylon Finality Provider and EOTS daemons are currently
   operating version `v1.0.0`, `v1.1.0-rc.0` or `v1.1.0-rc.1`.
-- Obtain the `v2.0.0-rc.0` binary. You can achieve this in multiple ways:
+- Obtain the `v2.0.0-rc.1` binary. You can achieve this in multiple ways:
   - Download the binary from the [releases
-    page](https://github.com/babylonlabs-io/finality-provider/releases/tag/v2.0.0-rc.0).
+    page](https://github.com/babylonlabs-io/finality-provider/releases/tag/v2.0.0-rc.1).
   - Build the binary on your machine:
     ```shell
-    git checkout v2.0.0-rc.0
+    git checkout v2.0.0-rc.1
     make install
     ```
   - Pull the pre-built Docker image:
     ```shell
-    docker pull babylonlabs/finality-provider:v2.0.0-rc.0
+    docker pull babylonlabs/finality-provider:v2.0.0-rc.1
     ```
 
 #### 3.1.2. Execution
@@ -112,7 +112,7 @@ experience downtime or submit invalid signatures:
 
    ; The upper bound of the number of Schnorr public randomness for each commitment
    NumPubRandMax = 500000
-   
+
    ; The interval between each attempt to commit public randomness
    RandomnessCommitInterval = 30s
 
