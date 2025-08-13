@@ -15,4 +15,5 @@ You can find a list of the Software Upgrades listed in chronological order here:
   `1202565`
 - The [v2.2](./v2.2/README.md) upgrade was performed at Babylon block `1338510`
 - The [v3](./v3/README.md) upgrade was performed at Babylon block
-  `1692200`
+- The [v3rc2](./v3rc2/README.md) upgrade was performed at Babylon block
+  `1717030`
