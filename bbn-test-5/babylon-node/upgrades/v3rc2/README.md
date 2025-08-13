@@ -19,7 +19,7 @@ This document summarizes the procedure to upgrade a Babylon node to version
 
 ### 2.1. Preparation
 
-Obtain the `v3` binary. You can achieve this in multiple ways:
+Obtain the `v3.0.0-rc.2` binary. You can achieve this in multiple ways:
   - Download the binary from the [releases
     page](https://github.com/babylonlabs-io/babylon/releases/tag/v3.0.0-rc.2)
   - Build the binary on your machine
