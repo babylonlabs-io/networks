@@ -26,6 +26,7 @@ A snapshot including state up to height `226` can be retrieved from
 To boot a node with this snapshot, Babylon version `v1.0.1` should be used
 ([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v1.0.1)).
 
+Pruned ITRocket snapshot with commands to install can be retrieved [here](https://itrocket.net/services/mainnet/babylon/#snap).
 
 Some additional network snapshot sources are also listed:
 
