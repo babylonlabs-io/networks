@@ -1,0 +1,11 @@
+{
+  "description": {
+    "moniker": "Atlas-Staking",
+    "identity": "3FAA58BDC270427D",
+    "website": "https://www.atlasstaking.com",
+    "security_contact": "info@atlasstaking.com",
+    "details": "Where Your Crypto Works As Hard As You Do."
+  },
+  "eots_pk": "cebc260b9220e67f3fa9fdc1d14cca74bf40c7040376287e418014e1c1d0a691",
+  "commission": "0.03"
+}
