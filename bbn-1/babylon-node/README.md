@@ -2,19 +2,55 @@
 
 ## Table of Contents
 
-1. [Install Babylon binary](#1-install-babylon-binary)
-2. [Set up node home directory and configuration](#2-set-up-your-node-home-directory-and-configuration)
-3. [Prepare for sync](#3-prepare-for-sync)
-    1. [Sync through a network snapshot](#31-sync-through-a-network-snapshot)
-    2. [Sync from scratch](#32-sync-from-scratch)
-4. [Start the node](#4-start-the-node)
+1. [Full automatic installation](#1-full-autoinstallation)
+2. [Install Babylon binary](#2-install-babylon-binary)
+3. [Set up node](#3-set-up-your-node)
+4. [Prepare for sync](#4-prepare-for-sync)
+    1. [Sync through a network snapshot](#41-sync-through-a-network-snapshot)
+    2. [Sync from scratch](#42-sync-from-scratch)
+5. [Start the node](#5-start-the-node)
+    1. [Start your node from CLI](#51-start-your-node-from-cli)
+    2. [Start your node using a service file](#52-start-your-node-using-a-service-file)
 
-## 1. Install Babylon Binary
+## 1. Full Autoinstallation
+To install the node with one command, run:
+```shell
+source <(curl -s https://itrocket.net/api/mainnet/babylon/autoinstall/)
+```
+
+This command:
+- installs all the necessary dependencies;
+- installs the binary;
+- configures the node (edits configuration files, downloads genesis and addrbook, sets seeds and peers);
+- downloads a snapshot;
+- runs the node with a service file.
+
+## 2. Install Babylon Binary
+
+Before installation, set the variables:
+```shell
+# set vars
+[ ! -f ~/.bash_profile ] && touch ~/.bash_profile
+echo "export WALLET="wallet"" >> $HOME/.bash_profile
+echo "export MONIKER="test"" >> $HOME/.bash_profile
+echo "export BABYLON_CHAIN_ID="bbn-1"" >> $HOME/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
+source $HOME/.bash_profile
+```
 
 Installing the Babylon binary requires a Golang installation.
 
 Install Golang 1.23 by following the instructions
-[here](https://go.dev/dl)
+[here](https://go.dev/dl) or run the following:
+```shell
+cd $HOME
+VER="1.23.1"
+wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
+rm "go$VER.linux-amd64.tar.gz"
+[ ! -d ~/go/bin ] && mkdir -p ~/go/bin
+```
 
 Once installed, to verify your installation, run:
 ```shell
@@ -30,7 +66,7 @@ cd babylon
 # tag corresponds to the version of the software
 # you want to install -- depends on which
 # height you sync from
-git checkout v1.0.1
+git checkout v2.1.0
 # install the binary
 make install
 ```
@@ -43,28 +79,21 @@ You can verify your installation by executing the `version` command:
 
 ```shell
 babylond version
-v1.0.1
-```
-
-If your shell cannot find the installed binary, make sure `$GOPATH/bin` is in
-your shell's `$PATH`. Use the following command to add it to your profile,
-depending on your shell:
- ```shell
-echo 'export PATH=$HOME/go/bin:$PATH' >> ~/.profile
+v2.1.0
  ```
-
-Make sure to restart your terminal session after running the above command.
 
 Note: Alternatively, you can use a
 [Docker image](https://hub.docker.com/layers/babylonlabs/babylond/v1.0.1/images/sha256-8650aca16af767d844de62d45ff989637aa6009d7d71d19f5a0d2b86198cda94)
 
-## 2. Set up your node
+## 3. Set up your node
 
-In this section we will initialize your node and create the necessary
-configuration directory through the `init` command.
+In this section we will initialize your node and create the necessary configuration directory through the `init` command. Replace `<path>` with the directory where your node files will be stored:
 
 ```shell
-babylond init <moniker> --chain-id bbn-1 --home <path>
+babylond init $MONIKER --chain-id $BABYLON_CHAIN_ID --home <path>
+sed -i \
+-e "s/chain-id = .*/chain-id = \"${BABYLON_CHAIN_ID}\"/" \
+-e "s/keyring-backend = .*/keyring-backend = \"os\"/" $HOME/.babylond/config/client.toml
 ```
 
 Parameters:
@@ -116,32 +145,9 @@ $HOME/.babylond/
     └── ...
 ```
 
-After initialization, you'll need to modify the following configuration files:
+After initialization, you'll need to modify `app.toml` and `config.toml` configuration files.
 
-1. On `app.toml`, update the following settings:
-
-```shell
-# Base configuration
-# Minimum gas prices that this node will accept
-minimum-gas-prices = "0.002ubbn"
-
-[mempool]
-# Setting max-txs to 0 will allow for a unbounded amount of transactions in the mempool.
-# Setting max_txs to negative 1 (-1) will disable transactions from being inserted into the mempool (no-op mempool).
-# Setting max_txs to a positive number (> 0) will limit the number of transactions in the mempool, by the specified amount.
-#
-# Note, this configuration only applies to SDK built-in app-side mempool
-# implementations.
-max-txs = 0
-
-[btc-config]
-
-# Configures which bitcoin network should be used for checkpointing
-# valid values are: [mainnet, testnet, simnet, signet, regtest]
-network = "mainnet" # The Babylon Genesis mainnet connects to the mainnet Bitcoin network
-```
-
-Parameters:
+1. On `app.toml`, update the following parameters:
 - `minimum-gas-prices`: The minimum gas price your node will accept for
   transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and
   any transactions with gas prices below your node's minimum will be rejected.
@@ -151,50 +157,62 @@ Parameters:
   checkpointing. For the Babylon Genesis mainnet,
   we use "mainnet" which is Bitcoin's mainnet network.
 
+To update them, run:
+```shell
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.002ubbn"|g' $HOME/.babylond/config/app.toml
+sed -i 's|mempool.max-txs =.*|mempool.max-txs = 0|g' $HOME/.babylond/config/app.toml
+sed -i 's|btc-config.network =.*|btc-config.network = "mainnet"|g' $HOME/.babylond/config/app.toml
+```
+
 Note: If you're running a validator or RPC node that needs to handle queries,
 it's recommended to keep these default values for optimal performance. Only
 adjust these if you're running a node with limited memory resources.
 
-2. On `config.toml`, update the the following settings:
-
-```shell
-[p2p]
-
-# These are placeholder values and should be replaced
-seeds = "NODE_ID1@NODE_ENDPOINT1:PORT1,NODE_ID2@NODE_ENDPOINT2:PORT2"
-
-# These are placeholder values and should be replaced
-persistent_peers = "NODE_ID1@NODE_ENDPOINT1:PORT1,NODE_ID2@NODE_ENDPOINT2:PORT2"
-
-[consensus]
-
-timeout_commit = "9200ms"
-```
-
-Parameters:
+2. On `config.toml`, update the the following parameters:
 - `seeds`: Comma separated list of seed nodes that your node will connect to for
-   discovering other peers in the network; you can obtain seed endpoints from
-   [here](../README.md#seed-nodes)
+   discovering other peers in the network;
 - `persistent_peers`: Comma separated list of nodes that your node will use as
-   persistent peers; you can obtain peers from [here](../README.md#peers)
+   persistent peers;
 - `timeout_commit`: The Babylon Genesis network block time has to be set to
    **9200 milliseconds**. We set a lower value than the target 10s block time,
    to account for network delays.
 
-Note: You can use either seeds, persistent peers or both.
+To update them, run:
+```shell
+SEEDS="42fad8afbf7dfca51020c3c6e1a487ce17c4c218@babylon-seed-1.nodes.guru:55706,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:20656,145ee7d64ae5d3f6a8ceb6b7dba889f7de48de06@babylon-mainnet-seed.itrocket.net:27656"
+PEERS="f0d280c08608400cac0ccc3d64d67c63fabc8bcc@91.134.70.52:55706,4c1406cb6867232b7ea130ed3a3d25996ca06844@23.88.6.237:20656,b40a147910a608018c47a0e0225106d00d2651ed@5.9.99.42:20656,184db83783c9158a3e99809ffed3752e180597be@65.108.205.121:20656,1f06b55dfbae181fa40ec08fe145b3caef6d3c83@5.9.81.54:2080,7d728de314f9746e499034bfcfc5a9023c672df5@84.32.32.149:18800,b16397b576f2431c8a80efa4f5338c1b82583916@babylon-mainnet-peer.itrocket.net:27656"
+sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
+       -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" \
+       -e "/^\[consensus\]/,/^\[/{s/^[[:space:]]*timeout_commit *=.*/timeout_commit = \"9200ms\"/}" \
+       $HOME/.babylond/config/config.toml
+```
+Note: You can use either seeds, persistent peers or both. Seeds can be obtained from [here](../README.md#seed-nodes), while peers can be found [here](../README.md#peers).
 
+3. (Optional) Additionally, you can set custom ports.
+Set your port for the `BABYLON_PORT` variable instead of `27`:
+```shell
+echo 'export BABYLON_PORT="27"' >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
+sed -i.bak -e "s%:1317%:${BABYLON_PORT}317%g; s%:9090%:${BABYLON_PORT}090%g" $HOME/.babylond/config/app.toml
+sed -i "s|^node *=.*|node = \"tcp://localhost:${BABYLON_PORT}657\"|" $HOME/.babylond/config/client.toml
+sed -i.bak -e "s%:26658%:${BABYLON_PORT}658%g;
+s%:26657%:${BABYLON_PORT}657%g;
+s%:6060%:${BABYLON_PORT}060%g;
+s%:26656%:${BABYLON_PORT}656%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${BABYLON_PORT}656\"%;
+s%:26660%:${BABYLON_PORT}660%g" $HOME/.babylond/config/config.toml
+```
 Next, you'll need to obtain the network's genesis file. This file contains
 the initial state of the blockchain and is crucial for successfully syncing
 your node. You can inspect the file [here](../README.md#genesis) or use the
 following commands to download it directly:
 
 ```shell
-wget
-https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/main/bbn-1/network-artifacts/genesis.json
-mv genesis.json <path>/config/genesis.json # You must insert the home directory of your node
+wget -O $HOME/.babylond/config/genesis.json https://raw.githubusercontent.com/babylonlabs-io/networks/refs/heads/main/bbn-1/network-artifacts/genesis.json
 ```
 
-## 3. Prepare for sync
+## 4. Prepare for sync
 
 Before starting your node sync, it's important to note that the initial release
 at genesis was `v0.9.0`, while subsequently there have been software upgrades.
@@ -203,7 +221,7 @@ There are two options you can choose from when syncing:
 1. Sync through a network snapshot (fastest method)
 2. Sync from scratch (complete sync from block 1)
 
-### 3.1. Sync through a network snapshot
+### 4.1. Sync through a network snapshot
 
 Snapshot syncing is the fastest way to get your node up to date with the network.
 A snapshot is a compressed backup of the blockchain data taken at a specific
@@ -225,7 +243,7 @@ Parameters:
 After importing the state, you can now start your node as specified in section
 [Start the node](#4-start-the-node).
 
-### 3.2. Sync from scratch
+### 4.2. Sync from scratch
 
 > **Important**: If you decide to sync from scratch and target to become a
 > validator, do not create a BLS key before
@@ -258,12 +276,19 @@ BABYLON_BUILD_OPTIONS="mainnet" make install
 You will have to go over all the software upgrades until you sync with the
 full blockchain.
 
-## 4. Start the node
+## 5. Start the node
 
-You can start your node using the following command:
+You can start your node from CLI or configure it with a service file.
 
+### 5.1. Start your node from CLI
+For non-validator nodes:
 ```shell
-babylond start --chain-id bbn-1 --home <path> --x-crisis-skip-assert-invariants
+babylond start --chain-id $BABYLON_CHAIN_ID --home $HOME/.babylond --x-crisis-skip-assert-invariants
+```
+
+For validator nodes:
+```shell
+babylond start --chain-id $BABYLON_CHAIN_ID --home $HOME/.babylond --bls-password-file="$HOME/.babylond/config/bls_password.txt
 ```
 
 Parameters:
@@ -292,5 +317,32 @@ Parameters:
 > * **(Recommended) Password Prompt**
 >   If none of the above is set, a prompt will appear asking you to type your
 >   password.
+
+### 5.2. Start your node using a service file
+
+Create a service file:
+```shell
+sudo tee /etc/systemd/system/babylond.service > /dev/null <<EOF
+[Unit]
+Description=Babylon node
+After=network-online.target
+[Service]
+User=$USER
+WorkingDirectory=$HOME/.babylond
+ExecStart=$(which babylond) start --home $HOME/.babylond --bls-password-file="$HOME/.babylond/config/bls_password.txt"
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+Enable and start service:
+```shell
+sudo systemctl daemon-reload
+sudo systemctl enable babylond
+sudo systemctl restart babylond && sudo journalctl -u babylond -fo cat
+```
 
 Congratulations! Your Babylon node is now set up and syncing blocks.
