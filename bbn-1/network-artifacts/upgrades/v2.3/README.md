@@ -3,7 +3,7 @@
 ## Upgrade overview
 
 - **Upgrade version**: `v2.3.0`
-- **Upgrade height**: `1425045`
+- **Upgrade height**: `1416370`
 
 ## Upgrade process
 
