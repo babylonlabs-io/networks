@@ -1,0 +1,6 @@
+{
+    "binaries": {
+        "linux/amd64": "https://github.com/babylonlabs-io/babylon/releases/download/v2.0.0-rc.0/babylon-testnet-2.0.0-rc.0-linux-amd64?checksum=sha256:120566ae36a7e0f96ed8bc0f815669287c992bc5ca1bbbf563a06a2c92cc155a",
+        "linux/arm64": "https://github.com/babylonlabs-io/babylon/releases/download/v2.0.0-rc.0/babylon-testnet-2.0.0-rc.0-linux-arm64"
+    }
+}
