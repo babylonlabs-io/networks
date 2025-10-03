@@ -1,10 +1,30 @@
 {
-  "app_name": "babylond",
-  "app_version": "v0.9.0",
-  "genesis_time": "2024-12-06T05:26:51Z",
+  "genesis_time": "2025-10-02T06:28:06Z",
   "chain_id": "bbn-test-6",
-  "initial_height": 1,
-  "app_hash": null,
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "50000000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {
+      "app": "0"
+    },
+    "abci": {
+      "vote_extensions_enable_height": "1"
+    }
+  },
+  "app_hash": "",
   "app_state": {
     "07-tendermint": null,
     "08-wasm": {
@@ -21,14 +41,14 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "bbn1py58qvyyz6lcp9fhulwh5av8a4sllx6hm0f60v",
+          "address": "bbn1663q6shrrqkmezh5v3sntcut2pwwlrc32yp279",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "bbn1w9cfa0qzlx8ktdecnctpxe0en0ct2985v0c42g",
+          "address": "bbn1zym93stlhf7ph4ejvga77sp2v5jlprkstt5kk0",
           "pub_key": null,
           "account_number": "1",
           "sequence": "0"
@@ -45,20 +65,20 @@
       },
       "balances": [
         {
-          "address": "bbn1py58qvyyz6lcp9fhulwh5av8a4sllx6hm0f60v",
-          "coins": [
-            {
-              "denom": "ubbn",
-              "amount": "1000000000"
-            }
-          ]
-        },
-        {
-          "address": "bbn1w9cfa0qzlx8ktdecnctpxe0en0ct2985v0c42g",
+          "address": "bbn1zym93stlhf7ph4ejvga77sp2v5jlprkstt5kk0",
           "coins": [
             {
               "denom": "ubbn",
               "amount": "9999999000000000"
+            }
+          ]
+        },
+        {
+          "address": "bbn1663q6shrrqkmezh5v3sntcut2pwwlrc32yp279",
+          "coins": [
+            {
+              "denom": "ubbn",
+              "amount": "1000000000"
             }
           ]
         }
@@ -74,7 +94,7 @@
     },
     "btccheckpoint": {
       "params": {
-        "btc_confirmation_depth": "10",
+        "btc_confirmation_depth": "30",
         "checkpoint_finalization_timeout": "100",
         "checkpoint_tag": "62627434"
       }
@@ -133,16 +153,16 @@
     "checkpointing": {
       "genesis_keys": [
         {
-          "validator_address": "bbnvaloper1py58qvyyz6lcp9fhulwh5av8a4sllx6hxdr8rd",
+          "validator_address": "bbnvaloper1663q6shrrqkmezh5v3sntcut2pwwlrc3hxthjy",
           "bls_key": {
-            "pubkey": "tgX+/QbXVEY/AsWb3x0ptag8KfBc4yvcYR9JHNKELabvKOv1mj7+BoLSym2cTSnZFfzrvdIOO7T9W64Akdz1ri8aJjpLtdfUtZsMnRPv7tdkJ1VLfw5bE+51ngNOThxj",
+            "pubkey": "r2XgLlSJJA2grlKnCaXAWe4WT7nYCGRZoj21aBvYW1tWnhlDIRBhLuNDTErFeDtVFHRAe1zHmYHpA3Q0NoCbjiIRETRXpFS1hjYpsVlTyt/ro+bYpl6FUS66k79irlj4",
             "pop": {
-              "ed25519_sig": "Zr9yP3eGRNKckUjx8aALBkjIX2/MtUm4XfiwneFpfWOEHhrlnni2eZsWAy69JHeNojI+EBeWOk3FJzCcV6AkCA==",
-              "bls_sig": "pDI6p6BYjL4mY3ByP8jHIDB3ESFXnWtujWVLhim3BxjUk4M+AzT0duv194etMtZk"
+              "ed25519_sig": "Pd0zKdAAT4nVbuVutnPbM4EnIvdZof40ojr3I0NflRJPJ9gfyxlCkKDfa7+3DHPKDf9FVLPJg0oExdLY+40EBQ==",
+              "bls_sig": "rxDj2VdzdL8Udb8C3LaoCSJ1E9JfiZfgoQzvvUOZ4Zjzt1pRzf70NUUAYiuNg4K6"
             }
           },
           "val_pubkey": {
-            "key": "Lw8uplrZsYNz0KcJZSiBXAOZG0M5YHt8j2VHiAVTE9o="
+            "key": "6NLSAu3k2vIfTkE9/wmGj0cEEyIdt/kKi0Uq3JCV/c4="
           }
         }
       ]
@@ -231,10 +251,10 @@
                 },
                 "min_self_delegation": "1",
                 "delegator_address": "",
-                "validator_address": "bbnvaloper1py58qvyyz6lcp9fhulwh5av8a4sllx6hxdr8rd",
+                "validator_address": "bbnvaloper1663q6shrrqkmezh5v3sntcut2pwwlrc3hxthjy",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "Lw8uplrZsYNz0KcJZSiBXAOZG0M5YHt8j2VHiAVTE9o="
+                  "key": "6NLSAu3k2vIfTkE9/wmGj0cEEyIdt/kKi0Uq3JCV/c4="
                 },
                 "value": {
                   "denom": "ubbn",
@@ -242,7 +262,7 @@
                 }
               }
             ],
-            "memo": "ce5568e20c6688bed0ab3ba0b2272f5bc6539af7@10.151.73.30:26656",
+            "memo": "b8504b248805dfbae40a5bec970ad5ea204bb634@10.101.81.3:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -252,7 +272,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AiuYYcL30ZPg50241U/PyzTcK+MZzRKj4V4GQMh8M0Qt"
+                  "key": "A9rb1GvQ6+C8RDJttH1onyAr50R8NsKbp0ijgDut0JV7"
                 },
                 "mode_info": {
                   "single": {
@@ -276,7 +296,7 @@
             "tip": null
           },
           "signatures": [
-            "ZNifZ9NSFATNTI4sX7yZp4CEWButxBBdLRRvUaYZaGk1ficKHIdl4zMc+oX3tOPwIHHdWHoMHZEznM8oFThpoQ=="
+            "WAa8zmEbPDiw5dRu7Pas2aPM1fr07CA0/qEYs2xzs2Z3hMf8lk+2t764uliUu99znb5LUnSK5ojGllA/6BrAbA=="
           ]
         }
       ]
@@ -439,38 +459,6 @@
       "params": {
         "ibc_packet_timeout_seconds": 86400
       }
-    }
-  },
-  "consensus": {
-    "params": {
-      "block": {
-        "max_bytes": "22020096",
-        "max_gas": "50000000"
-      },
-      "evidence": {
-        "max_age_num_blocks": "100000",
-        "max_age_duration": "172800000000000",
-        "max_bytes": "1048576"
-      },
-      "validator": {
-        "pub_key_types": [
-          "ed25519"
-        ]
-      },
-      "version": {
-        "app": "0"
-      },
-      "abci": {
-        "vote_extensions_enable_height": "1"
-      }
-    }
-  },
-  "consensus_params": {
-    "abci": {
-      "vote_extensions_enable_height": "1"
-    },
-    "block": {
-      "max_gas": "50000000"
     }
   }
 }
