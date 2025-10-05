@@ -181,7 +181,7 @@ but remember to replace all values with the actual values you want to use.
 
 Unlike traditional Cosmos SDK chains that use the `staking` module, 
 Babylon uses the Babylon
-[`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing)
+[`checkpointing`](https://github.com/babylonlabs-io/babylon/blob/main/x/checkpointing/README.md)
 module for validator creation and management.
 
 Before proceeding, ensure that your
