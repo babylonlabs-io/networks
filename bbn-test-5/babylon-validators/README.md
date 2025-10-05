@@ -305,7 +305,7 @@ BOND_STATUS_BONDED = 3
 ### 5.3 Staking with your Validator
 
 > ⚠️ **Important**: Babylon uses the 
-> [`checkpointing`](https://docs.babylonlabs.io/docs/developer-guides/modules/checkpointing)
+> [`checkpointing`](https://github.com/babylonlabs-io/babylon/blob/main/x/checkpointing/README.md)
 > module for validator creation and management.
 > All staking-related transactions (delegate, redelegate, unbond) must be 
 > processed through the `x/epoching` module, which encapsulates the `x/staking` 
