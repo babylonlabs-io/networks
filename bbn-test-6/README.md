@@ -16,7 +16,7 @@ The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 
 ### State snapshot
 
-A snapshot including state up to height `411` can be retrieved from
+A snapshot including state up to height `9064` can be retrieved from
 [here](./network-artifacts/bbn-test-6.tar.gz).
 
 To boot a node with this snapshot, Babylon version `v2.3.1` should be used
