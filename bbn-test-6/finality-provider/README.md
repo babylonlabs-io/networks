@@ -3,6 +3,3 @@
 General information regarding the Finality Provider daemon can be found
 [here](https://github.com/babylonlabs-io/finality-provider/blob/main/README.md).
 
-Consult the corresponding Finality Provider operation guide depending on the
-BSN your finality provider is securing:
-- [Babylon Genesis Finality Provider](https://github.com/babylonlabs-io/finality-provider/blob/main/docs/finality-provider-operation.md)
