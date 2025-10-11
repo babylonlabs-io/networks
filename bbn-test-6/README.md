@@ -16,17 +16,15 @@ The genesis file can be retrieved from [here](./network-artifacts/genesis.json).
 
 ### State snapshot
 
-A snapshot including state up to height `TODO` can be retrieved from
+A snapshot including state up to height `9064` can be retrieved from
 [here](./network-artifacts/bbn-test-6.tar.gz).
 
-To boot a node with this snapshot, Babylon version `TODO` should be used
-([reference](https://github.com/babylonlabs-io/babylon/releases/tag/TODO)).
+To boot a node with this snapshot, Babylon version `v2.3.1` should be used
+([reference](https://github.com/babylonlabs-io/babylon/releases/tag/v2.3.1)).
 
 Some additional network snapshot sources are also listed:
 
 - https://polkachu.com/testnets/babylon/snapshots
-- https://www.imperator.co/services/chain-services/testnets/babylon
-- https://services.contributiondao.com/testnet/babylon/snapshots
 
 ### Seed nodes
 
@@ -40,32 +38,17 @@ Peers can be retrieved from [here](./network-artifacts/peers.txt).
 
 1. RPC
 
-
 Pruned:
-- https://babylon-testnet-rpc.nodes.guru
 - https://babylon-testnet-rpc.polkachu.com
-- https://rpc-babylon-testnet.imperator.co
-- https://babylon-testnet-rpc.contributiondao.com
-
-Archive:
-- https://babylon-testnet-rpc-archive-1.nodes.guru
 
 2. LCD (node API)
 
 Pruned:
-- https://babylon-testnet-api.nodes.guru
 - https://babylon-testnet-api.polkachu.com
-- https://lcd-babylon-testnet.imperator.co
-- https://babylon-testnet-api.contributiondao.com
-
-Archive:
-- https://babylon-testnet-api-archive-1.nodes.guru
 
 3. gRPC
 
-- https://babylon-testnet-grpc.nodes.guru
 - http://babylon-testnet-grpc.polkachu.com:20690
-- grpc-babylon-testnet.imperator.co:443
 
 ### Covenant Committee
 
