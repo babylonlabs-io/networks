@@ -263,7 +263,7 @@ full blockchain.
 You can start your node using the following command:
 
 ```shell
-babylond start --chain-id bbn-1 --home <path> --x-crisis-skip-assert-invariants
+babylond start --chain-id bbn-1 --home <path>
 ```
 
 Parameters:

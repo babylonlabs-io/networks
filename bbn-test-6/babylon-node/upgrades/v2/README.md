@@ -14,12 +14,12 @@ Obtain the `v2` binary. You can achieve this in multiple ways:
     page](https://github.com/babylonlabs-io/babylon/releases/tag/v2)
   - Build the binary on your machine
     ```shell
-    git checkout v2
+    git checkout v2.1.0
     BABYLON_BUILD_OPTIONS="testnet" make install
     ```
   - If you're working with Docker images, you can pull the pre-built Docker image:
     ```shell
-    docker pull babylonlabs/babylond:v2-testnet
+    docker pull babylonlabs/babylond:v2.1.0-testnet
     ```
 
 ### Perform the upgrade
