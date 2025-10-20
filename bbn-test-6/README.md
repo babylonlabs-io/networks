@@ -80,7 +80,7 @@ Alternatively, the list can be retrieved from [here](./covenant-committee.json).
 There are four types of participants in the Babylon network.
 Please see the setup and configuration guides below:
 
-- [Babylon Node Operators](babylon-node/README.md)
-- [Validators](babylon-validators/README.md)
-- [Finality Providers](finality-provider/README.md)
+- [Babylon Node Operators](https://github.com/babylonlabs-io/networks/blob/main/bbn-test-6/babylon-node/README.md)
+- [Validators](https://github.com/babylonlabs-io/networks/blob/main/bbn-test-6/babylon-validators/README.md)
+- [Finality Providers](https://github.com/babylonlabs-io/networks/blob/main/bbn-test-6/finality-provider/README.md)
 - [Covenant Committee](https://github.com/babylonlabs-io/covenant-emulator/blob/main/README.md)
