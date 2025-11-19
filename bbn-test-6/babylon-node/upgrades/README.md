@@ -11,4 +11,4 @@ You can find a list of the Software Upgrades listed in chronological order here:
 - The [v2.2](./v2.2/README.md) upgrade was performed at Babylon block `363`
 - The [v2.3](./v2.3/README.md) upgrade was performed at Babylon block `410`
 - The [v4](./v4/README.md) upgrade was performed at Babylon block `86041`
-- The [v4.1](./v4.1/README.md) upgrade will be performed at Babylon block `384300`
+- The [v4.1](./v4.1/README.md) upgrade was performed at Babylon block `384300`
