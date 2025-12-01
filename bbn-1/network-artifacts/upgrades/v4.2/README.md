@@ -2,8 +2,8 @@
 
 ## Upgrade overview
 
-- **Upgrade version**: `v4.2`
-- **Upgrade height**: `TBD`
+- **Upgrade version**: `v4.2.0`
+- **Upgrade height**: `2072934`
 
 ## Upgrade process
 
