@@ -11,21 +11,21 @@ jobs:
   build-eotsd:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           repository: babylonlabs-io/finality-provider
           ref: v0.4.0
 
       - name: Cache eotsd
         id: cache-eots
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
             ./build/eotsd
           key: key-eotsd-v040
 
       - name: Setup go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5.6.0
         with:
           go-version: 1.21
       - name: Compile
@@ -39,13 +39,13 @@ jobs:
       any_changed: ${{steps.changed-files-registry.outputs.any_changed}}
       all_changed_files: ${{steps.changed-files-registry.outputs.all_changed_files}}
     steps:
-      - uses: actions/checkout@v4 # checkout to current repo
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0 # fetch all
 
       - name: Get changed files
         id: changed-files-registry
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@c65cd883420fd2eb864698a825fc4162dd94482c # v44.5.7
         with:
           files: 'bbn-1/finality-providers/registry/*.json'
 
@@ -55,10 +55,10 @@ jobs:
       - changed-fp-files
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - name: Load eotsd
         id: cache-bin
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
             ./build/eotsd
