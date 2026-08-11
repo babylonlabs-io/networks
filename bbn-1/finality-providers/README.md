@@ -104,7 +104,7 @@ To follow this guide, please use the
 [eotsd v0.4.0](https://github.com/babylonlabs-io/finality-provider/releases/tag/v0.4.0)
 version. This is a Golang project and requires version 1.21 or later. Install
 Go by following the instructions in the
-[official Go installation guide](https://golang.org/doc/install).
+[official Go installation guide](https://go.dev/doc/install).
 
 Download the EOTS Manager code with `git clone`
 
