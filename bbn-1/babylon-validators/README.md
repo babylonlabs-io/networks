@@ -42,7 +42,7 @@ two types of keys are generated automatically. One is a CometBFT consensus key
 pair, which is stored in `priv_validator_key.json`. This key is used by your
 validator to participate in block creation and signing during the
 consensus process at the CometBFT layer.
-The other is BLS key pair, which is stored in `bls_key.json` along with
+The other is a BLS key pair, which is stored in `bls_key.json` along with
 `bls_password.txt` following [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335).
 The key file location for both types of keys
 is specified in your node's `config.toml` file.
@@ -72,7 +72,7 @@ this key is one of the most important steps in setting up your validator.
 
 > **⚡ Note**: This key represents your validator's application layer account 
 > and is different from the CometBFT Key for consensus. While the CometBFT key 
-> is used for consensus-level operations, this key will be for the application-level
+> is used for consensus-level operations, this key is used for the application-level
 > operations such as managing your validator and withdrawing rewards.
 
 We will be using [Cosmos SDK](https://docs.cosmos.network/v0.50/user/run-node/keyring) 
@@ -248,7 +248,7 @@ First, get your validator's operator address using your Babylon address:
 babylond keys show <your-key-name> --address --bech val --home <path> --keyring-backend <keyring-backend>
 ```
 
-For example, for the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k85teavxmuq`, 
+For example, the address we used above is `bbn1qh8444k43spt6m8ernm8phxr332k85teavxmuq`, 
 the operator address is `bbnvaloper1qh8444k43spt6m8ernm8phxr332k85teavxmuq`. 
 
 For the next step, we will query your validator's details; however, results 
@@ -332,7 +332,7 @@ documentation.
 
 ## 6. Advanced Security Architecture
 
-Each validator's needs are significantly varied based on their operational needs 
+Each validator's needs vary significantly based on their operational needs 
 and the environment they are running in. Before setting up your validator 
 infrastructure, take time to research different security architectures, including 
 the [Sentry Node Architecture](https://hub.cosmos.network/main/validators/security#sentry-nodes-ddos-protection). 
