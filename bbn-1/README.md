@@ -52,6 +52,8 @@ Archive:
 - https://babylon-archive.nodes.guru/rpc
 - https://babylon-archive-rpc.polkachu.com
 
+See also: [OpenChainBench Babylon RPC benchmark](https://openchainbench.com/bench/babylon-rpc) — live latency comparison of free public endpoints (PublicNode, Polkachu, LavenderFive), measured every 60s from 3 regions.
+
 ##### LCD (node API)
 
 Pruned:
