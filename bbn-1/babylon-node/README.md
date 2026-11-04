@@ -145,8 +145,7 @@ Parameters:
 - `minimum-gas-prices`: The minimum gas price your node will accept for
   transactions. The Babylon protocol enforces a minimum of `0.002ubbn` and
   any transactions with gas prices below your node's minimum will be rejected.
-- `mempool.max-txs`: Set this to `0` in order to utilise the application side
-  mempool.
+- `mempool.max-txs`: Set this to `0` in order to utilise the application side mempool.
 - `btc-config.network`: Specifies which Bitcoin network to connect to for
   checkpointing. For the Babylon Genesis mainnet,
   we use "mainnet" which is Bitcoin's mainnet network.
@@ -155,7 +154,7 @@ Note: If you're running a validator or RPC node that needs to handle queries,
 it's recommended to keep these default values for optimal performance. Only
 adjust these if you're running a node with limited memory resources.
 
-2. On `config.toml`, update the the following settings:
+2. On `config.toml`, update the following settings:
 
 ```shell
 [p2p]
