@@ -7,6 +7,9 @@ on:
       - 'bbn-1/finality-providers/registry/**.json'
       - 'bbn-1/finality-providers/sigs/**.sig'
 
+permissions:
+  contents: read
+
 jobs:
   build-eotsd:
     runs-on: ubuntu-latest
@@ -45,7 +48,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files-registry
-        uses: tj-actions/changed-files@c65cd883420fd2eb864698a825fc4162dd94482c # v44.5.7
+        uses: tj-actions/changed-files@9426d40962ed5378910ee2e21d5f8c6fcbf2dd96 # v47.0.6
         with:
           files: 'bbn-1/finality-providers/registry/*.json'
 
